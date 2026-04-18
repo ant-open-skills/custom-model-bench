@@ -1,0 +1,88 @@
+{
+  "run_id": "run_openai_config-openai_2026-04-18T21-48-47-322Z",
+  "candidate": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+    "temperature": 0,
+    "maxOutputTokens": 200
+  },
+  "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/demo/dataset.jsonl",
+  "results": [
+    {
+      "id": "ex-001",
+      "prompt": "What is the capital of France?",
+      "response": "The capital of France is Paris.",
+      "turns": 1,
+      "latency_ms": 2047,
+      "input_tokens": 29,
+      "output_tokens": 7,
+      "cost_usd": 0.000008550000000000001,
+      "error": null
+    },
+    {
+      "id": "ex-002",
+      "prompt": "Name three primary colors.",
+      "response": "Red, blue, and yellow.",
+      "turns": 1,
+      "latency_ms": 1763,
+      "input_tokens": 27,
+      "output_tokens": 7,
+      "cost_usd": 0.00000825,
+      "error": null
+    },
+    {
+      "id": "ex-003",
+      "prompt": "What is 17 multiplied by 23?",
+      "response": "17 multiplied by 23 is 391.",
+      "turns": 1,
+      "latency_ms": 621,
+      "input_tokens": 31,
+      "output_tokens": 9,
+      "cost_usd": 0.000010049999999999999,
+      "error": null
+    },
+    {
+      "id": "ex-004",
+      "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+      "response": "The Apollo 11 mission landed on the Moon in 1969.",
+      "turns": 1,
+      "latency_ms": 740,
+      "input_tokens": 36,
+      "output_tokens": 14,
+      "cost_usd": 0.0000138,
+      "error": null
+    },
+    {
+      "id": "ex-005",
+      "prompt": "Give a one-sentence definition of photosynthesis.",
+      "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy in the form of glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
+      "turns": 1,
+      "latency_ms": 1515,
+      "input_tokens": 32,
+      "output_tokens": 46,
+      "cost_usd": 0.0000324,
+      "error": null
+    }
+  ],
+  "aggregate": {
+    "n": 5,
+    "n_success": 5,
+    "n_error": 0,
+    "latency_ms": {
+      "p50": 1515,
+      "p95": 2047,
+      "p99": 2047,
+      "mean": 1337
+    },
+    "cost_usd": {
+      "total": 0.00007305,
+      "mean": 0.00001461,
+      "per_1k_evals": 0.014610000000000001
+    },
+    "turns": {
+      "mean": 1,
+      "max": 1
+    }
+  }
+}

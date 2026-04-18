@@ -1,12 +1,14 @@
 /**
- * Candidate config for the Phase 1 demo run.
+ * Default candidate: Claude Haiku 4.5.
  *
- * Phase 1 is Claude-only. In Phase 1.5 this same shape will also accept
- * openai, google, and xai as providers — swapping is a one-line change.
+ * Other providers in this directory's sibling configs:
+ *   - config-openai.ts  → GPT-4o mini
+ *   - config-google.ts  → Gemini 2.0 Flash
+ *   - config-xai.ts     → Grok 3 Mini
  */
 
 export type CandidateConfig = {
-  provider: "anthropic"; // more providers land in Phase 1.5
+  provider: "anthropic" | "openai" | "google" | "xai";
   model: string;
   systemPrompt?: string;
   temperature?: number;

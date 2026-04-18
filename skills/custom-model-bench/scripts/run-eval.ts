@@ -1,23 +1,34 @@
 #!/usr/bin/env bun
 /**
- * run-eval.ts — Phase 1 eval runner.
+ * run-eval.ts — eval runner.
  *
- * Loads a candidate config + dataset.jsonl from an example directory,
- * runs each row via the Vercel AI SDK, captures latency / cost / turns,
- * and writes a run report to <example-dir>/runs/<run-id>.json.
+ * Loads a candidate config + dataset.jsonl from an example directory, runs
+ * each row via the Vercel AI SDK, and writes a run report to
+ * <example-dir>/runs/<run-id>.json.
  *
- * Usage: bun run run-eval.ts <example-dir>
+ * Supports Anthropic, OpenAI, Google, and xAI via provider dispatch.
+ *
+ * Usage:
+ *   bun run run-eval.ts <example-dir> [config-filename]
+ *
+ * Default config-filename is "config.ts". Pass e.g. "config-openai.ts" to
+ * run the same dataset against a different candidate.
  */
 
 import "dotenv/config";
-import { generateText } from "ai";
+import { generateText, type LanguageModelV1 } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
+import { openai } from "@ai-sdk/openai";
+import { google } from "@ai-sdk/google";
+import { xai } from "@ai-sdk/xai";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { resolve, join } from "node:path";
+import { resolve, join, basename } from "node:path";
 import { computeCost } from "./pricing";
 
+type Provider = "anthropic" | "openai" | "google" | "xai";
+
 type CandidateConfig = {
-  provider: "anthropic";
+  provider: Provider;
   model: string;
   systemPrompt?: string;
   temperature?: number;
@@ -38,6 +49,19 @@ type RowResult = {
   error: string | null;
 };
 
+function modelFor(candidate: CandidateConfig): LanguageModelV1 {
+  switch (candidate.provider) {
+    case "anthropic":
+      return anthropic(candidate.model);
+    case "openai":
+      return openai(candidate.model);
+    case "google":
+      return google(candidate.model);
+    case "xai":
+      return xai(candidate.model);
+  }
+}
+
 function percentile(sorted: number[], p: number): number {
   if (sorted.length === 0) return 0;
   const i = Math.ceil((p / 100) * sorted.length) - 1;
@@ -55,7 +79,7 @@ async function runRow(
   const startedAt = performance.now();
   try {
     const out = await generateText({
-      model: anthropic(candidate.model),
+      model: modelFor(candidate),
       system: candidate.systemPrompt,
       prompt: row.prompt,
       temperature: candidate.temperature,
@@ -69,7 +93,7 @@ async function runRow(
       id: row.id,
       prompt: row.prompt,
       response: out.text,
-      turns: 1, // Phase 1 has no tools; later phases derive from steps
+      turns: 1,
       latency_ms,
       input_tokens,
       output_tokens,
@@ -94,12 +118,13 @@ async function runRow(
 
 async function main() {
   const exampleDirArg = process.argv[2];
+  const configFilename = process.argv[3] ?? "config.ts";
   if (!exampleDirArg) {
-    console.error("Usage: bun run run-eval.ts <example-dir>");
+    console.error("Usage: bun run run-eval.ts <example-dir> [config-filename]");
     process.exit(1);
   }
   const exampleDir = resolve(exampleDirArg);
-  const configPath = join(exampleDir, "config.ts");
+  const configPath = join(exampleDir, configFilename);
   const datasetPath = join(exampleDir, "dataset.jsonl");
 
   const mod = (await import(configPath)) as { candidate: CandidateConfig };
@@ -129,7 +154,12 @@ async function main() {
   const turns = ok.map((r) => r.turns);
   const totalCost = costs.reduce((a, b) => a + b, 0);
 
-  const runId = `run_${new Date().toISOString().replace(/[:.]/g, "-")}`;
+  // Run ID includes provider + config filename stem so multi-provider runs
+  // don't collide on the same timestamp second.
+  const configStem = basename(configFilename, ".ts");
+  const runId = `run_${candidate.provider}_${configStem}_${new Date()
+    .toISOString()
+    .replace(/[:.]/g, "-")}`;
   const report = {
     run_id: runId,
     candidate,

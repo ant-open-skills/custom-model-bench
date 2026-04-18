@@ -12,14 +12,19 @@
     "bench:google": "bun run skills/custom-model-bench/scripts/run-eval.ts skills/custom-model-bench/examples/demo config-google.ts",
     "bench:xai": "bun run skills/custom-model-bench/scripts/run-eval.ts skills/custom-model-bench/examples/demo config-xai.ts",
     "bench:all": "bun bench:anthropic && bun bench:openai && bun bench:google && bun bench:xai",
-    "bench:compare": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/demo"
+    "bench:compare": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/demo",
+    "bench:tiers:anthropic": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/anthropic-tiers",
+    "bench:tiers:openai": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/openai-tiers",
+    "bench:tiers:google": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/google-tiers",
+    "bench:tiers:xai": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/xai-tiers",
+    "bench:tiers:all": "bun bench:tiers:anthropic && bun bench:tiers:openai && bun bench:tiers:google && bun bench:tiers:xai"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^1.2.0",
-    "@ai-sdk/google": "^1.2.0",
-    "@ai-sdk/openai": "^1.3.0",
-    "@ai-sdk/xai": "^1.2.0",
-    "ai": "^4.3.0",
+    "@ai-sdk/anthropic": "^3.0.71",
+    "@ai-sdk/google": "^3.0.64",
+    "@ai-sdk/openai": "^3.0.53",
+    "@ai-sdk/xai": "^3.0.83",
+    "ai": "^6.0.168",
     "dotenv": "^16.4.5",
     "zod": "^3.23.8"
   },

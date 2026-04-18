@@ -1,10 +1,10 @@
 {
-  "comparison_id": "comparison_2026-04-18T22-07-56-427Z",
+  "comparison_id": "comparison_2026-04-18T22-30-41-996Z",
   "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/demo/dataset.jsonl",
   "n_rows": 5,
   "n_candidates": 4,
-  "started_at": "2026-04-18T22:07:43.701Z",
-  "completed_at": "2026-04-18T22:07:56.426Z",
+  "started_at": "2026-04-18T22:30:29.168Z",
+  "completed_at": "2026-04-18T22:30:41.996Z",
   "runs": [
     {
       "config_file": "config-google.ts",
@@ -19,21 +19,21 @@
           "prompt": "What is the capital of France?",
           "response": "The capital of France is Paris.",
           "turns": 1,
-          "latency_ms": 2455,
+          "latency_ms": 2099,
           "input_tokens": 19,
-          "output_tokens": 7,
-          "cost_usd": 0.000122,
+          "output_tokens": 99,
+          "cost_usd": 0.001226,
           "error": null
         },
         {
           "id": "ex-002",
           "prompt": "Name three primary colors.",
-          "response": "The three primary colors are",
+          "response": "The three traditional primary",
           "turns": 1,
-          "latency_ms": 2662,
+          "latency_ms": 3054,
           "input_tokens": 17,
-          "output_tokens": 5,
-          "cost_usd": 0.000094,
+          "output_tokens": 196,
+          "cost_usd": 0.002386,
           "error": null
         },
         {
@@ -41,10 +41,10 @@
           "prompt": "What is 17 multiplied by 23?",
           "response": "17 multiplied by 23 is 391.",
           "turns": 1,
-          "latency_ms": 2426,
+          "latency_ms": 2276,
           "input_tokens": 23,
-          "output_tokens": 12,
-          "cost_usd": 0.00019,
+          "output_tokens": 149,
+          "cost_usd": 0.001834,
           "error": null
         },
         {
@@ -52,10 +52,10 @@
           "prompt": "In which year did the Apollo 11 mission land on the Moon?",
           "response": "The Apollo 11 mission landed on the Moon in 1969.",
           "turns": 1,
-          "latency_ms": 2382,
+          "latency_ms": 2456,
           "input_tokens": 27,
-          "output_tokens": 17,
-          "cost_usd": 0.000258,
+          "output_tokens": 155,
+          "cost_usd": 0.001914,
           "error": null
         },
         {
@@ -63,10 +63,10 @@
           "prompt": "Give a one-sentence definition of photosynthesis.",
           "response": "Photosynthesis is the process",
           "turns": 1,
-          "latency_ms": 2799,
+          "latency_ms": 2941,
           "input_tokens": 21,
-          "output_tokens": 5,
-          "cost_usd": 0.000102,
+          "output_tokens": 196,
+          "cost_usd": 0.002394,
           "error": null
         }
       ],
@@ -75,15 +75,15 @@
         "n_success": 5,
         "n_error": 0,
         "latency_ms": {
-          "p50": 2455,
-          "p95": 2799,
-          "p99": 2799,
-          "mean": 2545
+          "p50": 2456,
+          "p95": 3054,
+          "p99": 3054,
+          "mean": 2565
         },
         "cost_usd": {
-          "total": 0.000766,
-          "mean": 0.00015319999999999998,
-          "per_1k_evals": 0.15319999999999998
+          "total": 0.009754,
+          "mean": 0.0019508000000000001,
+          "per_1k_evals": 1.9508
         },
         "turns": {
           "mean": 1,
@@ -104,10 +104,10 @@
           "prompt": "What is the capital of France?",
           "response": "The capital of France is Paris.",
           "turns": 1,
-          "latency_ms": 1178,
+          "latency_ms": 1026,
           "input_tokens": 28,
-          "output_tokens": 10,
-          "cost_usd": 0.000051,
+          "output_tokens": 11,
+          "cost_usd": 0.0000705,
           "error": null
         },
         {
@@ -115,10 +115,10 @@
           "prompt": "Name three primary colors.",
           "response": "Red, blue, and yellow.",
           "turns": 1,
-          "latency_ms": 926,
+          "latency_ms": 982,
           "input_tokens": 26,
-          "output_tokens": 10,
-          "cost_usd": 0.0000495,
+          "output_tokens": 11,
+          "cost_usd": 0.000069,
           "error": null
         },
         {
@@ -126,10 +126,10 @@
           "prompt": "What is 17 multiplied by 23?",
           "response": "17 multiplied by 23 is 391.",
           "turns": 1,
-          "latency_ms": 643,
+          "latency_ms": 1110,
           "input_tokens": 30,
-          "output_tokens": 12,
-          "cost_usd": 0.0000585,
+          "output_tokens": 13,
+          "cost_usd": 0.000081,
           "error": null
         },
         {
@@ -137,10 +137,10 @@
           "prompt": "In which year did the Apollo 11 mission land on the Moon?",
           "response": "Apollo 11 landed on the Moon in 1969.",
           "turns": 1,
-          "latency_ms": 1139,
+          "latency_ms": 986,
           "input_tokens": 35,
-          "output_tokens": 15,
-          "cost_usd": 0.00007125,
+          "output_tokens": 16,
+          "cost_usd": 0.00009825,
           "error": null
         },
         {
@@ -148,10 +148,10 @@
           "prompt": "Give a one-sentence definition of photosynthesis.",
           "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
           "turns": 1,
-          "latency_ms": 711,
+          "latency_ms": 1466,
           "input_tokens": 31,
-          "output_tokens": 30,
-          "cost_usd": 0.00011325,
+          "output_tokens": 31,
+          "cost_usd": 0.00016275,
           "error": null
         }
       ],
@@ -160,15 +160,15 @@
         "n_success": 5,
         "n_error": 0,
         "latency_ms": {
-          "p50": 926,
-          "p95": 1178,
-          "p99": 1178,
-          "mean": 919
+          "p50": 1026,
+          "p95": 1466,
+          "p99": 1466,
+          "mean": 1114
         },
         "cost_usd": {
-          "total": 0.0003435,
-          "mean": 0.0000687,
-          "per_1k_evals": 0.0687
+          "total": 0.00048150000000000005,
+          "mean": 0.00009630000000000001,
+          "per_1k_evals": 0.09630000000000001
         },
         "turns": {
           "mean": 1,
@@ -189,10 +189,10 @@
           "prompt": "What is the capital of France?",
           "response": "Paris is the capital of France.",
           "turns": 1,
-          "latency_ms": 1536,
+          "latency_ms": 1596,
           "input_tokens": 703,
-          "output_tokens": 7,
-          "cost_usd": 0.001448,
+          "output_tokens": 64,
+          "cost_usd": 0.00179,
           "error": null
         },
         {
@@ -200,10 +200,10 @@
           "prompt": "Name three primary colors.",
           "response": "The three primary colors are red, yellow, and blue.",
           "turns": 1,
-          "latency_ms": 2682,
+          "latency_ms": 2640,
           "input_tokens": 701,
-          "output_tokens": 12,
-          "cost_usd": 0.001474,
+          "output_tokens": 121,
+          "cost_usd": 0.002128,
           "error": null
         },
         {
@@ -211,10 +211,10 @@
           "prompt": "What is 17 multiplied by 23?",
           "response": "17 multiplied by 23 is 391.",
           "turns": 1,
-          "latency_ms": 2379,
+          "latency_ms": 2306,
           "input_tokens": 705,
-          "output_tokens": 9,
-          "cost_usd": 0.001464,
+          "output_tokens": 130,
+          "cost_usd": 0.00219,
           "error": null
         },
         {
@@ -222,21 +222,21 @@
           "prompt": "In which year did the Apollo 11 mission land on the Moon?",
           "response": "The Apollo 11 mission landed on the Moon in 1969.",
           "turns": 1,
-          "latency_ms": 1893,
+          "latency_ms": 1679,
           "input_tokens": 710,
-          "output_tokens": 14,
-          "cost_usd": 0.001504,
+          "output_tokens": 84,
+          "cost_usd": 0.001924,
           "error": null
         },
         {
           "id": "ex-005",
           "prompt": "Give a one-sentence definition of photosynthesis.",
-          "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
+          "response": "Photosynthesis is the biological process by which green plants, algae, and some bacteria convert light energy from the sun into chemical energy, using carbon dioxide and water to produce glucose and oxygen.",
           "turns": 1,
-          "latency_ms": 2560,
+          "latency_ms": 2895,
           "input_tokens": 705,
-          "output_tokens": 42,
-          "cost_usd": 0.001662,
+          "output_tokens": 146,
+          "cost_usd": 0.002286,
           "error": null
         }
       ],
@@ -245,15 +245,15 @@
         "n_success": 5,
         "n_error": 0,
         "latency_ms": {
-          "p50": 2379,
-          "p95": 2682,
-          "p99": 2682,
-          "mean": 2210
+          "p50": 2306,
+          "p95": 2895,
+          "p99": 2895,
+          "mean": 2223
         },
         "cost_usd": {
-          "total": 0.0075520000000000006,
-          "mean": 0.0015104,
-          "per_1k_evals": 1.5104
+          "total": 0.010317999999999999,
+          "mean": 0.0020635999999999996,
+          "per_1k_evals": 2.0635999999999997
         },
         "turns": {
           "mean": 1,
@@ -272,12 +272,12 @@
         {
           "id": "ex-001",
           "prompt": "What is the capital of France?",
-          "response": "The capital of France is **Paris**.",
+          "response": "The capital of France is Paris.",
           "turns": 1,
-          "latency_ms": 731,
+          "latency_ms": 688,
           "input_tokens": 27,
-          "output_tokens": 11,
-          "cost_usd": 0.000246,
+          "output_tokens": 10,
+          "cost_usd": 0.000231,
           "error": null
         },
         {
@@ -285,7 +285,7 @@
           "prompt": "Name three primary colors.",
           "response": "The three primary colors are **red**, **blue**, and **yellow**.",
           "turns": 1,
-          "latency_ms": 1690,
+          "latency_ms": 823,
           "input_tokens": 25,
           "output_tokens": 18,
           "cost_usd": 0.000345,
@@ -296,7 +296,7 @@
           "prompt": "What is 17 multiplied by 23?",
           "response": "17 multiplied by 23 is **391**.",
           "turns": 1,
-          "latency_ms": 1564,
+          "latency_ms": 699,
           "input_tokens": 31,
           "output_tokens": 16,
           "cost_usd": 0.000333,
@@ -307,7 +307,7 @@
           "prompt": "In which year did the Apollo 11 mission land on the Moon?",
           "response": "The Apollo 11 mission landed on the Moon in **1969**.",
           "turns": 1,
-          "latency_ms": 1135,
+          "latency_ms": 1395,
           "input_tokens": 35,
           "output_tokens": 18,
           "cost_usd": 0.000375,
@@ -318,7 +318,7 @@
           "prompt": "Give a one-sentence definition of photosynthesis.",
           "response": "Photosynthesis is the biological process by which plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored as glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
           "turns": 1,
-          "latency_ms": 1525,
+          "latency_ms": 1547,
           "input_tokens": 32,
           "output_tokens": 52,
           "cost_usd": 0.000876,
@@ -330,15 +330,15 @@
         "n_success": 5,
         "n_error": 0,
         "latency_ms": {
-          "p50": 1525,
-          "p95": 1690,
-          "p99": 1690,
-          "mean": 1329
+          "p50": 823,
+          "p95": 1547,
+          "p99": 1547,
+          "mean": 1030
         },
         "cost_usd": {
-          "total": 0.002175,
-          "mean": 0.00043499999999999995,
-          "per_1k_evals": 0.43499999999999994
+          "total": 0.00216,
+          "mean": 0.000432,
+          "per_1k_evals": 0.432
         },
         "turns": {
           "mean": 1,
@@ -350,68 +350,68 @@
   "leaderboard": {
     "latency_p50_ms": [
       {
-        "provider": "openai",
-        "model": "gpt-5.4-mini",
-        "value": 926
-      },
-      {
         "provider": "anthropic",
         "model": "claude-sonnet-4-6",
-        "value": 1525
+        "value": 823
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-mini",
+        "value": 1026
       },
       {
         "provider": "xai",
         "model": "grok-4",
-        "value": 2379
+        "value": 2306
       },
       {
         "provider": "google",
         "model": "gemini-3.1-pro-preview",
-        "value": 2455
+        "value": 2456
       }
     ],
     "latency_p95_ms": [
       {
         "provider": "openai",
         "model": "gpt-5.4-mini",
-        "value": 1178
+        "value": 1466
       },
       {
         "provider": "anthropic",
         "model": "claude-sonnet-4-6",
-        "value": 1690
+        "value": 1547
       },
       {
         "provider": "xai",
         "model": "grok-4",
-        "value": 2682
+        "value": 2895
       },
       {
         "provider": "google",
         "model": "gemini-3.1-pro-preview",
-        "value": 2799
+        "value": 3054
       }
     ],
     "cost_per_1k_evals_usd": [
       {
         "provider": "openai",
         "model": "gpt-5.4-mini",
-        "value": 0.0687
-      },
-      {
-        "provider": "google",
-        "model": "gemini-3.1-pro-preview",
-        "value": 0.15319999999999998
+        "value": 0.09630000000000001
       },
       {
         "provider": "anthropic",
         "model": "claude-sonnet-4-6",
-        "value": 0.43499999999999994
+        "value": 0.432
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "value": 1.9508
       },
       {
         "provider": "xai",
         "model": "grok-4",
-        "value": 1.5104
+        "value": 2.0635999999999997
       }
     ],
     "success_rate": [

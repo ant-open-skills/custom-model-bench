@@ -15,7 +15,7 @@
  */
 
 import "dotenv/config";
-import { generateText, type LanguageModelV1 } from "ai";
+import { generateText, type LanguageModel } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { openai } from "@ai-sdk/openai";
 import { google } from "@ai-sdk/google";
@@ -68,7 +68,7 @@ type CandidateRun = {
   aggregate: Aggregate;
 };
 
-function modelFor(candidate: CandidateConfig): LanguageModelV1 {
+function modelFor(candidate: CandidateConfig): LanguageModel {
   switch (candidate.provider) {
     case "anthropic":
       return anthropic(candidate.model);
@@ -101,12 +101,18 @@ async function runRow(
       model: modelFor(candidate),
       system: candidate.systemPrompt,
       prompt: row.prompt,
-      temperature: candidate.temperature,
-      maxTokens: candidate.maxOutputTokens,
+      // Spread only params that are actually set — some models (e.g. Opus 4.7)
+      // reject an explicit `temperature` even when it's `undefined`.
+      ...(candidate.temperature !== undefined
+        ? { temperature: candidate.temperature }
+        : {}),
+      ...(candidate.maxOutputTokens !== undefined
+        ? { maxOutputTokens: candidate.maxOutputTokens }
+        : {}),
     });
     const latency_ms = Math.round(performance.now() - startedAt);
-    const input_tokens = out.usage?.promptTokens ?? 0;
-    const output_tokens = out.usage?.completionTokens ?? 0;
+    const input_tokens = out.usage?.inputTokens ?? 0;
+    const output_tokens = out.usage?.outputTokens ?? 0;
     return {
       id: row.id,
       prompt: row.prompt,

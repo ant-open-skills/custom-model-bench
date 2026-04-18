@@ -1,0 +1,8 @@
+{
+  "name": "custom-model-bench",
+  "description": "Benchmark your custom Claude agents and prompted workflows against curated datasets and rubric-based judges. Dataset + rubric + run + report — the fundamentals of model evaluation, packaged for Claude Code.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Hendrik Krack"
+  }
+}

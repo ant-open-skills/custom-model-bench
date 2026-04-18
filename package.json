@@ -1,0 +1,18 @@
+{
+  "name": "custom-model-bench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Benchmark custom Claude agents and prompted workflows against datasets and rubrics.",
+  "license": "MIT",
+  "type": "module",
+  "author": "Hendrik Krack",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.114",
+    "dotenv": "^16.4.5",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.13",
+    "typescript": "^5.6.3"
+  }
+}

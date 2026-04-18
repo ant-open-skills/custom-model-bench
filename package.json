@@ -6,6 +6,13 @@
   "license": "MIT",
   "type": "module",
   "author": "Hendrik Krack",
+  "scripts": {
+    "bench:anthropic": "bun run skills/custom-model-bench/scripts/run-eval.ts skills/custom-model-bench/examples/demo",
+    "bench:openai": "bun run skills/custom-model-bench/scripts/run-eval.ts skills/custom-model-bench/examples/demo config-openai.ts",
+    "bench:google": "bun run skills/custom-model-bench/scripts/run-eval.ts skills/custom-model-bench/examples/demo config-google.ts",
+    "bench:xai": "bun run skills/custom-model-bench/scripts/run-eval.ts skills/custom-model-bench/examples/demo config-xai.ts",
+    "bench:all": "bun bench:anthropic && bun bench:openai && bun bench:google && bun bench:xai"
+  },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.0",
     "@ai-sdk/google": "^1.2.0",

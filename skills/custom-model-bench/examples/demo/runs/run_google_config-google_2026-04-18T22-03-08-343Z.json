@@ -1,8 +1,8 @@
 {
-  "run_id": "run_2026-04-18T21-32-36-890Z",
+  "run_id": "run_google_config-google_2026-04-18T22-03-08-343Z",
   "candidate": {
-    "provider": "anthropic",
-    "model": "claude-haiku-4-5",
+    "provider": "google",
+    "model": "gemini-3.1-pro-preview",
     "systemPrompt": "You are a concise assistant. Answer in one sentence.",
     "temperature": 0,
     "maxOutputTokens": 200
@@ -14,21 +14,21 @@
       "prompt": "What is the capital of France?",
       "response": "The capital of France is Paris.",
       "turns": 1,
-      "latency_ms": 1488,
-      "input_tokens": 26,
-      "output_tokens": 10,
-      "cost_usd": 0.000076,
+      "latency_ms": 4469,
+      "input_tokens": 19,
+      "output_tokens": 7,
+      "cost_usd": 0.000122,
       "error": null
     },
     {
       "id": "ex-002",
       "prompt": "Name three primary colors.",
-      "response": "The three primary colors are red, yellow, and blue.",
+      "response": "The three primary colors are",
       "turns": 1,
-      "latency_ms": 879,
-      "input_tokens": 24,
-      "output_tokens": 15,
-      "cost_usd": 0.000099,
+      "latency_ms": 2656,
+      "input_tokens": 17,
+      "output_tokens": 5,
+      "cost_usd": 0.000094,
       "error": null
     },
     {
@@ -36,32 +36,32 @@
       "prompt": "What is 17 multiplied by 23?",
       "response": "17 multiplied by 23 is 391.",
       "turns": 1,
-      "latency_ms": 487,
-      "input_tokens": 30,
-      "output_tokens": 16,
-      "cost_usd": 0.00011,
+      "latency_ms": 2823,
+      "input_tokens": 23,
+      "output_tokens": 12,
+      "cost_usd": 0.00019,
       "error": null
     },
     {
       "id": "ex-004",
       "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-      "response": "Apollo 11 landed on the Moon in 1969.",
+      "response": "The Apollo 11 mission landed on the Moon in 1969.",
       "turns": 1,
-      "latency_ms": 569,
-      "input_tokens": 34,
-      "output_tokens": 16,
-      "cost_usd": 0.000114,
+      "latency_ms": 2465,
+      "input_tokens": 27,
+      "output_tokens": 17,
+      "cost_usd": 0.000258,
       "error": null
     },
     {
       "id": "ex-005",
       "prompt": "Give a one-sentence definition of photosynthesis.",
-      "response": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "response": "Photosynthesis is the process",
       "turns": 1,
-      "latency_ms": 1138,
-      "input_tokens": 31,
-      "output_tokens": 29,
-      "cost_usd": 0.000176,
+      "latency_ms": 2805,
+      "input_tokens": 21,
+      "output_tokens": 5,
+      "cost_usd": 0.000102,
       "error": null
     }
   ],
@@ -70,15 +70,15 @@
     "n_success": 5,
     "n_error": 0,
     "latency_ms": {
-      "p50": 879,
-      "p95": 1488,
-      "p99": 1488,
-      "mean": 912
+      "p50": 2805,
+      "p95": 4469,
+      "p99": 4469,
+      "mean": 3044
     },
     "cost_usd": {
-      "total": 0.000575,
-      "mean": 0.000115,
-      "per_1k_evals": 0.115
+      "total": 0.000766,
+      "mean": 0.00015319999999999998,
+      "per_1k_evals": 0.15319999999999998
     },
     "turns": {
       "mean": 1,

@@ -1,8 +1,8 @@
 {
-  "run_id": "run_openai_config-openai_2026-04-18T21-48-47-322Z",
+  "run_id": "run_openai_config-openai_2026-04-18T22-02-05-722Z",
   "candidate": {
     "provider": "openai",
-    "model": "gpt-4o-mini",
+    "model": "gpt-5.4-mini",
     "systemPrompt": "You are a concise assistant. Answer in one sentence.",
     "temperature": 0,
     "maxOutputTokens": 200
@@ -14,10 +14,10 @@
       "prompt": "What is the capital of France?",
       "response": "The capital of France is Paris.",
       "turns": 1,
-      "latency_ms": 2047,
-      "input_tokens": 29,
-      "output_tokens": 7,
-      "cost_usd": 0.000008550000000000001,
+      "latency_ms": 873,
+      "input_tokens": 28,
+      "output_tokens": 10,
+      "cost_usd": 0.000051,
       "error": null
     },
     {
@@ -25,10 +25,10 @@
       "prompt": "Name three primary colors.",
       "response": "Red, blue, and yellow.",
       "turns": 1,
-      "latency_ms": 1763,
-      "input_tokens": 27,
-      "output_tokens": 7,
-      "cost_usd": 0.00000825,
+      "latency_ms": 652,
+      "input_tokens": 26,
+      "output_tokens": 10,
+      "cost_usd": 0.0000495,
       "error": null
     },
     {
@@ -36,32 +36,32 @@
       "prompt": "What is 17 multiplied by 23?",
       "response": "17 multiplied by 23 is 391.",
       "turns": 1,
-      "latency_ms": 621,
-      "input_tokens": 31,
-      "output_tokens": 9,
-      "cost_usd": 0.000010049999999999999,
+      "latency_ms": 991,
+      "input_tokens": 30,
+      "output_tokens": 12,
+      "cost_usd": 0.0000585,
       "error": null
     },
     {
       "id": "ex-004",
       "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-      "response": "The Apollo 11 mission landed on the Moon in 1969.",
+      "response": "Apollo 11 landed on the Moon in 1969.",
       "turns": 1,
-      "latency_ms": 740,
-      "input_tokens": 36,
-      "output_tokens": 14,
-      "cost_usd": 0.0000138,
+      "latency_ms": 1338,
+      "input_tokens": 35,
+      "output_tokens": 15,
+      "cost_usd": 0.00007125,
       "error": null
     },
     {
       "id": "ex-005",
       "prompt": "Give a one-sentence definition of photosynthesis.",
-      "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy in the form of glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
+      "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
       "turns": 1,
-      "latency_ms": 1515,
-      "input_tokens": 32,
-      "output_tokens": 46,
-      "cost_usd": 0.0000324,
+      "latency_ms": 1203,
+      "input_tokens": 31,
+      "output_tokens": 30,
+      "cost_usd": 0.00011325,
       "error": null
     }
   ],
@@ -70,15 +70,15 @@
     "n_success": 5,
     "n_error": 0,
     "latency_ms": {
-      "p50": 1515,
-      "p95": 2047,
-      "p99": 2047,
-      "mean": 1337
+      "p50": 991,
+      "p95": 1338,
+      "p99": 1338,
+      "mean": 1011
     },
     "cost_usd": {
-      "total": 0.00007305,
-      "mean": 0.00001461,
-      "per_1k_evals": 0.014610000000000001
+      "total": 0.0003435,
+      "mean": 0.0000687,
+      "per_1k_evals": 0.0687
     },
     "turns": {
       "mean": 1,

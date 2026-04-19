@@ -1,0 +1,10 @@
+{"id":"r-001","prompt":"What is the remainder when 7^100 is divided by 11?","expected_answer":"1"}
+{"id":"r-002","prompt":"How many positive integers less than 1000 are divisible by 7 but not by 5?","expected_answer":"114"}
+{"id":"r-003","prompt":"A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?","expected_answer":"96"}
+{"id":"r-004","prompt":"Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.","expected_answer":"4"}
+{"id":"r-005","prompt":"In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)","expected_answer":"3600"}
+{"id":"r-006","prompt":"How many distinct arrangements are there of the letters in the word MISSISSIPPI?","expected_answer":"34650"}
+{"id":"r-007","prompt":"A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.","expected_answer":"16.8"}
+{"id":"r-008","prompt":"Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?","expected_answer":"3"}
+{"id":"r-009","prompt":"The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?","expected_answer":"89"}
+{"id":"r-010","prompt":"A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).","expected_answer":"3/44"}

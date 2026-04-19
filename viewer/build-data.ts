@@ -61,6 +61,12 @@ const SCOPES: Scope[] = [
     provider: "xai",
     dir: "skills/custom-model-bench/examples/xai-tiers",
   },
+  {
+    id: "reasoning",
+    label: "Reasoning bench",
+    kind: "flagship",
+    dir: "skills/custom-model-bench/examples/reasoning",
+  },
 ];
 
 async function latestComparisonFile(runsDir: string): Promise<string | null> {

@@ -139,8 +139,10 @@
         p95: r.aggregate.latency_ms.p95,
         per1k: r.aggregate.cost_usd.per_1k_evals,
         success: r.aggregate.n_success / r.aggregate.n,
+        accuracy: r.aggregate.answer_accuracy?.rate ?? null,
       };
     });
+    const hasAccuracy = enriched.some(r => r.accuracy != null);
 
     const sorted = [...enriched].sort((a, b) => {
       const dir = SEL.sort.asc ? 1 : -1;
@@ -149,11 +151,13 @@
 
     const extremes = UI.columnExtremes(enriched, {
       p50: r => r.p50, p95: r => r.p95, per1k: r => r.per1k, success: r => r.success,
+      accuracy: r => r.accuracy,
     });
 
     const uc = Fit.USECASES[SEL.usecase];
 
     const topFit    = sorted[0];
+    const bestAcc   = hasAccuracy ? [...enriched].filter(r => r.accuracy != null).sort((a, b) => b.accuracy - a.accuracy)[0] : null;
     const bestP95   = [...enriched].sort((a, b) => a.p95 - b.p95)[0];
     const cheapest  = [...enriched].filter(r => r.success >= 0.95).sort((a, b) => a.per1k - b.per1k)[0];
     const fastest   = [...enriched].sort((a, b) => a.p50 - b.p50)[0];
@@ -169,8 +173,9 @@
     const sortClass = (key, isNum) =>
       (SEL.sort.key === key ? `sort ${SEL.sort.asc ? "asc" : ""}` : "") + (isNum ? " num" : "");
 
+    const colspan = hasAccuracy ? 9 : 8;
     const tbody = sorted.length === 0
-      ? `<tr><td colspan="8" style="text-align:center; padding:40px; color:var(--ink-3); font-style:italic; font-family:var(--serif);">No candidates match these filters.</td></tr>`
+      ? `<tr><td colspan="${colspan}" style="text-align:center; padding:40px; color:var(--ink-3); font-style:italic; font-family:var(--serif);">No candidates match these filters.</td></tr>`
       : sorted.map((r, i) => `
           <tr data-cfg="${UI.esc(r.config_file)}">
             <td class="rank ${i === 0 ? "top" : ""}">${i + 1}</td>
@@ -180,6 +185,9 @@
             <td class="${UI.cellCls(r.p95, "p95", extremes, true)}">${UI.fmtMs(r.p95)}</td>
             <td class="${UI.cellCls(r.per1k, "per1k", extremes, true)}">${UI.fmtCost1k(r.per1k)}</td>
             <td class="${UI.cellCls(r.success, "success", extremes, false)}">${UI.fmtRate(r.success)}</td>
+            ${hasAccuracy
+              ? `<td class="${UI.cellCls(r.accuracy, "accuracy", extremes, false)}">${r.accuracy != null ? UI.fmtRate(r.accuracy) : "—"}</td>`
+              : ""}
             <td style="text-align:right; color:var(--ink-4); font-family:var(--mono); font-size:11px;">›</td>
           </tr>
       `).join("");
@@ -204,7 +212,9 @@
 
         <section class="summary">
           ${summaryCard(`Top fit · ${uc.label}`, topFit, topFit ? `fit ${Math.round(topFit.fit)}` : null)}
-          ${summaryCard(`Best on p95`, bestP95, bestP95 ? `${UI.fmtMs(bestP95.p95)} p95` : null)}
+          ${hasAccuracy
+            ? summaryCard(`Highest accuracy`, bestAcc, bestAcc ? `${(bestAcc.accuracy * 100).toFixed(0)}% correct` : null)
+            : summaryCard(`Best on p95`, bestP95, bestP95 ? `${UI.fmtMs(bestP95.p95)} p95` : null)}
           ${summaryCard(`Cheapest viable`, cheapest, cheapest ? `${UI.fmtCost1k(cheapest.per1k)}/1k evals` : null)}
           ${summaryCard(`Fastest p50`, fastest, fastest ? `${UI.fmtMs(fastest.p50)} p50` : null)}
         </section>
@@ -230,6 +240,9 @@
                   <th class="${sortClass("p95", true)}" data-sort="p95" title="Tail latency">p95 lat.</th>
                   <th class="${sortClass("per1k", true)}" data-sort="per1k" title="Cost per 1000 evals">$/1k</th>
                   <th class="${sortClass("success", true)}" data-sort="success" title="Success rate">Success</th>
+                  ${hasAccuracy
+                    ? `<th class="${sortClass("accuracy", true)}" data-sort="accuracy" title="Exact-match accuracy against ground-truth answers">Accuracy</th>`
+                    : ""}
                   <th style="width:32px;"></th>
                 </tr>
               </thead>
@@ -299,18 +312,35 @@
       row: run.results.find(r => r.id === currentRow.id) || null,
     }));
 
+    const expected = currentRow.expected_answer;
     const candidateHtml = candidates.map(({ run, row }) => {
       if (!row) return "";
       const isErr = row.error !== null;
       const bodyClass = isErr ? "candidate-body error" : "candidate-body";
       const bodyText = isErr ? UI.esc(row.error) : UI.esc(row.response);
+
+      let verdict = "";
+      if (!isErr && expected != null) {
+        const correct = row.answer_correct === true;
+        const extracted = row.answer_extracted ?? "?";
+        const color = correct ? "var(--good)" : "var(--bad)";
+        const label = correct ? "✓ correct" : "✗ wrong";
+        const hint = correct
+          ? `extracted <b>${UI.esc(extracted)}</b>`
+          : `extracted <b>${UI.esc(extracted)}</b> · expected <b>${UI.esc(expected)}</b>`;
+        verdict = `
+          <span class="mono" style="font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:${color};">${label}</span>
+          <span class="mono" style="font-size:10px; color:var(--ink-3); margin-left:8px;">${hint}</span>
+        `;
+      } else {
+        verdict = `<span class="mono" style="font-size:10px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.08em;">${isErr ? "error" : "ok"}</span>`;
+      }
+
       return `
         <div class="candidate">
           <div class="candidate-head">
             ${UI.modelLabel(run.model, run.provider)}
-            <span class="mono" style="font-size:10px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.08em;">
-              ${isErr ? "error" : "ok"}
-            </span>
+            <span>${verdict}</span>
           </div>
           <div class="${bodyClass}">${bodyText}</div>
           <div class="candidate-footer">

@@ -23,6 +23,7 @@ import { xai } from "@ai-sdk/xai";
 import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { computeCost } from "./pricing";
+import { gradeRow } from "./graders/exact_match";
 
 type Provider = "anthropic" | "openai" | "google" | "xai";
 
@@ -34,7 +35,12 @@ type CandidateConfig = {
   maxOutputTokens?: number;
 };
 
-type Row = { id: string; prompt: string };
+type Row = {
+  id: string;
+  prompt: string;
+  /** If present, the candidate's response is exact-match graded against this. */
+  expected_answer?: string;
+};
 
 type RowResult = {
   id: string;
@@ -46,6 +52,9 @@ type RowResult = {
   output_tokens: number;
   cost_usd: number;
   error: string | null;
+  /** Set when the dataset row has `expected_answer`; null otherwise. */
+  answer_extracted?: string | null;
+  answer_correct?: boolean | null;
 };
 
 type Aggregate = {
@@ -55,6 +64,12 @@ type Aggregate = {
   latency_ms: { p50: number; p95: number; p99: number; mean: number };
   cost_usd: { total: number; mean: number; per_1k_evals: number };
   turns: { mean: number; max: number };
+  /** Populated only when any dataset row carries `expected_answer`. */
+  answer_accuracy?: {
+    graded: number;   // rows that had expected_answer and didn't error
+    correct: number;
+    rate: number;     // correct / graded (0 when graded is 0)
+  };
 };
 
 type CandidateRun = {
@@ -113,6 +128,7 @@ async function runRow(
     const latency_ms = Math.round(performance.now() - startedAt);
     const input_tokens = out.usage?.inputTokens ?? 0;
     const output_tokens = out.usage?.outputTokens ?? 0;
+    const { extracted, correct } = gradeRow(out.text, row.expected_answer);
     return {
       id: row.id,
       prompt: row.prompt,
@@ -123,6 +139,8 @@ async function runRow(
       output_tokens,
       cost_usd: computeCost(candidate.model, input_tokens, output_tokens),
       error: null,
+      answer_extracted: row.expected_answer != null ? extracted : null,
+      answer_correct: row.expected_answer != null ? correct : null,
     };
   } catch (e: unknown) {
     return {
@@ -145,6 +163,13 @@ function aggregate(results: RowResult[]): Aggregate {
   const costs = ok.map((r) => r.cost_usd);
   const turns = ok.map((r) => r.turns);
   const totalCost = costs.reduce((a, b) => a + b, 0);
+
+  const graded = results.filter((r) => r.answer_correct !== null && r.answer_correct !== undefined);
+  const correct = graded.filter((r) => r.answer_correct === true).length;
+  const answer_accuracy = graded.length > 0
+    ? { graded: graded.length, correct, rate: correct / graded.length }
+    : undefined;
+
   return {
     n: results.length,
     n_success: ok.length,
@@ -164,6 +189,7 @@ function aggregate(results: RowResult[]): Aggregate {
       mean: mean(turns),
       max: turns.length ? Math.max(...turns) : 0,
     },
+    ...(answer_accuracy ? { answer_accuracy } : {}),
   };
 }
 
@@ -298,6 +324,7 @@ async function main() {
   await writeFile(outPath, JSON.stringify(report, null, 2));
 
   // Summary table
+  const anyGraded = runs.some((r) => r.aggregate.answer_accuracy);
   console.log("=== Results ===\n");
   const col = (s: string, w: number) => s.padEnd(w);
   console.log(
@@ -305,16 +332,23 @@ async function main() {
       col("p50 ms", 10) +
       col("p95 ms", 10) +
       col("$/1k", 12) +
-      col("ok", 8),
+      col("ok", 8) +
+      (anyGraded ? col("accuracy", 12) : ""),
   );
-  console.log("─".repeat(78));
+  console.log("─".repeat(anyGraded ? 90 : 78));
   for (const r of runs) {
     const label = `${r.provider}/${r.model}`;
     const p50 = r.aggregate.latency_ms.p50.toString();
     const p95 = r.aggregate.latency_ms.p95.toString();
     const cost = `$${r.aggregate.cost_usd.per_1k_evals.toFixed(4)}`;
     const ok = `${r.aggregate.n_success}/${r.aggregate.n}`;
-    console.log(col(label, 38) + col(p50, 10) + col(p95, 10) + col(cost, 12) + col(ok, 8));
+    const acc = r.aggregate.answer_accuracy
+      ? `${r.aggregate.answer_accuracy.correct}/${r.aggregate.answer_accuracy.graded}  ${(r.aggregate.answer_accuracy.rate * 100).toFixed(0)}%`
+      : "";
+    console.log(
+      col(label, 38) + col(p50, 10) + col(p95, 10) + col(cost, 12) + col(ok, 8)
+        + (anyGraded ? col(acc, 12) : ""),
+    );
   }
 
   console.log(`\nWrote ${outPath}`);

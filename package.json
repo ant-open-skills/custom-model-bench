@@ -18,6 +18,7 @@
     "bench:tiers:google": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/google-tiers",
     "bench:tiers:xai": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/xai-tiers",
     "bench:tiers:all": "bun bench:tiers:anthropic && bun bench:tiers:openai && bun bench:tiers:google && bun bench:tiers:xai",
+    "bench:reasoning": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/reasoning",
     "viewer:build": "bun run viewer/build-data.ts",
     "viewer:serve": "bun run viewer/serve.ts",
     "viewer": "bun viewer:build && bun viewer:serve",

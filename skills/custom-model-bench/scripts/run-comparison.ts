@@ -24,6 +24,20 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { computeCost } from "./pricing";
 import { gradeRow } from "./graders/exact_match";
+import { checkSchema } from "./graders/schema";
+import {
+  checkToolCallAccuracy,
+  checkEfficiency,
+  countToolCalls,
+} from "./graders/tool_calls";
+import {
+  checkGithubOrg,
+  checkTechStackOverlap,
+  checkTechStackOverlapPctInRange,
+  checkContactsInRange,
+  checkFitScoreInRange,
+} from "./graders/ground_truth";
+import { isRecovery, p50Sorted } from "./graders/trace_metrics";
 import { runCagentRow } from "./adapters/cagent";
 import type { CandidateConfig, ToolDefinition, TraceEntry } from "./types";
 
@@ -86,6 +100,20 @@ type Row = {
   prompt: string;
   /** If present, the candidate's response is exact-match graded against this. */
   expected_answer?: string;
+  /** D.1/D.3 ground-truth fields (yc-qualifier scope; optional for others). */
+  expected_github_org?: string | null;
+  /** Array form (per task spec) — intersection / expected size. */
+  expected_tech_stack_overlap?: string[];
+  /** Range form (as authored in yc-qualifier dataset.jsonl). Checked against
+   *  the model's predicted `tech_stack_overlap_pct`. */
+  expected_tech_stack_overlap_range?: [number, number];
+  expected_contacts_count_range?: [number, number];
+  expected_fit_score_range?: [number, number];
+  /** D.1 tool-call accuracy (spec field; yc-qualifier dataset does not ship
+   *  this today — gated cleanly when absent). */
+  expected_tools?: string[];
+  /** D.1 efficiency — total tool calls ≤ max_tool_calls. */
+  max_tool_calls?: number;
 };
 
 type RowResult = {
@@ -119,12 +147,54 @@ type Aggregate = {
      *  Captures the blog-post claim "cost per successful task." */
     per_successful_task: number;
   };
-  turns: { mean: number; max: number };
+  turns: { mean: number; max: number; p50: number };
   /** Populated only when any dataset row carries `expected_answer`. */
   answer_accuracy?: {
     graded: number;   // rows that had expected_answer and didn't error
     correct: number;
     rate: number;     // correct / graded (0 when graded is 0)
+  };
+  /** D.1 — schema compliance. Populated when an `extractProfile` helper was
+   *  supplied (i.e. the scope has a schema.ts). */
+  schema_compliance?: {
+    graded: number;
+    valid: number;
+    rate: number;
+  };
+  /** D.1 — tool-call accuracy vs. row.expected_tools. */
+  tool_call_accuracy?: {
+    graded: number;
+    expected_total: number;
+    seen_total: number;
+    rate: number;
+  };
+  /** D.1 — efficiency: fraction of rows with total tool calls ≤ max_tool_calls. */
+  efficiency?: {
+    graded: number;
+    within_budget: number;
+    rate: number;
+  };
+  /** D.2 — recovery rate: rows that bounced back from a tool error to succeed. */
+  recovery_rate?: {
+    eligible: number;
+    recovered: number;
+    rate: number;
+  };
+  /** D.2 — dead-end rate: 1 - task_completion. Gated on schema-check availability. */
+  dead_end_rate?: number;
+  /** D.2 — task completion: fraction of rows with schema-valid ProspectProfile. */
+  task_completion?: number;
+  /** D.3 — ground truth per-field accuracy. */
+  ground_truth?: {
+    github_org?: { graded: number; correct: number; rate: number };
+    tech_stack?: {
+      graded: number;
+      /** Mean overlap (array form) or in-range fraction (range form). */
+      rate: number;
+      mode: "array_overlap" | "pct_range";
+    };
+    contacts?: { graded: number; correct: number; rate: number };
+    fit_score?: { graded: number; correct: number; rate: number };
   };
 };
 
@@ -234,11 +304,20 @@ async function runRow(
   }
 }
 
-function aggregate(results: RowResult[]): Aggregate {
+type ExtractProfileFn = (text: string) =>
+  | { ok: true; value: unknown }
+  | { ok: false; error: string };
+
+function aggregate(
+  results: RowResult[],
+  rows?: Row[],
+  extractProfile?: ExtractProfileFn,
+): Aggregate {
   const ok = results.filter((r) => r.error === null);
   const latencies = ok.map((r) => r.latency_ms).sort((a, b) => a - b);
   const costs = ok.map((r) => r.cost_usd);
   const turns = ok.map((r) => r.turns);
+  const turnsSorted = [...turns].sort((a, b) => a - b);
   const totalCost = costs.reduce((a, b) => a + b, 0);
   // Numerator is ALL rows' cost — including failed attempts — because the
   // agentic question "what did it cost me to get a successful task done"
@@ -251,6 +330,197 @@ function aggregate(results: RowResult[]): Aggregate {
   const answer_accuracy = graded.length > 0
     ? { graded: graded.length, correct, rate: correct / graded.length }
     : undefined;
+
+  // --- D.1 / D.2 / D.3 ---
+  // Zip results with the source row so we can read expected_* fields.
+  const rowById = new Map<string, Row>();
+  for (const r of rows ?? []) rowById.set(r.id, r);
+
+  // schema compliance — one pass so we can reuse per-row profiles in D.3.
+  type PerRow = {
+    row?: Row;
+    result: RowResult;
+    schemaValid: boolean | null; // null = no extractor
+    profile: any | null;
+  };
+  const perRow: PerRow[] = results.map((r) => {
+    const row = rowById.get(r.id);
+    if (!extractProfile || r.error !== null) {
+      return { row, result: r, schemaValid: null, profile: null };
+    }
+    const check = checkSchema(r.response, extractProfile);
+    return {
+      row,
+      result: r,
+      schemaValid: check.valid,
+      profile: check.valid ? (check.value as any) : null,
+    };
+  });
+
+  let schema_compliance: Aggregate["schema_compliance"];
+  if (extractProfile) {
+    const schemaGraded = perRow.filter((p) => p.schemaValid !== null);
+    const schemaValid = schemaGraded.filter((p) => p.schemaValid).length;
+    if (schemaGraded.length > 0) {
+      schema_compliance = {
+        graded: schemaGraded.length,
+        valid: schemaValid,
+        rate: schemaValid / schemaGraded.length,
+      };
+    }
+  }
+
+  // tool_call_accuracy — only for rows that carry expected_tools.
+  const toolAcc = perRow
+    .map((p) => {
+      if (!p.row?.expected_tools) return null;
+      return checkToolCallAccuracy(p.result.trace, p.row.expected_tools);
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null);
+  const tool_call_accuracy =
+    toolAcc.length > 0
+      ? {
+          graded: toolAcc.length,
+          expected_total: toolAcc.reduce((a, b) => a + b.expected, 0),
+          seen_total: toolAcc.reduce((a, b) => a + b.seen, 0),
+          rate: mean(toolAcc.map((a) => a.rate)),
+        }
+      : undefined;
+
+  // efficiency — only rows with max_tool_calls defined.
+  const effResults = perRow
+    .map((p) => {
+      if (p.row?.max_tool_calls == null) return null;
+      return checkEfficiency(p.result.trace, p.row.max_tool_calls);
+    })
+    .filter((x): x is boolean => x !== null);
+  const efficiency =
+    effResults.length > 0
+      ? {
+          graded: effResults.length,
+          within_budget: effResults.filter(Boolean).length,
+          rate: effResults.filter(Boolean).length / effResults.length,
+        }
+      : undefined;
+
+  // recovery_rate — requires a trace. "Eligible" = rows that succeeded (so
+  // a recovery was possible in principle). False negatives preferred.
+  let recovery_rate: Aggregate["recovery_rate"];
+  const eligibleRecovery = perRow.filter(
+    (p) => p.result.error === null && p.result.trace && p.result.trace.length > 0,
+  );
+  if (eligibleRecovery.length > 0) {
+    const recovered = eligibleRecovery.filter((p) =>
+      isRecovery(p.result.trace, true),
+    ).length;
+    recovery_rate = {
+      eligible: eligibleRecovery.length,
+      recovered,
+      rate: recovered / eligibleRecovery.length,
+    };
+  }
+
+  // task_completion + dead_end_rate — only when a schema extractor is present.
+  let task_completion: number | undefined;
+  let dead_end_rate: number | undefined;
+  if (extractProfile) {
+    const total = perRow.length;
+    if (total > 0) {
+      const completed = perRow.filter((p) => p.schemaValid === true).length;
+      task_completion = completed / total;
+      dead_end_rate = 1 - task_completion;
+    }
+  }
+
+  // --- D.3 ground truth ---
+  let ground_truth: Aggregate["ground_truth"];
+  const buildGT = () => {
+    const gt: NonNullable<Aggregate["ground_truth"]> = {};
+
+    // github_org
+    const ghPairs = perRow
+      .filter((p) => p.row?.expected_github_org !== undefined)
+      .map((p) => checkGithubOrg(p.profile, p.row!.expected_github_org));
+    const ghGraded = ghPairs.filter((v): v is boolean => v !== null);
+    if (ghGraded.length > 0) {
+      const correct = ghGraded.filter(Boolean).length;
+      gt.github_org = {
+        graded: ghGraded.length,
+        correct,
+        rate: correct / ghGraded.length,
+      };
+    }
+
+    // tech_stack — prefer array form when present, else fall back to the
+    // numeric-range form shipped in yc-qualifier.
+    const arrayPairs = perRow
+      .filter((p) => Array.isArray(p.row?.expected_tech_stack_overlap))
+      .map((p) =>
+        checkTechStackOverlap(p.profile, p.row!.expected_tech_stack_overlap),
+      )
+      .filter((x): x is NonNullable<typeof x> => x !== null);
+    if (arrayPairs.length > 0) {
+      gt.tech_stack = {
+        graded: arrayPairs.length,
+        rate: mean(arrayPairs.map((a) => a.overlap_pct)),
+        mode: "array_overlap",
+      };
+    } else {
+      const rangePairs = perRow
+        .filter((p) => p.row?.expected_tech_stack_overlap_range !== undefined)
+        .map((p) =>
+          checkTechStackOverlapPctInRange(
+            p.profile,
+            p.row!.expected_tech_stack_overlap_range,
+          ),
+        )
+        .filter((x): x is boolean => x !== null);
+      if (rangePairs.length > 0) {
+        const correct = rangePairs.filter(Boolean).length;
+        gt.tech_stack = {
+          graded: rangePairs.length,
+          rate: correct / rangePairs.length,
+          mode: "pct_range",
+        };
+      }
+    }
+
+    // contacts
+    const contactsPairs = perRow
+      .filter((p) => p.row?.expected_contacts_count_range !== undefined)
+      .map((p) =>
+        checkContactsInRange(p.profile, p.row!.expected_contacts_count_range),
+      )
+      .filter((x): x is boolean => x !== null);
+    if (contactsPairs.length > 0) {
+      const correct = contactsPairs.filter(Boolean).length;
+      gt.contacts = {
+        graded: contactsPairs.length,
+        correct,
+        rate: correct / contactsPairs.length,
+      };
+    }
+
+    // fit_score
+    const fitPairs = perRow
+      .filter((p) => p.row?.expected_fit_score_range !== undefined)
+      .map((p) =>
+        checkFitScoreInRange(p.profile, p.row!.expected_fit_score_range),
+      )
+      .filter((x): x is boolean => x !== null);
+    if (fitPairs.length > 0) {
+      const correct = fitPairs.filter(Boolean).length;
+      gt.fit_score = {
+        graded: fitPairs.length,
+        correct,
+        rate: correct / fitPairs.length,
+      };
+    }
+
+    return gt;
+  };
+  const gtBuilt = buildGT();
+  if (Object.keys(gtBuilt).length > 0) ground_truth = gtBuilt;
 
   return {
     n: results.length,
@@ -271,8 +541,16 @@ function aggregate(results: RowResult[]): Aggregate {
     turns: {
       mean: mean(turns),
       max: turns.length ? Math.max(...turns) : 0,
+      p50: p50Sorted(turnsSorted),
     },
     ...(answer_accuracy ? { answer_accuracy } : {}),
+    ...(schema_compliance ? { schema_compliance } : {}),
+    ...(tool_call_accuracy ? { tool_call_accuracy } : {}),
+    ...(efficiency ? { efficiency } : {}),
+    ...(recovery_rate ? { recovery_rate } : {}),
+    ...(task_completion !== undefined ? { task_completion } : {}),
+    ...(dead_end_rate !== undefined ? { dead_end_rate } : {}),
+    ...(ground_truth ? { ground_truth } : {}),
   };
 }
 
@@ -280,6 +558,7 @@ async function runCandidate(
   configFile: string,
   candidate: CandidateConfig,
   rows: Row[],
+  extractProfile?: ExtractProfileFn,
 ): Promise<CandidateRun> {
   // Rows serialized per-candidate so latency isn't polluted by parallelism
   // within a single provider; candidates still run in parallel with each other.
@@ -298,7 +577,7 @@ async function runCandidate(
     temperature: candidate.temperature,
     maxOutputTokens: candidate.maxOutputTokens,
     results,
-    aggregate: aggregate(results),
+    aggregate: aggregate(results, rows, extractProfile),
   };
 }
 
@@ -339,6 +618,21 @@ async function main() {
       }),
     );
 
+  // Optionally load the scope's schema.ts — exposes an `extractProfile` helper
+  // that graders use to validate the final JSON. Scopes without it just skip
+  // the schema/task_completion/ground_truth metrics.
+  let extractProfile: ExtractProfileFn | undefined;
+  try {
+    const mod = (await import(join(exampleDir, "schema.ts"))) as {
+      extractProfile?: ExtractProfileFn;
+    };
+    if (typeof mod.extractProfile === "function") {
+      extractProfile = mod.extractProfile;
+    }
+  } catch {
+    // no schema.ts in this scope — fine.
+  }
+
   console.log(
     `Comparison: ${rows.length} rows × ${candidates.length} candidates (parallel)\n`,
   );
@@ -350,7 +644,7 @@ async function main() {
   const started_at = new Date().toISOString();
   const runs = await Promise.all(
     candidates.map(({ configFile, candidate }) =>
-      runCandidate(configFile, candidate, rows),
+      runCandidate(configFile, candidate, rows, extractProfile),
     ),
   );
   const completed_at = new Date().toISOString();

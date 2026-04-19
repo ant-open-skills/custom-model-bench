@@ -16,7 +16,7 @@
  */
 
 import "dotenv/config";
-import { generateText, tool, type LanguageModel } from "ai";
+import { generateText, tool, stepCountIs, type LanguageModel } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { openai } from "@ai-sdk/openai";
 import { google } from "@ai-sdk/google";
@@ -35,7 +35,12 @@ type CandidateConfig = {
   temperature?: number;
   maxOutputTokens?: number;
   tools?: ToolDefinition[];
+  /** Max tool-use rounds before the loop terminates. Only meaningful when
+   *  `tools` is set. Defaults to 10. */
+  maxTurns?: number;
 };
+
+const DEFAULT_MAX_TURNS = 10;
 
 /**
  * Convert our simple ToolDefinition[] into the Vercel AI SDK's keyed tools
@@ -104,6 +109,7 @@ async function runRow(
   const startedAt = performance.now();
   try {
     const sdkTools = toSdkTools(candidate.tools);
+    const maxTurns = candidate.maxTurns ?? DEFAULT_MAX_TURNS;
     const out = await generateText({
       model: modelFor(candidate),
       system: candidate.systemPrompt,
@@ -116,17 +122,26 @@ async function runRow(
       ...(candidate.maxOutputTokens !== undefined
         ? { maxOutputTokens: candidate.maxOutputTokens }
         : {}),
-      ...(sdkTools ? { tools: sdkTools } : {}),
+      // With tools, enable the SDK's auto-loop. It keeps calling the model
+      // until the model returns a turn with no tool calls OR we hit maxTurns.
+      // Handlers are invoked by the SDK; results are fed back as tool_result
+      // messages in the provider's native format.
+      ...(sdkTools
+        ? { tools: sdkTools, stopWhen: stepCountIs(maxTurns) }
+        : {}),
     });
     const latency_ms = Math.round(performance.now() - startedAt);
     const input_tokens = out.usage?.inputTokens ?? 0;
     const output_tokens = out.usage?.outputTokens ?? 0;
     const cost_usd = computeCost(candidate.model, input_tokens, output_tokens);
+    // With tools, turns = number of model rounds (each may carry ≥1 tool calls).
+    // Without tools, always 1.
+    const turns = sdkTools ? (out.steps?.length ?? 1) : 1;
     return {
       id: row.id,
       prompt: row.prompt,
       response: out.text,
-      turns: 1,
+      turns,
       latency_ms,
       input_tokens,
       output_tokens,

@@ -1,0 +1,88 @@
+{
+  "run_id": "run_anthropic_config_2026-04-19T01-50-11-218Z",
+  "candidate": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5",
+    "systemPrompt": "You have access to an `echo` tool that returns whatever string you pass in. When the user asks you to test it, call echo with a short message, then tell the user what the tool returned.",
+    "temperature": 0,
+    "maxOutputTokens": 300,
+    "tools": [
+      {
+        "name": "echo",
+        "description": "Returns the input message verbatim.",
+        "inputSchema": {
+          "_def": {
+            "unknownKeys": "strip",
+            "catchall": {
+              "_def": {
+                "typeName": "ZodNever"
+              },
+              "~standard": {
+                "version": 1,
+                "vendor": "zod"
+              }
+            },
+            "typeName": "ZodObject"
+          },
+          "~standard": {
+            "version": 1,
+            "vendor": "zod"
+          },
+          "_cached": {
+            "shape": {
+              "message": {
+                "_def": {
+                  "checks": [],
+                  "typeName": "ZodString",
+                  "coerce": false
+                },
+                "~standard": {
+                  "version": 1,
+                  "vendor": "zod"
+                }
+              }
+            },
+            "keys": [
+              "message"
+            ]
+          }
+        }
+      }
+    ],
+    "maxTurns": 5
+  },
+  "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-smoke/dataset.jsonl",
+  "results": [
+    {
+      "id": "t-001",
+      "prompt": "Please test the echo tool with the message \"hello world\" and tell me what it returned.",
+      "response": "The echo tool returned: **\"hello world\"**\n\nThe tool successfully echoed back the exact message I sent to it.",
+      "turns": 2,
+      "latency_ms": 1413,
+      "input_tokens": 717,
+      "output_tokens": 29,
+      "cost_usd": 0.000862,
+      "error": null
+    }
+  ],
+  "aggregate": {
+    "n": 1,
+    "n_success": 1,
+    "n_error": 0,
+    "latency_ms": {
+      "p50": 1413,
+      "p95": 1413,
+      "p99": 1413,
+      "mean": 1413
+    },
+    "cost_usd": {
+      "total": 0.000862,
+      "mean": 0.000862,
+      "per_1k_evals": 0.862
+    },
+    "turns": {
+      "mean": 2,
+      "max": 2
+    }
+  }
+}

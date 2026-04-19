@@ -29,7 +29,7 @@ type Scope = {
 const SCOPES: Scope[] = [
   {
     id: "flagship",
-    label: "Flagship showdown",
+    label: "Speed bench",
     kind: "flagship",
     dir: "skills/custom-model-bench/examples/demo",
   },

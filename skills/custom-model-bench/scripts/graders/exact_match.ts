@@ -50,15 +50,58 @@ export function exactMatch(actual: string, expected: string): boolean {
   return false;
 }
 
-/** Full grader: given a candidate's row result and the dataset's expected_answer,
- *  return { extracted, correct }. null `extracted` means we couldn't find any
- *  candidate answer in the response. */
+/**
+ * Case-insensitive word-boundary-aware substring check.
+ * Handles numerics and identifiers correctly (matches "Paris" in "…is Paris.",
+ * "1969" in "in 1969 they…"), without false-positive "3" ⊂ "3600".
+ * Falls back to a plain substring contains when the expected value contains
+ * characters that would break `\b` (e.g. slashes in fractions).
+ */
+function looseContains(response: string, expected: string): boolean {
+  const e = expected.trim();
+  if (!e) return false;
+  if (/^[A-Za-z0-9.-]+$/.test(e)) {
+    const escaped = e.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`\\b${escaped}\\b`, "i").test(response);
+  }
+  return response.toLowerCase().includes(e.toLowerCase());
+}
+
+/** Full grader. Tries three strategies in order:
+ *  1. Strict:  extract `Final answer: X` and exact-match it.
+ *  2. Loose:   word-boundary (or substring) match of expected in the full
+ *              response — catches trivia answers that don't use the format.
+ *  3. Fallback: last non-empty line, exact-match.
+ *  The first to return a true match wins; `extracted` reports whichever
+ *  candidate answer we settled on.
+ */
 export function gradeRow(
   response: string,
   expected: string | undefined | null,
 ): { extracted: string | null; correct: boolean | null } {
   if (expected == null) return { extracted: null, correct: null };
-  const extracted = extractFinalAnswer(response);
-  if (extracted == null) return { extracted: null, correct: false };
-  return { extracted, correct: exactMatch(extracted, expected) };
+  if (!response) return { extracted: null, correct: false };
+
+  // 1. Strict: Final answer: X
+  const re = /(?:^|\n)\s*final\s*answer\s*[:\-\u2014]?\s*(.+?)\s*$/gim;
+  let strict: string | null = null;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(response)) !== null) strict = m[1];
+  if (strict !== null && exactMatch(strict, expected)) {
+    return { extracted: strict, correct: true };
+  }
+
+  // 2. Loose: word-boundary match in the full response
+  if (looseContains(response, expected)) {
+    return { extracted: strict ?? expected, correct: true };
+  }
+
+  // 3. Fallback: last non-empty line
+  const lines = response.trim().split(/\n+/).map((l) => l.trim()).filter(Boolean);
+  const last = lines.length ? lines[lines.length - 1] : null;
+  if (last && exactMatch(last, expected)) {
+    return { extracted: last, correct: true };
+  }
+
+  return { extracted: strict ?? last, correct: false };
 }

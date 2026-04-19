@@ -21,7 +21,7 @@ type Scope = {
 };
 
 const SCOPES: Scope[] = [
-  { id: "flagship",  label: "Flagship showdown", kind: "flagship",                           dir: "skills/custom-model-bench/examples/demo" },
+  { id: "flagship",  label: "Speed bench",       kind: "flagship",                           dir: "skills/custom-model-bench/examples/demo" },
   { id: "anthropic", label: "Anthropic tiers",   kind: "intra", provider: "anthropic",       dir: "skills/custom-model-bench/examples/anthropic-tiers" },
   { id: "openai",    label: "OpenAI tiers",      kind: "intra", provider: "openai",          dir: "skills/custom-model-bench/examples/openai-tiers" },
   { id: "google",    label: "Google tiers",      kind: "intra", provider: "google",          dir: "skills/custom-model-bench/examples/google-tiers" },

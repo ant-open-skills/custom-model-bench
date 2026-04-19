@@ -1,5 +1,5 @@
-{"id":"ex-001","prompt":"What is the capital of France?"}
+{"id":"ex-001","prompt":"What is the capital of France?","expected_answer":"Paris"}
 {"id":"ex-002","prompt":"Name three primary colors."}
-{"id":"ex-003","prompt":"What is 17 multiplied by 23?"}
-{"id":"ex-004","prompt":"In which year did the Apollo 11 mission land on the Moon?"}
+{"id":"ex-003","prompt":"What is 17 multiplied by 23?","expected_answer":"391"}
+{"id":"ex-004","prompt":"In which year did the Apollo 11 mission land on the Moon?","expected_answer":"1969"}
 {"id":"ex-005","prompt":"Give a one-sentence definition of photosynthesis."}

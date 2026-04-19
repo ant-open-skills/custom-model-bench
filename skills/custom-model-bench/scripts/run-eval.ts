@@ -229,6 +229,8 @@ async function main() {
   const costs = ok.map((r) => r.cost_usd);
   const turns = ok.map((r) => r.turns);
   const totalCost = costs.reduce((a, b) => a + b, 0);
+  const totalCostAllRows = results.reduce((a, r) => a + r.cost_usd, 0);
+  const per_successful_task = ok.length ? totalCostAllRows / ok.length : 0;
 
   // Run ID includes provider + config filename stem so multi-provider runs
   // don't collide on the same timestamp second.
@@ -255,6 +257,7 @@ async function main() {
         total: totalCost,
         mean: ok.length ? totalCost / ok.length : 0,
         per_1k_evals: ok.length ? (totalCost / ok.length) * 1000 : 0,
+        per_successful_task,
       },
       turns: {
         mean: mean(turns),

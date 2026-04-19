@@ -24,6 +24,7 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { computeCost } from "./pricing";
 import { gradeRow } from "./graders/exact_match";
+import { runCagentRow } from "./adapters/cagent";
 import type { CandidateConfig, ToolDefinition, TraceEntry } from "./types";
 
 type Provider = CandidateConfig["provider"];
@@ -110,7 +111,14 @@ type Aggregate = {
   n_success: number;
   n_error: number;
   latency_ms: { p50: number; p95: number; p99: number; mean: number };
-  cost_usd: { total: number; mean: number; per_1k_evals: number };
+  cost_usd: {
+    total: number;
+    mean: number;
+    per_1k_evals: number;
+    /** Total cost across all rows (incl. failures) / # successful rows.
+     *  Captures the blog-post claim "cost per successful task." */
+    per_successful_task: number;
+  };
   turns: { mean: number; max: number };
   /** Populated only when any dataset row carries `expected_answer`. */
   answer_accuracy?: {
@@ -163,19 +171,7 @@ async function runRow(
 ): Promise<RowResult> {
   const runtime = candidate.runtime ?? "vercel";
   if (runtime === "cagent-sdk") {
-    // C.5.2 will plug in the Claude Agent SDK adapter here. Until then, a
-    // clear failure is better than silently routing through the Vercel path.
-    return {
-      id: row.id,
-      prompt: row.prompt,
-      response: "",
-      turns: 0,
-      latency_ms: 0,
-      input_tokens: 0,
-      output_tokens: 0,
-      cost_usd: 0,
-      error: "cagent-sdk runtime not yet implemented (see Phase C.5.2)",
-    };
+    return runCagentRow(candidate, row);
   }
   const startedAt = performance.now();
   try {
@@ -244,6 +240,11 @@ function aggregate(results: RowResult[]): Aggregate {
   const costs = ok.map((r) => r.cost_usd);
   const turns = ok.map((r) => r.turns);
   const totalCost = costs.reduce((a, b) => a + b, 0);
+  // Numerator is ALL rows' cost — including failed attempts — because the
+  // agentic question "what did it cost me to get a successful task done"
+  // must account for tokens burned on failures. Denominator is successes only.
+  const totalCostAllRows = results.reduce((a, r) => a + r.cost_usd, 0);
+  const per_successful_task = ok.length ? totalCostAllRows / ok.length : 0;
 
   const graded = results.filter((r) => r.answer_correct !== null && r.answer_correct !== undefined);
   const correct = graded.filter((r) => r.answer_correct === true).length;
@@ -265,6 +266,7 @@ function aggregate(results: RowResult[]): Aggregate {
       total: totalCost,
       mean: ok.length ? totalCost / ok.length : 0,
       per_1k_evals: ok.length ? (totalCost / ok.length) * 1000 : 0,
+      per_successful_task,
     },
     turns: {
       mean: mean(turns),

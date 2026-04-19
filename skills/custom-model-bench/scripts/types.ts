@@ -26,6 +26,13 @@ export type ToolDefinition<TInput = any, TOutput = any> = {
 /** A keyed collection of tools, indexed by ToolDefinition.name. */
 export type ToolSet = Record<string, ToolDefinition>;
 
+/** Which runtime drives the candidate. `vercel` (default) uses the Vercel AI
+ *  SDK's generateText + tool-calling loop — multi-provider. `cagent-sdk` uses
+ *  Anthropic's Claude Agent SDK, so `provider` must be `anthropic`. The two
+ *  runtimes share dataset + graders + trace schema; they differ only in how
+ *  the model is invoked and how tool calls are orchestrated. */
+export type Runtime = "vercel" | "cagent-sdk";
+
 /** Shared CandidateConfig for the whole project. Each example scope's
  *  `config-*.ts` files export a `candidate: CandidateConfig`. */
 export type CandidateConfig = {
@@ -38,6 +45,8 @@ export type CandidateConfig = {
   tools?: ToolDefinition[];
   /** Max tool-use rounds; only meaningful with `tools`. Defaults to 10. */
   maxTurns?: number;
+  /** Runtime that drives the candidate. Defaults to `"vercel"`. */
+  runtime?: Runtime;
 };
 
 /**

@@ -24,21 +24,9 @@ import { xai } from "@ai-sdk/xai";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, join, basename } from "node:path";
 import { computeCost } from "./pricing";
-import type { ToolDefinition, TraceEntry } from "./types";
+import type { CandidateConfig, ToolDefinition, TraceEntry } from "./types";
 
-type Provider = "anthropic" | "openai" | "google" | "xai";
-
-type CandidateConfig = {
-  provider: Provider;
-  model: string;
-  systemPrompt?: string;
-  temperature?: number;
-  maxOutputTokens?: number;
-  tools?: ToolDefinition[];
-  /** Max tool-use rounds before the loop terminates. Only meaningful when
-   *  `tools` is set. Defaults to 10. */
-  maxTurns?: number;
-};
+type Provider = CandidateConfig["provider"];
 
 const DEFAULT_MAX_TURNS = 10;
 

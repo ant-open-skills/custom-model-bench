@@ -24,20 +24,9 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { computeCost } from "./pricing";
 import { gradeRow } from "./graders/exact_match";
-import type { ToolDefinition, TraceEntry } from "./types";
+import type { CandidateConfig, ToolDefinition, TraceEntry } from "./types";
 
-type Provider = "anthropic" | "openai" | "google" | "xai";
-
-type CandidateConfig = {
-  provider: Provider;
-  model: string;
-  systemPrompt?: string;
-  temperature?: number;
-  maxOutputTokens?: number;
-  tools?: ToolDefinition[];
-  /** Max tool-use rounds. Only meaningful when `tools` is set. Defaults to 10. */
-  maxTurns?: number;
-};
+type Provider = CandidateConfig["provider"];
 
 const DEFAULT_MAX_TURNS = 10;
 
@@ -135,6 +124,9 @@ type CandidateRun = {
   config_file: string;
   provider: Provider;
   model: string;
+  /** Only emitted when the config opts in to a non-default runtime, so
+   *  existing comparison JSONs stay byte-identical. */
+  runtime?: "vercel" | "cagent-sdk";
   systemPrompt?: string;
   temperature?: number;
   maxOutputTokens?: number;
@@ -169,6 +161,22 @@ async function runRow(
   candidate: CandidateConfig,
   row: Row,
 ): Promise<RowResult> {
+  const runtime = candidate.runtime ?? "vercel";
+  if (runtime === "cagent-sdk") {
+    // C.5.2 will plug in the Claude Agent SDK adapter here. Until then, a
+    // clear failure is better than silently routing through the Vercel path.
+    return {
+      id: row.id,
+      prompt: row.prompt,
+      response: "",
+      turns: 0,
+      latency_ms: 0,
+      input_tokens: 0,
+      output_tokens: 0,
+      cost_usd: 0,
+      error: "cagent-sdk runtime not yet implemented (see Phase C.5.2)",
+    };
+  }
   const startedAt = performance.now();
   try {
     const sdkTools = toSdkTools(candidate.tools);
@@ -281,6 +289,9 @@ async function runCandidate(
     config_file: configFile,
     provider: candidate.provider,
     model: candidate.model,
+    // Conditional spread keeps comparison JSONs for vercel-only scopes
+    // byte-identical to the pre-C.5.1 output.
+    ...(candidate.runtime ? { runtime: candidate.runtime } : {}),
     systemPrompt: candidate.systemPrompt,
     temperature: candidate.temperature,
     maxOutputTokens: candidate.maxOutputTokens,

@@ -7502,12 +7502,12 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T06-00-47-832Z",
+        "comparison_id": "comparison_2026-04-19T06-06-25-640Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-bench/dataset.jsonl",
         "n_rows": 5,
         "n_candidates": 12,
-        "started_at": "2026-04-19T06:00:09.376Z",
-        "completed_at": "2026-04-19T06:00:47.831Z",
+        "started_at": "2026-04-19T06:05:26.307Z",
+        "completed_at": "2026-04-19T06:06:25.640Z",
         "runs": [
           {
             "config_file": "config-gemini-flash.ts",
@@ -7522,10 +7522,10 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2212,
-                "input_tokens": 834,
-                "output_tokens": 95,
-                "cost_usd": 0.000702,
+                "latency_ms": 2436,
+                "input_tokens": 823,
+                "output_tokens": 142,
+                "cost_usd": 0.0008375,
                 "error": null,
                 "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
@@ -7537,7 +7537,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "PBCSsUhwEVlm8xJG"
+                    "id": "wzjk8naUsMVIqamF"
                   },
                   {
                     "type": "tool_result",
@@ -7583,7 +7583,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "PBCSsUhwEVlm8xJG"
+                    "id": "wzjk8naUsMVIqamF"
                   },
                   {
                     "type": "assistant_text",
@@ -7597,7 +7597,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1928,
+                "latency_ms": 1899,
                 "input_tokens": 818,
                 "output_tokens": 40,
                 "cost_usd": 0.000529,
@@ -7612,7 +7612,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "J6NS5mgudvwPtu4Y"
+                    "id": "2rQ6hv5kXhcpkx8z"
                   },
                   {
                     "type": "tool_result",
@@ -7658,7 +7658,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "J6NS5mgudvwPtu4Y"
+                    "id": "2rQ6hv5kXhcpkx8z"
                   },
                   {
                     "type": "assistant_text",
@@ -7672,10 +7672,10 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 1825,
-                "input_tokens": 756,
-                "output_tokens": 3,
-                "cost_usd": 0.000387,
+                "latency_ms": 2108,
+                "input_tokens": 745,
+                "output_tokens": 21,
+                "cost_usd": 0.0004355,
                 "error": null,
                 "answer_extracted": "Vercel",
                 "answer_correct": true,
@@ -7687,7 +7687,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "MxC9Z4rhOlSCH7BL"
+                    "id": "4lALmtlM4WGxgaxh"
                   },
                   {
                     "type": "tool_result",
@@ -7702,7 +7702,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "MxC9Z4rhOlSCH7BL"
+                    "id": "4lALmtlM4WGxgaxh"
                   },
                   {
                     "type": "assistant_text",
@@ -7716,7 +7716,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1864,
+                "latency_ms": 2324,
                 "input_tokens": 992,
                 "output_tokens": 87,
                 "cost_usd": 0.000757,
@@ -7731,7 +7731,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "yu1WXSqiV4Z9I6F8"
+                    "id": "z4SNzV86mhUdMpTB"
                   },
                   {
                     "type": "tool_call",
@@ -7740,7 +7740,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "BVyYIiFc5fqhEgDp"
+                    "id": "VgWzZafg4VIzP5ka"
                   },
                   {
                     "type": "tool_result",
@@ -7786,7 +7786,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "yu1WXSqiV4Z9I6F8"
+                    "id": "z4SNzV86mhUdMpTB"
                   },
                   {
                     "type": "tool_result",
@@ -7832,7 +7832,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "BVyYIiFc5fqhEgDp"
+                    "id": "VgWzZafg4VIzP5ka"
                   },
                   {
                     "type": "assistant_text",
@@ -7846,7 +7846,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1373,
+                "latency_ms": 1512,
                 "input_tokens": 592,
                 "output_tokens": 22,
                 "cost_usd": 0.000362,
@@ -7861,7 +7861,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "tmI4EdLYYUXDJDJ0"
+                    "id": "LoGEjLTHxQ66Z2Rr"
                   },
                   {
                     "type": "tool_result",
@@ -7873,7 +7873,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "tmI4EdLYYUXDJDJ0"
+                    "id": "LoGEjLTHxQ66Z2Rr"
                   },
                   {
                     "type": "assistant_text",
@@ -7888,15 +7888,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1864,
-                "p95": 2212,
-                "p99": 2212,
-                "mean": 1840
+                "p50": 2108,
+                "p95": 2436,
+                "p99": 2436,
+                "mean": 2056
               },
               "cost_usd": {
-                "total": 0.002737,
-                "mean": 0.0005474,
-                "per_1k_evals": 0.5474
+                "total": 0.002921,
+                "mean": 0.0005842,
+                "per_1k_evals": 0.5842
               },
               "turns": {
                 "mean": 2,
@@ -7922,7 +7922,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 3418,
+                "latency_ms": 2009,
                 "input_tokens": 703,
                 "output_tokens": 13,
                 "cost_usd": 0.00019525,
@@ -7937,7 +7937,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "t8VCNRKhxdphxtZz"
+                    "id": "GDgdJ2otXXqruC1i"
                   },
                   {
                     "type": "tool_result",
@@ -7983,7 +7983,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "t8VCNRKhxdphxtZz"
+                    "id": "GDgdJ2otXXqruC1i"
                   },
                   {
                     "type": "assistant_text",
@@ -7997,7 +7997,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2799,
+                "latency_ms": 1197,
                 "input_tokens": 688,
                 "output_tokens": 1,
                 "cost_usd": 0.0001735,
@@ -8012,7 +8012,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "a7biSat3PXdxXBV5"
+                    "id": "0VA7fR6PRBV4raFx"
                   },
                   {
                     "type": "tool_result",
@@ -8058,7 +8058,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "a7biSat3PXdxXBV5"
+                    "id": "0VA7fR6PRBV4raFx"
                   },
                   {
                     "type": "assistant_text",
@@ -8072,7 +8072,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2187,
+                "latency_ms": 1647,
                 "input_tokens": 640,
                 "output_tokens": 3,
                 "cost_usd": 0.0001645,
@@ -8087,7 +8087,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "mOZ6WcmYgOXngu1M"
+                    "id": "J9UFUerUMg7qZFNZ"
                   },
                   {
                     "type": "tool_result",
@@ -8102,7 +8102,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "mOZ6WcmYgOXngu1M"
+                    "id": "J9UFUerUMg7qZFNZ"
                   },
                   {
                     "type": "assistant_text",
@@ -8116,7 +8116,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "The top language mix for Vercel is TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), and Other (3%). The top language mix for Supabase is TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), and Other (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 1645,
+                "latency_ms": 1840,
                 "input_tokens": 907,
                 "output_tokens": 83,
                 "cost_usd": 0.00035125,
@@ -8131,7 +8131,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "t64fCu0fcvOaKlky"
+                    "id": "FpgZdmjtJF8roqgA"
                   },
                   {
                     "type": "tool_call",
@@ -8140,7 +8140,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "i3OdVTFt03qsNUzL"
+                    "id": "KmMQ76gbf2VxwhGe"
                   },
                   {
                     "type": "tool_result",
@@ -8186,7 +8186,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "t64fCu0fcvOaKlky"
+                    "id": "FpgZdmjtJF8roqgA"
                   },
                   {
                     "type": "tool_result",
@@ -8232,7 +8232,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "i3OdVTFt03qsNUzL"
+                    "id": "KmMQ76gbf2VxwhGe"
                   },
                   {
                     "type": "assistant_text",
@@ -8246,7 +8246,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1282,
+                "latency_ms": 1693,
                 "input_tokens": 562,
                 "output_tokens": 2,
                 "cost_usd": 0.0001435,
@@ -8261,7 +8261,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "srV0e3iYFc8NqIf2"
+                    "id": "f0XlyYZhcIFuaAN7"
                   },
                   {
                     "type": "tool_result",
@@ -8273,7 +8273,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "srV0e3iYFc8NqIf2"
+                    "id": "f0XlyYZhcIFuaAN7"
                   },
                   {
                     "type": "assistant_text",
@@ -8288,10 +8288,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2187,
-                "p95": 3418,
-                "p99": 3418,
-                "mean": 2266
+                "p50": 1693,
+                "p95": 2009,
+                "p99": 2009,
+                "mean": 1677
               },
               "cost_usd": {
                 "total": 0.001028,
@@ -8322,55 +8322,55 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "",
                 "turns": 0,
-                "latency_ms": 6298,
+                "latency_ms": 6400,
                 "input_tokens": 0,
                 "output_tokens": 0,
                 "cost_usd": 0,
-                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m44.334731449s."
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h54m27.304366678s."
               },
               {
                 "id": "tb-002",
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "",
                 "turns": 0,
-                "latency_ms": 6232,
+                "latency_ms": 6254,
                 "input_tokens": 0,
                 "output_tokens": 0,
                 "cost_usd": 0,
-                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m38.09888889s."
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h54m21.045315999s."
               },
               {
                 "id": "tb-003",
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "",
                 "turns": 0,
-                "latency_ms": 6237,
+                "latency_ms": 6343,
                 "input_tokens": 0,
                 "output_tokens": 0,
                 "cost_usd": 0,
-                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m31.859719808s."
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h54m14.700973972s."
               },
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "",
                 "turns": 0,
-                "latency_ms": 6346,
+                "latency_ms": 6283,
                 "input_tokens": 0,
                 "output_tokens": 0,
                 "cost_usd": 0,
-                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m25.514646233s."
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h54m8.417865315s."
               },
               {
                 "id": "tb-005",
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "",
                 "turns": 0,
-                "latency_ms": 6369,
+                "latency_ms": 6294,
                 "input_tokens": 0,
                 "output_tokens": 0,
                 "cost_usd": 0,
-                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m19.147322366s."
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h54m2.132322762s."
               }
             ],
             "aggregate": {
@@ -8406,7 +8406,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2697,
+                "latency_ms": 3867,
                 "input_tokens": 602,
                 "output_tokens": 16,
                 "cost_usd": 0.001745,
@@ -8421,7 +8421,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_nyyWeEOxAsvoQdRpQtSS6HUm"
+                    "id": "call_9b05kiwZVjonH4xteZwHy94T"
                   },
                   {
                     "type": "tool_result",
@@ -8467,7 +8467,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_nyyWeEOxAsvoQdRpQtSS6HUm"
+                    "id": "call_9b05kiwZVjonH4xteZwHy94T"
                   },
                   {
                     "type": "assistant_text",
@@ -8481,7 +8481,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 4546,
+                "latency_ms": 4007,
                 "input_tokens": 588,
                 "output_tokens": 6,
                 "cost_usd": 0.00156,
@@ -8496,7 +8496,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_FlTfdahxjUDKWXa2Ie8ijdN2"
+                    "id": "call_oK99iCGUX3tgHxLC5jxSx9vg"
                   },
                   {
                     "type": "tool_result",
@@ -8542,7 +8542,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_FlTfdahxjUDKWXa2Ie8ijdN2"
+                    "id": "call_oK99iCGUX3tgHxLC5jxSx9vg"
                   },
                   {
                     "type": "assistant_text",
@@ -8556,7 +8556,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 4762,
+                "latency_ms": 2695,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.001495,
@@ -8571,7 +8571,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_eC132s97wMaOZJxKITIPcyUA"
+                    "id": "call_Tcji9LSYktwVLsyZ30sYxo0P"
                   },
                   {
                     "type": "tool_result",
@@ -8586,7 +8586,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_eC132s97wMaOZJxKITIPcyUA"
+                    "id": "call_Tcji9LSYktwVLsyZ30sYxo0P"
                   },
                   {
                     "type": "assistant_text",
@@ -8598,12 +8598,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Vercel top-language mix: TypeScript, JavaScript, Rust, Go  \nSupabase top-language mix: TypeScript, Elixir, Go, Shell  \n\nOne language appearing in both: TypeScript",
+                "response": "Vercel top languages: TypeScript, JavaScript, Rust, Go  \nSupabase top languages: TypeScript, Elixir, Go, Shell  \n\nOne language that appears in both: TypeScript",
                 "turns": 2,
-                "latency_ms": 3613,
+                "latency_ms": 31699,
                 "input_tokens": 775,
-                "output_tokens": 45,
-                "cost_usd": 0.0026125,
+                "output_tokens": 44,
+                "cost_usd": 0.0025975,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -8615,7 +8615,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_DhVjw1tYqKhNy357Smbko8u7"
+                    "id": "call_sFJm8rv0Db9FCtx6paKTOFh5"
                   },
                   {
                     "type": "tool_call",
@@ -8624,7 +8624,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_jL5Z7JJd4c1M0ydBYJ7etGJZ"
+                    "id": "call_GT3FLb5z1VKOgZ5rHeZAWJeL"
                   },
                   {
                     "type": "tool_result",
@@ -8670,7 +8670,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_DhVjw1tYqKhNy357Smbko8u7"
+                    "id": "call_sFJm8rv0Db9FCtx6paKTOFh5"
                   },
                   {
                     "type": "tool_result",
@@ -8716,12 +8716,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_jL5Z7JJd4c1M0ydBYJ7etGJZ"
+                    "id": "call_GT3FLb5z1VKOgZ5rHeZAWJeL"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Vercel top-language mix: TypeScript, JavaScript, Rust, Go  \nSupabase top-language mix: TypeScript, Elixir, Go, Shell  \n\nOne language appearing in both: TypeScript"
+                    "text": "Vercel top languages: TypeScript, JavaScript, Rust, Go  \nSupabase top languages: TypeScript, Elixir, Go, Shell  \n\nOne language that appears in both: TypeScript"
                   }
                 ]
               },
@@ -8730,7 +8730,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 4072,
+                "latency_ms": 17062,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.0013125,
@@ -8745,7 +8745,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_ntZNHwTVbn7tkXq0IsgZnmbs"
+                    "id": "call_pdoqee3FKHAno1qZVUsYKFlg"
                   },
                   {
                     "type": "tool_result",
@@ -8757,7 +8757,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_ntZNHwTVbn7tkXq0IsgZnmbs"
+                    "id": "call_pdoqee3FKHAno1qZVUsYKFlg"
                   },
                   {
                     "type": "assistant_text",
@@ -8772,15 +8772,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 4072,
-                "p95": 4762,
-                "p99": 4762,
-                "mean": 3938
+                "p50": 4007,
+                "p95": 31699,
+                "p99": 31699,
+                "mean": 11866
               },
               "cost_usd": {
-                "total": 0.008724999999999998,
-                "mean": 0.0017449999999999996,
-                "per_1k_evals": 1.7449999999999997
+                "total": 0.008709999999999999,
+                "mean": 0.0017419999999999998,
+                "per_1k_evals": 1.7419999999999998
               },
               "turns": {
                 "mean": 2,
@@ -8805,7 +8805,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 26688,
+                "latency_ms": 2538,
                 "input_tokens": 602,
                 "output_tokens": 16,
                 "cost_usd": 0.0005235,
@@ -8820,7 +8820,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_7Tb5d3PX8H0P9n7mPmDt58DY"
+                    "id": "call_EDMOl4IihtTOdFi0FkztLp8F"
                   },
                   {
                     "type": "tool_result",
@@ -8866,7 +8866,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_7Tb5d3PX8H0P9n7mPmDt58DY"
+                    "id": "call_EDMOl4IihtTOdFi0FkztLp8F"
                   },
                   {
                     "type": "assistant_text",
@@ -8880,7 +8880,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2098,
+                "latency_ms": 2213,
                 "input_tokens": 588,
                 "output_tokens": 6,
                 "cost_usd": 0.000468,
@@ -8895,7 +8895,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_U0wFCEGTRxJIhFyeukz9r18W"
+                    "id": "call_8Oc83qm7WR3Tb4TtteYdfoF9"
                   },
                   {
                     "type": "tool_result",
@@ -8941,7 +8941,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_U0wFCEGTRxJIhFyeukz9r18W"
+                    "id": "call_8Oc83qm7WR3Tb4TtteYdfoF9"
                   },
                   {
                     "type": "assistant_text",
@@ -8955,7 +8955,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 3186,
+                "latency_ms": 2677,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.0004485,
@@ -8970,7 +8970,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_YxNM6zvQxFV6ElqdHwLaHDgm"
+                    "id": "call_nhAZFnmgGeui9G42Fn2dGiLy"
                   },
                   {
                     "type": "tool_result",
@@ -8985,7 +8985,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_YxNM6zvQxFV6ElqdHwLaHDgm"
+                    "id": "call_nhAZFnmgGeui9G42Fn2dGiLy"
                   },
                   {
                     "type": "assistant_text",
@@ -8997,12 +8997,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.\n\nOne language in both top-language mixes: **TypeScript**.",
+                "response": "Vercel’s top languages are TypeScript, JavaScript, Rust, Go, and Other.  \nSupabase’s top languages are TypeScript, Elixir, Go, Shell, and Other.\n\nOne language in both top-language mixes: **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 2671,
+                "latency_ms": 4303,
                 "input_tokens": 775,
-                "output_tokens": 53,
-                "cost_usd": 0.00081975,
+                "output_tokens": 57,
+                "cost_usd": 0.00083775,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -9014,7 +9014,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_jPJQ5b3yD8YiQQos85ndp04B"
+                    "id": "call_TRPMScQrm405NegBLPeBMgYV"
                   },
                   {
                     "type": "tool_call",
@@ -9023,7 +9023,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_LWvLo8MeUW02agN0rfUmv3M2"
+                    "id": "call_6wpCOHgeJSNpZjSdKbSDVmhS"
                   },
                   {
                     "type": "tool_result",
@@ -9069,7 +9069,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_jPJQ5b3yD8YiQQos85ndp04B"
+                    "id": "call_TRPMScQrm405NegBLPeBMgYV"
                   },
                   {
                     "type": "tool_result",
@@ -9115,12 +9115,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_LWvLo8MeUW02agN0rfUmv3M2"
+                    "id": "call_6wpCOHgeJSNpZjSdKbSDVmhS"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.\n\nOne language in both top-language mixes: **TypeScript**."
+                    "text": "Vercel’s top languages are TypeScript, JavaScript, Rust, Go, and Other.  \nSupabase’s top languages are TypeScript, Elixir, Go, Shell, and Other.\n\nOne language in both top-language mixes: **TypeScript**."
                   }
                 ]
               },
@@ -9129,7 +9129,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 3808,
+                "latency_ms": 2201,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.00039375,
@@ -9144,7 +9144,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_sH2OXd65MV40PbuXQ5ecIe5w"
+                    "id": "call_ppfblfOnmgQHS9uLP0JKbwHB"
                   },
                   {
                     "type": "tool_result",
@@ -9156,7 +9156,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_sH2OXd65MV40PbuXQ5ecIe5w"
+                    "id": "call_ppfblfOnmgQHS9uLP0JKbwHB"
                   },
                   {
                     "type": "assistant_text",
@@ -9171,15 +9171,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3186,
-                "p95": 26688,
-                "p99": 26688,
-                "mean": 7690
+                "p50": 2538,
+                "p95": 4303,
+                "p99": 4303,
+                "mean": 2786
               },
               "cost_usd": {
-                "total": 0.0026534999999999996,
-                "mean": 0.0005306999999999999,
-                "per_1k_evals": 0.5307
+                "total": 0.0026715,
+                "mean": 0.0005342999999999999,
+                "per_1k_evals": 0.5342999999999999
               },
               "turns": {
                 "mean": 2,
@@ -9204,7 +9204,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 4593,
+                "latency_ms": 2357,
                 "input_tokens": 602,
                 "output_tokens": 16,
                 "cost_usd": 0.0001404,
@@ -9219,7 +9219,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_zFvQyONBKCAG1Tq0GR0Do4q2"
+                    "id": "call_rMSFeGzPG0iMdbuUAjw4AJLO"
                   },
                   {
                     "type": "tool_result",
@@ -9265,7 +9265,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_zFvQyONBKCAG1Tq0GR0Do4q2"
+                    "id": "call_rMSFeGzPG0iMdbuUAjw4AJLO"
                   },
                   {
                     "type": "assistant_text",
@@ -9279,7 +9279,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1792,
+                "latency_ms": 2074,
                 "input_tokens": 588,
                 "output_tokens": 6,
                 "cost_usd": 0.0001251,
@@ -9294,7 +9294,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_9IXoEX4WO1cQ4FxNRGFvoI1h"
+                    "id": "call_nrLGURVhiVOfmkG7i85bHRPq"
                   },
                   {
                     "type": "tool_result",
@@ -9340,7 +9340,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_9IXoEX4WO1cQ4FxNRGFvoI1h"
+                    "id": "call_nrLGURVhiVOfmkG7i85bHRPq"
                   },
                   {
                     "type": "assistant_text",
@@ -9354,7 +9354,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 1879,
+                "latency_ms": 2371,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.00011995,
@@ -9369,7 +9369,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_0Uti0uJQwZglGVPS8wMWoVif"
+                    "id": "call_qWwe1VNDd9vNJ7a0IWvn31rZ"
                   },
                   {
                     "type": "tool_result",
@@ -9384,7 +9384,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_0Uti0uJQwZglGVPS8wMWoVif"
+                    "id": "call_qWwe1VNDd9vNJ7a0IWvn31rZ"
                   },
                   {
                     "type": "assistant_text",
@@ -9396,12 +9396,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "**Top-language mix (GitHub orgs):**\n- **Vercel:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n- **Supabase:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**One language appearing in both orgs’ top-language mix:** **TypeScript**.",
+                "response": "- **Vercel (top-language mix):** TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%, Other 3%  \n- **Supabase (top-language mix):** TypeScript 58%, Elixir 14%, Go 12%, Shell 8%, Other 8%\n\n**One language in both orgs’ top-language mix:** **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 3962,
+                "latency_ms": 42925,
                 "input_tokens": 775,
-                "output_tokens": 88,
-                "cost_usd": 0.000265,
+                "output_tokens": 87,
+                "cost_usd": 0.00026375,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -9413,7 +9413,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_sCGC0lO9hYE3NwVoaPPkGf7e"
+                    "id": "call_Tsb8ql3GhwUkhvHiuXnme4zi"
                   },
                   {
                     "type": "tool_call",
@@ -9422,7 +9422,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_wg1OJNQcqBzkLfd4KiGqRGpv"
+                    "id": "call_cMDLDO0UV8jqWqZOsDyh1m9x"
                   },
                   {
                     "type": "tool_result",
@@ -9468,7 +9468,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_sCGC0lO9hYE3NwVoaPPkGf7e"
+                    "id": "call_Tsb8ql3GhwUkhvHiuXnme4zi"
                   },
                   {
                     "type": "tool_result",
@@ -9514,12 +9514,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_wg1OJNQcqBzkLfd4KiGqRGpv"
+                    "id": "call_cMDLDO0UV8jqWqZOsDyh1m9x"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "**Top-language mix (GitHub orgs):**\n- **Vercel:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n- **Supabase:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**One language appearing in both orgs’ top-language mix:** **TypeScript**."
+                    "text": "- **Vercel (top-language mix):** TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%, Other 3%  \n- **Supabase (top-language mix):** TypeScript 58%, Elixir 14%, Go 12%, Shell 8%, Other 8%\n\n**One language in both orgs’ top-language mix:** **TypeScript**."
                   }
                 ]
               },
@@ -9528,7 +9528,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1601,
+                "latency_ms": 1884,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.00010530000000000001,
@@ -9543,7 +9543,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_A5vgJx9ip1KVgt8GqksgOYYg"
+                    "id": "call_xKma2wvJXrNa2yf3xjJPyrx8"
                   },
                   {
                     "type": "tool_result",
@@ -9555,7 +9555,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_A5vgJx9ip1KVgt8GqksgOYYg"
+                    "id": "call_xKma2wvJXrNa2yf3xjJPyrx8"
                   },
                   {
                     "type": "assistant_text",
@@ -9570,15 +9570,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1879,
-                "p95": 4593,
-                "p99": 4593,
-                "mean": 2765
+                "p50": 2357,
+                "p95": 42925,
+                "p99": 42925,
+                "mean": 10322
               },
               "cost_usd": {
-                "total": 0.00075575,
-                "mean": 0.00015115000000000001,
-                "per_1k_evals": 0.15115
+                "total": 0.0007545,
+                "mean": 0.00015089999999999998,
+                "per_1k_evals": 0.15089999999999998
               },
               "turns": {
                 "mean": 2,
@@ -9604,7 +9604,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 1463,
+                "latency_ms": 739,
                 "input_tokens": 868,
                 "output_tokens": 12,
                 "cost_usd": 0.001808,
@@ -9619,7 +9619,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-07ae04ed-c12d-42df-a2b4-9b874c358e12-0"
+                    "id": "call-7aac6ec5-76a6-4cac-aa24-fc377d6ea640-0"
                   },
                   {
                     "type": "tool_result",
@@ -9665,7 +9665,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-07ae04ed-c12d-42df-a2b4-9b874c358e12-0"
+                    "id": "call-7aac6ec5-76a6-4cac-aa24-fc377d6ea640-0"
                   },
                   {
                     "type": "assistant_text",
@@ -9679,7 +9679,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 754,
+                "latency_ms": 2334,
                 "input_tokens": 854,
                 "output_tokens": 2,
                 "cost_usd": 0.00172,
@@ -9694,7 +9694,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-c5a9a947-a8a2-4305-bf66-cf3c1e225f1d-0"
+                    "id": "call-c0e3111b-92f6-4aca-b5ff-c32c11e1e0df-0"
                   },
                   {
                     "type": "tool_result",
@@ -9740,7 +9740,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-c5a9a947-a8a2-4305-bf66-cf3c1e225f1d-0"
+                    "id": "call-c0e3111b-92f6-4aca-b5ff-c32c11e1e0df-0"
                   },
                   {
                     "type": "assistant_text",
@@ -9754,7 +9754,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 633,
+                "latency_ms": 801,
                 "input_tokens": 821,
                 "output_tokens": 3,
                 "cost_usd": 0.00166,
@@ -9769,7 +9769,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call-fc28a66a-0360-4e5d-be2a-8672314ca4ed-0"
+                    "id": "call-a2b42816-e63e-4520-8a10-52ef609148fc-0"
                   },
                   {
                     "type": "tool_result",
@@ -9784,7 +9784,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call-fc28a66a-0360-4e5d-be2a-8672314ca4ed-0"
+                    "id": "call-a2b42816-e63e-4520-8a10-52ef609148fc-0"
                   },
                   {
                     "type": "assistant_text",
@@ -9798,7 +9798,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%).",
                 "turns": 2,
-                "latency_ms": 814,
+                "latency_ms": 858,
                 "input_tokens": 1012,
                 "output_tokens": 23,
                 "cost_usd": 0.002162,
@@ -9813,7 +9813,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-0"
+                    "id": "call-dd63fdcf-f421-4eb5-9b3a-493962cf9297-0"
                   },
                   {
                     "type": "tool_call",
@@ -9822,7 +9822,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-1"
+                    "id": "call-dd63fdcf-f421-4eb5-9b3a-493962cf9297-1"
                   },
                   {
                     "type": "tool_result",
@@ -9868,7 +9868,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-0"
+                    "id": "call-dd63fdcf-f421-4eb5-9b3a-493962cf9297-0"
                   },
                   {
                     "type": "tool_result",
@@ -9914,7 +9914,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-1"
+                    "id": "call-dd63fdcf-f421-4eb5-9b3a-493962cf9297-1"
                   },
                   {
                     "type": "assistant_text",
@@ -9928,7 +9928,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 684,
+                "latency_ms": 667,
                 "input_tokens": 758,
                 "output_tokens": 2,
                 "cost_usd": 0.001528,
@@ -9943,7 +9943,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call-8b92371f-3b97-404b-b1be-3a665ec91cc1-0"
+                    "id": "call-1a65e888-46c0-44fa-bd42-6e558de6b1e1-0"
                   },
                   {
                     "type": "tool_result",
@@ -9955,7 +9955,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call-8b92371f-3b97-404b-b1be-3a665ec91cc1-0"
+                    "id": "call-1a65e888-46c0-44fa-bd42-6e558de6b1e1-0"
                   },
                   {
                     "type": "assistant_text",
@@ -9970,10 +9970,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 754,
-                "p95": 1463,
-                "p99": 1463,
-                "mean": 870
+                "p50": 801,
+                "p95": 2334,
+                "p99": 2334,
+                "mean": 1080
               },
               "cost_usd": {
                 "total": 0.008878,
@@ -10004,7 +10004,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2853,
+                "latency_ms": 2120,
                 "input_tokens": 1001,
                 "output_tokens": 12,
                 "cost_usd": 0.00020620000000000002,
@@ -10019,7 +10019,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_40002268"
+                    "id": "call_33005595"
                   },
                   {
                     "type": "tool_result",
@@ -10065,7 +10065,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_40002268"
+                    "id": "call_33005595"
                   },
                   {
                     "type": "assistant_text",
@@ -10079,7 +10079,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2434,
+                "latency_ms": 3121,
                 "input_tokens": 987,
                 "output_tokens": 2,
                 "cost_usd": 0.0001984,
@@ -10094,7 +10094,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_08176195"
+                    "id": "call_63710866"
                   },
                   {
                     "type": "tool_result",
@@ -10140,7 +10140,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_08176195"
+                    "id": "call_63710866"
                   },
                   {
                     "type": "assistant_text",
@@ -10154,7 +10154,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 875,
+                "latency_ms": 838,
                 "input_tokens": 954,
                 "output_tokens": 3,
                 "cost_usd": 0.0001923,
@@ -10169,7 +10169,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_80390607"
+                    "id": "call_00322100"
                   },
                   {
                     "type": "tool_result",
@@ -10184,7 +10184,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_80390607"
+                    "id": "call_00322100"
                   },
                   {
                     "type": "assistant_text",
@@ -10198,7 +10198,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%) orgs.",
                 "turns": 2,
-                "latency_ms": 2070,
+                "latency_ms": 1209,
                 "input_tokens": 1161,
                 "output_tokens": 26,
                 "cost_usd": 0.0002452,
@@ -10213,7 +10213,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_23046443"
+                    "id": "call_48275405"
                   },
                   {
                     "type": "tool_call",
@@ -10222,7 +10222,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_65265015"
+                    "id": "call_45461296"
                   },
                   {
                     "type": "tool_result",
@@ -10268,7 +10268,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_23046443"
+                    "id": "call_48275405"
                   },
                   {
                     "type": "tool_result",
@@ -10314,7 +10314,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_65265015"
+                    "id": "call_45461296"
                   },
                   {
                     "type": "assistant_text",
@@ -10328,7 +10328,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 796,
+                "latency_ms": 852,
                 "input_tokens": 891,
                 "output_tokens": 2,
                 "cost_usd": 0.00017920000000000002,
@@ -10343,7 +10343,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_76152591"
+                    "id": "call_33432914"
                   },
                   {
                     "type": "tool_result",
@@ -10355,7 +10355,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_76152591"
+                    "id": "call_33432914"
                   },
                   {
                     "type": "assistant_text",
@@ -10370,10 +10370,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2070,
-                "p95": 2853,
-                "p99": 2853,
-                "mean": 1806
+                "p50": 1209,
+                "p95": 3121,
+                "p99": 3121,
+                "mean": 1628
               },
               "cost_usd": {
                 "total": 0.0010213000000000002,
@@ -10403,10 +10403,10 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 1705,
-                "input_tokens": 1017,
-                "output_tokens": 128,
-                "cost_usd": 0.002802,
+                "latency_ms": 1648,
+                "input_tokens": 986,
+                "output_tokens": 102,
+                "cost_usd": 0.002584,
                 "error": null,
                 "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
@@ -10418,7 +10418,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-089e872e-79f8-4a14-b824-5bef075f2ab8-0"
+                    "id": "call-c89df257-80dd-4726-87a1-2309472c9c3f-0"
                   },
                   {
                     "type": "tool_result",
@@ -10464,7 +10464,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-089e872e-79f8-4a14-b824-5bef075f2ab8-0"
+                    "id": "call-c89df257-80dd-4726-87a1-2309472c9c3f-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10478,10 +10478,10 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2017,
-                "input_tokens": 1027,
-                "output_tokens": 80,
-                "cost_usd": 0.002534,
+                "latency_ms": 5518,
+                "input_tokens": 1050,
+                "output_tokens": 90,
+                "cost_usd": 0.00264,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -10493,7 +10493,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-fd506234-c45c-4d18-bdf2-69916f61fe88-0"
+                    "id": "call-8380197e-1781-4443-aa02-ac2ed0d0f392-0"
                   },
                   {
                     "type": "tool_result",
@@ -10539,7 +10539,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-fd506234-c45c-4d18-bdf2-69916f61fe88-0"
+                    "id": "call-8380197e-1781-4443-aa02-ac2ed0d0f392-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10553,10 +10553,10 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2686,
-                "input_tokens": 926,
-                "output_tokens": 61,
-                "cost_usd": 0.002218,
+                "latency_ms": 1753,
+                "input_tokens": 1012,
+                "output_tokens": 113,
+                "cost_usd": 0.002702,
                 "error": null,
                 "answer_extracted": "Vercel",
                 "answer_correct": true,
@@ -10568,7 +10568,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call-76260d0a-82d1-4bdc-b354-fd12f34e631b-0"
+                    "id": "call-341a4a89-ba00-4213-b4be-12549dfda51a-0"
                   },
                   {
                     "type": "tool_result",
@@ -10583,7 +10583,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call-76260d0a-82d1-4bdc-b354-fd12f34e631b-0"
+                    "id": "call-341a4a89-ba00-4213-b4be-12549dfda51a-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10595,12 +10595,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "TypeScript  \n\n\n**Comparison:**  \n- Vercel: TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)  \n- Supabase: TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)",
+                "response": "**TypeScript**\n\n**Comparison:**  \n- **Vercel** top languages: TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%).  \n- **Supabase** top languages: TypeScript (58%), Elixir (14%), Go (12%), Shell (8%).  \nBoth share TypeScript (dominant in each) and Go.",
                 "turns": 2,
-                "latency_ms": 2809,
-                "input_tokens": 1221,
-                "output_tokens": 336,
-                "cost_usd": 0.004458,
+                "latency_ms": 2784,
+                "input_tokens": 1120,
+                "output_tokens": 415,
+                "cost_usd": 0.00473,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -10612,7 +10612,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-0"
+                    "id": "call-28b8adbe-02c3-471c-b7ea-8a63058c82b7-0"
                   },
                   {
                     "type": "tool_call",
@@ -10621,7 +10621,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-1"
+                    "id": "call-28b8adbe-02c3-471c-b7ea-8a63058c82b7-1"
                   },
                   {
                     "type": "tool_result",
@@ -10667,7 +10667,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-0"
+                    "id": "call-28b8adbe-02c3-471c-b7ea-8a63058c82b7-0"
                   },
                   {
                     "type": "tool_result",
@@ -10713,12 +10713,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-1"
+                    "id": "call-28b8adbe-02c3-471c-b7ea-8a63058c82b7-1"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "TypeScript  \n\n\n**Comparison:**  \n- Vercel: TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)  \n- Supabase: TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)"
+                    "text": "**TypeScript**\n\n**Comparison:**  \n- **Vercel** top languages: TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%).  \n- **Supabase** top languages: TypeScript (58%), Elixir (14%), Go (12%), Shell (8%).  \nBoth share TypeScript (dominant in each) and Go."
                   }
                 ]
               },
@@ -10727,10 +10727,10 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 4462,
-                "input_tokens": 910,
-                "output_tokens": 132,
-                "cost_usd": 0.002612,
+                "latency_ms": 2140,
+                "input_tokens": 939,
+                "output_tokens": 111,
+                "cost_usd": 0.002544,
                 "error": null,
                 "answer_extracted": "Example Domain",
                 "answer_correct": true,
@@ -10742,7 +10742,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call-22789c22-cf19-41d0-b796-a84f7bd8761f-0"
+                    "id": "call-541305d5-bb7a-4baf-a84a-0e9bfdea1c75-0"
                   },
                   {
                     "type": "tool_result",
@@ -10754,7 +10754,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call-22789c22-cf19-41d0-b796-a84f7bd8761f-0"
+                    "id": "call-541305d5-bb7a-4baf-a84a-0e9bfdea1c75-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10769,15 +10769,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2686,
-                "p95": 4462,
-                "p99": 4462,
-                "mean": 2736
+                "p50": 2140,
+                "p95": 5518,
+                "p99": 5518,
+                "mean": 2769
               },
               "cost_usd": {
-                "total": 0.014624,
-                "mean": 0.0029248,
-                "per_1k_evals": 2.9248
+                "total": 0.015199999999999998,
+                "mean": 0.0030399999999999997,
+                "per_1k_evals": 3.0399999999999996
               },
               "turns": {
                 "mean": 2,
@@ -10803,7 +10803,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 1784,
+                "latency_ms": 2140,
                 "input_tokens": 1359,
                 "output_tokens": 16,
                 "cost_usd": 0.001439,
@@ -10818,7 +10818,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_019mtF2tDKjaKn1bJ7h1FKSf"
+                    "id": "toolu_013msDcK4TbmSwxs7WfcXq4o"
                   },
                   {
                     "type": "tool_result",
@@ -10864,7 +10864,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_019mtF2tDKjaKn1bJ7h1FKSf"
+                    "id": "toolu_013msDcK4TbmSwxs7WfcXq4o"
                   },
                   {
                     "type": "assistant_text",
@@ -10878,7 +10878,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1436,
+                "latency_ms": 1465,
                 "input_tokens": 1353,
                 "output_tokens": 5,
                 "cost_usd": 0.001378,
@@ -10893,7 +10893,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_0115L9VS6LVhZBumaVtdwVwG"
+                    "id": "toolu_018dkLb4MrvovjomJCPN1N5D"
                   },
                   {
                     "type": "tool_result",
@@ -10939,7 +10939,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_0115L9VS6LVhZBumaVtdwVwG"
+                    "id": "toolu_018dkLb4MrvovjomJCPN1N5D"
                   },
                   {
                     "type": "assistant_text",
@@ -10953,7 +10953,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 1918,
+                "latency_ms": 1368,
                 "input_tokens": 1315,
                 "output_tokens": 6,
                 "cost_usd": 0.001345,
@@ -10968,7 +10968,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_013Ms18REr8a78G8e9kyj6U6"
+                    "id": "toolu_01Uft3n5GVcYxb4Dn8ybfZnV"
                   },
                   {
                     "type": "tool_result",
@@ -10983,7 +10983,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_013Ms18REr8a78G8e9kyj6U6"
+                    "id": "toolu_01Uft3n5GVcYxb4Dn8ybfZnV"
                   },
                   {
                     "type": "assistant_text",
@@ -10997,7 +10997,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "Based on the GitHub lookup results:\n\n**Vercel's top languages:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n\n**Supabase's top languages:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**Common language:** **TypeScript** appears in the top-language mix of both organizations, being the dominant language for both Vercel (62%) and Supabase (58%).",
                 "turns": 2,
-                "latency_ms": 2508,
+                "latency_ms": 2862,
                 "input_tokens": 1600,
                 "output_tokens": 115,
                 "cost_usd": 0.002175,
@@ -11012,7 +11012,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01DMDoTaXSxcyKtEw4CrRBDj"
+                    "id": "toolu_01RmuVP7suCYSZwsWsfsUPoX"
                   },
                   {
                     "type": "tool_call",
@@ -11021,7 +11021,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01VPBaB78F4TCqYP97hpESJC"
+                    "id": "toolu_01SwewbBnf1aK11jQD4FbXm2"
                   },
                   {
                     "type": "tool_result",
@@ -11067,7 +11067,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01DMDoTaXSxcyKtEw4CrRBDj"
+                    "id": "toolu_01RmuVP7suCYSZwsWsfsUPoX"
                   },
                   {
                     "type": "tool_result",
@@ -11113,7 +11113,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01VPBaB78F4TCqYP97hpESJC"
+                    "id": "toolu_01SwewbBnf1aK11jQD4FbXm2"
                   },
                   {
                     "type": "assistant_text",
@@ -11127,7 +11127,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "The page title is: **Example Domain**",
                 "turns": 2,
-                "latency_ms": 1421,
+                "latency_ms": 1994,
                 "input_tokens": 1239,
                 "output_tokens": 12,
                 "cost_usd": 0.001299,
@@ -11142,7 +11142,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_01Aonh4bKis4WtoNytdX4TxY"
+                    "id": "toolu_01BbdHZjoWCqjp96sx2QNKd6"
                   },
                   {
                     "type": "tool_result",
@@ -11154,7 +11154,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_01Aonh4bKis4WtoNytdX4TxY"
+                    "id": "toolu_01BbdHZjoWCqjp96sx2QNKd6"
                   },
                   {
                     "type": "assistant_text",
@@ -11169,10 +11169,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1784,
-                "p95": 2508,
-                "p99": 2508,
-                "mean": 1813
+                "p50": 1994,
+                "p95": 2862,
+                "p99": 2862,
+                "mean": 1966
               },
               "cost_usd": {
                 "total": 0.0076359999999999996,
@@ -11202,7 +11202,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2699,
+                "latency_ms": 2905,
                 "input_tokens": 1855,
                 "output_tokens": 20,
                 "cost_usd": 0.009775,
@@ -11217,7 +11217,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01TMUmHoYs8qKyBjkiHhXGKY"
+                    "id": "toolu_01E2tNpvQG3KsfVnFZXds7sw"
                   },
                   {
                     "type": "tool_result",
@@ -11263,7 +11263,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01TMUmHoYs8qKyBjkiHhXGKY"
+                    "id": "toolu_01E2tNpvQG3KsfVnFZXds7sw"
                   },
                   {
                     "type": "assistant_text",
@@ -11277,7 +11277,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2607,
+                "latency_ms": 2253,
                 "input_tokens": 1840,
                 "output_tokens": 9,
                 "cost_usd": 0.009425,
@@ -11292,7 +11292,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01FkGsi6Kpuot59sG9fKcUdz"
+                    "id": "toolu_01CG64eaotYZdepxMmuygu2A"
                   },
                   {
                     "type": "tool_result",
@@ -11338,7 +11338,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01FkGsi6Kpuot59sG9fKcUdz"
+                    "id": "toolu_01CG64eaotYZdepxMmuygu2A"
                   },
                   {
                     "type": "assistant_text",
@@ -11352,7 +11352,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2429,
+                "latency_ms": 2586,
                 "input_tokens": 1791,
                 "output_tokens": 8,
                 "cost_usd": 0.009155,
@@ -11367,7 +11367,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_01CpGxKrfwJLJ5HLHtiJfvS8"
+                    "id": "toolu_01Pj3yGKijgbaj6dqXiXBpdA"
                   },
                   {
                     "type": "tool_result",
@@ -11382,7 +11382,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_01CpGxKrfwJLJ5HLHtiJfvS8"
+                    "id": "toolu_01Pj3yGKijgbaj6dqXiXBpdA"
                   },
                   {
                     "type": "assistant_text",
@@ -11394,16 +11394,21 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "**Shared top language: TypeScript**\n\n- Vercel: TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%\n- Supabase: TypeScript 58%, Elixir 14%, Go 12%, Shell 8%\n\nBoth orgs are TypeScript-dominant (Vercel 62%, Supabase 58%). Go also appears in both mixes as a secondary language.",
+                "response": "**Shared top language: TypeScript** (Vercel: 62%, Supabase: 58%)\n\nOther overlap: **Go** also appears in both (Vercel: 4%, Supabase: 12%). The remaining languages differ — Vercel leans on JavaScript and Rust, while Supabase features Elixir and Shell.",
                 "turns": 2,
-                "latency_ms": 4932,
-                "input_tokens": 2183,
-                "output_tokens": 140,
-                "cost_usd": 0.014415,
+                "latency_ms": 5906,
+                "input_tokens": 2197,
+                "output_tokens": 112,
+                "cost_usd": 0.013785,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
                 "trace": [
+                  {
+                    "type": "assistant_text",
+                    "step": 0,
+                    "text": "I'll look up both orgs in parallel."
+                  },
                   {
                     "type": "tool_call",
                     "step": 0,
@@ -11411,7 +11416,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01SjVVJ3K6qKBnhpobRSoN1x"
+                    "id": "toolu_01BBvpQzfmawqoBWEdKLhH4H"
                   },
                   {
                     "type": "tool_call",
@@ -11420,7 +11425,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01Uodr22d6FhbWBYECRmSWEu"
+                    "id": "toolu_01WkKH1myVq5bFFcLVyxm4MT"
                   },
                   {
                     "type": "tool_result",
@@ -11466,7 +11471,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01SjVVJ3K6qKBnhpobRSoN1x"
+                    "id": "toolu_01BBvpQzfmawqoBWEdKLhH4H"
                   },
                   {
                     "type": "tool_result",
@@ -11512,12 +11517,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01Uodr22d6FhbWBYECRmSWEu"
+                    "id": "toolu_01WkKH1myVq5bFFcLVyxm4MT"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "**Shared top language: TypeScript**\n\n- Vercel: TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%\n- Supabase: TypeScript 58%, Elixir 14%, Go 12%, Shell 8%\n\nBoth orgs are TypeScript-dominant (Vercel 62%, Supabase 58%). Go also appears in both mixes as a secondary language."
+                    "text": "**Shared top language: TypeScript** (Vercel: 62%, Supabase: 58%)\n\nOther overlap: **Go** also appears in both (Vercel: 4%, Supabase: 12%). The remaining languages differ — Vercel leans on JavaScript and Rust, while Supabase features Elixir and Shell."
                   }
                 ]
               },
@@ -11526,7 +11531,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 2510,
+                "latency_ms": 2691,
                 "input_tokens": 1666,
                 "output_tokens": 9,
                 "cost_usd": 0.008555,
@@ -11541,7 +11546,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_01NWqsD4FAagQFjk8YWVeMom"
+                    "id": "toolu_01PVySRZZdW5JVyndgZeybdQ"
                   },
                   {
                     "type": "tool_result",
@@ -11553,7 +11558,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_01NWqsD4FAagQFjk8YWVeMom"
+                    "id": "toolu_01PVySRZZdW5JVyndgZeybdQ"
                   },
                   {
                     "type": "assistant_text",
@@ -11568,15 +11573,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2607,
-                "p95": 4932,
-                "p99": 4932,
-                "mean": 3035
+                "p50": 2691,
+                "p95": 5906,
+                "p99": 5906,
+                "mean": 3268
               },
               "cost_usd": {
-                "total": 0.051325,
-                "mean": 0.010265,
-                "per_1k_evals": 10.265
+                "total": 0.050695000000000004,
+                "mean": 0.010139,
+                "per_1k_evals": 10.139000000000001
               },
               "turns": {
                 "mean": 2,
@@ -11602,7 +11607,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2449,
+                "latency_ms": 3119,
                 "input_tokens": 1348,
                 "output_tokens": 16,
                 "cost_usd": 0.004284,
@@ -11617,7 +11622,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01JF5PSQuCXs2gpn33FZTgQk"
+                    "id": "toolu_01HEPfGRui3Qm9rc7vay7b9B"
                   },
                   {
                     "type": "tool_result",
@@ -11663,7 +11668,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01JF5PSQuCXs2gpn33FZTgQk"
+                    "id": "toolu_01HEPfGRui3Qm9rc7vay7b9B"
                   },
                   {
                     "type": "assistant_text",
@@ -11677,7 +11682,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1995,
+                "latency_ms": 2275,
                 "input_tokens": 1342,
                 "output_tokens": 5,
                 "cost_usd": 0.004101,
@@ -11692,7 +11697,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01EKpQc61vx2yeRwGKPBitvs"
+                    "id": "toolu_01Pip7GfNJrJENXcDsGn2UEs"
                   },
                   {
                     "type": "tool_result",
@@ -11738,7 +11743,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01EKpQc61vx2yeRwGKPBitvs"
+                    "id": "toolu_01Pip7GfNJrJENXcDsGn2UEs"
                   },
                   {
                     "type": "assistant_text",
@@ -11752,7 +11757,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "**Vercel**",
                 "turns": 2,
-                "latency_ms": 2557,
+                "latency_ms": 2295,
                 "input_tokens": 1304,
                 "output_tokens": 8,
                 "cost_usd": 0.004032,
@@ -11767,7 +11772,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_01JCUfgr64pNvB9v91b7MAki"
+                    "id": "toolu_01ANhK9t8s9yW9AUs4XjQdWi"
                   },
                   {
                     "type": "tool_result",
@@ -11782,7 +11787,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_01JCUfgr64pNvB9v91b7MAki"
+                    "id": "toolu_01ANhK9t8s9yW9AUs4XjQdWi"
                   },
                   {
                     "type": "assistant_text",
@@ -11794,9 +11799,9 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### 🔁 Language appearing in **both** orgs:\n\n**TypeScript** — it's the dominant language in both organizations, making up **62%** of Vercel's codebase and **58%** of Supabase's. This reflects the broader industry trend of TypeScript being the go-to language for modern web and backend tooling.\n\n**Go** also appears in both (4% at Vercel, 12% at Supabase), typically used for performance-critical backend services.",
+                "response": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n---\n\n**One language that appears in both orgs' top-language mix: TypeScript** 🎯\n\nIt's actually the dominant language for *both* — **62%** of Vercel's codebase and **58%** of Supabase's — reflecting the broader industry trend of TypeScript becoming the go-to language for modern web and backend tooling. **Go** also appears in both (4% Vercel, 12% Supabase), making it a second shared language worth noting.",
                 "turns": 2,
-                "latency_ms": 6012,
+                "latency_ms": 5766,
                 "input_tokens": 1599,
                 "output_tokens": 245,
                 "cost_usd": 0.008472,
@@ -11816,7 +11821,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01LBRTQ4VZiteNMpD7xd7dHt"
+                    "id": "toolu_01HPfPmhsPSMVvRaB6PUkVj9"
                   },
                   {
                     "type": "tool_call",
@@ -11825,7 +11830,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01Nfc6qr9856aLZcXqQxgoSx"
+                    "id": "toolu_01QYXAxpK6sqDt4YNYiKDYUP"
                   },
                   {
                     "type": "tool_result",
@@ -11871,7 +11876,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01LBRTQ4VZiteNMpD7xd7dHt"
+                    "id": "toolu_01HPfPmhsPSMVvRaB6PUkVj9"
                   },
                   {
                     "type": "tool_result",
@@ -11917,12 +11922,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01Nfc6qr9856aLZcXqQxgoSx"
+                    "id": "toolu_01QYXAxpK6sqDt4YNYiKDYUP"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### 🔁 Language appearing in **both** orgs:\n\n**TypeScript** — it's the dominant language in both organizations, making up **62%** of Vercel's codebase and **58%** of Supabase's. This reflects the broader industry trend of TypeScript being the go-to language for modern web and backend tooling.\n\n**Go** also appears in both (4% at Vercel, 12% at Supabase), typically used for performance-critical backend services."
+                    "text": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n---\n\n**One language that appears in both orgs' top-language mix: TypeScript** 🎯\n\nIt's actually the dominant language for *both* — **62%** of Vercel's codebase and **58%** of Supabase's — reflecting the broader industry trend of TypeScript becoming the go-to language for modern web and backend tooling. **Go** also appears in both (4% Vercel, 12% Supabase), making it a second shared language worth noting."
                   }
                 ]
               },
@@ -11931,7 +11936,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "The page title, exactly as written, is:\n\n**Example Domain**",
                 "turns": 2,
-                "latency_ms": 3612,
+                "latency_ms": 2345,
                 "input_tokens": 1228,
                 "output_tokens": 18,
                 "cost_usd": 0.003954,
@@ -11946,7 +11951,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_01SaseED68nxVZ15tGjpZAvW"
+                    "id": "toolu_0153t5uKqC1PzMSWWZMpsuN1"
                   },
                   {
                     "type": "tool_result",
@@ -11958,7 +11963,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_01SaseED68nxVZ15tGjpZAvW"
+                    "id": "toolu_0153t5uKqC1PzMSWWZMpsuN1"
                   },
                   {
                     "type": "assistant_text",
@@ -11973,10 +11978,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2557,
-                "p95": 6012,
-                "p99": 6012,
-                "mean": 3325
+                "p50": 2345,
+                "p95": 5766,
+                "p99": 5766,
+                "mean": 3160
               },
               "cost_usd": {
                 "total": 0.024843,
@@ -12000,121 +12005,121 @@ window.__BENCH = {
             {
               "provider": "xai",
               "model": "grok-4.20-0309-non-reasoning",
-              "value": 754
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 1784
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3-flash-preview",
-              "value": 1864
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "value": 1879
+              "value": 801
             },
             {
               "provider": "xai",
               "model": "grok-4-1-fast-non-reasoning",
-              "value": 2070
+              "value": 1209
             },
             {
               "provider": "google",
               "model": "gemini-3.1-flash-lite-preview",
-              "value": 2187
+              "value": 1693
             },
             {
               "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 2557
+              "model": "claude-haiku-4-5",
+              "value": 1994
             },
             {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 2607
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 2108
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 2686
+              "value": 2140
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 2345
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 2357
             },
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 3186
+              "value": 2538
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 2691
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 4072
+              "value": 4007
             }
           ],
           "latency_p95_ms": [
             {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 2009
+            },
+            {
               "provider": "xai",
               "model": "grok-4.20-0309-non-reasoning",
-              "value": 1463
+              "value": 2334
             },
             {
               "provider": "google",
               "model": "gemini-3-flash-preview",
-              "value": 2212
+              "value": 2436
             },
             {
               "provider": "anthropic",
               "model": "claude-haiku-4-5",
-              "value": 2508
+              "value": 2862
             },
             {
               "provider": "xai",
               "model": "grok-4-1-fast-non-reasoning",
-              "value": 2853
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 3418
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-reasoning",
-              "value": 4462
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "value": 4593
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 4762
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 4932
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 6012
+              "value": 3121
             },
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 26688
+              "value": 4303
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 5518
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 5766
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 5906
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 31699
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 42925
             }
           ],
           "cost_per_1k_evals_usd": [
             {
               "provider": "openai",
               "model": "gpt-5.4-nano",
-              "value": 0.15115
+              "value": 0.15089999999999998
             },
             {
               "provider": "xai",
@@ -12129,12 +12134,12 @@ window.__BENCH = {
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 0.5307
+              "value": 0.5342999999999999
             },
             {
               "provider": "google",
               "model": "gemini-3-flash-preview",
-              "value": 0.5474
+              "value": 0.5842
             },
             {
               "provider": "anthropic",
@@ -12144,7 +12149,7 @@ window.__BENCH = {
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 1.7449999999999997
+              "value": 1.7419999999999998
             },
             {
               "provider": "xai",
@@ -12154,7 +12159,7 @@ window.__BENCH = {
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 2.9248
+              "value": 3.0399999999999996
             },
             {
               "provider": "anthropic",
@@ -12164,7 +12169,7 @@ window.__BENCH = {
             {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 10.265
+              "value": 10.139000000000001
             }
           ],
           "success_rate": [
@@ -19719,9 +19724,359 @@ window.__BENCH = {
               }
             }
           ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T06-06-25-640Z",
+          "started_at": "2026-04-19T06:05:26.307Z",
+          "completed_at": "2026-04-19T06:06:25.640Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2108,
+                  "p95": 2436,
+                  "p99": 2436,
+                  "mean": 2056
+                },
+                "cost_usd": {
+                  "total": 0.002921,
+                  "mean": 0.0005842,
+                  "per_1k_evals": 0.5842
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1693,
+                  "p95": 2009,
+                  "p99": 2009,
+                  "mean": 1677
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4007,
+                  "p95": 31699,
+                  "p99": 31699,
+                  "mean": 11866
+                },
+                "cost_usd": {
+                  "total": 0.008709999999999999,
+                  "mean": 0.0017419999999999998,
+                  "per_1k_evals": 1.7419999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2538,
+                  "p95": 4303,
+                  "p99": 4303,
+                  "mean": 2786
+                },
+                "cost_usd": {
+                  "total": 0.0026715,
+                  "mean": 0.0005342999999999999,
+                  "per_1k_evals": 0.5342999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2357,
+                  "p95": 42925,
+                  "p99": 42925,
+                  "mean": 10322
+                },
+                "cost_usd": {
+                  "total": 0.0007545,
+                  "mean": 0.00015089999999999998,
+                  "per_1k_evals": 0.15089999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 801,
+                  "p95": 2334,
+                  "p99": 2334,
+                  "mean": 1080
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1209,
+                  "p95": 3121,
+                  "p99": 3121,
+                  "mean": 1628
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2140,
+                  "p95": 5518,
+                  "p99": 5518,
+                  "mean": 2769
+                },
+                "cost_usd": {
+                  "total": 0.015199999999999998,
+                  "mean": 0.0030399999999999997,
+                  "per_1k_evals": 3.0399999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1994,
+                  "p95": 2862,
+                  "p99": 2862,
+                  "mean": 1966
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2691,
+                  "p95": 5906,
+                  "p99": 5906,
+                  "mean": 3268
+                },
+                "cost_usd": {
+                  "total": 0.050695000000000004,
+                  "mean": 0.010139,
+                  "per_1k_evals": 10.139000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2345,
+                  "p95": 5766,
+                  "p99": 5766,
+                  "mean": 3160
+                },
+                "cost_usd": {
+                  "total": 0.024843,
+                  "mean": 0.0049686,
+                  "per_1k_evals": 4.9686
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T06-00-47-832Z.json"
+      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T06-06-25-640Z.json"
     },
     {
       "id": "yc-qualifier",

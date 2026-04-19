@@ -195,15 +195,32 @@ export async function runCagentRow(
     }
 
     const latency_ms = Math.round(performance.now() - startedAt);
-    // Pull cumulative token counts from result.usage. Each per-message
-    // `usage` field reports only that model call's incremental tokens AND is
-    // emitted multiple times per round (see dedupe above), so summing it is
-    // unreliable. `result.usage` is the single source of truth.
-    const rUsage = resultMsg?.usage ?? {};
-    const input_tokens = rUsage.input_tokens ?? 0;
-    const output_tokens = rUsage.output_tokens ?? 0;
-    const cache_read_tokens = rUsage.cache_read_input_tokens ?? 0;
-    const cache_creation_tokens = rUsage.cache_creation_input_tokens ?? 0;
+    // Token accounting source-of-truth priority:
+    //   1. result.modelUsage[model] — cleanest cumulative per-model bucket,
+    //      camelCase fields, includes a usable costUSD too.
+    //   2. result.usage — top-level summary, snake_case, sometimes only
+    //      reflects the final iteration on multi-turn runs.
+    // Sum modelUsage across all models in case the SDK ever reports more
+    // than one (e.g. judge sub-models in future versions).
+    const modelUsage: Record<string, any> = resultMsg?.modelUsage ?? {};
+    let input_tokens = 0;
+    let output_tokens = 0;
+    let cache_read_tokens = 0;
+    let cache_creation_tokens = 0;
+    if (Object.keys(modelUsage).length > 0) {
+      for (const u of Object.values(modelUsage)) {
+        input_tokens += u?.inputTokens ?? 0;
+        output_tokens += u?.outputTokens ?? 0;
+        cache_read_tokens += u?.cacheReadInputTokens ?? 0;
+        cache_creation_tokens += u?.cacheCreationInputTokens ?? 0;
+      }
+    } else {
+      const rUsage = resultMsg?.usage ?? {};
+      input_tokens = rUsage.input_tokens ?? 0;
+      output_tokens = rUsage.output_tokens ?? 0;
+      cache_read_tokens = rUsage.cache_read_input_tokens ?? 0;
+      cache_creation_tokens = rUsage.cache_creation_input_tokens ?? 0;
+    }
     // Effective input tokens = new + cache_read + cache_creation. The Vercel
     // path reports gross input tokens (cache-inclusive) via generateText, so
     // surface a comparable cumulative for symmetry on the leaderboard. Keep
@@ -249,7 +266,7 @@ export async function runCagentRow(
       response: finalText,
       turns,
       latency_ms,
-      input_tokens,
+      input_tokens: effective_input_tokens,
       output_tokens,
       cost_usd,
       error: null,

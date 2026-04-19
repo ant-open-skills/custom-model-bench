@@ -1,0 +1,108 @@
+{
+  "comparison_id": "comparison_2026-04-19T02-11-46-181Z",
+  "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-smoke/dataset.jsonl",
+  "n_rows": 1,
+  "n_candidates": 1,
+  "started_at": "2026-04-19T02:11:44.840Z",
+  "completed_at": "2026-04-19T02:11:46.181Z",
+  "runs": [
+    {
+      "config_file": "config.ts",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "systemPrompt": "You have access to an `echo` tool that returns whatever string you pass in. When the user asks you to test it, call echo with a short message, then tell the user what the tool returned.",
+      "temperature": 0,
+      "maxOutputTokens": 300,
+      "results": [
+        {
+          "id": "t-001",
+          "prompt": "Please test the echo tool with the message \"hello world\" and tell me what it returned.",
+          "response": "The echo tool returned: **\"hello world\"**\n\nThe tool successfully echoed back the exact message I sent to it.",
+          "turns": 2,
+          "latency_ms": 1340,
+          "input_tokens": 717,
+          "output_tokens": 29,
+          "cost_usd": 0.000862,
+          "error": null,
+          "answer_extracted": null,
+          "answer_correct": null,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "echo",
+              "input": {
+                "message": "hello world"
+              },
+              "id": "toolu_013jFcm8mXAbKU8p7Wvq1wNZ"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "echo",
+              "output": {
+                "echoed": "hello world"
+              },
+              "id": "toolu_013jFcm8mXAbKU8p7Wvq1wNZ"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "The echo tool returned: **\"hello world\"**\n\nThe tool successfully echoed back the exact message I sent to it."
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 1,
+        "n_success": 1,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 1340,
+          "p95": 1340,
+          "p99": 1340,
+          "mean": 1340
+        },
+        "cost_usd": {
+          "total": 0.000862,
+          "mean": 0.000862,
+          "per_1k_evals": 0.862
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        }
+      }
+    }
+  ],
+  "leaderboard": {
+    "latency_p50_ms": [
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 1340
+      }
+    ],
+    "latency_p95_ms": [
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 1340
+      }
+    ],
+    "cost_per_1k_evals_usd": [
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 0.862
+      }
+    ],
+    "success_rate": [
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 1
+      }
+    ]
+  }
+}

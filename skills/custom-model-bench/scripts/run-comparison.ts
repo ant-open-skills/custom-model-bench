@@ -15,7 +15,7 @@
  */
 
 import "dotenv/config";
-import { generateText, type LanguageModel } from "ai";
+import { generateText, tool, stepCountIs, type LanguageModel } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { openai } from "@ai-sdk/openai";
 import { google } from "@ai-sdk/google";
@@ -24,6 +24,7 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { computeCost } from "./pricing";
 import { gradeRow } from "./graders/exact_match";
+import type { ToolDefinition, TraceEntry } from "./types";
 
 type Provider = "anthropic" | "openai" | "google" | "xai";
 
@@ -33,7 +34,62 @@ type CandidateConfig = {
   systemPrompt?: string;
   temperature?: number;
   maxOutputTokens?: number;
+  tools?: ToolDefinition[];
+  /** Max tool-use rounds. Only meaningful when `tools` is set. Defaults to 10. */
+  maxTurns?: number;
 };
+
+const DEFAULT_MAX_TURNS = 10;
+
+/** Convert ToolDefinition[] into the Vercel AI SDK's keyed tools object.
+ *  Returns undefined when the candidate has no tools; the call site uses
+ *  conditional spread so `generateText` never sees a `tools: undefined` key. */
+function toSdkTools(tools: ToolDefinition[] | undefined): Record<string, any> | undefined {
+  if (!tools || tools.length === 0) return undefined;
+  const out: Record<string, any> = {};
+  for (const t of tools) {
+    out[t.name] = tool({
+      description: t.description,
+      inputSchema: t.inputSchema,
+      execute: async (input: any) => t.handler(input),
+    } as any);
+  }
+  return out;
+}
+
+/** Flatten the SDK's steps[] into a linear TraceEntry[] for persistence.
+ *  Handles minor field-name variance across SDK versions (args vs input,
+ *  result vs output). */
+function flattenTrace(steps: any[] | undefined): TraceEntry[] {
+  if (!steps || steps.length === 0) return [];
+  const trace: TraceEntry[] = [];
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i] ?? {};
+    const text: string = step.text ?? "";
+    if (text.length > 0) {
+      trace.push({ type: "assistant_text", step: i, text });
+    }
+    for (const tc of step.toolCalls ?? []) {
+      trace.push({
+        type: "tool_call",
+        step: i,
+        name: tc.toolName ?? tc.name ?? "?",
+        input: tc.input ?? tc.args ?? null,
+        id: tc.toolCallId ?? tc.id ?? String(i),
+      });
+    }
+    for (const tr of step.toolResults ?? []) {
+      trace.push({
+        type: "tool_result",
+        step: i,
+        name: tr.toolName ?? tr.name ?? "?",
+        output: tr.output ?? tr.result ?? null,
+        id: tr.toolCallId ?? tr.id ?? String(i),
+      });
+    }
+  }
+  return trace;
+}
 
 type Row = {
   id: string;
@@ -55,6 +111,9 @@ type RowResult = {
   /** Set when the dataset row has `expected_answer`; null otherwise. */
   answer_extracted?: string | null;
   answer_correct?: boolean | null;
+  /** Present only when the candidate ran with tools. Compact linearization
+   *  of the SDK's `steps` array. See TraceEntry in ./types.ts. */
+  trace?: TraceEntry[];
 };
 
 type Aggregate = {
@@ -112,6 +171,8 @@ async function runRow(
 ): Promise<RowResult> {
   const startedAt = performance.now();
   try {
+    const sdkTools = toSdkTools(candidate.tools);
+    const maxTurns = candidate.maxTurns ?? DEFAULT_MAX_TURNS;
     const out = await generateText({
       model: modelFor(candidate),
       system: candidate.systemPrompt,
@@ -124,16 +185,27 @@ async function runRow(
       ...(candidate.maxOutputTokens !== undefined
         ? { maxOutputTokens: candidate.maxOutputTokens }
         : {}),
+      // With tools, enable the SDK's auto-loop. It keeps calling the model
+      // until the model returns a turn with no tool calls OR maxTurns is
+      // reached. Handlers execute in-process and their outputs are fed back
+      // as tool_result messages in the provider's native format.
+      ...(sdkTools
+        ? { tools: sdkTools, stopWhen: stepCountIs(maxTurns) }
+        : {}),
     });
     const latency_ms = Math.round(performance.now() - startedAt);
     const input_tokens = out.usage?.inputTokens ?? 0;
     const output_tokens = out.usage?.outputTokens ?? 0;
     const { extracted, correct } = gradeRow(out.text, row.expected_answer);
+    // With tools, turns = # of model rounds (each may carry ≥1 tool calls).
+    // Without tools, always 1.
+    const turns = sdkTools ? ((out as any).steps?.length ?? 1) : 1;
+    const trace = sdkTools ? flattenTrace((out as any).steps) : undefined;
     return {
       id: row.id,
       prompt: row.prompt,
       response: out.text,
-      turns: 1,
+      turns,
       latency_ms,
       input_tokens,
       output_tokens,
@@ -141,6 +213,7 @@ async function runRow(
       error: null,
       answer_extracted: row.expected_answer != null ? extracted : null,
       answer_correct: row.expected_answer != null ? correct : null,
+      ...(trace && trace.length > 0 ? { trace } : {}),
     };
   } catch (e: unknown) {
     return {

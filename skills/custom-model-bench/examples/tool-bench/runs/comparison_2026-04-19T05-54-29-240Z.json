@@ -1,0 +1,4730 @@
+{
+  "comparison_id": "comparison_2026-04-19T05-54-29-240Z",
+  "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-bench/dataset.jsonl",
+  "n_rows": 5,
+  "n_candidates": 12,
+  "started_at": "2026-04-19T05:53:47.115Z",
+  "completed_at": "2026-04-19T05:54:29.239Z",
+  "runs": [
+    {
+      "config_file": "config-gemini-flash.ts",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 2496,
+          "input_tokens": 823,
+          "output_tokens": 142,
+          "cost_usd": 0.0008375,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "KbYZP3ETjlca6w3D"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "KbYZP3ETjlca6w3D"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 2063,
+          "input_tokens": 779,
+          "output_tokens": 40,
+          "cost_usd": 0.0005095,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "evIjJd3zpmM5Rak7"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "evIjJd3zpmM5Rak7"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 1692,
+          "input_tokens": 756,
+          "output_tokens": 3,
+          "cost_usd": 0.000387,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "KhtamarO5LlWgYwv"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "KhtamarO5LlWgYwv"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 2081,
+          "input_tokens": 991,
+          "output_tokens": 78,
+          "cost_usd": 0.0007295,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "G5LgAP4xgGabGLAr"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "mEhB9aE1zptmdxVG"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "G5LgAP4xgGabGLAr"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "mEhB9aE1zptmdxVG"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 1513,
+          "input_tokens": 592,
+          "output_tokens": 22,
+          "cost_usd": 0.000362,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "VZduLUWmUDUkZAiD"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "VZduLUWmUDUkZAiD"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 2063,
+          "p95": 2496,
+          "p99": 2496,
+          "mean": 1969
+        },
+        "cost_usd": {
+          "total": 0.0028255,
+          "mean": 0.0005651,
+          "per_1k_evals": 0.5651
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-gemini-lite.ts",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite-preview",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 1731,
+          "input_tokens": 703,
+          "output_tokens": 13,
+          "cost_usd": 0.00019525,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "pD3pZ7Z72BY66cdO"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "pD3pZ7Z72BY66cdO"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 1382,
+          "input_tokens": 688,
+          "output_tokens": 1,
+          "cost_usd": 0.0001735,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "EzVkm8EapvKMCn5C"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "EzVkm8EapvKMCn5C"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 1910,
+          "input_tokens": 640,
+          "output_tokens": 3,
+          "cost_usd": 0.0001645,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "AN2haKtvF3NknNqe"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "AN2haKtvF3NknNqe"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "The top language mix for Vercel is TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), and Other (3%). The top language mix for Supabase is TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), and Other (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**.",
+          "turns": 2,
+          "latency_ms": 1763,
+          "input_tokens": 907,
+          "output_tokens": 83,
+          "cost_usd": 0.00035125,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "PztSvLTGprc8C3J6"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "8VwkMNCPaUVqgQQc"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "PztSvLTGprc8C3J6"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "8VwkMNCPaUVqgQQc"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "The top language mix for Vercel is TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), and Other (3%). The top language mix for Supabase is TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), and Other (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 1916,
+          "input_tokens": 562,
+          "output_tokens": 2,
+          "cost_usd": 0.0001435,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "CWnFcGIky10mgzd2"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "CWnFcGIky10mgzd2"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 1763,
+          "p95": 1916,
+          "p99": 1916,
+          "mean": 1740
+        },
+        "cost_usd": {
+          "total": 0.001028,
+          "mean": 0.0002056,
+          "per_1k_evals": 0.2056
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-gemini-pro.ts",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "",
+          "turns": 0,
+          "latency_ms": 6283,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 18h6m6.61364048s."
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "",
+          "turns": 0,
+          "latency_ms": 6449,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 18h6m0.269621889s."
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "",
+          "turns": 0,
+          "latency_ms": 6255,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 18h5m53.903116237s."
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "",
+          "turns": 0,
+          "latency_ms": 6229,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 18h5m47.673110971s."
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "",
+          "turns": 0,
+          "latency_ms": 6218,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 18h5m41.456123937s."
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 0,
+        "n_error": 5,
+        "latency_ms": {
+          "p50": 0,
+          "p95": 0,
+          "p99": 0,
+          "mean": 0
+        },
+        "cost_usd": {
+          "total": 0,
+          "mean": 0,
+          "per_1k_evals": 0
+        },
+        "turns": {
+          "mean": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "config_file": "config-gpt-5-4.ts",
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 3286,
+          "input_tokens": 602,
+          "output_tokens": 16,
+          "cost_usd": 0.001745,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_YXWzluUHljYvYmgTnC7jFJvq"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_YXWzluUHljYvYmgTnC7jFJvq"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 2371,
+          "input_tokens": 588,
+          "output_tokens": 6,
+          "cost_usd": 0.00156,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_M4vwc3WpRTlAnBxLAJi32hVM"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_M4vwc3WpRTlAnBxLAJi32hVM"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 3326,
+          "input_tokens": 556,
+          "output_tokens": 7,
+          "cost_usd": 0.001495,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "call_0PHfs7lHbe3YwLJw3aacc8WZ"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "call_0PHfs7lHbe3YwLJw3aacc8WZ"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "Vercel top-language mix: TypeScript, JavaScript, Rust, Go  \nSupabase top-language mix: TypeScript, Elixir, Go, Shell  \n\nOne language appearing in both: TypeScript",
+          "turns": 2,
+          "latency_ms": 30833,
+          "input_tokens": 775,
+          "output_tokens": 45,
+          "cost_usd": 0.0026125,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_NPJ2jdOJZbVeaAg406vfEv9h"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_VFEGzwBssCQDSvGcjtXDOT0e"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_NPJ2jdOJZbVeaAg406vfEv9h"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_VFEGzwBssCQDSvGcjtXDOT0e"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel top-language mix: TypeScript, JavaScript, Rust, Go  \nSupabase top-language mix: TypeScript, Elixir, Go, Shell  \n\nOne language appearing in both: TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 2304,
+          "input_tokens": 489,
+          "output_tokens": 6,
+          "cost_usd": 0.0013125,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "call_FfEF5hK3X4E6W7JPlYxDhPbs"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "call_FfEF5hK3X4E6W7JPlYxDhPbs"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 3286,
+          "p95": 30833,
+          "p99": 30833,
+          "mean": 8424
+        },
+        "cost_usd": {
+          "total": 0.008724999999999998,
+          "mean": 0.0017449999999999996,
+          "per_1k_evals": 1.7449999999999997
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-gpt-mini.ts",
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 2202,
+          "input_tokens": 602,
+          "output_tokens": 16,
+          "cost_usd": 0.0005235,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_GQiGVIwnLilAX1BzjmajpEDv"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_GQiGVIwnLilAX1BzjmajpEDv"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 3017,
+          "input_tokens": 588,
+          "output_tokens": 6,
+          "cost_usd": 0.000468,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_jJvfONVYLAeI3Ty0MoOqkyL3"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_jJvfONVYLAeI3Ty0MoOqkyL3"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 2169,
+          "input_tokens": 556,
+          "output_tokens": 7,
+          "cost_usd": 0.0004485,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "call_wtGV6oCcfDFEcecAGUc0BSEr"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "call_wtGV6oCcfDFEcecAGUc0BSEr"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "Vercel’s top languages: TypeScript, JavaScript, Rust, Go.  \nSupabase’s top languages: TypeScript, Elixir, Go, Shell.\n\nShared language: TypeScript.",
+          "turns": 2,
+          "latency_ms": 2376,
+          "input_tokens": 775,
+          "output_tokens": 44,
+          "cost_usd": 0.00077925,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_1s3iS40iNAxcKSagOsJCwLIB"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_j0yeydSjJAqeZEx4jK486Mal"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_1s3iS40iNAxcKSagOsJCwLIB"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_j0yeydSjJAqeZEx4jK486Mal"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel’s top languages: TypeScript, JavaScript, Rust, Go.  \nSupabase’s top languages: TypeScript, Elixir, Go, Shell.\n\nShared language: TypeScript."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 14761,
+          "input_tokens": 489,
+          "output_tokens": 6,
+          "cost_usd": 0.00039375,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "call_RdEJzomKOCaXOtAhFDYpWAfR"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "call_RdEJzomKOCaXOtAhFDYpWAfR"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 2376,
+          "p95": 14761,
+          "p99": 14761,
+          "mean": 4905
+        },
+        "cost_usd": {
+          "total": 0.002613,
+          "mean": 0.0005226,
+          "per_1k_evals": 0.5226000000000001
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-gpt-nano.ts",
+      "provider": "openai",
+      "model": "gpt-5.4-nano",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 29011,
+          "input_tokens": 602,
+          "output_tokens": 16,
+          "cost_usd": 0.0001404,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_wXvJnwuNEzLgeBXi3DzyggCW"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_wXvJnwuNEzLgeBXi3DzyggCW"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 1981,
+          "input_tokens": 588,
+          "output_tokens": 6,
+          "cost_usd": 0.0001251,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_h5OxJQJIXVPZJEC84pFHZzAo"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_h5OxJQJIXVPZJEC84pFHZzAo"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 1842,
+          "input_tokens": 556,
+          "output_tokens": 7,
+          "cost_usd": 0.00011995,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "call_O2wmq7OXf9csjK0Rhmz2xG3e"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "call_O2wmq7OXf9csjK0Rhmz2xG3e"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "- **Vercel top-language mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n- **Supabase top-language mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\n**One language appearing in both orgs’ top-language mix:** **TypeScript**.",
+          "turns": 2,
+          "latency_ms": 2382,
+          "input_tokens": 775,
+          "output_tokens": 84,
+          "cost_usd": 0.00026,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_h8Y23vsJ5nudF2Vdy9x6jIcW"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_uSYBrb28YQ4kw1fGv9VY9Pg8"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_h8Y23vsJ5nudF2Vdy9x6jIcW"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_uSYBrb28YQ4kw1fGv9VY9Pg8"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "- **Vercel top-language mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n- **Supabase top-language mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\n**One language appearing in both orgs’ top-language mix:** **TypeScript**."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 1809,
+          "input_tokens": 489,
+          "output_tokens": 6,
+          "cost_usd": 0.00010530000000000001,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "call_38KXqsq7Ut5QOHI0EPBeqV0c"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "call_38KXqsq7Ut5QOHI0EPBeqV0c"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 1981,
+          "p95": 29011,
+          "p99": 29011,
+          "mean": 7405
+        },
+        "cost_usd": {
+          "total": 0.00075075,
+          "mean": 0.00015015,
+          "per_1k_evals": 0.15014999999999998
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-grok-420.ts",
+      "provider": "xai",
+      "model": "grok-4.20-0309-non-reasoning",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 2012,
+          "input_tokens": 868,
+          "output_tokens": 12,
+          "cost_usd": 0.001808,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call-25b69261-b49a-4747-867c-a6aecc9acff6-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call-25b69261-b49a-4747-867c-a6aecc9acff6-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 632,
+          "input_tokens": 854,
+          "output_tokens": 2,
+          "cost_usd": 0.00172,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call-da93a731-e4ce-4acc-8344-b16a0c570a32-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call-da93a731-e4ce-4acc-8344-b16a0c570a32-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 622,
+          "input_tokens": 821,
+          "output_tokens": 3,
+          "cost_usd": 0.00166,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "call-c23ff9a5-04f3-4b3a-8c3e-a283462cf52d-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "call-c23ff9a5-04f3-4b3a-8c3e-a283462cf52d-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%).",
+          "turns": 2,
+          "latency_ms": 730,
+          "input_tokens": 1012,
+          "output_tokens": 23,
+          "cost_usd": 0.002162,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call-3c71e4f2-3950-4b0c-ba29-fbf922f8ff10-0"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call-3c71e4f2-3950-4b0c-ba29-fbf922f8ff10-1"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call-3c71e4f2-3950-4b0c-ba29-fbf922f8ff10-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call-3c71e4f2-3950-4b0c-ba29-fbf922f8ff10-1"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%)."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 606,
+          "input_tokens": 758,
+          "output_tokens": 2,
+          "cost_usd": 0.001528,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "call-ebca947c-5522-4aee-bb1d-99070ec4a9bd-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "call-ebca947c-5522-4aee-bb1d-99070ec4a9bd-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 632,
+          "p95": 2012,
+          "p99": 2012,
+          "mean": 920
+        },
+        "cost_usd": {
+          "total": 0.008878,
+          "mean": 0.0017756,
+          "per_1k_evals": 1.7756
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-grok-fast.ts",
+      "provider": "xai",
+      "model": "grok-4-1-fast-non-reasoning",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 2109,
+          "input_tokens": 1001,
+          "output_tokens": 12,
+          "cost_usd": 0.00020620000000000002,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_41072091"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_41072091"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 1840,
+          "input_tokens": 987,
+          "output_tokens": 2,
+          "cost_usd": 0.0001984,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_67350726"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_67350726"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 1612,
+          "input_tokens": 954,
+          "output_tokens": 3,
+          "cost_usd": 0.0001923,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "call_94818790"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "call_94818790"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%) orgs.",
+          "turns": 2,
+          "latency_ms": 2271,
+          "input_tokens": 1161,
+          "output_tokens": 26,
+          "cost_usd": 0.0002452,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call_16962926"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call_31112983"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call_16962926"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call_31112983"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%) orgs."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 3077,
+          "input_tokens": 891,
+          "output_tokens": 2,
+          "cost_usd": 0.00017920000000000002,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "call_46961073"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "call_46961073"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 2109,
+          "p95": 3077,
+          "p99": 3077,
+          "mean": 2182
+        },
+        "cost_usd": {
+          "total": 0.0010213000000000002,
+          "mean": 0.00020426000000000003,
+          "per_1k_evals": 0.20426000000000002
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-grok-reasoning.ts",
+      "provider": "xai",
+      "model": "grok-4.20-0309-reasoning",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 3301,
+          "input_tokens": 1019,
+          "output_tokens": 123,
+          "cost_usd": 0.002776,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call-307776e8-ba6e-41dd-88fa-93a073147ef2-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call-307776e8-ba6e-41dd-88fa-93a073147ef2-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 3234,
+          "input_tokens": 1078,
+          "output_tokens": 87,
+          "cost_usd": 0.002678,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call-c764eed1-35ba-4bfc-afb1-bdf914a10a4c-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call-c764eed1-35ba-4bfc-afb1-bdf914a10a4c-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 2623,
+          "input_tokens": 926,
+          "output_tokens": 73,
+          "cost_usd": 0.00229,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "call-58a497af-ca48-432a-b39a-98678bc3fae9-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "call-58a497af-ca48-432a-b39a-98678bc3fae9-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "**Vercel top langs:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%).  \n**Supabase top langs:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%).  \n\n**Common language:** TypeScript",
+          "turns": 2,
+          "latency_ms": 3185,
+          "input_tokens": 1206,
+          "output_tokens": 481,
+          "cost_usd": 0.005298,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "call-da53f5f5-1eb2-40a1-a4ea-f2107e2e00bb-0"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "call-da53f5f5-1eb2-40a1-a4ea-f2107e2e00bb-1"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "call-da53f5f5-1eb2-40a1-a4ea-f2107e2e00bb-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "call-da53f5f5-1eb2-40a1-a4ea-f2107e2e00bb-1"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "**Vercel top langs:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%).  \n**Supabase top langs:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%).  \n\n**Common language:** TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 1430,
+          "input_tokens": 869,
+          "output_tokens": 88,
+          "cost_usd": 0.002266,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "call-81e7af83-f6d2-49a0-b1e2-057fa70c195b-0"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "call-81e7af83-f6d2-49a0-b1e2-057fa70c195b-0"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 3185,
+          "p95": 3301,
+          "p99": 3301,
+          "mean": 2755
+        },
+        "cost_usd": {
+          "total": 0.015307999999999999,
+          "mean": 0.0030616,
+          "per_1k_evals": 3.0616
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-haiku.ts",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 1504,
+          "input_tokens": 1359,
+          "output_tokens": 16,
+          "cost_usd": 0.001439,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "toolu_01HXB7RE2HGWZEUPpYGQtb1n"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01HXB7RE2HGWZEUPpYGQtb1n"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 2126,
+          "input_tokens": 1353,
+          "output_tokens": 5,
+          "cost_usd": 0.001378,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "toolu_01VLgQMbDttehiziVM6DN7XP"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01VLgQMbDttehiziVM6DN7XP"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 1457,
+          "input_tokens": 1315,
+          "output_tokens": 6,
+          "cost_usd": 0.001345,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "toolu_01RUthWmLDfhcbZ6wfWiMmpz"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "toolu_01RUthWmLDfhcbZ6wfWiMmpz"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "Based on the GitHub lookup results:\n\n**Vercel's top languages:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n\n**Supabase's top languages:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**Common language:** **TypeScript** appears in the top-language mix of both organizations, being the dominant language for both Vercel (62%) and Supabase (58%).",
+          "turns": 2,
+          "latency_ms": 2947,
+          "input_tokens": 1600,
+          "output_tokens": 115,
+          "cost_usd": 0.002175,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "toolu_016G6kvuo1phXaLgXxGJdwmC"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "toolu_01Lsp4mQ4eD1G2VxsGCadsaJ"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "toolu_016G6kvuo1phXaLgXxGJdwmC"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01Lsp4mQ4eD1G2VxsGCadsaJ"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Based on the GitHub lookup results:\n\n**Vercel's top languages:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n\n**Supabase's top languages:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**Common language:** **TypeScript** appears in the top-language mix of both organizations, being the dominant language for both Vercel (62%) and Supabase (58%)."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "The page title is: **Example Domain**",
+          "turns": 2,
+          "latency_ms": 1729,
+          "input_tokens": 1239,
+          "output_tokens": 12,
+          "cost_usd": 0.001299,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "toolu_01LRHjV7SZzAt75V3sXw6Q2c"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "toolu_01LRHjV7SZzAt75V3sXw6Q2c"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "The page title is: **Example Domain**"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 1729,
+          "p95": 2947,
+          "p99": 2947,
+          "mean": 1953
+        },
+        "cost_usd": {
+          "total": 0.0076359999999999996,
+          "mean": 0.0015271999999999998,
+          "per_1k_evals": 1.5272
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-opus-4-7.ts",
+      "provider": "anthropic",
+      "model": "claude-opus-4-7",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 2605,
+          "input_tokens": 1855,
+          "output_tokens": 20,
+          "cost_usd": 0.009775,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "toolu_01GrLUQDW96nxxuubP8GCUux"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01GrLUQDW96nxxuubP8GCUux"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 3702,
+          "input_tokens": 1840,
+          "output_tokens": 9,
+          "cost_usd": 0.009425,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "toolu_01DpCsR7DSdRsT4ZCkkS5eqk"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01DpCsR7DSdRsT4ZCkkS5eqk"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "Vercel",
+          "turns": 2,
+          "latency_ms": 2964,
+          "input_tokens": 1791,
+          "output_tokens": 8,
+          "cost_usd": 0.009155,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "toolu_01EqpikBuxHjK9fUWu7TzFqT"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "toolu_01EqpikBuxHjK9fUWu7TzFqT"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Vercel"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "**Shared top language: TypeScript**\n\n- **Vercel**: TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%\n- **Supabase**: TypeScript 58%, Elixir 14%, Go 12%, Shell 8%\n\nTypeScript dominates both orgs (Go also appears in both, but at much smaller shares). Vercel leans toward frontend JS/Rust tooling, while Supabase's mix reflects its backend/infra focus (Elixir for Realtime, Go for GoTrue, Shell for Postgres).",
+          "turns": 2,
+          "latency_ms": 7452,
+          "input_tokens": 2183,
+          "output_tokens": 194,
+          "cost_usd": 0.015765,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "toolu_016W5Z3GR1tHK1hqTWLnSpVF"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "toolu_0113nrzsQbKon4ScM1fpRoii"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "toolu_016W5Z3GR1tHK1hqTWLnSpVF"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "toolu_0113nrzsQbKon4ScM1fpRoii"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "**Shared top language: TypeScript**\n\n- **Vercel**: TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%\n- **Supabase**: TypeScript 58%, Elixir 14%, Go 12%, Shell 8%\n\nTypeScript dominates both orgs (Go also appears in both, but at much smaller shares). Vercel leans toward frontend JS/Rust tooling, while Supabase's mix reflects its backend/infra focus (Elixir for Realtime, Go for GoTrue, Shell for Postgres)."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "Example Domain",
+          "turns": 2,
+          "latency_ms": 2452,
+          "input_tokens": 1666,
+          "output_tokens": 9,
+          "cost_usd": 0.008555,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "toolu_019tYu9FvVsx1MoLMdXcZa5f"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "toolu_019tYu9FvVsx1MoLMdXcZa5f"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Example Domain"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 2964,
+          "p95": 7452,
+          "p99": 7452,
+          "mean": 3835
+        },
+        "cost_usd": {
+          "total": 0.05267500000000001,
+          "mean": 0.010535000000000001,
+          "per_1k_evals": 10.535
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-sonnet.ts",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "tb-001",
+          "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+          "response": "Top repos: next.js, swr, turborepo",
+          "turns": 2,
+          "latency_ms": 2104,
+          "input_tokens": 1348,
+          "output_tokens": 16,
+          "cost_usd": 0.004284,
+          "error": null,
+          "answer_extracted": "Top repos: next.js, swr, turborepo",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "toolu_01FrVrvyQduAHhskQykAhY2x"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01FrVrvyQduAHhskQykAhY2x"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Top repos: next.js, swr, turborepo"
+            }
+          ]
+        },
+        {
+          "id": "tb-002",
+          "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+          "response": "TypeScript",
+          "turns": 2,
+          "latency_ms": 1829,
+          "input_tokens": 1342,
+          "output_tokens": 5,
+          "cost_usd": 0.004101,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "toolu_01HcsxXoNP1oALp1deJ7zg5B"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01HcsxXoNP1oALp1deJ7zg5B"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "TypeScript"
+            }
+          ]
+        },
+        {
+          "id": "tb-003",
+          "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+          "response": "**Vercel**",
+          "turns": 2,
+          "latency_ms": 2267,
+          "input_tokens": 1304,
+          "output_tokens": 8,
+          "cost_usd": 0.004032,
+          "error": null,
+          "answer_extracted": "Vercel",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "input": {
+                "profile_slug": "guillermo-rauch"
+              },
+              "id": "toolu_017tkoKog1dBZqNByF7Ahq8r"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "linkedin_enrich",
+              "output": {
+                "full_name": "Guillermo Rauch",
+                "headline": "CEO at Vercel",
+                "location": "San Francisco, California",
+                "company": "Vercel",
+                "company_title": "CEO",
+                "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                "source": "mock"
+              },
+              "id": "toolu_017tkoKog1dBZqNByF7Ahq8r"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "**Vercel**"
+            }
+          ]
+        },
+        {
+          "id": "tb-004",
+          "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+          "response": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n---\n\n**One language that appears in both orgs' top-language mix: TypeScript** 🎯\n\nIt's actually the dominant language for *both* — **62%** of Vercel's codebase and **58%** of Supabase's — reflecting the industry-wide shift toward TypeScript for large-scale open-source projects. **Go** also appears in both (4% Vercel, 12% Supabase), making it a second shared language worth noting.",
+          "turns": 2,
+          "latency_ms": 6169,
+          "input_tokens": 1599,
+          "output_tokens": 241,
+          "cost_usd": 0.008412,
+          "error": null,
+          "answer_extracted": "TypeScript",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "assistant_text",
+              "step": 0,
+              "text": "I'll look up both GitHub orgs simultaneously!"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "vercel"
+              },
+              "id": "toolu_014XUb7PB68pJs9bwEp74xR9"
+            },
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "github_lookup",
+              "input": {
+                "org": "supabase"
+              },
+              "id": "toolu_01MQmt6j8ghN6Hx1E3RAh5aY"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Vercel",
+                "description": "Frontend cloud for building and deploying web apps.",
+                "public_repos": 208,
+                "top_repos": [
+                  {
+                    "name": "next.js",
+                    "stars": 124000,
+                    "language": "JavaScript"
+                  },
+                  {
+                    "name": "swr",
+                    "stars": 31000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "turborepo",
+                    "stars": 27200,
+                    "language": "Rust"
+                  },
+                  {
+                    "name": "ai",
+                    "stars": 12400,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "satori",
+                    "stars": 11500,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 62,
+                  "JavaScript": 22,
+                  "Rust": 9,
+                  "Go": 4,
+                  "Other": 3
+                },
+                "source": "mock"
+              },
+              "id": "toolu_014XUb7PB68pJs9bwEp74xR9"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "github_lookup",
+              "output": {
+                "name": "Supabase",
+                "description": "The open source Firebase alternative — Postgres-first.",
+                "public_repos": 180,
+                "top_repos": [
+                  {
+                    "name": "supabase",
+                    "stars": 76000,
+                    "language": "TypeScript"
+                  },
+                  {
+                    "name": "realtime",
+                    "stars": 7300,
+                    "language": "Elixir"
+                  },
+                  {
+                    "name": "postgres",
+                    "stars": 3600,
+                    "language": "Shell"
+                  },
+                  {
+                    "name": "gotrue",
+                    "stars": 3400,
+                    "language": "Go"
+                  },
+                  {
+                    "name": "storage-api",
+                    "stars": 1300,
+                    "language": "TypeScript"
+                  }
+                ],
+                "language_mix": {
+                  "TypeScript": 58,
+                  "Elixir": 14,
+                  "Go": 12,
+                  "Shell": 8,
+                  "Other": 8
+                },
+                "source": "mock"
+              },
+              "id": "toolu_01MQmt6j8ghN6Hx1E3RAh5aY"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n---\n\n**One language that appears in both orgs' top-language mix: TypeScript** 🎯\n\nIt's actually the dominant language for *both* — **62%** of Vercel's codebase and **58%** of Supabase's — reflecting the industry-wide shift toward TypeScript for large-scale open-source projects. **Go** also appears in both (4% Vercel, 12% Supabase), making it a second shared language worth noting."
+            }
+          ]
+        },
+        {
+          "id": "tb-005",
+          "prompt": "Fetch https://example.com and return the page title exactly as written.",
+          "response": "The page title, exactly as written, is:\n\n**Example Domain**",
+          "turns": 2,
+          "latency_ms": 2089,
+          "input_tokens": 1228,
+          "output_tokens": 18,
+          "cost_usd": 0.003954,
+          "error": null,
+          "answer_extracted": "Example Domain",
+          "answer_correct": true,
+          "trace": [
+            {
+              "type": "tool_call",
+              "step": 0,
+              "name": "web_fetch",
+              "input": {
+                "url": "https://example.com"
+              },
+              "id": "toolu_01JFw8mWrMpDh7sZNvwu2UBU"
+            },
+            {
+              "type": "tool_result",
+              "step": 0,
+              "name": "web_fetch",
+              "output": {
+                "title": "Example Domain",
+                "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "url": "https://example.com",
+                "source": "mock"
+              },
+              "id": "toolu_01JFw8mWrMpDh7sZNvwu2UBU"
+            },
+            {
+              "type": "assistant_text",
+              "step": 1,
+              "text": "The page title, exactly as written, is:\n\n**Example Domain**"
+            }
+          ]
+        }
+      ],
+      "aggregate": {
+        "n": 5,
+        "n_success": 5,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 2104,
+          "p95": 6169,
+          "p99": 6169,
+          "mean": 2892
+        },
+        "cost_usd": {
+          "total": 0.024783,
+          "mean": 0.0049566,
+          "per_1k_evals": 4.9566
+        },
+        "turns": {
+          "mean": 2,
+          "max": 2
+        },
+        "answer_accuracy": {
+          "graded": 5,
+          "correct": 5,
+          "rate": 1
+        }
+      }
+    }
+  ],
+  "leaderboard": {
+    "latency_p50_ms": [
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-non-reasoning",
+        "value": 632
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 1729
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite-preview",
+        "value": 1763
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-nano",
+        "value": 1981
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview",
+        "value": 2063
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6",
+        "value": 2104
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4-1-fast-non-reasoning",
+        "value": 2109
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-mini",
+        "value": 2376
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 2964
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 3185
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 3286
+      }
+    ],
+    "latency_p95_ms": [
+      {
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite-preview",
+        "value": 1916
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-non-reasoning",
+        "value": 2012
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview",
+        "value": 2496
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 2947
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4-1-fast-non-reasoning",
+        "value": 3077
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 3301
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6",
+        "value": 6169
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 7452
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-mini",
+        "value": 14761
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-nano",
+        "value": 29011
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 30833
+      }
+    ],
+    "cost_per_1k_evals_usd": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-nano",
+        "value": 0.15014999999999998
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4-1-fast-non-reasoning",
+        "value": 0.20426000000000002
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite-preview",
+        "value": 0.2056
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-mini",
+        "value": 0.5226000000000001
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview",
+        "value": 0.5651
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 1.5272
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 1.7449999999999997
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-non-reasoning",
+        "value": 1.7756
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 3.0616
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6",
+        "value": 4.9566
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 10.535
+      }
+    ],
+    "success_rate": [
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview",
+        "value": 1
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite-preview",
+        "value": 1
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 1
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-mini",
+        "value": 1
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4-nano",
+        "value": 1
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-non-reasoning",
+        "value": 1
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4-1-fast-non-reasoning",
+        "value": 1
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 1
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "value": 1
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 1
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6",
+        "value": 1
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "value": 0
+      }
+    ]
+  }
+}

@@ -7502,12 +7502,12 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T02-43-21-377Z",
+        "comparison_id": "comparison_2026-04-19T06-00-47-832Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-bench/dataset.jsonl",
         "n_rows": 5,
         "n_candidates": 12,
-        "started_at": "2026-04-19T02:42:54.356Z",
-        "completed_at": "2026-04-19T02:43:21.376Z",
+        "started_at": "2026-04-19T06:00:09.376Z",
+        "completed_at": "2026-04-19T06:00:47.831Z",
         "runs": [
           {
             "config_file": "config-gemini-flash.ts",
@@ -7522,10 +7522,10 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2888,
+                "latency_ms": 2212,
                 "input_tokens": 834,
-                "output_tokens": 265,
-                "cost_usd": 0.001212,
+                "output_tokens": 95,
+                "cost_usd": 0.000702,
                 "error": null,
                 "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
@@ -7537,7 +7537,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "2SoQyg5Fpx0e8FZc"
+                    "id": "PBCSsUhwEVlm8xJG"
                   },
                   {
                     "type": "tool_result",
@@ -7554,11 +7554,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -7567,6 +7562,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -7583,7 +7583,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "2SoQyg5Fpx0e8FZc"
+                    "id": "PBCSsUhwEVlm8xJG"
                   },
                   {
                     "type": "assistant_text",
@@ -7597,10 +7597,10 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2135,
-                "input_tokens": 850,
-                "output_tokens": 36,
-                "cost_usd": 0.000533,
+                "latency_ms": 1928,
+                "input_tokens": 818,
+                "output_tokens": 40,
+                "cost_usd": 0.000529,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -7612,7 +7612,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "U4VpAhdrSedHspzr"
+                    "id": "J6NS5mgudvwPtu4Y"
                   },
                   {
                     "type": "tool_result",
@@ -7658,7 +7658,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "U4VpAhdrSedHspzr"
+                    "id": "J6NS5mgudvwPtu4Y"
                   },
                   {
                     "type": "assistant_text",
@@ -7672,7 +7672,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 1877,
+                "latency_ms": 1825,
                 "input_tokens": 756,
                 "output_tokens": 3,
                 "cost_usd": 0.000387,
@@ -7687,7 +7687,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "Tj96qcbwqH9qvw5h"
+                    "id": "MxC9Z4rhOlSCH7BL"
                   },
                   {
                     "type": "tool_result",
@@ -7702,7 +7702,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "Tj96qcbwqH9qvw5h"
+                    "id": "MxC9Z4rhOlSCH7BL"
                   },
                   {
                     "type": "assistant_text",
@@ -7716,10 +7716,10 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2171,
+                "latency_ms": 1864,
                 "input_tokens": 992,
-                "output_tokens": 93,
-                "cost_usd": 0.000775,
+                "output_tokens": 87,
+                "cost_usd": 0.000757,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -7731,7 +7731,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "JZ5wpYhbdlSv0X5Q"
+                    "id": "yu1WXSqiV4Z9I6F8"
                   },
                   {
                     "type": "tool_call",
@@ -7740,7 +7740,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "AXKYSirDFhvmpEKb"
+                    "id": "BVyYIiFc5fqhEgDp"
                   },
                   {
                     "type": "tool_result",
@@ -7757,11 +7757,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -7770,6 +7765,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -7786,7 +7786,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "JZ5wpYhbdlSv0X5Q"
+                    "id": "yu1WXSqiV4Z9I6F8"
                   },
                   {
                     "type": "tool_result",
@@ -7832,7 +7832,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "AXKYSirDFhvmpEKb"
+                    "id": "BVyYIiFc5fqhEgDp"
                   },
                   {
                     "type": "assistant_text",
@@ -7846,7 +7846,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1527,
+                "latency_ms": 1373,
                 "input_tokens": 592,
                 "output_tokens": 22,
                 "cost_usd": 0.000362,
@@ -7861,7 +7861,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "GzhyGD4tRlwEZhbM"
+                    "id": "tmI4EdLYYUXDJDJ0"
                   },
                   {
                     "type": "tool_result",
@@ -7873,7 +7873,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "GzhyGD4tRlwEZhbM"
+                    "id": "tmI4EdLYYUXDJDJ0"
                   },
                   {
                     "type": "assistant_text",
@@ -7888,15 +7888,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2135,
-                "p95": 2888,
-                "p99": 2888,
-                "mean": 2120
+                "p50": 1864,
+                "p95": 2212,
+                "p99": 2212,
+                "mean": 1840
               },
               "cost_usd": {
-                "total": 0.003269,
-                "mean": 0.0006538000000000001,
-                "per_1k_evals": 0.6538
+                "total": 0.002737,
+                "mean": 0.0005474,
+                "per_1k_evals": 0.5474
               },
               "turns": {
                 "mean": 2,
@@ -7922,7 +7922,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2009,
+                "latency_ms": 3418,
                 "input_tokens": 703,
                 "output_tokens": 13,
                 "cost_usd": 0.00019525,
@@ -7937,7 +7937,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "3CJRf2nkmz58hj1z"
+                    "id": "t8VCNRKhxdphxtZz"
                   },
                   {
                     "type": "tool_result",
@@ -7954,11 +7954,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -7967,6 +7962,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -7983,7 +7983,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "3CJRf2nkmz58hj1z"
+                    "id": "t8VCNRKhxdphxtZz"
                   },
                   {
                     "type": "assistant_text",
@@ -7997,7 +7997,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1561,
+                "latency_ms": 2799,
                 "input_tokens": 688,
                 "output_tokens": 1,
                 "cost_usd": 0.0001735,
@@ -8012,7 +8012,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "onnJRiIqQVLIQrfV"
+                    "id": "a7biSat3PXdxXBV5"
                   },
                   {
                     "type": "tool_result",
@@ -8058,7 +8058,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "onnJRiIqQVLIQrfV"
+                    "id": "a7biSat3PXdxXBV5"
                   },
                   {
                     "type": "assistant_text",
@@ -8072,7 +8072,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 1232,
+                "latency_ms": 2187,
                 "input_tokens": 640,
                 "output_tokens": 3,
                 "cost_usd": 0.0001645,
@@ -8087,7 +8087,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "OwPhPA5KUzdo9p9e"
+                    "id": "mOZ6WcmYgOXngu1M"
                   },
                   {
                     "type": "tool_result",
@@ -8102,7 +8102,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "OwPhPA5KUzdo9p9e"
+                    "id": "mOZ6WcmYgOXngu1M"
                   },
                   {
                     "type": "assistant_text",
@@ -8114,12 +8114,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "The top language mix for Vercel is dominated by TypeScript (62%), followed by JavaScript (22%), Rust (9%), and Go (4%). Supabase's top language mix is also led by TypeScript (58%), followed by Elixir (14%), Go (12%), and Shell (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**.",
+                "response": "The top language mix for Vercel is TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), and Other (3%). The top language mix for Supabase is TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), and Other (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 1938,
+                "latency_ms": 1645,
                 "input_tokens": 907,
-                "output_tokens": 84,
-                "cost_usd": 0.00035275,
+                "output_tokens": 83,
+                "cost_usd": 0.00035125,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -8131,7 +8131,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "weZivX9XU5B0claY"
+                    "id": "t64fCu0fcvOaKlky"
                   },
                   {
                     "type": "tool_call",
@@ -8140,7 +8140,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "Y7Mjf1jux6RUFUlE"
+                    "id": "i3OdVTFt03qsNUzL"
                   },
                   {
                     "type": "tool_result",
@@ -8157,11 +8157,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -8170,6 +8165,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -8186,7 +8186,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "weZivX9XU5B0claY"
+                    "id": "t64fCu0fcvOaKlky"
                   },
                   {
                     "type": "tool_result",
@@ -8232,12 +8232,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "Y7Mjf1jux6RUFUlE"
+                    "id": "i3OdVTFt03qsNUzL"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "The top language mix for Vercel is dominated by TypeScript (62%), followed by JavaScript (22%), Rust (9%), and Go (4%). Supabase's top language mix is also led by TypeScript (58%), followed by Elixir (14%), Go (12%), and Shell (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**."
+                    "text": "The top language mix for Vercel is TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), and Other (3%). The top language mix for Supabase is TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), and Other (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**."
                   }
                 ]
               },
@@ -8246,7 +8246,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1541,
+                "latency_ms": 1282,
                 "input_tokens": 562,
                 "output_tokens": 2,
                 "cost_usd": 0.0001435,
@@ -8261,7 +8261,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "xGnsIUtG3nauChgF"
+                    "id": "srV0e3iYFc8NqIf2"
                   },
                   {
                     "type": "tool_result",
@@ -8273,7 +8273,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "xGnsIUtG3nauChgF"
+                    "id": "srV0e3iYFc8NqIf2"
                   },
                   {
                     "type": "assistant_text",
@@ -8288,15 +8288,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1561,
-                "p95": 2009,
-                "p99": 2009,
-                "mean": 1656
+                "p50": 2187,
+                "p95": 3418,
+                "p99": 3418,
+                "mean": 2266
               },
               "cost_usd": {
-                "total": 0.0010295,
-                "mean": 0.00020590000000000002,
-                "per_1k_evals": 0.20590000000000003
+                "total": 0.001028,
+                "mean": 0.0002056,
+                "per_1k_evals": 0.2056
               },
               "turns": {
                 "mean": 2,
@@ -8320,392 +8320,77 @@ window.__BENCH = {
               {
                 "id": "tb-001",
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
-                "response": "Top repos: next.js, swr, turborepo",
-                "turns": 2,
-                "latency_ms": 5672,
-                "input_tokens": 821,
-                "output_tokens": 241,
-                "cost_usd": 0.004534,
-                "error": null,
-                "answer_extracted": "Top repos: next.js, swr, turborepo",
-                "answer_correct": true,
-                "trace": [
-                  {
-                    "type": "tool_call",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "input": {
-                      "org": "vercel"
-                    },
-                    "id": "qbYi0U0o35E16fcg"
-                  },
-                  {
-                    "type": "tool_result",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "output": {
-                      "name": "Vercel",
-                      "description": "Frontend cloud for building and deploying web apps.",
-                      "public_repos": 208,
-                      "top_repos": [
-                        {
-                          "name": "next.js",
-                          "stars": 124000,
-                          "language": "JavaScript"
-                        },
-                        {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
-                          "name": "swr",
-                          "stars": 31000,
-                          "language": "TypeScript"
-                        },
-                        {
-                          "name": "turborepo",
-                          "stars": 27200,
-                          "language": "Rust"
-                        },
-                        {
-                          "name": "satori",
-                          "stars": 11500,
-                          "language": "TypeScript"
-                        }
-                      ],
-                      "language_mix": {
-                        "TypeScript": 62,
-                        "JavaScript": 22,
-                        "Rust": 9,
-                        "Go": 4,
-                        "Other": 3
-                      },
-                      "source": "mock"
-                    },
-                    "id": "qbYi0U0o35E16fcg"
-                  },
-                  {
-                    "type": "assistant_text",
-                    "step": 1,
-                    "text": "Top repos: next.js, swr, turborepo"
-                  }
-                ]
+                "response": "",
+                "turns": 0,
+                "latency_ms": 6298,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0,
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m44.334731449s."
               },
               {
                 "id": "tb-002",
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
-                "response": "TypeScript",
-                "turns": 2,
-                "latency_ms": 4706,
-                "input_tokens": 836,
-                "output_tokens": 40,
-                "cost_usd": 0.002152,
-                "error": null,
-                "answer_extracted": "TypeScript",
-                "answer_correct": true,
-                "trace": [
-                  {
-                    "type": "tool_call",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "input": {
-                      "org": "supabase"
-                    },
-                    "id": "cjF0oWi5LzxkPaps"
-                  },
-                  {
-                    "type": "tool_result",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "output": {
-                      "name": "Supabase",
-                      "description": "The open source Firebase alternative — Postgres-first.",
-                      "public_repos": 180,
-                      "top_repos": [
-                        {
-                          "name": "supabase",
-                          "stars": 76000,
-                          "language": "TypeScript"
-                        },
-                        {
-                          "name": "realtime",
-                          "stars": 7300,
-                          "language": "Elixir"
-                        },
-                        {
-                          "name": "postgres",
-                          "stars": 3600,
-                          "language": "Shell"
-                        },
-                        {
-                          "name": "gotrue",
-                          "stars": 3400,
-                          "language": "Go"
-                        },
-                        {
-                          "name": "storage-api",
-                          "stars": 1300,
-                          "language": "TypeScript"
-                        }
-                      ],
-                      "language_mix": {
-                        "TypeScript": 58,
-                        "Elixir": 14,
-                        "Go": 12,
-                        "Shell": 8,
-                        "Other": 8
-                      },
-                      "source": "mock"
-                    },
-                    "id": "cjF0oWi5LzxkPaps"
-                  },
-                  {
-                    "type": "assistant_text",
-                    "step": 1,
-                    "text": "TypeScript"
-                  }
-                ]
+                "response": "",
+                "turns": 0,
+                "latency_ms": 6232,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0,
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m38.09888889s."
               },
               {
                 "id": "tb-003",
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
-                "response": "Vercel",
-                "turns": 2,
-                "latency_ms": 5025,
-                "input_tokens": 847,
-                "output_tokens": 49,
-                "cost_usd": 0.002282,
-                "error": null,
-                "answer_extracted": "Vercel",
-                "answer_correct": true,
-                "trace": [
-                  {
-                    "type": "tool_call",
-                    "step": 0,
-                    "name": "linkedin_enrich",
-                    "input": {
-                      "profile_slug": "guillermo-rauch"
-                    },
-                    "id": "UB9iqTtC3x4NTLrx"
-                  },
-                  {
-                    "type": "tool_result",
-                    "step": 0,
-                    "name": "linkedin_enrich",
-                    "output": {
-                      "full_name": "Guillermo Rauch",
-                      "headline": "CEO at Vercel",
-                      "location": "San Francisco, California",
-                      "company": "Vercel",
-                      "company_title": "CEO",
-                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
-                      "source": "mock"
-                    },
-                    "id": "UB9iqTtC3x4NTLrx"
-                  },
-                  {
-                    "type": "assistant_text",
-                    "step": 1,
-                    "text": "Vercel"
-                  }
-                ]
+                "response": "",
+                "turns": 0,
+                "latency_ms": 6237,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0,
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m31.859719808s."
               },
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "**TypeScript** (or **Go**) appears in the top-language mix of both Vercel and Supabase. \n\n* **Vercel's mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)\n* **Supabase's mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)",
-                "turns": 2,
-                "latency_ms": 6186,
-                "input_tokens": 1093,
-                "output_tokens": 214,
-                "cost_usd": 0.004754,
-                "error": null,
-                "answer_extracted": "TypeScript",
-                "answer_correct": true,
-                "trace": [
-                  {
-                    "type": "tool_call",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "input": {
-                      "org": "vercel"
-                    },
-                    "id": "PQANZjchrpANQpCq"
-                  },
-                  {
-                    "type": "tool_call",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "input": {
-                      "org": "supabase"
-                    },
-                    "id": "vvbpgitSOmpXmzUg"
-                  },
-                  {
-                    "type": "tool_result",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "output": {
-                      "name": "Vercel",
-                      "description": "Frontend cloud for building and deploying web apps.",
-                      "public_repos": 208,
-                      "top_repos": [
-                        {
-                          "name": "next.js",
-                          "stars": 124000,
-                          "language": "JavaScript"
-                        },
-                        {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
-                          "name": "swr",
-                          "stars": 31000,
-                          "language": "TypeScript"
-                        },
-                        {
-                          "name": "turborepo",
-                          "stars": 27200,
-                          "language": "Rust"
-                        },
-                        {
-                          "name": "satori",
-                          "stars": 11500,
-                          "language": "TypeScript"
-                        }
-                      ],
-                      "language_mix": {
-                        "TypeScript": 62,
-                        "JavaScript": 22,
-                        "Rust": 9,
-                        "Go": 4,
-                        "Other": 3
-                      },
-                      "source": "mock"
-                    },
-                    "id": "PQANZjchrpANQpCq"
-                  },
-                  {
-                    "type": "tool_result",
-                    "step": 0,
-                    "name": "github_lookup",
-                    "output": {
-                      "name": "Supabase",
-                      "description": "The open source Firebase alternative — Postgres-first.",
-                      "public_repos": 180,
-                      "top_repos": [
-                        {
-                          "name": "supabase",
-                          "stars": 76000,
-                          "language": "TypeScript"
-                        },
-                        {
-                          "name": "realtime",
-                          "stars": 7300,
-                          "language": "Elixir"
-                        },
-                        {
-                          "name": "postgres",
-                          "stars": 3600,
-                          "language": "Shell"
-                        },
-                        {
-                          "name": "gotrue",
-                          "stars": 3400,
-                          "language": "Go"
-                        },
-                        {
-                          "name": "storage-api",
-                          "stars": 1300,
-                          "language": "TypeScript"
-                        }
-                      ],
-                      "language_mix": {
-                        "TypeScript": 58,
-                        "Elixir": 14,
-                        "Go": 12,
-                        "Shell": 8,
-                        "Other": 8
-                      },
-                      "source": "mock"
-                    },
-                    "id": "vvbpgitSOmpXmzUg"
-                  },
-                  {
-                    "type": "assistant_text",
-                    "step": 1,
-                    "text": "**TypeScript** (or **Go**) appears in the top-language mix of both Vercel and Supabase. \n\n* **Vercel's mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)\n* **Supabase's mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)"
-                  }
-                ]
+                "response": "",
+                "turns": 0,
+                "latency_ms": 6346,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0,
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m25.514646233s."
               },
               {
                 "id": "tb-005",
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
-                "response": "Example Domain",
-                "turns": 2,
-                "latency_ms": 4890,
-                "input_tokens": 676,
-                "output_tokens": 65,
-                "cost_usd": 0.002132,
-                "error": null,
-                "answer_extracted": "Example Domain",
-                "answer_correct": true,
-                "trace": [
-                  {
-                    "type": "tool_call",
-                    "step": 0,
-                    "name": "web_fetch",
-                    "input": {
-                      "url": "https://example.com"
-                    },
-                    "id": "APsi6dIQl2F0LlzA"
-                  },
-                  {
-                    "type": "tool_result",
-                    "step": 0,
-                    "name": "web_fetch",
-                    "output": {
-                      "title": "Example Domain",
-                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
-                      "url": "https://example.com",
-                      "source": "mock"
-                    },
-                    "id": "APsi6dIQl2F0LlzA"
-                  },
-                  {
-                    "type": "assistant_text",
-                    "step": 1,
-                    "text": "Example Domain"
-                  }
-                ]
+                "response": "",
+                "turns": 0,
+                "latency_ms": 6369,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0,
+                "error": "Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 17h59m19.147322366s."
               }
             ],
             "aggregate": {
               "n": 5,
-              "n_success": 5,
-              "n_error": 0,
+              "n_success": 0,
+              "n_error": 5,
               "latency_ms": {
-                "p50": 5025,
-                "p95": 6186,
-                "p99": 6186,
-                "mean": 5296
+                "p50": 0,
+                "p95": 0,
+                "p99": 0,
+                "mean": 0
               },
               "cost_usd": {
-                "total": 0.015854,
-                "mean": 0.0031708,
-                "per_1k_evals": 3.1708000000000003
+                "total": 0,
+                "mean": 0,
+                "per_1k_evals": 0
               },
               "turns": {
-                "mean": 2,
-                "max": 2
-              },
-              "answer_accuracy": {
-                "graded": 5,
-                "correct": 5,
-                "rate": 1
+                "mean": 0,
+                "max": 0
               }
             }
           },
@@ -8721,7 +8406,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2516,
+                "latency_ms": 2697,
                 "input_tokens": 602,
                 "output_tokens": 16,
                 "cost_usd": 0.001745,
@@ -8736,7 +8421,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_KtxQlLHPUhPp3XDghWeZH1np"
+                    "id": "call_nyyWeEOxAsvoQdRpQtSS6HUm"
                   },
                   {
                     "type": "tool_result",
@@ -8753,11 +8438,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -8766,6 +8446,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -8782,7 +8467,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_KtxQlLHPUhPp3XDghWeZH1np"
+                    "id": "call_nyyWeEOxAsvoQdRpQtSS6HUm"
                   },
                   {
                     "type": "assistant_text",
@@ -8796,7 +8481,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2620,
+                "latency_ms": 4546,
                 "input_tokens": 588,
                 "output_tokens": 6,
                 "cost_usd": 0.00156,
@@ -8811,7 +8496,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_YUvOAmXL36AJWAgV2dSDgeiY"
+                    "id": "call_FlTfdahxjUDKWXa2Ie8ijdN2"
                   },
                   {
                     "type": "tool_result",
@@ -8857,7 +8542,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_YUvOAmXL36AJWAgV2dSDgeiY"
+                    "id": "call_FlTfdahxjUDKWXa2Ie8ijdN2"
                   },
                   {
                     "type": "assistant_text",
@@ -8871,7 +8556,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 3183,
+                "latency_ms": 4762,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.001495,
@@ -8886,7 +8571,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_ZlO1Kr1ewlvy63P28FrXVnPd"
+                    "id": "call_eC132s97wMaOZJxKITIPcyUA"
                   },
                   {
                     "type": "tool_result",
@@ -8901,7 +8586,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_ZlO1Kr1ewlvy63P28FrXVnPd"
+                    "id": "call_eC132s97wMaOZJxKITIPcyUA"
                   },
                   {
                     "type": "assistant_text",
@@ -8913,12 +8598,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Vercel: TypeScript, JavaScript, Rust, Go  \nSupabase: TypeScript, Elixir, Go, Shell\n\nOne language in both: TypeScript",
+                "response": "Vercel top-language mix: TypeScript, JavaScript, Rust, Go  \nSupabase top-language mix: TypeScript, Elixir, Go, Shell  \n\nOne language appearing in both: TypeScript",
                 "turns": 2,
-                "latency_ms": 3252,
+                "latency_ms": 3613,
                 "input_tokens": 775,
-                "output_tokens": 38,
-                "cost_usd": 0.0025075,
+                "output_tokens": 45,
+                "cost_usd": 0.0026125,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -8930,7 +8615,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_OMUfqK65B3u6l6JYWoJaT9ql"
+                    "id": "call_DhVjw1tYqKhNy357Smbko8u7"
                   },
                   {
                     "type": "tool_call",
@@ -8939,7 +8624,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_2Xt0bGlFQWQbXVaDvffo5Tnx"
+                    "id": "call_jL5Z7JJd4c1M0ydBYJ7etGJZ"
                   },
                   {
                     "type": "tool_result",
@@ -8956,11 +8641,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -8969,6 +8649,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -8985,7 +8670,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_OMUfqK65B3u6l6JYWoJaT9ql"
+                    "id": "call_DhVjw1tYqKhNy357Smbko8u7"
                   },
                   {
                     "type": "tool_result",
@@ -9031,12 +8716,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_2Xt0bGlFQWQbXVaDvffo5Tnx"
+                    "id": "call_jL5Z7JJd4c1M0ydBYJ7etGJZ"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Vercel: TypeScript, JavaScript, Rust, Go  \nSupabase: TypeScript, Elixir, Go, Shell\n\nOne language in both: TypeScript"
+                    "text": "Vercel top-language mix: TypeScript, JavaScript, Rust, Go  \nSupabase top-language mix: TypeScript, Elixir, Go, Shell  \n\nOne language appearing in both: TypeScript"
                   }
                 ]
               },
@@ -9045,7 +8730,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 3043,
+                "latency_ms": 4072,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.0013125,
@@ -9060,7 +8745,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_SkKx5GBzQ2mA6In0hXvkwQzT"
+                    "id": "call_ntZNHwTVbn7tkXq0IsgZnmbs"
                   },
                   {
                     "type": "tool_result",
@@ -9072,7 +8757,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_SkKx5GBzQ2mA6In0hXvkwQzT"
+                    "id": "call_ntZNHwTVbn7tkXq0IsgZnmbs"
                   },
                   {
                     "type": "assistant_text",
@@ -9087,15 +8772,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3043,
-                "p95": 3252,
-                "p99": 3252,
-                "mean": 2923
+                "p50": 4072,
+                "p95": 4762,
+                "p99": 4762,
+                "mean": 3938
               },
               "cost_usd": {
-                "total": 0.00862,
-                "mean": 0.0017239999999999998,
-                "per_1k_evals": 1.7239999999999998
+                "total": 0.008724999999999998,
+                "mean": 0.0017449999999999996,
+                "per_1k_evals": 1.7449999999999997
               },
               "turns": {
                 "mean": 2,
@@ -9120,7 +8805,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 3564,
+                "latency_ms": 26688,
                 "input_tokens": 602,
                 "output_tokens": 16,
                 "cost_usd": 0.0005235,
@@ -9135,7 +8820,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_V7Z0vGQZJieDkSrhv2W9ONr5"
+                    "id": "call_7Tb5d3PX8H0P9n7mPmDt58DY"
                   },
                   {
                     "type": "tool_result",
@@ -9152,11 +8837,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -9165,6 +8845,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -9181,7 +8866,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_V7Z0vGQZJieDkSrhv2W9ONr5"
+                    "id": "call_7Tb5d3PX8H0P9n7mPmDt58DY"
                   },
                   {
                     "type": "assistant_text",
@@ -9195,7 +8880,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 3478,
+                "latency_ms": 2098,
                 "input_tokens": 588,
                 "output_tokens": 6,
                 "cost_usd": 0.000468,
@@ -9210,7 +8895,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_mEFEc6d5AuJsCgmAZjjQvEOL"
+                    "id": "call_U0wFCEGTRxJIhFyeukz9r18W"
                   },
                   {
                     "type": "tool_result",
@@ -9256,7 +8941,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_mEFEc6d5AuJsCgmAZjjQvEOL"
+                    "id": "call_U0wFCEGTRxJIhFyeukz9r18W"
                   },
                   {
                     "type": "assistant_text",
@@ -9270,7 +8955,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2815,
+                "latency_ms": 3186,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.0004485,
@@ -9285,7 +8970,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_INITAJT8PQo5KdKLoKgUcHRy"
+                    "id": "call_YxNM6zvQxFV6ElqdHwLaHDgm"
                   },
                   {
                     "type": "tool_result",
@@ -9300,7 +8985,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_INITAJT8PQo5KdKLoKgUcHRy"
+                    "id": "call_YxNM6zvQxFV6ElqdHwLaHDgm"
                   },
                   {
                     "type": "assistant_text",
@@ -9312,12 +8997,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Both orgs have **TypeScript** in their top-language mix.",
+                "response": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.\n\nOne language in both top-language mixes: **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 8447,
+                "latency_ms": 2671,
                 "input_tokens": 775,
-                "output_tokens": 18,
-                "cost_usd": 0.00066225,
+                "output_tokens": 53,
+                "cost_usd": 0.00081975,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -9329,7 +9014,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_XvIArNFUfVkdrHhmtJt9cJd5"
+                    "id": "call_jPJQ5b3yD8YiQQos85ndp04B"
                   },
                   {
                     "type": "tool_call",
@@ -9338,7 +9023,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_RgmlpjSzgN5H81DLGMh3hvo1"
+                    "id": "call_LWvLo8MeUW02agN0rfUmv3M2"
                   },
                   {
                     "type": "tool_result",
@@ -9355,11 +9040,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -9368,6 +9048,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -9384,7 +9069,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_XvIArNFUfVkdrHhmtJt9cJd5"
+                    "id": "call_jPJQ5b3yD8YiQQos85ndp04B"
                   },
                   {
                     "type": "tool_result",
@@ -9430,12 +9115,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_RgmlpjSzgN5H81DLGMh3hvo1"
+                    "id": "call_LWvLo8MeUW02agN0rfUmv3M2"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Both orgs have **TypeScript** in their top-language mix."
+                    "text": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.\n\nOne language in both top-language mixes: **TypeScript**."
                   }
                 ]
               },
@@ -9444,7 +9129,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 2285,
+                "latency_ms": 3808,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.00039375,
@@ -9459,7 +9144,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_gU0Fhil6aULJZFsX271ohVDS"
+                    "id": "call_sH2OXd65MV40PbuXQ5ecIe5w"
                   },
                   {
                     "type": "tool_result",
@@ -9471,7 +9156,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_gU0Fhil6aULJZFsX271ohVDS"
+                    "id": "call_sH2OXd65MV40PbuXQ5ecIe5w"
                   },
                   {
                     "type": "assistant_text",
@@ -9486,15 +9171,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3478,
-                "p95": 8447,
-                "p99": 8447,
-                "mean": 4118
+                "p50": 3186,
+                "p95": 26688,
+                "p99": 26688,
+                "mean": 7690
               },
               "cost_usd": {
-                "total": 0.002496,
-                "mean": 0.0004992,
-                "per_1k_evals": 0.4992
+                "total": 0.0026534999999999996,
+                "mean": 0.0005306999999999999,
+                "per_1k_evals": 0.5307
               },
               "turns": {
                 "mean": 2,
@@ -9517,15 +9202,15 @@ window.__BENCH = {
               {
                 "id": "tb-001",
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
-                "response": "Top repos: next.js, ai, swr",
+                "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 11048,
+                "latency_ms": 4593,
                 "input_tokens": 602,
-                "output_tokens": 14,
-                "cost_usd": 0.00013790000000000002,
+                "output_tokens": 16,
+                "cost_usd": 0.0001404,
                 "error": null,
-                "answer_extracted": "Top repos: next.js, ai, swr",
-                "answer_correct": false,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
                 "trace": [
                   {
                     "type": "tool_call",
@@ -9534,7 +9219,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_ilIXWiFcZ806IWV9LFJ6dNK8"
+                    "id": "call_zFvQyONBKCAG1Tq0GR0Do4q2"
                   },
                   {
                     "type": "tool_result",
@@ -9551,11 +9236,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -9564,6 +9244,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -9580,12 +9265,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_ilIXWiFcZ806IWV9LFJ6dNK8"
+                    "id": "call_zFvQyONBKCAG1Tq0GR0Do4q2"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Top repos: next.js, ai, swr"
+                    "text": "Top repos: next.js, swr, turborepo"
                   }
                 ]
               },
@@ -9594,7 +9279,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 4461,
+                "latency_ms": 1792,
                 "input_tokens": 588,
                 "output_tokens": 6,
                 "cost_usd": 0.0001251,
@@ -9609,7 +9294,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_K5xCi7YluezJ2KALOWP8bEIA"
+                    "id": "call_9IXoEX4WO1cQ4FxNRGFvoI1h"
                   },
                   {
                     "type": "tool_result",
@@ -9655,7 +9340,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_K5xCi7YluezJ2KALOWP8bEIA"
+                    "id": "call_9IXoEX4WO1cQ4FxNRGFvoI1h"
                   },
                   {
                     "type": "assistant_text",
@@ -9669,7 +9354,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2244,
+                "latency_ms": 1879,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.00011995,
@@ -9684,7 +9369,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_6oVgA8JGuQ68zkzcLyM1LMeB"
+                    "id": "call_0Uti0uJQwZglGVPS8wMWoVif"
                   },
                   {
                     "type": "tool_result",
@@ -9699,7 +9384,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_6oVgA8JGuQ68zkzcLyM1LMeB"
+                    "id": "call_0Uti0uJQwZglGVPS8wMWoVif"
                   },
                   {
                     "type": "assistant_text",
@@ -9711,12 +9396,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "- **Vercel top-language mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n- **Supabase top-language mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\n**One language appearing in both:** **TypeScript**.",
+                "response": "**Top-language mix (GitHub orgs):**\n- **Vercel:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n- **Supabase:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**One language appearing in both orgs’ top-language mix:** **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 4894,
+                "latency_ms": 3962,
                 "input_tokens": 775,
-                "output_tokens": 78,
-                "cost_usd": 0.0002525,
+                "output_tokens": 88,
+                "cost_usd": 0.000265,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -9728,7 +9413,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_batXr0r6Bcf6zwir9fh0lFXu"
+                    "id": "call_sCGC0lO9hYE3NwVoaPPkGf7e"
                   },
                   {
                     "type": "tool_call",
@@ -9737,7 +9422,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_MIp760tFlm3e67H11ggufIHu"
+                    "id": "call_wg1OJNQcqBzkLfd4KiGqRGpv"
                   },
                   {
                     "type": "tool_result",
@@ -9754,11 +9439,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -9767,6 +9447,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -9783,7 +9468,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_batXr0r6Bcf6zwir9fh0lFXu"
+                    "id": "call_sCGC0lO9hYE3NwVoaPPkGf7e"
                   },
                   {
                     "type": "tool_result",
@@ -9829,12 +9514,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_MIp760tFlm3e67H11ggufIHu"
+                    "id": "call_wg1OJNQcqBzkLfd4KiGqRGpv"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "- **Vercel top-language mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n- **Supabase top-language mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\n**One language appearing in both:** **TypeScript**."
+                    "text": "**Top-language mix (GitHub orgs):**\n- **Vercel:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n- **Supabase:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**One language appearing in both orgs’ top-language mix:** **TypeScript**."
                   }
                 ]
               },
@@ -9843,7 +9528,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1757,
+                "latency_ms": 1601,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.00010530000000000001,
@@ -9858,7 +9543,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_OoqOxQsOVitV4Yg744aFyX2t"
+                    "id": "call_A5vgJx9ip1KVgt8GqksgOYYg"
                   },
                   {
                     "type": "tool_result",
@@ -9870,7 +9555,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_OoqOxQsOVitV4Yg744aFyX2t"
+                    "id": "call_A5vgJx9ip1KVgt8GqksgOYYg"
                   },
                   {
                     "type": "assistant_text",
@@ -9885,15 +9570,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 4461,
-                "p95": 11048,
-                "p99": 11048,
-                "mean": 4881
+                "p50": 1879,
+                "p95": 4593,
+                "p99": 4593,
+                "mean": 2765
               },
               "cost_usd": {
-                "total": 0.0007407500000000001,
-                "mean": 0.00014815000000000002,
-                "per_1k_evals": 0.14815000000000003
+                "total": 0.00075575,
+                "mean": 0.00015115000000000001,
+                "per_1k_evals": 0.15115
               },
               "turns": {
                 "mean": 2,
@@ -9901,8 +9586,8 @@ window.__BENCH = {
               },
               "answer_accuracy": {
                 "graded": 5,
-                "correct": 4,
-                "rate": 0.8
+                "correct": 5,
+                "rate": 1
               }
             }
           },
@@ -9919,7 +9604,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 13002,
+                "latency_ms": 1463,
                 "input_tokens": 868,
                 "output_tokens": 12,
                 "cost_usd": 0.001808,
@@ -9934,7 +9619,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-5db8ab3e-7cfa-4827-baa6-7d7c761ccef1-0"
+                    "id": "call-07ae04ed-c12d-42df-a2b4-9b874c358e12-0"
                   },
                   {
                     "type": "tool_result",
@@ -9951,11 +9636,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -9964,6 +9644,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -9980,7 +9665,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-5db8ab3e-7cfa-4827-baa6-7d7c761ccef1-0"
+                    "id": "call-07ae04ed-c12d-42df-a2b4-9b874c358e12-0"
                   },
                   {
                     "type": "assistant_text",
@@ -9994,7 +9679,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 3216,
+                "latency_ms": 754,
                 "input_tokens": 854,
                 "output_tokens": 2,
                 "cost_usd": 0.00172,
@@ -10009,7 +9694,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-1b3ff9e9-11e6-40d5-905e-b716cd422964-0"
+                    "id": "call-c5a9a947-a8a2-4305-bf66-cf3c1e225f1d-0"
                   },
                   {
                     "type": "tool_result",
@@ -10055,7 +9740,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-1b3ff9e9-11e6-40d5-905e-b716cd422964-0"
+                    "id": "call-c5a9a947-a8a2-4305-bf66-cf3c1e225f1d-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10069,7 +9754,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2059,
+                "latency_ms": 633,
                 "input_tokens": 821,
                 "output_tokens": 3,
                 "cost_usd": 0.00166,
@@ -10084,7 +9769,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call-e85e46a0-ccef-4ef0-a14f-8c3e88b21c91-0"
+                    "id": "call-fc28a66a-0360-4e5d-be2a-8672314ca4ed-0"
                   },
                   {
                     "type": "tool_result",
@@ -10099,7 +9784,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call-e85e46a0-ccef-4ef0-a14f-8c3e88b21c91-0"
+                    "id": "call-fc28a66a-0360-4e5d-be2a-8672314ca4ed-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10113,7 +9798,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%).",
                 "turns": 2,
-                "latency_ms": 3313,
+                "latency_ms": 814,
                 "input_tokens": 1012,
                 "output_tokens": 23,
                 "cost_usd": 0.002162,
@@ -10128,7 +9813,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-0"
+                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-0"
                   },
                   {
                     "type": "tool_call",
@@ -10137,7 +9822,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-1"
+                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-1"
                   },
                   {
                     "type": "tool_result",
@@ -10154,11 +9839,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -10167,6 +9847,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -10183,7 +9868,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-0"
+                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-0"
                   },
                   {
                     "type": "tool_result",
@@ -10229,7 +9914,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-1"
+                    "id": "call-314d788d-7740-4419-a895-a37dea28e4f6-1"
                   },
                   {
                     "type": "assistant_text",
@@ -10243,7 +9928,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 1918,
+                "latency_ms": 684,
                 "input_tokens": 758,
                 "output_tokens": 2,
                 "cost_usd": 0.001528,
@@ -10258,7 +9943,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call-7ca38ba9-82ee-4350-9794-061a0317559a-0"
+                    "id": "call-8b92371f-3b97-404b-b1be-3a665ec91cc1-0"
                   },
                   {
                     "type": "tool_result",
@@ -10270,7 +9955,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call-7ca38ba9-82ee-4350-9794-061a0317559a-0"
+                    "id": "call-8b92371f-3b97-404b-b1be-3a665ec91cc1-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10285,10 +9970,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3216,
-                "p95": 13002,
-                "p99": 13002,
-                "mean": 4702
+                "p50": 754,
+                "p95": 1463,
+                "p99": 1463,
+                "mean": 870
               },
               "cost_usd": {
                 "total": 0.008878,
@@ -10319,7 +10004,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 5222,
+                "latency_ms": 2853,
                 "input_tokens": 1001,
                 "output_tokens": 12,
                 "cost_usd": 0.00020620000000000002,
@@ -10334,7 +10019,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_92575046"
+                    "id": "call_40002268"
                   },
                   {
                     "type": "tool_result",
@@ -10351,11 +10036,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -10364,6 +10044,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -10380,7 +10065,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_92575046"
+                    "id": "call_40002268"
                   },
                   {
                     "type": "assistant_text",
@@ -10394,7 +10079,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 3336,
+                "latency_ms": 2434,
                 "input_tokens": 987,
                 "output_tokens": 2,
                 "cost_usd": 0.0001984,
@@ -10409,7 +10094,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_38481197"
+                    "id": "call_08176195"
                   },
                   {
                     "type": "tool_result",
@@ -10455,7 +10140,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_38481197"
+                    "id": "call_08176195"
                   },
                   {
                     "type": "assistant_text",
@@ -10469,7 +10154,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2562,
+                "latency_ms": 875,
                 "input_tokens": 954,
                 "output_tokens": 3,
                 "cost_usd": 0.0001923,
@@ -10484,7 +10169,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_28357962"
+                    "id": "call_80390607"
                   },
                   {
                     "type": "tool_result",
@@ -10499,7 +10184,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_28357962"
+                    "id": "call_80390607"
                   },
                   {
                     "type": "assistant_text",
@@ -10513,7 +10198,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%) orgs.",
                 "turns": 2,
-                "latency_ms": 2662,
+                "latency_ms": 2070,
                 "input_tokens": 1161,
                 "output_tokens": 26,
                 "cost_usd": 0.0002452,
@@ -10528,7 +10213,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_66972286"
+                    "id": "call_23046443"
                   },
                   {
                     "type": "tool_call",
@@ -10537,7 +10222,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_37416451"
+                    "id": "call_65265015"
                   },
                   {
                     "type": "tool_result",
@@ -10554,11 +10239,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -10567,6 +10247,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -10583,7 +10268,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_66972286"
+                    "id": "call_23046443"
                   },
                   {
                     "type": "tool_result",
@@ -10629,7 +10314,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_37416451"
+                    "id": "call_65265015"
                   },
                   {
                     "type": "assistant_text",
@@ -10641,12 +10326,12 @@ window.__BENCH = {
               {
                 "id": "tb-005",
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
-                "response": "**Example Domain**",
+                "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 3120,
+                "latency_ms": 796,
                 "input_tokens": 891,
-                "output_tokens": 4,
-                "cost_usd": 0.00018020000000000002,
+                "output_tokens": 2,
+                "cost_usd": 0.00017920000000000002,
                 "error": null,
                 "answer_extracted": "Example Domain",
                 "answer_correct": true,
@@ -10658,7 +10343,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_76056296"
+                    "id": "call_76152591"
                   },
                   {
                     "type": "tool_result",
@@ -10670,12 +10355,12 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_76056296"
+                    "id": "call_76152591"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "**Example Domain**"
+                    "text": "Example Domain"
                   }
                 ]
               }
@@ -10685,15 +10370,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3120,
-                "p95": 5222,
-                "p99": 5222,
-                "mean": 3380
+                "p50": 2070,
+                "p95": 2853,
+                "p99": 2853,
+                "mean": 1806
               },
               "cost_usd": {
-                "total": 0.0010223,
-                "mean": 0.00020446,
-                "per_1k_evals": 0.20446
+                "total": 0.0010213000000000002,
+                "mean": 0.00020426000000000003,
+                "per_1k_evals": 0.20426000000000002
               },
               "turns": {
                 "mean": 2,
@@ -10718,10 +10403,10 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 6231,
-                "input_tokens": 985,
-                "output_tokens": 244,
-                "cost_usd": 0.003434,
+                "latency_ms": 1705,
+                "input_tokens": 1017,
+                "output_tokens": 128,
+                "cost_usd": 0.002802,
                 "error": null,
                 "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
@@ -10733,7 +10418,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-1a999ba5-f7f1-4062-9240-8dfc9836f7b9-0"
+                    "id": "call-089e872e-79f8-4a14-b824-5bef075f2ab8-0"
                   },
                   {
                     "type": "tool_result",
@@ -10750,11 +10435,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -10763,6 +10443,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -10779,7 +10464,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-1a999ba5-f7f1-4062-9240-8dfc9836f7b9-0"
+                    "id": "call-089e872e-79f8-4a14-b824-5bef075f2ab8-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10793,10 +10478,10 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 5200,
-                "input_tokens": 979,
-                "output_tokens": 92,
-                "cost_usd": 0.00251,
+                "latency_ms": 2017,
+                "input_tokens": 1027,
+                "output_tokens": 80,
+                "cost_usd": 0.002534,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -10808,7 +10493,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-8bdbc117-c229-4727-8845-323b74ed6aee-0"
+                    "id": "call-fd506234-c45c-4d18-bdf2-69916f61fe88-0"
                   },
                   {
                     "type": "tool_result",
@@ -10854,7 +10539,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-8bdbc117-c229-4727-8845-323b74ed6aee-0"
+                    "id": "call-fd506234-c45c-4d18-bdf2-69916f61fe88-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10868,10 +10553,10 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 4392,
-                "input_tokens": 952,
+                "latency_ms": 2686,
+                "input_tokens": 926,
                 "output_tokens": 61,
-                "cost_usd": 0.00227,
+                "cost_usd": 0.002218,
                 "error": null,
                 "answer_extracted": "Vercel",
                 "answer_correct": true,
@@ -10883,7 +10568,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call-31c4f7a4-f122-4af8-b6cf-519deb9c3f2f-0"
+                    "id": "call-76260d0a-82d1-4bdc-b354-fd12f34e631b-0"
                   },
                   {
                     "type": "tool_result",
@@ -10898,7 +10583,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call-31c4f7a4-f122-4af8-b6cf-519deb9c3f2f-0"
+                    "id": "call-76260d0a-82d1-4bdc-b354-fd12f34e631b-0"
                   },
                   {
                     "type": "assistant_text",
@@ -10910,12 +10595,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "TypeScript",
+                "response": "TypeScript  \n\n\n**Comparison:**  \n- Vercel: TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)  \n- Supabase: TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)",
                 "turns": 2,
-                "latency_ms": 5850,
-                "input_tokens": 1107,
-                "output_tokens": 320,
-                "cost_usd": 0.004134,
+                "latency_ms": 2809,
+                "input_tokens": 1221,
+                "output_tokens": 336,
+                "cost_usd": 0.004458,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -10927,7 +10612,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-0"
+                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-0"
                   },
                   {
                     "type": "tool_call",
@@ -10936,7 +10621,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-1"
+                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-1"
                   },
                   {
                     "type": "tool_result",
@@ -10953,11 +10638,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -10966,6 +10646,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -10982,7 +10667,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-0"
+                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-0"
                   },
                   {
                     "type": "tool_result",
@@ -11028,12 +10713,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-1"
+                    "id": "call-6d355261-2843-488e-b796-43eddb93b688-1"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "TypeScript"
+                    "text": "TypeScript  \n\n\n**Comparison:**  \n- Vercel: TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)  \n- Supabase: TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)"
                   }
                 ]
               },
@@ -11042,10 +10727,10 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 5345,
-                "input_tokens": 874,
-                "output_tokens": 128,
-                "cost_usd": 0.002516,
+                "latency_ms": 4462,
+                "input_tokens": 910,
+                "output_tokens": 132,
+                "cost_usd": 0.002612,
                 "error": null,
                 "answer_extracted": "Example Domain",
                 "answer_correct": true,
@@ -11057,7 +10742,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call-5102069c-cac0-477a-aa21-eee26ef419ca-0"
+                    "id": "call-22789c22-cf19-41d0-b796-a84f7bd8761f-0"
                   },
                   {
                     "type": "tool_result",
@@ -11069,7 +10754,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call-5102069c-cac0-477a-aa21-eee26ef419ca-0"
+                    "id": "call-22789c22-cf19-41d0-b796-a84f7bd8761f-0"
                   },
                   {
                     "type": "assistant_text",
@@ -11084,15 +10769,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 5345,
-                "p95": 6231,
-                "p99": 6231,
-                "mean": 5404
+                "p50": 2686,
+                "p95": 4462,
+                "p99": 4462,
+                "mean": 2736
               },
               "cost_usd": {
-                "total": 0.014863999999999999,
-                "mean": 0.0029728,
-                "per_1k_evals": 2.9728
+                "total": 0.014624,
+                "mean": 0.0029248,
+                "per_1k_evals": 2.9248
               },
               "turns": {
                 "mean": 2,
@@ -11118,7 +10803,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 1469,
+                "latency_ms": 1784,
                 "input_tokens": 1359,
                 "output_tokens": 16,
                 "cost_usd": 0.001439,
@@ -11133,7 +10818,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01DrgAt18M8v6Vy8PMo6Ze7t"
+                    "id": "toolu_019mtF2tDKjaKn1bJ7h1FKSf"
                   },
                   {
                     "type": "tool_result",
@@ -11150,11 +10835,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -11163,6 +10843,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -11179,7 +10864,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01DrgAt18M8v6Vy8PMo6Ze7t"
+                    "id": "toolu_019mtF2tDKjaKn1bJ7h1FKSf"
                   },
                   {
                     "type": "assistant_text",
@@ -11193,7 +10878,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 1241,
+                "latency_ms": 1436,
                 "input_tokens": 1353,
                 "output_tokens": 5,
                 "cost_usd": 0.001378,
@@ -11208,7 +10893,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01CKtSZWaejTQwWLmkWCK3iP"
+                    "id": "toolu_0115L9VS6LVhZBumaVtdwVwG"
                   },
                   {
                     "type": "tool_result",
@@ -11254,7 +10939,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01CKtSZWaejTQwWLmkWCK3iP"
+                    "id": "toolu_0115L9VS6LVhZBumaVtdwVwG"
                   },
                   {
                     "type": "assistant_text",
@@ -11268,7 +10953,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 1389,
+                "latency_ms": 1918,
                 "input_tokens": 1315,
                 "output_tokens": 6,
                 "cost_usd": 0.001345,
@@ -11283,7 +10968,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_01Gq2iW7gvU949RKb2hjY1iJ"
+                    "id": "toolu_013Ms18REr8a78G8e9kyj6U6"
                   },
                   {
                     "type": "tool_result",
@@ -11298,7 +10983,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_01Gq2iW7gvU949RKb2hjY1iJ"
+                    "id": "toolu_013Ms18REr8a78G8e9kyj6U6"
                   },
                   {
                     "type": "assistant_text",
@@ -11312,7 +10997,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "Based on the GitHub lookup results:\n\n**Vercel's top languages:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n\n**Supabase's top languages:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**Common language:** **TypeScript** appears in the top-language mix of both organizations, being the dominant language for both Vercel (62%) and Supabase (58%).",
                 "turns": 2,
-                "latency_ms": 2097,
+                "latency_ms": 2508,
                 "input_tokens": 1600,
                 "output_tokens": 115,
                 "cost_usd": 0.002175,
@@ -11327,7 +11012,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01GCWyQaripGqiNPwSNSfZMp"
+                    "id": "toolu_01DMDoTaXSxcyKtEw4CrRBDj"
                   },
                   {
                     "type": "tool_call",
@@ -11336,7 +11021,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_0175BzddS84UYUkhpxYY6URf"
+                    "id": "toolu_01VPBaB78F4TCqYP97hpESJC"
                   },
                   {
                     "type": "tool_result",
@@ -11353,11 +11038,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -11366,6 +11046,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -11382,7 +11067,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01GCWyQaripGqiNPwSNSfZMp"
+                    "id": "toolu_01DMDoTaXSxcyKtEw4CrRBDj"
                   },
                   {
                     "type": "tool_result",
@@ -11428,7 +11113,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_0175BzddS84UYUkhpxYY6URf"
+                    "id": "toolu_01VPBaB78F4TCqYP97hpESJC"
                   },
                   {
                     "type": "assistant_text",
@@ -11442,7 +11127,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "The page title is: **Example Domain**",
                 "turns": 2,
-                "latency_ms": 1270,
+                "latency_ms": 1421,
                 "input_tokens": 1239,
                 "output_tokens": 12,
                 "cost_usd": 0.001299,
@@ -11457,7 +11142,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_011eV3oeovZtcDh3X85WyVeh"
+                    "id": "toolu_01Aonh4bKis4WtoNytdX4TxY"
                   },
                   {
                     "type": "tool_result",
@@ -11469,7 +11154,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_011eV3oeovZtcDh3X85WyVeh"
+                    "id": "toolu_01Aonh4bKis4WtoNytdX4TxY"
                   },
                   {
                     "type": "assistant_text",
@@ -11484,10 +11169,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1389,
-                "p95": 2097,
-                "p99": 2097,
-                "mean": 1493
+                "p50": 1784,
+                "p95": 2508,
+                "p99": 2508,
+                "mean": 1813
               },
               "cost_usd": {
                 "total": 0.0076359999999999996,
@@ -11517,7 +11202,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 2379,
+                "latency_ms": 2699,
                 "input_tokens": 1855,
                 "output_tokens": 20,
                 "cost_usd": 0.009775,
@@ -11532,7 +11217,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01VCyqyRanqgQcJi8AH1LCnD"
+                    "id": "toolu_01TMUmHoYs8qKyBjkiHhXGKY"
                   },
                   {
                     "type": "tool_result",
@@ -11549,11 +11234,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -11562,6 +11242,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -11578,7 +11263,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01VCyqyRanqgQcJi8AH1LCnD"
+                    "id": "toolu_01TMUmHoYs8qKyBjkiHhXGKY"
                   },
                   {
                     "type": "assistant_text",
@@ -11592,7 +11277,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2949,
+                "latency_ms": 2607,
                 "input_tokens": 1840,
                 "output_tokens": 9,
                 "cost_usd": 0.009425,
@@ -11607,7 +11292,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01PRksajbXdPeHwbTvXRbygm"
+                    "id": "toolu_01FkGsi6Kpuot59sG9fKcUdz"
                   },
                   {
                     "type": "tool_result",
@@ -11653,7 +11338,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01PRksajbXdPeHwbTvXRbygm"
+                    "id": "toolu_01FkGsi6Kpuot59sG9fKcUdz"
                   },
                   {
                     "type": "assistant_text",
@@ -11667,7 +11352,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2253,
+                "latency_ms": 2429,
                 "input_tokens": 1791,
                 "output_tokens": 8,
                 "cost_usd": 0.009155,
@@ -11682,7 +11367,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_01DWsKZe3F5vjqXB8QfFUrNi"
+                    "id": "toolu_01CpGxKrfwJLJ5HLHtiJfvS8"
                   },
                   {
                     "type": "tool_result",
@@ -11697,7 +11382,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_01DWsKZe3F5vjqXB8QfFUrNi"
+                    "id": "toolu_01CpGxKrfwJLJ5HLHtiJfvS8"
                   },
                   {
                     "type": "assistant_text",
@@ -11709,12 +11394,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "**TypeScript** appears in the top-language mix of both orgs — dominant in each (Vercel 62%, Supabase 58%).\n\nOther overlap: **Go** also appears in both (Vercel 4%, Supabase 12%).",
+                "response": "**Shared top language: TypeScript**\n\n- Vercel: TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%\n- Supabase: TypeScript 58%, Elixir 14%, Go 12%, Shell 8%\n\nBoth orgs are TypeScript-dominant (Vercel 62%, Supabase 58%). Go also appears in both mixes as a secondary language.",
                 "turns": 2,
-                "latency_ms": 3847,
+                "latency_ms": 4932,
                 "input_tokens": 2183,
-                "output_tokens": 81,
-                "cost_usd": 0.01294,
+                "output_tokens": 140,
+                "cost_usd": 0.014415,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -11726,7 +11411,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01SgVNzJ1aMLzL7heYBg45tU"
+                    "id": "toolu_01SjVVJ3K6qKBnhpobRSoN1x"
                   },
                   {
                     "type": "tool_call",
@@ -11735,7 +11420,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_016oGxMenP8f3zYqoVkcWvTg"
+                    "id": "toolu_01Uodr22d6FhbWBYECRmSWEu"
                   },
                   {
                     "type": "tool_result",
@@ -11752,11 +11437,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -11765,6 +11445,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -11781,7 +11466,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01SgVNzJ1aMLzL7heYBg45tU"
+                    "id": "toolu_01SjVVJ3K6qKBnhpobRSoN1x"
                   },
                   {
                     "type": "tool_result",
@@ -11827,12 +11512,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_016oGxMenP8f3zYqoVkcWvTg"
+                    "id": "toolu_01Uodr22d6FhbWBYECRmSWEu"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "**TypeScript** appears in the top-language mix of both orgs — dominant in each (Vercel 62%, Supabase 58%).\n\nOther overlap: **Go** also appears in both (Vercel 4%, Supabase 12%)."
+                    "text": "**Shared top language: TypeScript**\n\n- Vercel: TypeScript 62%, JavaScript 22%, Rust 9%, Go 4%\n- Supabase: TypeScript 58%, Elixir 14%, Go 12%, Shell 8%\n\nBoth orgs are TypeScript-dominant (Vercel 62%, Supabase 58%). Go also appears in both mixes as a secondary language."
                   }
                 ]
               },
@@ -11841,7 +11526,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 2540,
+                "latency_ms": 2510,
                 "input_tokens": 1666,
                 "output_tokens": 9,
                 "cost_usd": 0.008555,
@@ -11856,7 +11541,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_01Gfxg3NYDAvv8y51GfvejDJ"
+                    "id": "toolu_01NWqsD4FAagQFjk8YWVeMom"
                   },
                   {
                     "type": "tool_result",
@@ -11868,7 +11553,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_01Gfxg3NYDAvv8y51GfvejDJ"
+                    "id": "toolu_01NWqsD4FAagQFjk8YWVeMom"
                   },
                   {
                     "type": "assistant_text",
@@ -11883,15 +11568,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2540,
-                "p95": 3847,
-                "p99": 3847,
-                "mean": 2794
+                "p50": 2607,
+                "p95": 4932,
+                "p99": 4932,
+                "mean": 3035
               },
               "cost_usd": {
-                "total": 0.04985,
-                "mean": 0.00997,
-                "per_1k_evals": 9.969999999999999
+                "total": 0.051325,
+                "mean": 0.010265,
+                "per_1k_evals": 10.265
               },
               "turns": {
                 "mean": 2,
@@ -11915,14 +11600,14 @@ window.__BENCH = {
               {
                 "id": "tb-001",
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
-                "response": "Top repos: **next.js**, **swr**, **turborepo**",
+                "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 1854,
+                "latency_ms": 2449,
                 "input_tokens": 1348,
-                "output_tokens": 20,
-                "cost_usd": 0.004344,
+                "output_tokens": 16,
+                "cost_usd": 0.004284,
                 "error": null,
-                "answer_extracted": "Top repos: **next.js**, **swr**, **turborepo**",
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
                 "trace": [
                   {
@@ -11932,7 +11617,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_011ujVJFn4GK5RY752bNrqaf"
+                    "id": "toolu_01JF5PSQuCXs2gpn33FZTgQk"
                   },
                   {
                     "type": "tool_result",
@@ -11949,11 +11634,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -11962,6 +11642,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -11978,12 +11663,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_011ujVJFn4GK5RY752bNrqaf"
+                    "id": "toolu_01JF5PSQuCXs2gpn33FZTgQk"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Top repos: **next.js**, **swr**, **turborepo**"
+                    "text": "Top repos: next.js, swr, turborepo"
                   }
                 ]
               },
@@ -11992,7 +11677,7 @@ window.__BENCH = {
                 "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
                 "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 2267,
+                "latency_ms": 1995,
                 "input_tokens": 1342,
                 "output_tokens": 5,
                 "cost_usd": 0.004101,
@@ -12007,7 +11692,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01YJMnXwm79hNqCsKzCgqVUa"
+                    "id": "toolu_01EKpQc61vx2yeRwGKPBitvs"
                   },
                   {
                     "type": "tool_result",
@@ -12053,7 +11738,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01YJMnXwm79hNqCsKzCgqVUa"
+                    "id": "toolu_01EKpQc61vx2yeRwGKPBitvs"
                   },
                   {
                     "type": "assistant_text",
@@ -12067,7 +11752,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "**Vercel**",
                 "turns": 2,
-                "latency_ms": 2155,
+                "latency_ms": 2557,
                 "input_tokens": 1304,
                 "output_tokens": 8,
                 "cost_usd": 0.004032,
@@ -12082,7 +11767,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_012f7X3639JtD9dC2BV4VRxr"
+                    "id": "toolu_01JCUfgr64pNvB9v91b7MAki"
                   },
                   {
                     "type": "tool_result",
@@ -12097,7 +11782,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_012f7X3639JtD9dC2BV4VRxr"
+                    "id": "toolu_01JCUfgr64pNvB9v91b7MAki"
                   },
                   {
                     "type": "assistant_text",
@@ -12109,12 +11794,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Here's the comparison of the top languages used by each org:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n**Key Observations:**\n- **Vercel** is heavily TypeScript/JavaScript-focused, reflecting its frontend/web tooling roots, with a notable Rust presence (e.g., Turborepo).\n- **Supabase** is also TypeScript-dominant but has a more diverse backend mix, with Elixir (for its Realtime engine) and Go (for GoTrue auth) playing significant roles.\n\n---\n\n✅ **One language that appears in the top-language mix of *both* orgs: TypeScript** — it's the #1 language for both Vercel (62%) and Supabase (58%). **Go** is also shared by both (Vercel 4%, Supabase 12%).",
+                "response": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### 🔁 Language appearing in **both** orgs:\n\n**TypeScript** — it's the dominant language in both organizations, making up **62%** of Vercel's codebase and **58%** of Supabase's. This reflects the broader industry trend of TypeScript being the go-to language for modern web and backend tooling.\n\n**Go** also appears in both (4% at Vercel, 12% at Supabase), typically used for performance-critical backend services.",
                 "turns": 2,
-                "latency_ms": 6916,
+                "latency_ms": 6012,
                 "input_tokens": 1599,
-                "output_tokens": 305,
-                "cost_usd": 0.009372,
+                "output_tokens": 245,
+                "cost_usd": 0.008472,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -12131,7 +11816,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01Lpbk2in1G1ipQ1H7tugY1x"
+                    "id": "toolu_01LBRTQ4VZiteNMpD7xd7dHt"
                   },
                   {
                     "type": "tool_call",
@@ -12140,7 +11825,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01VoncVLu95KNTen9bjdGRcH"
+                    "id": "toolu_01Nfc6qr9856aLZcXqQxgoSx"
                   },
                   {
                     "type": "tool_result",
@@ -12157,11 +11842,6 @@ window.__BENCH = {
                           "language": "JavaScript"
                         },
                         {
-                          "name": "ai",
-                          "stars": 12400,
-                          "language": "TypeScript"
-                        },
-                        {
                           "name": "swr",
                           "stars": 31000,
                           "language": "TypeScript"
@@ -12170,6 +11850,11 @@ window.__BENCH = {
                           "name": "turborepo",
                           "stars": 27200,
                           "language": "Rust"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
                         },
                         {
                           "name": "satori",
@@ -12186,7 +11871,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01Lpbk2in1G1ipQ1H7tugY1x"
+                    "id": "toolu_01LBRTQ4VZiteNMpD7xd7dHt"
                   },
                   {
                     "type": "tool_result",
@@ -12232,12 +11917,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01VoncVLu95KNTen9bjdGRcH"
+                    "id": "toolu_01Nfc6qr9856aLZcXqQxgoSx"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Here's the comparison of the top languages used by each org:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n**Key Observations:**\n- **Vercel** is heavily TypeScript/JavaScript-focused, reflecting its frontend/web tooling roots, with a notable Rust presence (e.g., Turborepo).\n- **Supabase** is also TypeScript-dominant but has a more diverse backend mix, with Elixir (for its Realtime engine) and Go (for GoTrue auth) playing significant roles.\n\n---\n\n✅ **One language that appears in the top-language mix of *both* orgs: TypeScript** — it's the #1 language for both Vercel (62%) and Supabase (58%). **Go** is also shared by both (Vercel 4%, Supabase 12%)."
+                    "text": "Here's the language comparison:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### 🔁 Language appearing in **both** orgs:\n\n**TypeScript** — it's the dominant language in both organizations, making up **62%** of Vercel's codebase and **58%** of Supabase's. This reflects the broader industry trend of TypeScript being the go-to language for modern web and backend tooling.\n\n**Go** also appears in both (4% at Vercel, 12% at Supabase), typically used for performance-critical backend services."
                   }
                 ]
               },
@@ -12246,7 +11931,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "The page title, exactly as written, is:\n\n**Example Domain**",
                 "turns": 2,
-                "latency_ms": 6819,
+                "latency_ms": 3612,
                 "input_tokens": 1228,
                 "output_tokens": 18,
                 "cost_usd": 0.003954,
@@ -12261,7 +11946,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_01Jk83G6TpfDzgV4X7oaXck6"
+                    "id": "toolu_01SaseED68nxVZ15tGjpZAvW"
                   },
                   {
                     "type": "tool_result",
@@ -12273,7 +11958,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_01Jk83G6TpfDzgV4X7oaXck6"
+                    "id": "toolu_01SaseED68nxVZ15tGjpZAvW"
                   },
                   {
                     "type": "assistant_text",
@@ -12288,15 +11973,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2267,
-                "p95": 6916,
-                "p99": 6916,
-                "mean": 4002
+                "p50": 2557,
+                "p95": 6012,
+                "p99": 6012,
+                "mean": 3325
               },
               "cost_usd": {
-                "total": 0.025803,
-                "mean": 0.0051605999999999996,
-                "per_1k_evals": 5.1606
+                "total": 0.024843,
+                "mean": 0.0049686,
+                "per_1k_evals": 4.9686
               },
               "turns": {
                 "mean": 2,
@@ -12313,153 +11998,143 @@ window.__BENCH = {
         "leaderboard": {
           "latency_p50_ms": [
             {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 1389
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 754
             },
             {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 1561
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 1784
             },
             {
               "provider": "google",
               "model": "gemini-3-flash-preview",
-              "value": 2135
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 2267
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 2540
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 3043
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4-1-fast-non-reasoning",
-              "value": 3120
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-non-reasoning",
-              "value": 3216
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 3478
+              "value": 1864
             },
             {
               "provider": "openai",
               "model": "gpt-5.4-nano",
-              "value": 4461
+              "value": 1879
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 2070
             },
             {
               "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 5025
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 2187
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 2557
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 2607
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 5345
+              "value": 2686
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 3186
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 4072
             }
           ],
           "latency_p95_ms": [
             {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 2009
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 2097
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 1463
             },
             {
               "provider": "google",
               "model": "gemini-3-flash-preview",
-              "value": 2888
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 3252
+              "value": 2212
             },
             {
               "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 3847
+              "model": "claude-haiku-4-5",
+              "value": 2508
             },
             {
               "provider": "xai",
               "model": "grok-4-1-fast-non-reasoning",
-              "value": 5222
+              "value": 2853
             },
             {
               "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 6186
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 3418
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 6231
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 6916
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 8447
+              "value": 4462
             },
             {
               "provider": "openai",
               "model": "gpt-5.4-nano",
-              "value": 11048
+              "value": 4593
             },
             {
-              "provider": "xai",
-              "model": "grok-4.20-0309-non-reasoning",
-              "value": 13002
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 4762
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 4932
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 6012
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 26688
             }
           ],
           "cost_per_1k_evals_usd": [
             {
               "provider": "openai",
               "model": "gpt-5.4-nano",
-              "value": 0.14815000000000003
+              "value": 0.15115
             },
             {
               "provider": "xai",
               "model": "grok-4-1-fast-non-reasoning",
-              "value": 0.20446
+              "value": 0.20426000000000002
             },
             {
               "provider": "google",
               "model": "gemini-3.1-flash-lite-preview",
-              "value": 0.20590000000000003
+              "value": 0.2056
             },
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 0.4992
+              "value": 0.5307
             },
             {
               "provider": "google",
               "model": "gemini-3-flash-preview",
-              "value": 0.6538
+              "value": 0.5474
             },
             {
               "provider": "anthropic",
@@ -12469,7 +12144,7 @@ window.__BENCH = {
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 1.7239999999999998
+              "value": 1.7449999999999997
             },
             {
               "provider": "xai",
@@ -12479,22 +12154,17 @@ window.__BENCH = {
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 2.9728
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 3.1708000000000003
+              "value": 2.9248
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 5.1606
+              "value": 4.9686
             },
             {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 9.969999999999999
+              "value": 10.265
             }
           ],
           "success_rate": [
@@ -12509,11 +12179,6 @@ window.__BENCH = {
               "value": 1
             },
             {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 1
-            },
-            {
               "provider": "openai",
               "model": "gpt-5.4",
               "value": 1
@@ -12557,6 +12222,11 @@ window.__BENCH = {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
               "value": 1
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 0
             }
           ]
         }
@@ -13039,9 +12709,7019 @@ window.__BENCH = {
               }
             }
           ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-48-13-830Z",
+          "started_at": "2026-04-19T05:46:37.456Z",
+          "completed_at": "2026-04-19T05:48:13.830Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2192,
+                  "p95": 2459,
+                  "p99": 2459,
+                  "mean": 2077
+                },
+                "cost_usd": {
+                  "total": 0.0024855,
+                  "mean": 0.0004971,
+                  "per_1k_evals": 0.4971
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1528,
+                  "p95": 1974,
+                  "p99": 1974,
+                  "mean": 1643
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 4,
+                "n_error": 1,
+                "latency_ms": {
+                  "p50": 4751,
+                  "p95": 6229,
+                  "p99": 6229,
+                  "mean": 5147
+                },
+                "cost_usd": {
+                  "total": 0.010705999999999999,
+                  "mean": 0.0026764999999999996,
+                  "per_1k_evals": 2.6764999999999994
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 4,
+                  "correct": 4,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2959,
+                  "p95": 23583,
+                  "p99": 23583,
+                  "mean": 7560
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 22335,
+                  "p95": 39087,
+                  "p99": 39087,
+                  "mean": 19274
+                },
+                "cost_usd": {
+                  "total": 0.002649,
+                  "mean": 0.0005298,
+                  "per_1k_evals": 0.5297999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3563,
+                  "p95": 25343,
+                  "p99": 25343,
+                  "mean": 7457
+                },
+                "cost_usd": {
+                  "total": 0.00075575,
+                  "mean": 0.00015115000000000001,
+                  "per_1k_evals": 0.15115
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2304,
+                  "p95": 4359,
+                  "p99": 4359,
+                  "mean": 2735
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2966,
+                  "p95": 3245,
+                  "p99": 3245,
+                  "mean": 2980
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5777,
+                  "p95": 14778,
+                  "p99": 14778,
+                  "mean": 6633
+                },
+                "cost_usd": {
+                  "total": 0.014424,
+                  "mean": 0.0028848,
+                  "per_1k_evals": 2.8848
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2350,
+                  "p95": 2789,
+                  "p99": 2789,
+                  "mean": 2063
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2965,
+                  "p95": 4038,
+                  "p99": 4038,
+                  "mean": 3112
+                },
+                "cost_usd": {
+                  "total": 0.050775,
+                  "mean": 0.010155,
+                  "per_1k_evals": 10.155000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2500,
+                  "p95": 6483,
+                  "p99": 6483,
+                  "mean": 3208
+                },
+                "cost_usd": {
+                  "total": 0.024828,
+                  "mean": 0.0049656,
+                  "per_1k_evals": 4.965599999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-48-50-312Z",
+          "started_at": "2026-04-19T05:48:16.032Z",
+          "completed_at": "2026-04-19T05:48:50.311Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1962,
+                  "p95": 2411,
+                  "p99": 2411,
+                  "mean": 2017
+                },
+                "cost_usd": {
+                  "total": 0.002737,
+                  "mean": 0.0005474,
+                  "per_1k_evals": 0.5474
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1795,
+                  "p95": 2710,
+                  "p99": 2710,
+                  "mean": 1871
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3214,
+                  "p95": 18094,
+                  "p99": 18094,
+                  "mean": 6059
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2426,
+                  "p95": 4141,
+                  "p99": 4141,
+                  "mean": 2680
+                },
+                "cost_usd": {
+                  "total": 0.002649,
+                  "mean": 0.0005298,
+                  "per_1k_evals": 0.5297999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3368,
+                  "p95": 15488,
+                  "p99": 15488,
+                  "mean": 5415
+                },
+                "cost_usd": {
+                  "total": 0.00074825,
+                  "mean": 0.00014965,
+                  "per_1k_evals": 0.14965
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1888,
+                  "p95": 3207,
+                  "p99": 3207,
+                  "mean": 2165
+                },
+                "cost_usd": {
+                  "total": 0.009208,
+                  "mean": 0.0018415999999999999,
+                  "per_1k_evals": 1.8416
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3159,
+                  "p95": 3637,
+                  "p99": 3637,
+                  "mean": 3202
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4223,
+                  "p95": 5448,
+                  "p99": 5448,
+                  "mean": 4430
+                },
+                "cost_usd": {
+                  "total": 0.015340000000000001,
+                  "mean": 0.0030680000000000004,
+                  "per_1k_evals": 3.0680000000000005
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1500,
+                  "p95": 2033,
+                  "p99": 2033,
+                  "mean": 1548
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4022,
+                  "p95": 4405,
+                  "p99": 4405,
+                  "mean": 3593
+                },
+                "cost_usd": {
+                  "total": 0.05115,
+                  "mean": 0.01023,
+                  "per_1k_evals": 10.229999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2453,
+                  "p95": 6573,
+                  "p99": 6573,
+                  "mean": 3469
+                },
+                "cost_usd": {
+                  "total": 0.024947999999999998,
+                  "mean": 0.004989599999999999,
+                  "per_1k_evals": 4.989599999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-49-24-718Z",
+          "started_at": "2026-04-19T05:48:52.518Z",
+          "completed_at": "2026-04-19T05:49:24.718Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2160,
+                  "p95": 2365,
+                  "p99": 2365,
+                  "mean": 2036
+                },
+                "cost_usd": {
+                  "total": 0.002925,
+                  "mean": 0.000585,
+                  "per_1k_evals": 0.585
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1694,
+                  "p95": 2252,
+                  "p99": 2252,
+                  "mean": 1723
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 1,
+                "n_error": 4,
+                "latency_ms": {
+                  "p50": 6740,
+                  "p95": 6740,
+                  "p99": 6740,
+                  "mean": 6740
+                },
+                "cost_usd": {
+                  "total": 0.002842,
+                  "mean": 0.002842,
+                  "per_1k_evals": 2.842
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 1,
+                  "correct": 1,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3192,
+                  "p95": 4097,
+                  "p99": 4097,
+                  "mean": 3092
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3041,
+                  "p95": 19629,
+                  "p99": 19629,
+                  "mean": 6107
+                },
+                "cost_usd": {
+                  "total": 0.0026579999999999998,
+                  "mean": 0.0005315999999999999,
+                  "per_1k_evals": 0.5316
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2074,
+                  "p95": 11496,
+                  "p99": 11496,
+                  "mean": 4412
+                },
+                "cost_usd": {
+                  "total": 0.0007570000000000001,
+                  "mean": 0.00015140000000000002,
+                  "per_1k_evals": 0.15140000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1943,
+                  "p95": 2018,
+                  "p99": 2018,
+                  "mean": 1459
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2862,
+                  "p95": 3235,
+                  "p99": 3235,
+                  "mean": 2624
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3110,
+                  "p95": 5327,
+                  "p99": 5327,
+                  "mean": 3259
+                },
+                "cost_usd": {
+                  "total": 0.014636,
+                  "mean": 0.0029272,
+                  "per_1k_evals": 2.9272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1443,
+                  "p95": 3248,
+                  "p99": 3248,
+                  "mean": 1756
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3032,
+                  "p95": 4327,
+                  "p99": 4327,
+                  "mean": 3191
+                },
+                "cost_usd": {
+                  "total": 0.05138,
+                  "mean": 0.010276,
+                  "per_1k_evals": 10.276
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1995,
+                  "p95": 6918,
+                  "p99": 6918,
+                  "mean": 2960
+                },
+                "cost_usd": {
+                  "total": 0.024843,
+                  "mean": 0.0049686,
+                  "per_1k_evals": 4.9686
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-50-19-789Z",
+          "started_at": "2026-04-19T05:49:26.905Z",
+          "completed_at": "2026-04-19T05:50:19.789Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1913,
+                  "p95": 2181,
+                  "p99": 2181,
+                  "mean": 1911
+                },
+                "cost_usd": {
+                  "total": 0.002737,
+                  "mean": 0.0005474,
+                  "per_1k_evals": 0.5474
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1719,
+                  "p95": 1807,
+                  "p99": 1807,
+                  "mean": 1601
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2630,
+                  "p95": 26306,
+                  "p99": 26306,
+                  "mean": 10576
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2355,
+                  "p95": 2611,
+                  "p99": 2611,
+                  "mean": 2280
+                },
+                "cost_usd": {
+                  "total": 0.002496,
+                  "mean": 0.0004992,
+                  "per_1k_evals": 0.4992
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3642,
+                  "p95": 5333,
+                  "p99": 5333,
+                  "mean": 3657
+                },
+                "cost_usd": {
+                  "total": 0.00075075,
+                  "mean": 0.00015015,
+                  "per_1k_evals": 0.15014999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1771,
+                  "p95": 3022,
+                  "p99": 3022,
+                  "mean": 1668
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2972,
+                  "p95": 3697,
+                  "p99": 3697,
+                  "mean": 2753
+                },
+                "cost_usd": {
+                  "total": 0.0010198,
+                  "mean": 0.00020396,
+                  "per_1k_evals": 0.20396
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2388,
+                  "p95": 5616,
+                  "p99": 5616,
+                  "mean": 2696
+                },
+                "cost_usd": {
+                  "total": 0.015522,
+                  "mean": 0.0031043999999999998,
+                  "per_1k_evals": 3.1043999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1400,
+                  "p95": 2214,
+                  "p99": 2214,
+                  "mean": 1595
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3190,
+                  "p95": 6175,
+                  "p99": 6175,
+                  "mean": 3612
+                },
+                "cost_usd": {
+                  "total": 0.051995,
+                  "mean": 0.010399,
+                  "per_1k_evals": 10.399000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2233,
+                  "p95": 5659,
+                  "p99": 5659,
+                  "mean": 2895
+                },
+                "cost_usd": {
+                  "total": 0.024738,
+                  "mean": 0.0049476,
+                  "per_1k_evals": 4.9475999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-51-02-437Z",
+          "started_at": "2026-04-19T05:50:21.963Z",
+          "completed_at": "2026-04-19T05:51:02.436Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1927,
+                  "p95": 2425,
+                  "p99": 2425,
+                  "mean": 2022
+                },
+                "cost_usd": {
+                  "total": 0.002858,
+                  "mean": 0.0005716,
+                  "per_1k_evals": 0.5716
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1808,
+                  "p95": 2002,
+                  "p99": 2002,
+                  "mean": 1795
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2575,
+                  "p95": 29646,
+                  "p99": 29646,
+                  "mean": 8094
+                },
+                "cost_usd": {
+                  "total": 0.008709999999999999,
+                  "mean": 0.0017419999999999998,
+                  "per_1k_evals": 1.7419999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3248,
+                  "p95": 12025,
+                  "p99": 12025,
+                  "mean": 4685
+                },
+                "cost_usd": {
+                  "total": 0.0026534999999999996,
+                  "mean": 0.0005306999999999999,
+                  "per_1k_evals": 0.5307
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3104,
+                  "p95": 18492,
+                  "p99": 18492,
+                  "mean": 6036
+                },
+                "cost_usd": {
+                  "total": 0.0007457500000000001,
+                  "mean": 0.00014915000000000002,
+                  "per_1k_evals": 0.14915000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2000,
+                  "p95": 2353,
+                  "p99": 2353,
+                  "mean": 1557
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3133,
+                  "p95": 5387,
+                  "p99": 5387,
+                  "mean": 3251
+                },
+                "cost_usd": {
+                  "total": 0.0010198,
+                  "mean": 0.00020396,
+                  "per_1k_evals": 0.20396
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3855,
+                  "p95": 5006,
+                  "p99": 5006,
+                  "mean": 3758
+                },
+                "cost_usd": {
+                  "total": 0.014602,
+                  "mean": 0.0029204,
+                  "per_1k_evals": 2.9204
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1446,
+                  "p95": 3666,
+                  "p99": 3666,
+                  "mean": 1904
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3265,
+                  "p95": 5864,
+                  "p99": 5864,
+                  "mean": 3727
+                },
+                "cost_usd": {
+                  "total": 0.05018,
+                  "mean": 0.010036,
+                  "per_1k_evals": 10.036
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2358,
+                  "p95": 5351,
+                  "p99": 5351,
+                  "mean": 3091
+                },
+                "cost_usd": {
+                  "total": 0.024738,
+                  "mean": 0.0049476,
+                  "per_1k_evals": 4.9475999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-51-39-645Z",
+          "started_at": "2026-04-19T05:51:04.627Z",
+          "completed_at": "2026-04-19T05:51:39.645Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1848,
+                  "p95": 2330,
+                  "p99": 2330,
+                  "mean": 1884
+                },
+                "cost_usd": {
+                  "total": 0.0028725,
+                  "mean": 0.0005745,
+                  "per_1k_evals": 0.5745
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1815,
+                  "p95": 2909,
+                  "p99": 2909,
+                  "mean": 2078
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2745,
+                  "p95": 5216,
+                  "p99": 5216,
+                  "mean": 3401
+                },
+                "cost_usd": {
+                  "total": 0.008709999999999999,
+                  "mean": 0.0017419999999999998,
+                  "per_1k_evals": 1.7419999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3910,
+                  "p95": 21335,
+                  "p99": 21335,
+                  "mean": 7003
+                },
+                "cost_usd": {
+                  "total": 0.002496,
+                  "mean": 0.0004992,
+                  "per_1k_evals": 0.4992
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1917,
+                  "p95": 2580,
+                  "p99": 2580,
+                  "mean": 2004
+                },
+                "cost_usd": {
+                  "total": 0.0007457500000000001,
+                  "mean": 0.00014915000000000002,
+                  "per_1k_evals": 0.14915000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 761,
+                  "p95": 2348,
+                  "p99": 2348,
+                  "mean": 1047
+                },
+                "cost_usd": {
+                  "total": 0.009208,
+                  "mean": 0.0018415999999999999,
+                  "per_1k_evals": 1.8416
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3070,
+                  "p95": 4723,
+                  "p99": 4723,
+                  "mean": 3179
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1668,
+                  "p95": 3115,
+                  "p99": 3115,
+                  "mean": 1901
+                },
+                "cost_usd": {
+                  "total": 0.015114,
+                  "mean": 0.0030228,
+                  "per_1k_evals": 3.0228
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1493,
+                  "p95": 3006,
+                  "p99": 3006,
+                  "mean": 1844
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2694,
+                  "p95": 4173,
+                  "p99": 4173,
+                  "mean": 2966
+                },
+                "cost_usd": {
+                  "total": 0.052050000000000006,
+                  "mean": 0.01041,
+                  "per_1k_evals": 10.41
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5928,
+                  "p95": 6765,
+                  "p99": 6765,
+                  "mean": 4612
+                },
+                "cost_usd": {
+                  "total": 0.024543000000000002,
+                  "mean": 0.004908600000000001,
+                  "per_1k_evals": 4.908600000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-52-13-559Z",
+          "started_at": "2026-04-19T05:51:41.857Z",
+          "completed_at": "2026-04-19T05:52:13.558Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2212,
+                  "p95": 2269,
+                  "p99": 2269,
+                  "mean": 1982
+                },
+                "cost_usd": {
+                  "total": 0.002741,
+                  "mean": 0.0005482,
+                  "per_1k_evals": 0.5482
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1718,
+                  "p95": 2029,
+                  "p99": 2029,
+                  "mean": 1756
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4224,
+                  "p95": 14647,
+                  "p99": 14647,
+                  "mean": 5923
+                },
+                "cost_usd": {
+                  "total": 0.00877,
+                  "mean": 0.001754,
+                  "per_1k_evals": 1.754
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2481,
+                  "p95": 4278,
+                  "p99": 4278,
+                  "mean": 2797
+                },
+                "cost_usd": {
+                  "total": 0.002604,
+                  "mean": 0.0005208,
+                  "per_1k_evals": 0.5207999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2247,
+                  "p95": 3315,
+                  "p99": 3315,
+                  "mean": 2356
+                },
+                "cost_usd": {
+                  "total": 0.00075825,
+                  "mean": 0.00015165,
+                  "per_1k_evals": 0.15165
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 778,
+                  "p95": 1173,
+                  "p99": 1173,
+                  "mean": 858
+                },
+                "cost_usd": {
+                  "total": 0.009208,
+                  "mean": 0.0018415999999999999,
+                  "per_1k_evals": 1.8416
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2575,
+                  "p95": 3156,
+                  "p99": 3156,
+                  "mean": 2591
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1644,
+                  "p95": 2660,
+                  "p99": 2660,
+                  "mean": 1749
+                },
+                "cost_usd": {
+                  "total": 0.014804,
+                  "mean": 0.0029608,
+                  "per_1k_evals": 2.9608
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1385,
+                  "p95": 2623,
+                  "p99": 2623,
+                  "mean": 1752
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2677,
+                  "p95": 4277,
+                  "p99": 4277,
+                  "mean": 2916
+                },
+                "cost_usd": {
+                  "total": 0.051245000000000006,
+                  "mean": 0.010249000000000001,
+                  "per_1k_evals": 10.249
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2140,
+                  "p95": 5559,
+                  "p99": 5559,
+                  "mean": 2746
+                },
+                "cost_usd": {
+                  "total": 0.024558,
+                  "mean": 0.0049116,
+                  "per_1k_evals": 4.9116
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-53-00-251Z",
+          "started_at": "2026-04-19T05:52:15.733Z",
+          "completed_at": "2026-04-19T05:53:00.251Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1869,
+                  "p95": 2329,
+                  "p99": 2329,
+                  "mean": 1817
+                },
+                "cost_usd": {
+                  "total": 0.0027519999999999997,
+                  "mean": 0.0005503999999999999,
+                  "per_1k_evals": 0.5503999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1663,
+                  "p95": 1920,
+                  "p99": 1920,
+                  "mean": 1709
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2485,
+                  "p95": 5700,
+                  "p99": 5700,
+                  "mean": 3209
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2646,
+                  "p95": 4483,
+                  "p99": 4483,
+                  "mean": 3032
+                },
+                "cost_usd": {
+                  "total": 0.0026625,
+                  "mean": 0.0005325,
+                  "per_1k_evals": 0.5325
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2614,
+                  "p95": 34864,
+                  "p99": 34864,
+                  "mean": 8903
+                },
+                "cost_usd": {
+                  "total": 0.00075325,
+                  "mean": 0.00015065,
+                  "per_1k_evals": 0.15065
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 641,
+                  "p95": 1956,
+                  "p99": 1956,
+                  "mean": 1121
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1977,
+                  "p95": 3153,
+                  "p99": 3153,
+                  "mean": 2068
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3107,
+                  "p95": 3255,
+                  "p99": 3255,
+                  "mean": 2685
+                },
+                "cost_usd": {
+                  "total": 0.014432,
+                  "mean": 0.0028864,
+                  "per_1k_evals": 2.8864
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2338,
+                  "p95": 3959,
+                  "p99": 3959,
+                  "mean": 2325
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3412,
+                  "p95": 4550,
+                  "p99": 4550,
+                  "mean": 3496
+                },
+                "cost_usd": {
+                  "total": 0.050175000000000004,
+                  "mean": 0.010035,
+                  "per_1k_evals": 10.035
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2305,
+                  "p95": 5693,
+                  "p99": 5693,
+                  "mean": 2851
+                },
+                "cost_usd": {
+                  "total": 0.024669,
+                  "mean": 0.0049338,
+                  "per_1k_evals": 4.933800000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-53-44-901Z",
+          "started_at": "2026-04-19T05:53:02.448Z",
+          "completed_at": "2026-04-19T05:53:44.900Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2117,
+                  "p95": 2330,
+                  "p99": 2330,
+                  "mean": 2044
+                },
+                "cost_usd": {
+                  "total": 0.0029029999999999998,
+                  "mean": 0.0005805999999999999,
+                  "per_1k_evals": 0.5805999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2188,
+                  "p95": 3364,
+                  "p99": 3364,
+                  "mean": 2510
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3915,
+                  "p95": 22699,
+                  "p99": 22699,
+                  "mean": 8490
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2596,
+                  "p95": 23979,
+                  "p99": 23979,
+                  "mean": 7032
+                },
+                "cost_usd": {
+                  "total": 0.0026219999999999998,
+                  "mean": 0.0005244,
+                  "per_1k_evals": 0.5244
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2498,
+                  "p95": 3236,
+                  "p99": 3236,
+                  "mean": 2509
+                },
+                "cost_usd": {
+                  "total": 0.0007545,
+                  "mean": 0.00015089999999999998,
+                  "per_1k_evals": 0.15089999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 721,
+                  "p95": 2009,
+                  "p99": 2009,
+                  "mean": 1003
+                },
+                "cost_usd": {
+                  "total": 0.008908,
+                  "mean": 0.0017816,
+                  "per_1k_evals": 1.7815999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1931,
+                  "p95": 3052,
+                  "p99": 3052,
+                  "mean": 1972
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1560,
+                  "p95": 3356,
+                  "p99": 3356,
+                  "mean": 2112
+                },
+                "cost_usd": {
+                  "total": 0.015419999999999998,
+                  "mean": 0.0030839999999999995,
+                  "per_1k_evals": 3.0839999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1881,
+                  "p95": 2301,
+                  "p99": 2301,
+                  "mean": 1818
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2925,
+                  "p95": 5416,
+                  "p99": 5416,
+                  "mean": 3452
+                },
+                "cost_usd": {
+                  "total": 0.053445,
+                  "mean": 0.010689,
+                  "per_1k_evals": 10.689
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3346,
+                  "p95": 6034,
+                  "p99": 6034,
+                  "mean": 3712
+                },
+                "cost_usd": {
+                  "total": 0.024812999999999998,
+                  "mean": 0.004962599999999999,
+                  "per_1k_evals": 4.962599999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-54-29-240Z",
+          "started_at": "2026-04-19T05:53:47.115Z",
+          "completed_at": "2026-04-19T05:54:29.239Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2063,
+                  "p95": 2496,
+                  "p99": 2496,
+                  "mean": 1969
+                },
+                "cost_usd": {
+                  "total": 0.0028255,
+                  "mean": 0.0005651,
+                  "per_1k_evals": 0.5651
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1763,
+                  "p95": 1916,
+                  "p99": 1916,
+                  "mean": 1740
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3286,
+                  "p95": 30833,
+                  "p99": 30833,
+                  "mean": 8424
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2376,
+                  "p95": 14761,
+                  "p99": 14761,
+                  "mean": 4905
+                },
+                "cost_usd": {
+                  "total": 0.002613,
+                  "mean": 0.0005226,
+                  "per_1k_evals": 0.5226000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1981,
+                  "p95": 29011,
+                  "p99": 29011,
+                  "mean": 7405
+                },
+                "cost_usd": {
+                  "total": 0.00075075,
+                  "mean": 0.00015015,
+                  "per_1k_evals": 0.15014999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 632,
+                  "p95": 2012,
+                  "p99": 2012,
+                  "mean": 920
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2109,
+                  "p95": 3077,
+                  "p99": 3077,
+                  "mean": 2182
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3185,
+                  "p95": 3301,
+                  "p99": 3301,
+                  "mean": 2755
+                },
+                "cost_usd": {
+                  "total": 0.015307999999999999,
+                  "mean": 0.0030616,
+                  "per_1k_evals": 3.0616
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1729,
+                  "p95": 2947,
+                  "p99": 2947,
+                  "mean": 1953
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2964,
+                  "p95": 7452,
+                  "p99": 7452,
+                  "mean": 3835
+                },
+                "cost_usd": {
+                  "total": 0.05267500000000001,
+                  "mean": 0.010535000000000001,
+                  "per_1k_evals": 10.535
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2104,
+                  "p95": 6169,
+                  "p99": 6169,
+                  "mean": 2892
+                },
+                "cost_usd": {
+                  "total": 0.024783,
+                  "mean": 0.0049566,
+                  "per_1k_evals": 4.9566
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-55-02-620Z",
+          "started_at": "2026-04-19T05:54:31.386Z",
+          "completed_at": "2026-04-19T05:55:02.620Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1999,
+                  "p95": 2345,
+                  "p99": 2345,
+                  "mean": 1900
+                },
+                "cost_usd": {
+                  "total": 0.002758,
+                  "mean": 0.0005516,
+                  "per_1k_evals": 0.5516
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1431,
+                  "p95": 1737,
+                  "p99": 1737,
+                  "mean": 1480
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3880,
+                  "p95": 5600,
+                  "p99": 5600,
+                  "mean": 3695
+                },
+                "cost_usd": {
+                  "total": 0.008709999999999999,
+                  "mean": 0.0017419999999999998,
+                  "per_1k_evals": 1.7419999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2643,
+                  "p95": 3322,
+                  "p99": 3322,
+                  "mean": 2752
+                },
+                "cost_usd": {
+                  "total": 0.0027524999999999997,
+                  "mean": 0.0005505,
+                  "per_1k_evals": 0.5505
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2622,
+                  "p95": 3172,
+                  "p99": 3172,
+                  "mean": 2560
+                },
+                "cost_usd": {
+                  "total": 0.00076825,
+                  "mean": 0.00015365000000000002,
+                  "per_1k_evals": 0.15365
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 830,
+                  "p95": 2303,
+                  "p99": 2303,
+                  "mean": 1254
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2177,
+                  "p95": 3677,
+                  "p99": 3677,
+                  "mean": 2464
+                },
+                "cost_usd": {
+                  "total": 0.0010418,
+                  "mean": 0.00020836000000000002,
+                  "per_1k_evals": 0.20836000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3039,
+                  "p95": 4607,
+                  "p99": 4607,
+                  "mean": 2888
+                },
+                "cost_usd": {
+                  "total": 0.015445999999999998,
+                  "mean": 0.0030891999999999994,
+                  "per_1k_evals": 3.0891999999999995
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1498,
+                  "p95": 2016,
+                  "p99": 2016,
+                  "mean": 1554
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2570,
+                  "p95": 4537,
+                  "p99": 4537,
+                  "mean": 2946
+                },
+                "cost_usd": {
+                  "total": 0.050405000000000005,
+                  "mean": 0.010081000000000001,
+                  "per_1k_evals": 10.081000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2434,
+                  "p95": 5691,
+                  "p99": 5691,
+                  "mean": 3313
+                },
+                "cost_usd": {
+                  "total": 0.024783,
+                  "mean": 0.0049566,
+                  "per_1k_evals": 4.9566
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-55-39-945Z",
+          "started_at": "2026-04-19T05:55:04.776Z",
+          "completed_at": "2026-04-19T05:55:39.945Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1965,
+                  "p95": 2256,
+                  "p99": 2256,
+                  "mean": 1900
+                },
+                "cost_usd": {
+                  "total": 0.0028725,
+                  "mean": 0.0005745,
+                  "per_1k_evals": 0.5745
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1735,
+                  "p95": 1826,
+                  "p99": 1826,
+                  "mean": 1678
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3150,
+                  "p95": 13712,
+                  "p99": 13712,
+                  "mean": 5232
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4069,
+                  "p95": 15394,
+                  "p99": 15394,
+                  "mean": 7034
+                },
+                "cost_usd": {
+                  "total": 0.002496,
+                  "mean": 0.0004992,
+                  "per_1k_evals": 0.4992
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1891,
+                  "p95": 3712,
+                  "p99": 3712,
+                  "mean": 2444
+                },
+                "cost_usd": {
+                  "total": 0.000772,
+                  "mean": 0.0001544,
+                  "per_1k_evals": 0.1544
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 675,
+                  "p95": 1950,
+                  "p99": 1950,
+                  "mean": 971
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1898,
+                  "p95": 3131,
+                  "p99": 3131,
+                  "mean": 1912
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3097,
+                  "p95": 3366,
+                  "p99": 3366,
+                  "mean": 2681
+                },
+                "cost_usd": {
+                  "total": 0.015232000000000002,
+                  "mean": 0.0030464000000000003,
+                  "per_1k_evals": 3.0464
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1421,
+                  "p95": 2148,
+                  "p99": 2148,
+                  "mean": 1535
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2545,
+                  "p95": 5395,
+                  "p99": 5395,
+                  "mean": 3292
+                },
+                "cost_usd": {
+                  "total": 0.052520000000000004,
+                  "mean": 0.010504000000000001,
+                  "per_1k_evals": 10.504000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1997,
+                  "p95": 5757,
+                  "p99": 5757,
+                  "mean": 2743
+                },
+                "cost_usd": {
+                  "total": 0.024903,
+                  "mean": 0.0049806,
+                  "per_1k_evals": 4.9806
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-56-15-394Z",
+          "started_at": "2026-04-19T05:55:42.073Z",
+          "completed_at": "2026-04-19T05:56:15.393Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2158,
+                  "p95": 2638,
+                  "p99": 2638,
+                  "mean": 2054
+                },
+                "cost_usd": {
+                  "total": 0.0027654999999999997,
+                  "mean": 0.0005531,
+                  "per_1k_evals": 0.5530999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1647,
+                  "p95": 1988,
+                  "p99": 1988,
+                  "mean": 1645
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2995,
+                  "p95": 21857,
+                  "p99": 21857,
+                  "mean": 6663
+                },
+                "cost_usd": {
+                  "total": 0.008709999999999999,
+                  "mean": 0.0017419999999999998,
+                  "per_1k_evals": 1.7419999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2303,
+                  "p95": 10915,
+                  "p99": 10915,
+                  "mean": 4350
+                },
+                "cost_usd": {
+                  "total": 0.0026625,
+                  "mean": 0.0005325,
+                  "per_1k_evals": 0.5325
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2026,
+                  "p95": 4018,
+                  "p99": 4018,
+                  "mean": 2784
+                },
+                "cost_usd": {
+                  "total": 0.0007570000000000001,
+                  "mean": 0.00015140000000000002,
+                  "per_1k_evals": 0.15140000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1084,
+                  "p95": 2059,
+                  "p99": 2059,
+                  "mean": 1243
+                },
+                "cost_usd": {
+                  "total": 0.009208,
+                  "mean": 0.0018415999999999999,
+                  "per_1k_evals": 1.8416
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1895,
+                  "p95": 2982,
+                  "p99": 2982,
+                  "mean": 1786
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1420,
+                  "p95": 2113,
+                  "p99": 2113,
+                  "mean": 1568
+                },
+                "cost_usd": {
+                  "total": 0.014352000000000002,
+                  "mean": 0.0028704000000000004,
+                  "per_1k_evals": 2.8704000000000005
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1357,
+                  "p95": 2067,
+                  "p99": 2067,
+                  "mean": 1504
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2414,
+                  "p95": 5018,
+                  "p99": 5018,
+                  "mean": 2893
+                },
+                "cost_usd": {
+                  "total": 0.051175000000000005,
+                  "mean": 0.010235000000000001,
+                  "per_1k_evals": 10.235000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2620,
+                  "p95": 5594,
+                  "p99": 5594,
+                  "mean": 3421
+                },
+                "cost_usd": {
+                  "total": 0.024843,
+                  "mean": 0.0049686,
+                  "per_1k_evals": 4.9686
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-56-48-943Z",
+          "started_at": "2026-04-19T05:56:17.546Z",
+          "completed_at": "2026-04-19T05:56:48.942Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1987,
+                  "p95": 2285,
+                  "p99": 2285,
+                  "mean": 1896
+                },
+                "cost_usd": {
+                  "total": 0.002854,
+                  "mean": 0.0005708,
+                  "per_1k_evals": 0.5708
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1514,
+                  "p95": 1725,
+                  "p99": 1725,
+                  "mean": 1488
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3764,
+                  "p95": 4953,
+                  "p99": 4953,
+                  "mean": 3922
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3957,
+                  "p95": 6079,
+                  "p99": 6079,
+                  "mean": 4220
+                },
+                "cost_usd": {
+                  "total": 0.0026265,
+                  "mean": 0.0005253,
+                  "per_1k_evals": 0.5253
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1876,
+                  "p95": 3059,
+                  "p99": 3059,
+                  "mean": 2250
+                },
+                "cost_usd": {
+                  "total": 0.0007495,
+                  "mean": 0.00014989999999999998,
+                  "per_1k_evals": 0.14989999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 745,
+                  "p95": 2119,
+                  "p99": 2119,
+                  "mean": 1201
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1021,
+                  "p95": 2971,
+                  "p99": 2971,
+                  "mean": 1720
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1700,
+                  "p95": 3445,
+                  "p99": 3445,
+                  "mean": 2230
+                },
+                "cost_usd": {
+                  "total": 0.015104000000000001,
+                  "mean": 0.0030208,
+                  "per_1k_evals": 3.0208
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 4,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1310,
+                  "p95": 2096,
+                  "p99": 2096,
+                  "mean": 1496
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2708,
+                  "p95": 5454,
+                  "p99": 5454,
+                  "mean": 3159
+                },
+                "cost_usd": {
+                  "total": 0.052095,
+                  "mean": 0.010419000000000001,
+                  "per_1k_evals": 10.419
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2115,
+                  "p95": 5895,
+                  "p99": 5895,
+                  "mean": 2797
+                },
+                "cost_usd": {
+                  "total": 0.024888,
+                  "mean": 0.0049776,
+                  "per_1k_evals": 4.977600000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-57-47-487Z",
+          "started_at": "2026-04-19T05:56:51.078Z",
+          "completed_at": "2026-04-19T05:57:47.487Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2082,
+                  "p95": 2355,
+                  "p99": 2355,
+                  "mean": 1946
+                },
+                "cost_usd": {
+                  "total": 0.0027405,
+                  "mean": 0.0005480999999999999,
+                  "per_1k_evals": 0.5480999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1819,
+                  "p95": 1891,
+                  "p99": 1891,
+                  "mean": 1771
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 10500,
+                  "p95": 22873,
+                  "p99": 22873,
+                  "mean": 11281
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4193,
+                  "p95": 5580,
+                  "p99": 5580,
+                  "mean": 4261
+                },
+                "cost_usd": {
+                  "total": 0.0026579999999999998,
+                  "mean": 0.0005315999999999999,
+                  "per_1k_evals": 0.5316
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2192,
+                  "p95": 3049,
+                  "p99": 3049,
+                  "mean": 2386
+                },
+                "cost_usd": {
+                  "total": 0.00075825,
+                  "mean": 0.00015165,
+                  "per_1k_evals": 0.15165
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 868,
+                  "p95": 2623,
+                  "p99": 2623,
+                  "mean": 1480
+                },
+                "cost_usd": {
+                  "total": 0.009208,
+                  "mean": 0.0018415999999999999,
+                  "per_1k_evals": 1.8416
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1781,
+                  "p95": 3427,
+                  "p99": 3427,
+                  "mean": 1776
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2207,
+                  "p95": 3372,
+                  "p99": 3372,
+                  "mean": 2303
+                },
+                "cost_usd": {
+                  "total": 0.014384,
+                  "mean": 0.0028767999999999997,
+                  "per_1k_evals": 2.8768
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1730,
+                  "p95": 2430,
+                  "p99": 2430,
+                  "mean": 1812
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3081,
+                  "p95": 4961,
+                  "p99": 4961,
+                  "mean": 3138
+                },
+                "cost_usd": {
+                  "total": 0.051070000000000004,
+                  "mean": 0.010214,
+                  "per_1k_evals": 10.214
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2170,
+                  "p95": 5947,
+                  "p99": 5947,
+                  "mean": 2920
+                },
+                "cost_usd": {
+                  "total": 0.024783,
+                  "mean": 0.0049566,
+                  "per_1k_evals": 4.9566
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-58-21-004Z",
+          "started_at": "2026-04-19T05:57:49.628Z",
+          "completed_at": "2026-04-19T05:58:21.003Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2063,
+                  "p95": 2246,
+                  "p99": 2246,
+                  "mean": 1946
+                },
+                "cost_usd": {
+                  "total": 0.0027405,
+                  "mean": 0.0005480999999999999,
+                  "per_1k_evals": 0.5480999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1437,
+                  "p95": 1625,
+                  "p99": 1625,
+                  "mean": 1455
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2662,
+                  "p95": 3571,
+                  "p99": 3571,
+                  "mean": 2914
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2366,
+                  "p95": 4027,
+                  "p99": 4027,
+                  "mean": 2781
+                },
+                "cost_usd": {
+                  "total": 0.0027435,
+                  "mean": 0.0005487,
+                  "per_1k_evals": 0.5487
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1836,
+                  "p95": 3205,
+                  "p99": 3205,
+                  "mean": 2124
+                },
+                "cost_usd": {
+                  "total": 0.0007620000000000001,
+                  "mean": 0.00015240000000000002,
+                  "per_1k_evals": 0.1524
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 679,
+                  "p95": 1845,
+                  "p99": 1845,
+                  "mean": 944
+                },
+                "cost_usd": {
+                  "total": 0.009208,
+                  "mean": 0.0018415999999999999,
+                  "per_1k_evals": 1.8416
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1023,
+                  "p95": 3227,
+                  "p99": 3227,
+                  "mean": 1609
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1624,
+                  "p95": 2892,
+                  "p99": 2892,
+                  "mean": 1829
+                },
+                "cost_usd": {
+                  "total": 0.01401,
+                  "mean": 0.002802,
+                  "per_1k_evals": 2.8019999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1520,
+                  "p95": 2471,
+                  "p99": 2471,
+                  "mean": 1685
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2629,
+                  "p95": 4503,
+                  "p99": 4503,
+                  "mean": 2953
+                },
+                "cost_usd": {
+                  "total": 0.051225,
+                  "mean": 0.010245,
+                  "per_1k_evals": 10.245000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2196,
+                  "p95": 5920,
+                  "p99": 5920,
+                  "mean": 2844
+                },
+                "cost_usd": {
+                  "total": 0.024888,
+                  "mean": 0.0049776,
+                  "per_1k_evals": 4.977600000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-58-59-426Z",
+          "started_at": "2026-04-19T05:58:23.148Z",
+          "completed_at": "2026-04-19T05:58:59.426Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2061,
+                  "p95": 2101,
+                  "p99": 2101,
+                  "mean": 1901
+                },
+                "cost_usd": {
+                  "total": 0.002495,
+                  "mean": 0.000499,
+                  "per_1k_evals": 0.499
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1592,
+                  "p95": 1807,
+                  "p99": 1807,
+                  "mean": 1549
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4690,
+                  "p95": 19845,
+                  "p99": 19845,
+                  "mean": 7255
+                },
+                "cost_usd": {
+                  "total": 0.00877,
+                  "mean": 0.001754,
+                  "per_1k_evals": 1.754
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4129,
+                  "p95": 19837,
+                  "p99": 19837,
+                  "mean": 7242
+                },
+                "cost_usd": {
+                  "total": 0.002649,
+                  "mean": 0.0005298,
+                  "per_1k_evals": 0.5297999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2367,
+                  "p95": 7581,
+                  "p99": 7581,
+                  "mean": 3256
+                },
+                "cost_usd": {
+                  "total": 0.00075825,
+                  "mean": 0.00015165,
+                  "per_1k_evals": 0.15165
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 695,
+                  "p95": 990,
+                  "p99": 990,
+                  "mean": 744
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2007,
+                  "p95": 3246,
+                  "p99": 3246,
+                  "mean": 1949
+                },
+                "cost_usd": {
+                  "total": 0.0010418,
+                  "mean": 0.00020836000000000002,
+                  "per_1k_evals": 0.20836000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1495,
+                  "p95": 1993,
+                  "p99": 1993,
+                  "mean": 1625
+                },
+                "cost_usd": {
+                  "total": 0.01483,
+                  "mean": 0.002966,
+                  "per_1k_evals": 2.9659999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1519,
+                  "p95": 4096,
+                  "p99": 4096,
+                  "mean": 2112
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3024,
+                  "p95": 4563,
+                  "p99": 4563,
+                  "mean": 3189
+                },
+                "cost_usd": {
+                  "total": 0.05115,
+                  "mean": 0.01023,
+                  "per_1k_evals": 10.229999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2072,
+                  "p95": 5824,
+                  "p99": 5824,
+                  "mean": 2967
+                },
+                "cost_usd": {
+                  "total": 0.024783,
+                  "mean": 0.0049566,
+                  "per_1k_evals": 4.9566
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T05-59-33-559Z",
+          "started_at": "2026-04-19T05:59:01.601Z",
+          "completed_at": "2026-04-19T05:59:33.558Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1899,
+                  "p95": 2321,
+                  "p99": 2321,
+                  "mean": 1868
+                },
+                "cost_usd": {
+                  "total": 0.0028344999999999998,
+                  "mean": 0.0005669,
+                  "per_1k_evals": 0.5669
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2237,
+                  "p95": 3401,
+                  "p99": 3401,
+                  "mean": 2238
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3517,
+                  "p95": 9595,
+                  "p99": 9595,
+                  "mean": 4456
+                },
+                "cost_usd": {
+                  "total": 0.00874,
+                  "mean": 0.001748,
+                  "per_1k_evals": 1.748
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3968,
+                  "p95": 16623,
+                  "p99": 16623,
+                  "mean": 6376
+                },
+                "cost_usd": {
+                  "total": 0.002496,
+                  "mean": 0.0004992,
+                  "per_1k_evals": 0.4992
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3682,
+                  "p95": 10346,
+                  "p99": 10346,
+                  "mean": 4710
+                },
+                "cost_usd": {
+                  "total": 0.00075575,
+                  "mean": 0.00015115000000000001,
+                  "per_1k_evals": 0.15115
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 808,
+                  "p95": 1907,
+                  "p99": 1907,
+                  "mean": 973
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 947,
+                  "p95": 2762,
+                  "p99": 2762,
+                  "mean": 1366
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1727,
+                  "p95": 2316,
+                  "p99": 2316,
+                  "mean": 1818
+                },
+                "cost_usd": {
+                  "total": 0.015012000000000001,
+                  "mean": 0.0030024,
+                  "per_1k_evals": 3.0024
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1500,
+                  "p95": 2356,
+                  "p99": 2356,
+                  "mean": 1677
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2491,
+                  "p95": 4422,
+                  "p99": 4422,
+                  "mean": 3038
+                },
+                "cost_usd": {
+                  "total": 0.05135,
+                  "mean": 0.01027,
+                  "per_1k_evals": 10.27
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2259,
+                  "p95": 5695,
+                  "p99": 5695,
+                  "mean": 2786
+                },
+                "cost_usd": {
+                  "total": 0.024873,
+                  "mean": 0.0049746,
+                  "per_1k_evals": 4.9746
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T06-00-07-204Z",
+          "started_at": "2026-04-19T05:59:35.707Z",
+          "completed_at": "2026-04-19T06:00:07.203Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1816,
+                  "p95": 2365,
+                  "p99": 2365,
+                  "mean": 1941
+                },
+                "cost_usd": {
+                  "total": 0.002867,
+                  "mean": 0.0005734000000000001,
+                  "per_1k_evals": 0.5734
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1675,
+                  "p95": 2022,
+                  "p99": 2022,
+                  "mean": 1721
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2714,
+                  "p95": 5370,
+                  "p99": 5370,
+                  "mean": 3373
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2522,
+                  "p95": 3781,
+                  "p99": 3781,
+                  "mean": 2626
+                },
+                "cost_usd": {
+                  "total": 0.0026625,
+                  "mean": 0.0005325,
+                  "per_1k_evals": 0.5325
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2044,
+                  "p95": 2856,
+                  "p99": 2856,
+                  "mean": 2086
+                },
+                "cost_usd": {
+                  "total": 0.0007570000000000001,
+                  "mean": 0.00015140000000000002,
+                  "per_1k_evals": 0.15140000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 715,
+                  "p95": 1954,
+                  "p99": 1954,
+                  "mean": 953
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1178,
+                  "p95": 2062,
+                  "p99": 2062,
+                  "mean": 1230
+                },
+                "cost_usd": {
+                  "total": 0.0010418,
+                  "mean": 0.00020836000000000002,
+                  "per_1k_evals": 0.20836000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1827,
+                  "p95": 1968,
+                  "p99": 1968,
+                  "mean": 1729
+                },
+                "cost_usd": {
+                  "total": 0.014535999999999999,
+                  "mean": 0.0029071999999999995,
+                  "per_1k_evals": 2.9071999999999996
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1728,
+                  "p95": 2129,
+                  "p99": 2129,
+                  "mean": 1663
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2553,
+                  "p95": 6242,
+                  "p99": 6242,
+                  "mean": 3212
+                },
+                "cost_usd": {
+                  "total": 0.052345,
+                  "mean": 0.010469000000000001,
+                  "per_1k_evals": 10.469000000000001
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2376,
+                  "p95": 6566,
+                  "p99": 6566,
+                  "mean": 3152
+                },
+                "cost_usd": {
+                  "total": 0.024843,
+                  "mean": 0.0049686,
+                  "per_1k_evals": 4.9686
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T06-00-47-832Z",
+          "started_at": "2026-04-19T06:00:09.376Z",
+          "completed_at": "2026-04-19T06:00:47.831Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1864,
+                  "p95": 2212,
+                  "p99": 2212,
+                  "mean": 1840
+                },
+                "cost_usd": {
+                  "total": 0.002737,
+                  "mean": 0.0005474,
+                  "per_1k_evals": 0.5474
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2187,
+                  "p95": 3418,
+                  "p99": 3418,
+                  "mean": 2266
+                },
+                "cost_usd": {
+                  "total": 0.001028,
+                  "mean": 0.0002056,
+                  "per_1k_evals": 0.2056
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 0,
+                "n_error": 5,
+                "latency_ms": {
+                  "p50": 0,
+                  "p95": 0,
+                  "p99": 0,
+                  "mean": 0
+                },
+                "cost_usd": {
+                  "total": 0,
+                  "mean": 0,
+                  "per_1k_evals": 0
+                },
+                "turns": {
+                  "mean": 0,
+                  "max": 0
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4072,
+                  "p95": 4762,
+                  "p99": 4762,
+                  "mean": 3938
+                },
+                "cost_usd": {
+                  "total": 0.008724999999999998,
+                  "mean": 0.0017449999999999996,
+                  "per_1k_evals": 1.7449999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3186,
+                  "p95": 26688,
+                  "p99": 26688,
+                  "mean": 7690
+                },
+                "cost_usd": {
+                  "total": 0.0026534999999999996,
+                  "mean": 0.0005306999999999999,
+                  "per_1k_evals": 0.5307
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1879,
+                  "p95": 4593,
+                  "p99": 4593,
+                  "mean": 2765
+                },
+                "cost_usd": {
+                  "total": 0.00075575,
+                  "mean": 0.00015115000000000001,
+                  "per_1k_evals": 0.15115
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 754,
+                  "p95": 1463,
+                  "p99": 1463,
+                  "mean": 870
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2070,
+                  "p95": 2853,
+                  "p99": 2853,
+                  "mean": 1806
+                },
+                "cost_usd": {
+                  "total": 0.0010213000000000002,
+                  "mean": 0.00020426000000000003,
+                  "per_1k_evals": 0.20426000000000002
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2686,
+                  "p95": 4462,
+                  "p99": 4462,
+                  "mean": 2736
+                },
+                "cost_usd": {
+                  "total": 0.014624,
+                  "mean": 0.0029248,
+                  "per_1k_evals": 2.9248
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1784,
+                  "p95": 2508,
+                  "p99": 2508,
+                  "mean": 1813
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2607,
+                  "p95": 4932,
+                  "p99": 4932,
+                  "mean": 3035
+                },
+                "cost_usd": {
+                  "total": 0.051325,
+                  "mean": 0.010265,
+                  "per_1k_evals": 10.265
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2557,
+                  "p95": 6012,
+                  "p99": 6012,
+                  "mean": 3325
+                },
+                "cost_usd": {
+                  "total": 0.024843,
+                  "mean": 0.0049686,
+                  "per_1k_evals": 4.9686
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T02-43-21-377Z.json"
+      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T06-00-47-832Z.json"
     },
     {
       "id": "yc-qualifier",

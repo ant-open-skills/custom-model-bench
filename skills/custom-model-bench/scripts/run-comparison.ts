@@ -39,6 +39,8 @@ import {
 } from "./graders/ground_truth";
 import { isRecovery, p50Sorted } from "./graders/trace_metrics";
 import { runCagentRow } from "./adapters/cagent";
+import { runJudge, type JudgeSummary, DIMENSIONS as JUDGE_DIMENSIONS } from "./judge";
+import { scoreGroundingFaithfulness, type GroundingResult } from "./graders/grounding_faithfulness";
 import type { CandidateConfig, ToolDefinition, TraceEntry } from "./types";
 
 type Provider = CandidateConfig["provider"];
@@ -132,6 +134,25 @@ type RowResult = {
   /** Present only when the candidate ran with tools. Compact linearization
    *  of the SDK's `steps` array. See TraceEntry in ./types.ts. */
   trace?: TraceEntry[];
+  /** E.4 — Stage 2 pipeline result. Set only when the scope has a Stage 2
+   *  config and Stage 1 succeeded. Even on Stage 2 failure we attach a
+   *  `stage2_error` so the row's pipeline state is fully visible. */
+  stage2?: {
+    config_file: string;
+    email_text: string;            // raw drafter response
+    email_valid: boolean;          // did it parse as EmailDraft?
+    email_error?: string;
+    email_recipient_name?: string;
+    email_subject?: string;
+    email_body_word_count?: number;
+    email_grounding_refs?: string[];
+    drafter_latency_ms: number;
+    drafter_cost_usd: number;
+    grounding?: GroundingResult;   // grounding faithfulness — set if email parsed
+    judge?: JudgeSummary;          // 3-run judge — set if email parsed
+    pipeline_total_cost_usd: number;
+    pipeline_total_latency_ms: number;
+  };
 };
 
 type Aggregate = {
@@ -195,6 +216,27 @@ type Aggregate = {
     };
     contacts?: { graded: number; correct: number; rate: number };
     fit_score?: { graded: number; correct: number; rate: number };
+  };
+  /** E.4 — Stage 2 pipeline aggregates. Populated only when the scope ran a
+   *  Stage 2 config and at least one row produced a parsed EmailDraft. */
+  stage2?: {
+    n_eligible: number;          // rows where Stage 1 succeeded → Stage 2 attempted
+    n_drafts_valid: number;      // EmailDraft parsed cleanly
+    drafter_total_cost_usd: number;
+    judge?: {
+      n_judged: number;          // rows where the judge produced ≥1 successful run
+      overall_mean: number;      // mean of per-row overall_mean
+      dimensions: Record<string, { mean: number; std_of_means: number }>;
+      total_cost_usd: number;
+    };
+    grounding_faithfulness?: {
+      n_scored: number;
+      mean_fabrication_rate: number;     // 0 = perfect, 1 = total fabrication
+      total_claims: number;
+      total_hallucinated: number;
+      n_perfect_rows: number;            // rows with fabrication_rate == 0
+      total_extraction_cost_usd: number;
+    };
   };
 };
 
@@ -522,6 +564,70 @@ function aggregate(
   const gtBuilt = buildGT();
   if (Object.keys(gtBuilt).length > 0) ground_truth = gtBuilt;
 
+  // --- E.4 Stage 2 aggregates — only when any row has stage2 data ---
+  let stage2: Aggregate["stage2"];
+  const rowsWithStage2 = results.filter((r) => r.stage2 !== undefined);
+  if (rowsWithStage2.length > 0) {
+    const drafterCost = rowsWithStage2.reduce(
+      (a, r) => a + (r.stage2!.drafter_cost_usd ?? 0),
+      0,
+    );
+    const validDrafts = rowsWithStage2.filter((r) => r.stage2!.email_valid);
+
+    // Judge aggregate — average per-row overall_mean; per-dim take the mean of
+    // per-row means and the std *of those means* (not the within-row std).
+    const judged = validDrafts.filter((r) => r.stage2!.judge && r.stage2!.judge.n_successful_runs > 0);
+    let judgeAgg: NonNullable<Aggregate["stage2"]>["judge"];
+    if (judged.length > 0) {
+      const perRowOverall = judged.map((r) => r.stage2!.judge!.overall_mean);
+      const overall_mean = perRowOverall.reduce((a, b) => a + b, 0) / perRowOverall.length;
+      const dims: Record<string, { mean: number; std_of_means: number }> = {};
+      for (const d of JUDGE_DIMENSIONS) {
+        const perRowDimMeans = judged.map((r) => r.stage2!.judge!.dimensions[d].mean);
+        const dMean = perRowDimMeans.reduce((a, b) => a + b, 0) / perRowDimMeans.length;
+        const variance = perRowDimMeans.length > 1
+          ? perRowDimMeans.reduce((a, x) => a + (x - dMean) ** 2, 0) / perRowDimMeans.length
+          : 0;
+        dims[d] = { mean: dMean, std_of_means: Math.sqrt(variance) };
+      }
+      const judgeCost = judged.reduce((a, r) => a + (r.stage2!.judge!.total_cost_usd ?? 0), 0);
+      judgeAgg = {
+        n_judged: judged.length,
+        overall_mean,
+        dimensions: dims,
+        total_cost_usd: judgeCost,
+      };
+    }
+
+    // Grounding faithfulness aggregate.
+    const grounded = validDrafts.filter((r) => r.stage2!.grounding !== undefined);
+    let groundingAgg: NonNullable<Aggregate["stage2"]>["grounding_faithfulness"];
+    if (grounded.length > 0) {
+      const totalClaims = grounded.reduce((a, r) => a + r.stage2!.grounding!.claims_total, 0);
+      const totalHall = grounded.reduce((a, r) => a + r.stage2!.grounding!.hallucinated, 0);
+      const rowFabRates = grounded.map((r) => r.stage2!.grounding!.fabrication_rate);
+      const meanFabRate = rowFabRates.reduce((a, b) => a + b, 0) / rowFabRates.length;
+      const perfect = grounded.filter((r) => r.stage2!.grounding!.fabrication_rate === 0).length;
+      const extractionCost = grounded.reduce((a, r) => a + (r.stage2!.grounding!.extraction_cost_usd ?? 0), 0);
+      groundingAgg = {
+        n_scored: grounded.length,
+        mean_fabrication_rate: meanFabRate,
+        total_claims: totalClaims,
+        total_hallucinated: totalHall,
+        n_perfect_rows: perfect,
+        total_extraction_cost_usd: extractionCost,
+      };
+    }
+
+    stage2 = {
+      n_eligible: rowsWithStage2.length,
+      n_drafts_valid: validDrafts.length,
+      drafter_total_cost_usd: drafterCost,
+      ...(judgeAgg ? { judge: judgeAgg } : {}),
+      ...(groundingAgg ? { grounding_faithfulness: groundingAgg } : {}),
+    };
+  }
+
   return {
     n: results.length,
     n_success: ok.length,
@@ -551,6 +657,7 @@ function aggregate(
     ...(task_completion !== undefined ? { task_completion } : {}),
     ...(dead_end_rate !== undefined ? { dead_end_rate } : {}),
     ...(ground_truth ? { ground_truth } : {}),
+    ...(stage2 ? { stage2 } : {}),
   };
 }
 
@@ -581,6 +688,94 @@ async function runCandidate(
   };
 }
 
+type ExtractEmailDraftFn = (text: string) =>
+  | { ok: true; value: { recipient?: { name: string }; subject: string; body: string; grounding_references: string[] } }
+  | { ok: false; error: string };
+
+type Stage2Options = {
+  /** Skip the Opus 4.7 judge (3 calls per row). Big cost lever. */
+  skipJudge?: boolean;
+  /** Skip the grounding faithfulness grader (1 Sonnet extraction per row). */
+  skipGrounding?: boolean;
+};
+
+/**
+ * Pipeline: Stage 2 drafter → grounding faithfulness → rubric judge.
+ * Called for each row where Stage 1 produced a schema-valid ProspectProfile.
+ * Returns an artifact ready to attach to the RowResult.
+ */
+async function runStage2Pipeline(
+  stage2: { configFile: string; candidate: CandidateConfig },
+  profile: any,
+  extractEmailDraft: ExtractEmailDraftFn | undefined,
+  options: Stage2Options = {},
+): Promise<NonNullable<RowResult["stage2"]>> {
+  const draftPrompt =
+    `Here is the Stage 1 ProspectProfile:\n\n` +
+    JSON.stringify(profile, null, 2);
+  const draft = await runRow(stage2.candidate, {
+    id: "stage2-draft",
+    prompt: draftPrompt,
+  });
+
+  const base = {
+    config_file: stage2.configFile,
+    email_text: draft.response,
+    email_valid: false,
+    drafter_latency_ms: draft.latency_ms,
+    drafter_cost_usd: draft.cost_usd,
+    pipeline_total_cost_usd: draft.cost_usd,
+    pipeline_total_latency_ms: draft.latency_ms,
+  };
+
+  if (draft.error) {
+    return { ...base, email_error: draft.error };
+  }
+  if (!extractEmailDraft) {
+    // No scope schema for EmailDraft — preserve the raw text but skip
+    // downstream stages that need the structured form.
+    return base;
+  }
+  const parsed = extractEmailDraft(draft.response);
+  if (!parsed.ok) {
+    return { ...base, email_error: `extract: ${parsed.error}` };
+  }
+  const email = parsed.value;
+  const bodyText = email.body ?? "";
+  const wordCount = bodyText.trim().split(/\s+/).filter(Boolean).length;
+
+  let grounding: GroundingResult | undefined;
+  let groundingCost = 0;
+  let groundingLatency = 0;
+  if (!options.skipGrounding) {
+    grounding = await scoreGroundingFaithfulness(bodyText, profile);
+    groundingCost = grounding.extraction_cost_usd;
+    groundingLatency = grounding.extraction_latency_ms;
+  }
+
+  let judge: JudgeSummary | undefined;
+  let judgeCost = 0;
+  let judgeLatency = 0;
+  if (!options.skipJudge) {
+    judge = await runJudge(email, profile);
+    judgeCost = judge.total_cost_usd;
+    judgeLatency = judge.total_latency_ms;
+  }
+
+  return {
+    ...base,
+    email_valid: true,
+    email_recipient_name: email.recipient?.name,
+    email_subject: email.subject,
+    email_body_word_count: wordCount,
+    email_grounding_refs: email.grounding_references,
+    ...(grounding ? { grounding } : {}),
+    ...(judge ? { judge } : {}),
+    pipeline_total_cost_usd: draft.cost_usd + groundingCost + judgeCost,
+    pipeline_total_latency_ms: draft.latency_ms + groundingLatency + judgeLatency,
+  };
+}
+
 async function main() {
   const exampleDirArg = process.argv[2];
   if (!exampleDirArg) {
@@ -590,13 +785,17 @@ async function main() {
   const exampleDir = resolve(exampleDirArg);
   const datasetPath = join(exampleDir, "dataset.jsonl");
 
-  // Auto-discover config*.ts files
+  // Auto-discover config*.ts files. Stage 2 configs (config-stage2*.ts)
+  // are pipeline stages, not candidates — they get loaded separately and
+  // run AFTER each Stage 1 candidate's row to produce drafts, then judged.
   const dirEntries = await readdir(exampleDir);
-  const configFiles = dirEntries
+  const allConfigFiles = dirEntries
     .filter((f) => /^config.*\.ts$/.test(f))
     .sort();
+  const configFiles = allConfigFiles.filter((f) => !/^config-stage2/.test(f));
+  const stage2ConfigFiles = allConfigFiles.filter((f) => /^config-stage2/.test(f));
   if (configFiles.length === 0) {
-    console.error(`No config*.ts files found in ${exampleDir}`);
+    console.error(`No Stage 1 config*.ts files found in ${exampleDir}`);
     process.exit(1);
   }
 
@@ -607,7 +806,7 @@ async function main() {
     .filter((l) => l.trim().length > 0)
     .map((l) => JSON.parse(l));
 
-  // Load every candidate config
+  // Load every Stage 1 candidate config
   const candidates: { configFile: string; candidate: CandidateConfig }[] =
     await Promise.all(
       configFiles.map(async (f) => {
@@ -618,26 +817,61 @@ async function main() {
       }),
     );
 
-  // Optionally load the scope's schema.ts — exposes an `extractProfile` helper
-  // that graders use to validate the final JSON. Scopes without it just skip
-  // the schema/task_completion/ground_truth metrics.
+  // Load Stage 2 configs (typically just one — the email drafter). Multiple
+  // are allowed but only the first is wired into the pipeline today; others
+  // are noted in the report metadata so future passes can iterate.
+  const stage2Configs: { configFile: string; candidate: CandidateConfig }[] =
+    await Promise.all(
+      stage2ConfigFiles.map(async (f) => {
+        const mod = (await import(join(exampleDir, f))) as {
+          candidate: CandidateConfig;
+        };
+        return { configFile: f, candidate: mod.candidate };
+      }),
+    );
+
+  // Optionally load the scope's schema.ts — exposes `extractProfile` (Stage 1)
+  // and `extractEmailDraft` (Stage 2) helpers. Scopes without them just skip
+  // the corresponding metrics / pipeline stages.
   let extractProfile: ExtractProfileFn | undefined;
+  let extractEmailDraft: ExtractEmailDraftFn | undefined;
   try {
     const mod = (await import(join(exampleDir, "schema.ts"))) as {
       extractProfile?: ExtractProfileFn;
+      extractEmailDraft?: ExtractEmailDraftFn;
     };
     if (typeof mod.extractProfile === "function") {
       extractProfile = mod.extractProfile;
     }
+    if (typeof mod.extractEmailDraft === "function") {
+      extractEmailDraft = mod.extractEmailDraft;
+    }
   } catch {
     // no schema.ts in this scope — fine.
   }
+
+  // E.4 — Stage 2 pipeline cost levers (env flags for cost-controlled smoke
+  // runs). SKIP_JUDGE=1 drops the 3×Opus judging; SKIP_GROUNDING=1 drops the
+  // Sonnet claim extractor. Both skipped → pipeline just drafts emails.
+  const skipJudge = process.env.SKIP_JUDGE === "1";
+  const skipGrounding = process.env.SKIP_GROUNDING === "1";
 
   console.log(
     `Comparison: ${rows.length} rows × ${candidates.length} candidates (parallel)\n`,
   );
   for (const { candidate, configFile } of candidates) {
     console.log(`  - ${candidate.provider}/${candidate.model}  (${configFile})`);
+  }
+  if (stage2Configs.length > 0) {
+    console.log(
+      `\nStage 2 pipeline: ${stage2Configs[0].configFile}` +
+        `${skipJudge ? " (SKIP_JUDGE)" : ""}${skipGrounding ? " (SKIP_GROUNDING)" : ""}`,
+    );
+    if (stage2Configs.length > 1) {
+      console.log(
+        `  (note: ${stage2Configs.length - 1} additional Stage 2 config(s) ignored for now)`,
+      );
+    }
   }
   console.log();
 
@@ -647,6 +881,32 @@ async function main() {
       runCandidate(configFile, candidate, rows, extractProfile),
     ),
   );
+
+  // --- E.4 Stage 2 pipeline ---
+  // Runs serially within each candidate (Stage 2 → grounding → judge is a
+  // slow chain already) but parallel across candidates to match Stage 1.
+  if (stage2Configs.length > 0 && extractProfile) {
+    const stage2Cfg = stage2Configs[0];
+    console.log("\nRunning Stage 2 pipeline across candidates...");
+    await Promise.all(
+      runs.map(async (candRun) => {
+        for (const rowResult of candRun.results) {
+          if (rowResult.error) continue; // Stage 1 failed → nothing to draft from
+          const ext = extractProfile!(rowResult.response);
+          if (!ext.ok) continue; // schema invalid → skip Stage 2 (row still counts as dead-end)
+          rowResult.stage2 = await runStage2Pipeline(
+            stage2Cfg,
+            ext.value,
+            extractEmailDraft,
+            { skipJudge, skipGrounding },
+          );
+        }
+        // Recompute the aggregate so Stage 2 metrics surface alongside Stage 1.
+        candRun.aggregate = aggregate(candRun.results, rows, extractProfile);
+      }),
+    );
+  }
+
   const completed_at = new Date().toISOString();
 
   // Leaderboards — pre-sorted, lowest-is-best unless noted

@@ -16,7 +16,7 @@ import type { z } from "zod";
  * this key). The handler is async; callers should catch exceptions and surface
  * them on the trace rather than failing the whole run.
  */
-export type ToolDefinition<TInput = unknown, TOutput = unknown> = {
+export type ToolDefinition<TInput = any, TOutput = any> = {
   name: string;
   description: string;
   inputSchema: z.ZodType<TInput>;

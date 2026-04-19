@@ -16,7 +16,7 @@
  */
 
 import "dotenv/config";
-import { generateText, type LanguageModel } from "ai";
+import { generateText, tool, type LanguageModel } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { openai } from "@ai-sdk/openai";
 import { google } from "@ai-sdk/google";
@@ -24,6 +24,7 @@ import { xai } from "@ai-sdk/xai";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, join, basename } from "node:path";
 import { computeCost } from "./pricing";
+import type { ToolDefinition } from "./types";
 
 type Provider = "anthropic" | "openai" | "google" | "xai";
 
@@ -33,7 +34,31 @@ type CandidateConfig = {
   systemPrompt?: string;
   temperature?: number;
   maxOutputTokens?: number;
+  tools?: ToolDefinition[];
 };
+
+/**
+ * Convert our simple ToolDefinition[] into the Vercel AI SDK's keyed tools
+ * object. Returns undefined when the candidate has no tools — the caller uses
+ * conditional spread so `generateText` never sees a `tools: undefined` key
+ * (which some providers treat differently than "not set").
+ */
+function toSdkTools(tools: ToolDefinition[] | undefined): Record<string, any> | undefined {
+  if (!tools || tools.length === 0) return undefined;
+  const out: Record<string, any> = {};
+  for (const t of tools) {
+    // Each tool is an independent schema/handler pairing. The SDK's tool()
+    // helper infers a tight generic per call, which doesn't compose over a
+    // heterogeneous array — casting through `any` is the idiomatic escape.
+    // Phase A.3 adds the tool-calling loop on top of this adapter.
+    out[t.name] = tool({
+      description: t.description,
+      inputSchema: t.inputSchema,
+      execute: async (input: any) => t.handler(input),
+    } as any);
+  }
+  return out;
+}
 
 type Row = { id: string; prompt: string };
 
@@ -78,6 +103,7 @@ async function runRow(
 ): Promise<RowResult> {
   const startedAt = performance.now();
   try {
+    const sdkTools = toSdkTools(candidate.tools);
     const out = await generateText({
       model: modelFor(candidate),
       system: candidate.systemPrompt,
@@ -90,6 +116,7 @@ async function runRow(
       ...(candidate.maxOutputTokens !== undefined
         ? { maxOutputTokens: candidate.maxOutputTokens }
         : {}),
+      ...(sdkTools ? { tools: sdkTools } : {}),
     });
     const latency_ms = Math.round(performance.now() - startedAt);
     const input_tokens = out.usage?.inputTokens ?? 0;

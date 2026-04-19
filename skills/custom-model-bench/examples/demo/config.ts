@@ -1,11 +1,13 @@
 /**
- * Default candidate: Claude Haiku 4.5.
+ * Default candidate: Claude Sonnet 4.6.
  *
  * Other providers in this directory's sibling configs:
- *   - config-openai.ts  → GPT-4o mini
- *   - config-google.ts  → Gemini 2.0 Flash
- *   - config-xai.ts     → Grok 3 Mini
+ *   - config-openai.ts  → GPT-5.4 mini
+ *   - config-google.ts  → Gemini 3.1 Pro
+ *   - config-xai.ts     → Grok 4
  */
+
+import type { ToolDefinition } from "../../scripts/types";
 
 export type CandidateConfig = {
   provider: "anthropic" | "openai" | "google" | "xai";
@@ -13,6 +15,12 @@ export type CandidateConfig = {
   systemPrompt?: string;
   temperature?: number;
   maxOutputTokens?: number;
+  /**
+   * Tools the candidate may call during execution. When empty or undefined,
+   * the run is a plain single-turn call. Phase A.2 wires the type through;
+   * A.3 adds the tool-calling loop in run-eval.ts.
+   */
+  tools?: ToolDefinition[];
 };
 
 export const candidate: CandidateConfig = {

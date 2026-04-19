@@ -132,9 +132,16 @@ export async function runCagentRow(
     let step = 0;
     let finalText = "";
     let resultMsg: any = null;
+    // The SDK emits each SDKAssistantMessage multiple times through the stream
+    // (observed 3×/round in smoke tests — likely hook lifecycle events).
+    // Dedupe on `msg.uuid` before extracting trace entries so we don't log
+    // every model round three times.
+    const seenAssistantUuids = new Set<string>();
 
     for await (const msg of q as any) {
       if (msg.type === "assistant") {
+        if (msg.uuid && seenAssistantUuids.has(msg.uuid)) continue;
+        if (msg.uuid) seenAssistantUuids.add(msg.uuid);
         const content: any[] = msg.message?.content ?? [];
         let sawAny = false;
         for (const block of content) {
@@ -188,14 +195,31 @@ export async function runCagentRow(
     }
 
     const latency_ms = Math.round(performance.now() - startedAt);
-    const input_tokens = resultMsg?.usage?.input_tokens ?? 0;
-    const output_tokens = resultMsg?.usage?.output_tokens ?? 0;
-    // Prefer the SDK's reported cost (accounts for cache tokens); fall back to
-    // our pricing table for consistency with the Vercel path.
+    // Pull cumulative token counts from result.usage. Each per-message
+    // `usage` field reports only that model call's incremental tokens AND is
+    // emitted multiple times per round (see dedupe above), so summing it is
+    // unreliable. `result.usage` is the single source of truth.
+    const rUsage = resultMsg?.usage ?? {};
+    const input_tokens = rUsage.input_tokens ?? 0;
+    const output_tokens = rUsage.output_tokens ?? 0;
+    const cache_read_tokens = rUsage.cache_read_input_tokens ?? 0;
+    const cache_creation_tokens = rUsage.cache_creation_input_tokens ?? 0;
+    // Effective input tokens = new + cache_read + cache_creation. The Vercel
+    // path reports gross input tokens (cache-inclusive) via generateText, so
+    // surface a comparable cumulative for symmetry on the leaderboard. Keep
+    // the cache breakdown as extra fields for analysis.
+    const effective_input_tokens =
+      input_tokens + cache_read_tokens + cache_creation_tokens;
+    // Prefer the SDK's reported cost (Anthropic billing precision + cache
+    // discount). Fallback to our pricing table only if it's missing.
     const cost_usd =
       typeof resultMsg?.total_cost_usd === "number"
         ? resultMsg.total_cost_usd
-        : computeCost(candidate.model, input_tokens, output_tokens);
+        : computeCost(candidate.model, effective_input_tokens, output_tokens);
+    // `result.num_turns` counts distinct assistant model rounds — same
+    // semantics as Vercel's `result.steps.length`. The inflated counts seen
+    // in my dedupe-less smoke test were an artifact of the SDK emitting
+    // the same assistant message multiple times, not of `num_turns` itself.
     const turns =
       typeof resultMsg?.num_turns === "number"
         ? resultMsg.num_turns
@@ -208,7 +232,7 @@ export async function runCagentRow(
         response: finalText,
         turns,
         latency_ms,
-        input_tokens,
+        input_tokens: effective_input_tokens,
         output_tokens,
         cost_usd,
         error: `cagent-sdk: ${resultMsg.subtype}${

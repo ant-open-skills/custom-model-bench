@@ -33,6 +33,65 @@
     return B.scopes.find(s => s.id === SEL.suite) || B.scopes[0];
   }
 
+  // ---------- Trace visualizer (Phase A.4b) ----------
+  // Renders a row's tool-use sequence as an indented, color-coded list.
+  // Called only when row.trace is present; no-op otherwise.
+  function jsonish(v, max = 120) {
+    try {
+      const s = JSON.stringify(v);
+      return s.length > max ? s.slice(0, max - 1) + "…" : s;
+    } catch {
+      return String(v);
+    }
+  }
+  function renderTrace(trace) {
+    if (!trace || trace.length === 0) return "";
+    const rowStyle = "padding:5px 0; display:flex; gap:10px; align-items:flex-start; font-family:var(--mono); font-size:12px; line-height:1.5;";
+    const stepBadge = (n) => `<span style="color:var(--ink-4); width:14px; flex-shrink:0; text-align:right;">${n}</span>`;
+
+    const entries = trace.map((e) => {
+      if (e.type === "assistant_text") {
+        const t = e.text || "";
+        const preview = t.length > 240 ? t.slice(0, 240) + "…" : t;
+        return `<div style="${rowStyle}">
+          ${stepBadge(e.step)}
+          <span style="color:var(--ink-3); flex-shrink:0;">▸</span>
+          <span style="font-family:var(--serif); font-size:13.5px; color:var(--ink-2); line-height:1.5; white-space:pre-wrap;">${UI.esc(preview)}</span>
+        </div>`;
+      }
+      if (e.type === "tool_call") {
+        return `<div style="${rowStyle}">
+          ${stepBadge(e.step)}
+          <span style="color:var(--accent); flex-shrink:0;">→</span>
+          <div>
+            <span style="color:var(--accent); font-weight:500;">${UI.esc(e.name)}</span>
+            <span style="color:var(--ink-3);">(${UI.esc(jsonish(e.input, 100))})</span>
+          </div>
+        </div>`;
+      }
+      if (e.type === "tool_result") {
+        return `<div style="${rowStyle}">
+          ${stepBadge(e.step)}
+          <span style="color:var(--good); flex-shrink:0;">←</span>
+          <div>
+            <span style="color:var(--good); font-weight:500;">${UI.esc(e.name)}</span>
+            <span style="color:var(--ink-3);"> → ${UI.esc(jsonish(e.output, 140))}</span>
+          </div>
+        </div>`;
+      }
+      return "";
+    }).join("");
+
+    return `
+      <div style="background:var(--bg-sunk); border-top:1px solid var(--rule-2); padding:10px 14px;">
+        <div style="font-family:var(--mono); font-size:9px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-3); margin-bottom:6px;">
+          trace · ${trace.length} step${trace.length !== 1 ? "s" : ""}
+        </div>
+        ${entries}
+      </div>
+    `;
+  }
+
   // ---------- Sidebar (shared across screens) ----------
   function sidebarHtml() {
     const byCat = {};
@@ -343,6 +402,7 @@
             <span>${verdict}</span>
           </div>
           <div class="${bodyClass}">${bodyText}</div>
+          ${renderTrace(row.trace)}
           <div class="candidate-footer">
             <div class="stat"><div class="k">Latency</div><div class="v">${row.latency_ms}ms</div></div>
             <div class="stat"><div class="k">Turns</div><div class="v">${row.turns}</div></div>

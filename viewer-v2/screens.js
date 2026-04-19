@@ -513,36 +513,50 @@
   //   series: [{ key, label, color, points: [{ x: Date|number, y: number|null }] }]
   //   fmtY: optional value formatter for axis ticks
   function renderLineChart(opts) {
-    const { series, title, fmtY, height = 180 } = opts;
+    const { series, title, fmtY, height = 180, ymaxClamp } = opts;
     const W = 380, H = height;
-    const padL = 44, padR = 12, padT = 8, padB = 22;
+    // Reserve a dedicated top slot for the title so gridlines/tick labels
+    // never cross through it. padT is the top of the plotting area, below
+    // the title band.
+    const titleH = title ? 18 : 8;
+    const padL = 44, padR = 12, padT = titleH, padB = 22;
     const innerW = W - padL - padR;
     const innerH = H - padT - padB;
 
-    // Flatten all points to compute domains
-    const xs = [];
+    // Determine the run-sequence length (N) from the longest series.
+    let N = 0;
+    for (const s of series) {
+      if (s.points.length > N) N = s.points.length;
+    }
+
+    // Flatten Y values to compute domain. X is now an ordinal index
+    // (1..N) derived from point position within each series, not from
+    // the point's .x field.
     const ys = [];
     for (const s of series) {
       for (const p of s.points) {
         if (p.y == null || !Number.isFinite(p.y)) continue;
-        xs.push(+p.x);
         ys.push(p.y);
       }
     }
-    if (xs.length === 0) {
+    if (ys.length === 0 || N === 0) {
       return `<svg class="trend-chart" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" xmlns="http://www.w3.org/2000/svg">
         <text x="${W/2}" y="${H/2}" text-anchor="middle" font-family="var(--serif)" font-size="13" fill="var(--ink-3)">no data</text>
       </svg>`;
     }
-    const xMin = Math.min(...xs), xMax = Math.max(...xs);
+    const xMin = 1, xMax = N;
     let yMin = Math.min(...ys), yMax = Math.max(...ys);
     // Pad Y for breathing room
     const ySpan = yMax - yMin || Math.max(1, Math.abs(yMax) * 0.1);
     yMin = yMin - ySpan * 0.12;
     yMax = yMax + ySpan * 0.12;
     if (yMin === yMax) { yMin -= 1; yMax += 1; }
+    // Optional ceiling clamp (e.g. rates in [0,1] should never exceed 1.0).
+    if (typeof ymaxClamp === "number" && yMax > ymaxClamp) {
+      yMax = ymaxClamp;
+    }
 
-    const sx = (v) => padL + (xMax === xMin ? innerW / 2 : ((+v - xMin) / (xMax - xMin)) * innerW);
+    const sx = (i) => padL + (xMax === xMin ? innerW / 2 : ((i - xMin) / (xMax - xMin)) * innerW);
     const sy = (v) => padT + innerH - ((v - yMin) / (yMax - yMin)) * innerH;
 
     // Y ticks (3 ticks)
@@ -559,13 +573,8 @@
       return t.toFixed(3);
     };
 
-    // X ticks: first + last
-    const fmtX = (v) => {
-      const d = new Date(+v);
-      const hh = String(d.getHours()).padStart(2, "0");
-      const mm = String(d.getMinutes()).padStart(2, "0");
-      return `${hh}:${mm}`;
-    };
+    // X ticks: first + last, labelled as run-sequence positions.
+    const fmtX = (i) => `run ${i}`;
 
     const gridLines = ticks.map(t => {
       const y = sy(t);
@@ -581,24 +590,30 @@
     `;
 
     const seriesSvg = series.map(s => {
-      const pts = s.points.filter(p => p.y != null && Number.isFinite(p.y));
+      // Use the point's index within its own series as the ordinal X.
+      const pts = s.points
+        .map((p, i) => ({ xi: i + 1, y: p.y }))
+        .filter(p => p.y != null && Number.isFinite(p.y));
       if (pts.length === 0) return "";
-      const d = pts.map((p, i) => `${i === 0 ? "M" : "L"}${sx(p.x).toFixed(1)},${sy(p.y).toFixed(1)}`).join(" ");
+      const d = pts.map((p, i) => `${i === 0 ? "M" : "L"}${sx(p.xi).toFixed(1)},${sy(p.y).toFixed(1)}`).join(" ");
       const line = `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`;
-      const dots = pts.map(p => `<circle cx="${sx(p.x).toFixed(1)}" cy="${sy(p.y).toFixed(1)}" r="2" fill="${s.color}"/>`).join("");
+      const dots = pts.map(p => `<circle cx="${sx(p.xi).toFixed(1)}" cy="${sy(p.y).toFixed(1)}" r="2" fill="${s.color}"/>`).join("");
       return line + dots;
     }).join("");
 
+    // Title sits in its own top slot, above the plotting area. padT is
+    // the top of the gridline region, so the title at y=10 cannot be
+    // crossed by the topmost gridline (which sits at y = padT).
     const titleSvg = title
-      ? `<text x="${padL}" y="${padT + 2}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-transform="uppercase" letter-spacing="0.08em">${UI.esc(title)}</text>`
+      ? `<text x="${padL}" y="11" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-transform="uppercase" letter-spacing="0.08em">${UI.esc(title)}</text>`
       : "";
 
     return `<svg class="trend-chart" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      ${titleSvg}
       ${gridLines}
       ${yLabels}
       ${xLabels}
       ${seriesSvg}
-      ${titleSvg}
     </svg>`;
   }
 
@@ -744,8 +759,8 @@ bun viewer-v2:build</pre>
       { title: "p95 latency",   svg: renderLineChart({ title: "p95 latency",   series: p95Series,  fmtY: fmtMs }) },
       { title: "$ per 1k evals",svg: renderLineChart({ title: "$ per 1k evals",series: costSeries, fmtY: fmtCost }) },
       accuracySeries
-        ? { title: "answer accuracy", svg: renderLineChart({ title: "answer accuracy", series: accuracySeries, fmtY: fmtPct }) }
-        : { title: "success rate",    svg: renderLineChart({ title: "success rate",    series: successSeries,  fmtY: fmtPct }) },
+        ? { title: "answer accuracy", svg: renderLineChart({ title: "answer accuracy", series: accuracySeries, fmtY: fmtPct, ymaxClamp: 1 }) }
+        : { title: "success rate",    svg: renderLineChart({ title: "success rate",    series: successSeries,  fmtY: fmtPct, ymaxClamp: 1 }) },
     ];
 
     const legendHtml = shown.map(c => `

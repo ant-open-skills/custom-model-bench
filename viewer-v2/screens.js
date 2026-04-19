@@ -439,33 +439,255 @@
   }
 
   // ==========================================================================
-  // SCREEN — RUNS (history, currently an empty state)
+  // SCREEN — RUNS (history trend lines; falls back to an empty state when <2)
   // ==========================================================================
+
+  // Small reusable SVG line chart.
+  //   series: [{ key, label, color, points: [{ x: Date|number, y: number|null }] }]
+  //   fmtY: optional value formatter for axis ticks
+  function renderLineChart(opts) {
+    const { series, title, fmtY, height = 180 } = opts;
+    const W = 380, H = height;
+    const padL = 44, padR = 12, padT = 8, padB = 22;
+    const innerW = W - padL - padR;
+    const innerH = H - padT - padB;
+
+    // Flatten all points to compute domains
+    const xs = [];
+    const ys = [];
+    for (const s of series) {
+      for (const p of s.points) {
+        if (p.y == null || !Number.isFinite(p.y)) continue;
+        xs.push(+p.x);
+        ys.push(p.y);
+      }
+    }
+    if (xs.length === 0) {
+      return `<svg class="trend-chart" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" xmlns="http://www.w3.org/2000/svg">
+        <text x="${W/2}" y="${H/2}" text-anchor="middle" font-family="var(--serif)" font-size="13" fill="var(--ink-3)">no data</text>
+      </svg>`;
+    }
+    const xMin = Math.min(...xs), xMax = Math.max(...xs);
+    let yMin = Math.min(...ys), yMax = Math.max(...ys);
+    // Pad Y for breathing room
+    const ySpan = yMax - yMin || Math.max(1, Math.abs(yMax) * 0.1);
+    yMin = yMin - ySpan * 0.12;
+    yMax = yMax + ySpan * 0.12;
+    if (yMin === yMax) { yMin -= 1; yMax += 1; }
+
+    const sx = (v) => padL + (xMax === xMin ? innerW / 2 : ((+v - xMin) / (xMax - xMin)) * innerW);
+    const sy = (v) => padT + innerH - ((v - yMin) / (yMax - yMin)) * innerH;
+
+    // Y ticks (3 ticks)
+    const ticks = [];
+    for (let i = 0; i <= 2; i++) {
+      const t = yMin + (i / 2) * (yMax - yMin);
+      ticks.push(t);
+    }
+    const yTickText = (t) => {
+      if (typeof fmtY === "function") return fmtY(t);
+      if (Math.abs(t) >= 1000) return (t / 1000).toFixed(1) + "k";
+      if (Math.abs(t) >= 10) return Math.round(t).toString();
+      if (Math.abs(t) >= 1) return t.toFixed(2);
+      return t.toFixed(3);
+    };
+
+    // X ticks: first + last
+    const fmtX = (v) => {
+      const d = new Date(+v);
+      const hh = String(d.getHours()).padStart(2, "0");
+      const mm = String(d.getMinutes()).padStart(2, "0");
+      return `${hh}:${mm}`;
+    };
+
+    const gridLines = ticks.map(t => {
+      const y = sy(t);
+      return `<line x1="${padL}" x2="${W - padR}" y1="${y}" y2="${y}" stroke="var(--rule-2)" stroke-width="1"/>`;
+    }).join("");
+    const yLabels = ticks.map(t => {
+      const y = sy(t);
+      return `<text x="${padL - 6}" y="${y + 3}" text-anchor="end" font-family="var(--mono)" font-size="9" fill="var(--ink-3)">${UI.esc(yTickText(t))}</text>`;
+    }).join("");
+    const xLabels = `
+      <text x="${padL}" y="${H - 6}" font-family="var(--mono)" font-size="9" fill="var(--ink-3)">${UI.esc(fmtX(xMin))}</text>
+      <text x="${W - padR}" y="${H - 6}" text-anchor="end" font-family="var(--mono)" font-size="9" fill="var(--ink-3)">${UI.esc(fmtX(xMax))}</text>
+    `;
+
+    const seriesSvg = series.map(s => {
+      const pts = s.points.filter(p => p.y != null && Number.isFinite(p.y));
+      if (pts.length === 0) return "";
+      const d = pts.map((p, i) => `${i === 0 ? "M" : "L"}${sx(p.x).toFixed(1)},${sy(p.y).toFixed(1)}`).join(" ");
+      const line = `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+      const dots = pts.map(p => `<circle cx="${sx(p.x).toFixed(1)}" cy="${sy(p.y).toFixed(1)}" r="2" fill="${s.color}"/>`).join("");
+      return line + dots;
+    }).join("");
+
+    const titleSvg = title
+      ? `<text x="${padL}" y="${padT + 2}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-transform="uppercase" letter-spacing="0.08em">${UI.esc(title)}</text>`
+      : "";
+
+    return `<svg class="trend-chart" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      ${gridLines}
+      ${yLabels}
+      ${xLabels}
+      ${seriesSvg}
+      ${titleSvg}
+    </svg>`;
+  }
+
   function renderRuns() {
     const scope = currentScope();
     const cmp = scope.comparison;
+    const history = Array.isArray(scope.history) ? scope.history : [];
 
-    const baselineCards = cmp.runs.map(run => {
-      const a = run.aggregate;
+    // Fallback: empty state if < 2 comparisons
+    if (history.length < 2) {
+      const baselineCards = cmp.runs.map(run => {
+        const a = run.aggregate;
+        return `
+          <div class="summary-card">
+            <div class="k">
+              ${UI.providerDot(run.provider)}
+              ${UI.esc(UI.modelDisplay(run.model))}
+            </div>
+            <div class="v" style="font-size:15px;">
+              <span class="mono" style="font-size:12px;">p50 <b>${a.latency_ms.p50}ms</b></span>
+            </div>
+            <div class="sub">
+              p95 ${a.latency_ms.p95}ms · $/1k ${a.cost_usd.per_1k_evals.toFixed(4)} · ok ${a.n_success}/${a.n}
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      const rerunCmd = scope.kind === "flagship"
+        ? (scope.id === "reasoning" ? "bun bench:reasoning" : "bun bench:compare")
+        : `bun bench:tiers:${scope.id}`;
+
       return `
-        <div class="summary-card">
-          <div class="k">
-            ${UI.providerDot(run.provider)}
-            ${UI.esc(UI.modelDisplay(run.model))}
-          </div>
-          <div class="v" style="font-size:15px;">
-            <span class="mono" style="font-size:12px;">p50 <b>${a.latency_ms.p50}ms</b></span>
-          </div>
-          <div class="sub">
-            p95 ${a.latency_ms.p95}ms · $/1k ${a.cost_usd.per_1k_evals.toFixed(4)} · ok ${a.n_success}/${a.n}
+        <div class="main">
+          <div class="runs-wrap">
+            <div class="breadcrumb">
+              <a data-route="leaderboard">${UI.esc(scope.label)}</a><span class="sep">›</span>runs history
+            </div>
+            <h2 style="font-family:var(--serif); font-weight:400; font-size:28px; letter-spacing:-0.01em; margin:8px 0 4px;">
+              Trends over time
+            </h2>
+            <div class="sub" style="font-family:var(--mono); font-size:11px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">
+              not enough runs yet
+            </div>
+
+            <p style="font-family:var(--serif); font-size:15px; line-height:1.55; color:var(--ink-2); max-width:620px;">
+              This scope has a single comparison so far. Re-run it across days or after a model/prompt change and this screen fills in with p50 / p95 / cost / success trend lines, annotated where the candidate config shifted.
+            </p>
+
+            <pre style="margin-top:14px;"># from the repo root
+${UI.esc(rerunCmd)}
+bun viewer-v2:build</pre>
+
+            <div style="margin-top:20px;">
+              <div style="font-family:var(--mono); font-size:10px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">
+                Current baselines
+              </div>
+              <div class="summary" style="grid-template-columns:repeat(${Math.max(2, cmp.n_candidates)}, 1fr);">
+                ${baselineCards}
+              </div>
+            </div>
           </div>
         </div>
       `;
-    }).join("");
+    }
+
+    // Trend-line mode ------------------------------------------------------
+    // Build candidate keys from the most recent run.
+    const latestRuns = history[history.length - 1].runs;
+    const candidates = latestRuns.map(r => ({
+      key: `${r.provider}/${r.model}`,
+      provider: r.provider,
+      model: r.model,
+      color: UI.PROVIDER_COLORS[r.provider] || "#888",
+    }));
+
+    // Respect active provider filters (but don't collapse to zero)
+    const filtered = candidates.filter(c => SEL.providers.has(c.provider));
+    const shown = filtered.length > 0 ? filtered : candidates;
+
+    // Check whether any run anywhere has answer_accuracy.
+    let hasAccuracy = false;
+    for (const h of history) {
+      for (const r of h.runs) {
+        if (r.aggregate && r.aggregate.answer_accuracy && r.aggregate.answer_accuracy.rate != null) {
+          hasAccuracy = true;
+        }
+      }
+    }
+
+    // For each metric, build series across candidates.
+    function buildSeries(pick) {
+      return shown.map(c => {
+        const points = history.map(h => {
+          const match = h.runs.find(r => r.provider === c.provider && r.model === c.model);
+          const y = match ? pick(match.aggregate) : null;
+          return { x: new Date(h.completed_at || h.started_at), y };
+        });
+        return { key: c.key, label: UI.modelDisplay(c.model), color: c.color, points };
+      });
+    }
+
+    const p50Series = buildSeries(a => a?.latency_ms?.p50 ?? null);
+    const p95Series = buildSeries(a => a?.latency_ms?.p95 ?? null);
+    const costSeries = buildSeries(a => {
+      const v = a?.cost_usd?.per_1k_evals;
+      return v == null ? null : v;
+    });
+    const successSeries = buildSeries(a => (a && a.n ? a.n_success / a.n : null));
+    const accuracySeries = hasAccuracy
+      ? buildSeries(a => a?.answer_accuracy?.rate ?? null)
+      : null;
+
+    const fmtMs = (t) => {
+      if (Math.abs(t) >= 1000) return (t / 1000).toFixed(1) + "s";
+      return Math.round(t) + "ms";
+    };
+    const fmtCost = (t) => {
+      if (Math.abs(t) >= 1) return "$" + t.toFixed(2);
+      if (Math.abs(t) >= 0.01) return "$" + t.toFixed(3);
+      return "$" + t.toFixed(4);
+    };
+    const fmtPct = (t) => (t * 100).toFixed(0) + "%";
+
+    const charts = [
+      { title: "p50 latency",   svg: renderLineChart({ title: "p50 latency",   series: p50Series,  fmtY: fmtMs }) },
+      { title: "p95 latency",   svg: renderLineChart({ title: "p95 latency",   series: p95Series,  fmtY: fmtMs }) },
+      { title: "$ per 1k evals",svg: renderLineChart({ title: "$ per 1k evals",series: costSeries, fmtY: fmtCost }) },
+      accuracySeries
+        ? { title: "answer accuracy", svg: renderLineChart({ title: "answer accuracy", series: accuracySeries, fmtY: fmtPct }) }
+        : { title: "success rate",    svg: renderLineChart({ title: "success rate",    series: successSeries,  fmtY: fmtPct }) },
+    ];
+
+    const legendHtml = shown.map(c => `
+      <div class="item" style="color:${c.color};">
+        <span class="swatch"></span>
+        <span style="color:var(--ink-2);">${UI.esc(UI.modelDisplay(c.model))}</span>
+        <span style="color:var(--ink-3); margin-left:4px;">${UI.esc(UI.PROVIDER_LABEL[c.provider] || c.provider)}</span>
+      </div>
+    `).join("");
+
+    const grid = charts.map(ch => `
+      <div class="chart-card" style="background:var(--bg-elev-2, rgba(0,0,0,0.02)); border:1px solid var(--rule-2); border-radius:var(--r-md, 6px); padding:12px;">
+        <div style="font-family:var(--mono); font-size:10px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">
+          ${UI.esc(ch.title)}
+        </div>
+        ${ch.svg}
+      </div>
+    `).join("");
 
     const rerunCmd = scope.kind === "flagship"
-      ? "bun bench:compare"
+      ? (scope.id === "reasoning" ? "bun bench:reasoning" : "bun bench:compare")
       : `bun bench:tiers:${scope.id}`;
+
+    const firstTs = history[0].completed_at || history[0].started_at;
+    const lastTs = history[history.length - 1].completed_at || history[history.length - 1].started_at;
 
     return `
       <div class="main">
@@ -477,24 +699,13 @@
             Trends over time
           </h2>
           <div class="sub" style="font-family:var(--mono); font-size:11px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">
-            not enough runs yet
+            ${history.length} runs · ${UI.fmtTs(firstTs)} → ${UI.fmtTs(lastTs)} · rerun with <span style="color:var(--ink-2);">${UI.esc(rerunCmd)}</span>
           </div>
 
-          <p style="font-family:var(--serif); font-size:15px; line-height:1.55; color:var(--ink-2); max-width:620px;">
-            This scope has a single comparison so far. Re-run it across days or after a model/prompt change and this screen fills in with p50 / p95 / cost / success trend lines, annotated where the candidate config shifted.
-          </p>
+          <div class="chart-legend">${legendHtml}</div>
 
-          <pre style="margin-top:14px;"># from the repo root
-${UI.esc(rerunCmd)}
-bun viewer-v2:build</pre>
-
-          <div style="margin-top:20px;">
-            <div style="font-family:var(--mono); font-size:10px; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">
-              Current baselines
-            </div>
-            <div class="summary" style="grid-template-columns:repeat(${Math.max(2, cmp.n_candidates)}, 1fr);">
-              ${baselineCards}
-            </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px;">
+            ${grid}
           </div>
         </div>
       </div>

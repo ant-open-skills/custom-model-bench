@@ -29,20 +29,24 @@ const SCOPES: Scope[] = [
   { id: "reasoning", label: "Reasoning bench",   kind: "flagship",                           dir: "skills/custom-model-bench/examples/reasoning" },
 ];
 
-async function latestComparisonFile(runsDir: string): Promise<string | null> {
+async function comparisonFilesByMtime(runsDir: string): Promise<{ p: string; m: number }[]> {
   let entries: string[];
   try {
     entries = await readdir(runsDir);
   } catch {
-    return null;
+    return [];
   }
   const files = entries.filter((f) => /^comparison_.*\.json$/.test(f));
-  if (files.length === 0) return null;
+  if (files.length === 0) return [];
   const withMtime = await Promise.all(
     files.map(async (f) => ({ p: join(runsDir, f), m: (await stat(join(runsDir, f))).mtimeMs })),
   );
-  withMtime.sort((a, b) => b.m - a.m);
-  return withMtime[0].p;
+  withMtime.sort((a, b) => a.m - b.m); // oldest first
+  return withMtime;
+}
+
+function slimRun(run: any) {
+  return { provider: run.provider, model: run.model, aggregate: run.aggregate };
 }
 
 async function main() {
@@ -50,22 +54,43 @@ async function main() {
 
   for (const scope of SCOPES) {
     const runsDir = join(REPO_ROOT, scope.dir, "runs");
-    const latest = await latestComparisonFile(runsDir);
-    if (!latest) {
+    const all = await comparisonFilesByMtime(runsDir);
+    if (all.length === 0) {
       console.warn(`  [skip] ${scope.id}: no comparison_*.json in ${runsDir}`);
       continue;
     }
-    const raw = await readFile(latest, "utf8");
-    const data = JSON.parse(raw);
+    const latestEntry = all[all.length - 1];
+    const rawLatest = await readFile(latestEntry.p, "utf8");
+    const latestData = JSON.parse(rawLatest);
+
+    const history: any[] = [];
+    for (const entry of all) {
+      let data: any;
+      if (entry.p === latestEntry.p) {
+        data = latestData;
+      } else {
+        data = JSON.parse(await readFile(entry.p, "utf8"));
+      }
+      history.push({
+        comparison_id: data.comparison_id,
+        started_at: data.started_at,
+        completed_at: data.completed_at,
+        runs: (data.runs || []).map(slimRun),
+      });
+    }
+
     bench.scopes.push({
       id: scope.id,
       label: scope.label,
       kind: scope.kind,
       provider: scope.provider ?? null,
-      comparison: data,
-      source_path: latest.replace(REPO_ROOT + "/", ""),
+      comparison: latestData,
+      history,
+      source_path: latestEntry.p.replace(REPO_ROOT + "/", ""),
     });
-    console.log(`  ${scope.id.padEnd(10)} ← ${latest.replace(REPO_ROOT + "/", "")}`);
+    console.log(
+      `  ${scope.id.padEnd(10)} ← ${latestEntry.p.replace(REPO_ROOT + "/", "")} (history: ${history.length})`,
+    );
   }
 
   const js =

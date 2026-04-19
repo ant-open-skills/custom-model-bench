@@ -3193,12 +3193,12 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T01-53-36-879Z",
+        "comparison_id": "comparison_2026-04-19T02-03-39-472Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/reasoning/dataset.jsonl",
         "n_rows": 10,
         "n_candidates": 4,
-        "started_at": "2026-04-19T01:52:27.784Z",
-        "completed_at": "2026-04-19T01:53:36.879Z",
+        "started_at": "2026-04-19T02:02:29.912Z",
+        "completed_at": "2026-04-19T02:03:39.472Z",
         "runs": [
           {
             "config_file": "config-gemini.ts",
@@ -3213,7 +3213,7 @@ window.__BENCH = {
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
                 "response": "To find the remainder of 7^100 divided by 11, we can apply Fermat's Little Theorem, which states that a^(p-1) ≡ 1 (mod p) for any prime p. Since 11 is a prime number, 7^10 ≡ 1 (mod 11). By raising both sides to the 10th power, we find that 7^100 ≡ 1^10 ≡ 1 (mod 11).\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 7960,
+                "latency_ms": 7413,
                 "input_tokens": 76,
                 "output_tokens": 779,
                 "cost_usd": 0.0095,
@@ -3224,12 +3224,12 @@ window.__BENCH = {
               {
                 "id": "r-002",
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
-                "response": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we first count the total multiples of 7 and then subtract the multiples of both 7 and 5 (which are multiples of 35). \n\nThe number of multiples of 7 less than 1000 is floor(999 / 7) = 142.\nThe number of multiples of 35 less than 1000 is floor(999 / 35) = 28.\n\nSubtracting the multiples of 35 from the multiples of 7 gives 142 - 28 = 114.\n\nFinal answer: 114",
+                "response": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we first count the total multiples of 7 and then subtract the multiples of both 7 and 5 (which are multiples of 35). \n\nThere are 142 multiples of 7 less than 1000 (since 999 / 7 = 142.71). \nThere are 28 multiples of 35 less than 1000 (since 999 / 35 = 28.54). \n\nSubtracting the multiples of 35 from the multiples of 7 gives 142 - 28 = 114.\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 7621,
+                "latency_ms": 7434,
                 "input_tokens": 80,
-                "output_tokens": 760,
-                "cost_usd": 0.00928,
+                "output_tokens": 694,
+                "cost_usd": 0.008488,
                 "error": null,
                 "answer_extracted": "114",
                 "answer_correct": true
@@ -3237,12 +3237,12 @@ window.__BENCH = {
               {
                 "id": "r-003",
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
-                "response": "To find the number of unit cubes with exactly two red faces, we look at the edges of the large cube. There are 12 edges in a cube, and each edge contains 8 such cubes (excluding the 2 corner cubes). Multiplying the number of edges by the number of cubes per edge gives the total.\n\nFinal answer: 96",
+                "response": "To find the number of unit cubes with exactly two red faces, we look at the edges of the large cube. There are 12 edges in a cube, and each edge contains 8 unit cubes between the corners that have exactly two painted faces. Multiplying the number of edges by the number of such cubes per edge gives the total.\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 7271,
+                "latency_ms": 7392,
                 "input_tokens": 97,
-                "output_tokens": 612,
-                "cost_usd": 0.007538,
+                "output_tokens": 721,
+                "cost_usd": 0.008846,
                 "error": null,
                 "answer_extracted": "96",
                 "answer_correct": true
@@ -3250,12 +3250,12 @@ window.__BENCH = {
               {
                 "id": "r-004",
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
-                "response": "To solve the equation log_2(x) + log_2(x - 2) = 3, we can use the properties of logarithms. \n\nFirst, combine the logarithms on the left side using the product rule, log_a(b) + log_a(c) = log_a(b * c):\nlog_2(x(x - 2)) = 3\n\nNext, rewrite the logarithmic equation in its exponential form:\nx(x - 2) = 2^3\n\nSimplify the right side:\nx^2 - 2x = 8\n\nSubtract 8 from both sides to set the quadratic equation to zero:\nx^2 - 2x - 8 = 0\n\nNow, factor the quadratic equation:\n(x - 4)(x + 2) = 0\n\nThis gives two possible solutions for x:\nx = 4  or  x = -2\n\nThe problem states that x must be real and positive. Furthermore, the domain of the original logarithms requires x > 0 and x - 2 > 0 (so x > 2). Therefore, x = -2 is an extraneous solution. \n\nThe only valid solution is x = 4. \n\nChecking the answer:\nlog_2(4) + log_2(4 - 2) = 2 + 1 = 3.\n\nFinal answer: 4",
+                "response": "To solve the equation $\\log_2(x) + \\log_2(x - 2) = 3$, we can use the properties of logarithms. \n\nFirst, combine the logarithms on the left side using the product rule, $\\log_b(m) + \\log_b(n) = \\log_b(m \\cdot n)$:\n$\\log_2(x(x - 2)) = 3$\n\nNext, rewrite the logarithmic equation in its exponential form:\n$x(x - 2) = 2^3$\n\nSimplify the right side:\n$x^2 - 2x = 8$\n\nBring all terms to one side to form a standard quadratic equation:\n$x^2 - 2x - 8 = 0$\n\nNow, factor the quadratic equation:\n$(x - 4)(x + 2) = 0$\n\nThis gives two possible solutions for $x$:\n$x = 4$ or $x = -2$\n\nThe original equation includes $\\log_2(x)$ and $\\log_2(x - 2)$, which are only defined for strictly positive arguments. Therefore, we must have $x > 0$ and $x - 2 > 0$ (which means $x > 2$). \n\nSince $x$ must be positive and greater than 2, we discard $x = -2$. \n\nThus, the only valid solution is $x = 4$.\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 6081,
+                "latency_ms": 5980,
                 "input_tokens": 89,
-                "output_tokens": 679,
-                "cost_usd": 0.008326,
+                "output_tokens": 680,
+                "cost_usd": 0.008338,
                 "error": null,
                 "answer_extracted": "4",
                 "answer_correct": true
@@ -3263,12 +3263,12 @@ window.__BENCH = {
               {
                 "id": "r-005",
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
-                "response": "To find the number of valid seating arrangements, we first calculate the total number of ways to seat 8 people around a round table. Then, we subtract the number of arrangements where Alice and Bob are seated next to each other by treating them as a single combined unit. Subtracting these restricted arrangements from the total gives the final number of valid seating configurations.\n\nFinal answer: 3600",
+                "response": "To find the number of valid seating arrangements, we first calculate the total number of ways to seat 8 people around a round table. Then, we subtract the number of arrangements where Alice and Bob are seated next to each other by treating them as a single unit. Subtracting these restricted arrangements from the total gives the final number of valid seating options.\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 7083,
+                "latency_ms": 7115,
                 "input_tokens": 98,
-                "output_tokens": 720,
-                "cost_usd": 0.008836,
+                "output_tokens": 688,
+                "cost_usd": 0.008452,
                 "error": null,
                 "answer_extracted": "3600",
                 "answer_correct": true
@@ -3278,7 +3278,7 @@ window.__BENCH = {
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
                 "response": "To find the number of distinct arrangements of the letters in the word MISSISSIPPI, we count the total number of letters and the frequencies of each repeating letter. There are 11 letters in total, with 'I' appearing 4 times, 'S' appearing 4 times, and 'P' appearing 2 times. We use the permutation formula for multisets, dividing the factorial of the total number of letters by the product of the factorials of the frequencies. This gives 11! / (4! * 4! * 2!), which equals 34,650.\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 6778,
+                "latency_ms": 6750,
                 "input_tokens": 75,
                 "output_tokens": 682,
                 "cost_usd": 0.008334,
@@ -3291,7 +3291,7 @@ window.__BENCH = {
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
                 "response": "To find the altitude drawn to the hypotenuse, first calculate the length of the hypotenuse using the Pythagorean theorem. Then, use the relationship that the product of the legs equals the product of the hypotenuse and the altitude to solve for the missing length. \n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 6011,
+                "latency_ms": 6319,
                 "input_tokens": 98,
                 "output_tokens": 560,
                 "cost_usd": 0.006916,
@@ -3302,9 +3302,9 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "To find the number of distinct real values of x for which f(x) = 0, we can analyze the critical points of the function f(x) = x^3 - 3x + 1.\n\nFirst, we find the derivative of f(x):\nf'(x) = 3x^2 - 3\n\nNext, we set the derivative equal to zero to find the critical points:\n3x^2 - 3 = 0\n3(x^2 - 1) = 0\nx^2 = 1\nx = 1  or  x = -1\n\nNow, we evaluate the original function f(x) at these critical points to find the local extrema:\nFor x = -1 (local maximum):\nf(-1) = (-1)^3 - 3(-1) + 1 = -1 + 3 + 1 = 3\n\nFor x = ",
+                "response": "To find the number of distinct real values of x for which f(x) = 0, we can analyze the critical points and the behavior of the function f(x) = x^3 -",
                 "turns": 1,
-                "latency_ms": 6989,
+                "latency_ms": 7230,
                 "input_tokens": 92,
                 "output_tokens": 796,
                 "cost_usd": 0.009736,
@@ -3317,7 +3317,7 @@ window.__BENCH = {
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
                 "response": "To find the 10th term of the sequence, we can iteratively apply the recurrence relation starting from the given initial values. By continuously adding the two previous terms to find the next term, we arrive at the value for the 10th term.\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 6361,
+                "latency_ms": 6805,
                 "input_tokens": 111,
                 "output_tokens": 602,
                 "cost_usd": 0.007446,
@@ -3330,7 +3330,7 @@ window.__BENCH = {
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
                 "response": "To find the probability that all three marbles drawn are the same color, we first need to determine the total number of ways to draw 3 marbles from",
                 "turns": 1,
-                "latency_ms": 6937,
+                "latency_ms": 7120,
                 "input_tokens": 113,
                 "output_tokens": 796,
                 "cost_usd": 0.009778,
@@ -3344,15 +3344,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 6937,
-                "p95": 7960,
-                "p99": 7960,
-                "mean": 6909
+                "p50": 7115,
+                "p95": 7434,
+                "p99": 7434,
+                "mean": 6956
               },
               "cost_usd": {
-                "total": 0.08568999999999997,
-                "mean": 0.008568999999999997,
-                "per_1k_evals": 8.568999999999997
+                "total": 0.085834,
+                "mean": 0.0085834,
+                "per_1k_evals": 8.5834
               },
               "turns": {
                 "mean": 1,
@@ -3375,12 +3375,12 @@ window.__BENCH = {
               {
                 "id": "r-001",
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
-                "response": "Powers of 7 modulo 11 cycle:\n\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 = 49 \\equiv 5 \\pmod{11}\\)\n- \\(7^3 \\equiv 5\\cdot 7 = 35 \\equiv 2 \\pmod{11}\\)\n- \\(7^4 \\equiv 2\\cdot 7 = 14 \\equiv 3 \\pmod{11}\\)\n- \\(7^5 \\equiv 3\\cdot 7 = 21 \\equiv 10 \\pmod{11}\\)\n- \\(7^6 \\equiv 10\\cdot 7 = 70 \\equiv 4 \\pmod{11}\\)\n- \\(7^7 \\equiv 4\\cdot 7 = 28 \\equiv 6 \\pmod{11}\\)\n- \\(7^8 \\equiv 6\\cdot 7 = 42 \\equiv 9 \\pmod{11}\\)\n- \\(7^9 \\equiv 9\\cdot 7 = 63 \\equiv 8 \\pmod{11}\\)\n- \\(7^{10} \\equiv 8\\cdot 7 = 56 \\equiv 1 \\pmod{11}\\)\n\nSo the cycle length is 10. Since \\(100 \\equiv 0 \\pmod{10}\\),\n\n\\[\n7^{100} \\equiv (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nFinal answer: 1",
+                "response": "Powers of 7 modulo 11 repeat:\n\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 \\equiv 49 \\equiv 5 \\pmod{11}\\)\n- \\(7^3 \\equiv 35 \\equiv 2 \\pmod{11}\\)\n- \\(7^4 \\equiv 14 \\equiv 3 \\pmod{11}\\)\n- \\(7^5 \\equiv 21 \\equiv 10 \\pmod{11}\\)\n- \\(7^6 \\equiv 70 \\equiv 4 \\pmod{11}\\)\n- \\(7^7 \\equiv 28 \\equiv 6 \\pmod{11}\\)\n- \\(7^8 \\equiv 42 \\equiv 9 \\pmod{11}\\)\n- \\(7^9 \\equiv 63 \\equiv 8 \\pmod{11}\\)\n- \\(7^{10} \\equiv 56 \\equiv 1 \\pmod{11}\\)\n\nSo the cycle length is 10. Since \\(100 \\equiv 0 \\pmod{10}\\),\n\n\\[\n7^{100} \\equiv (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 4231,
+                "latency_ms": 3710,
                 "input_tokens": 80,
-                "output_tokens": 358,
-                "cost_usd": 0.00557,
+                "output_tokens": 296,
+                "cost_usd": 0.00464,
                 "error": null,
                 "answer_extracted": "1",
                 "answer_correct": true
@@ -3388,9 +3388,9 @@ window.__BENCH = {
               {
                 "id": "r-002",
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
-                "response": "Positive integers less than 1000 divisible by 7:  \n\\(\\left\\lfloor \\frac{999}{7} \\right\\rfloor = 142\\).\n\nAmong these, those also divisible by 5 are divisible by \\(\\mathrm{lcm}(7,5)=35\\):  \n\\(\\left\\lfloor \\frac{999}{35} \\right\\rfloor = 28\\).\n\nSo the count divisible by 7 but not by 5 is:  \n\\(142 - 28 = 114\\).\n\nFinal answer: 114",
+                "response": "Positive integers less than 1000 divisible by 7:  \n\\(\\left\\lfloor \\frac{999}{7} \\right\\rfloor = 142\\)\n\nAmong these, those also divisible by 5 are divisible by \\(\\text{lcm}(7,5)=35\\):  \n\\(\\left\\lfloor \\frac{999}{35} \\right\\rfloor = 28\\)\n\nSo the count divisible by 7 but not by 5 is:  \n\\(142 - 28 = 114\\)\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 2551,
+                "latency_ms": 6142,
                 "input_tokens": 85,
                 "output_tokens": 120,
                 "cost_usd": 0.0020125,
@@ -3401,12 +3401,12 @@ window.__BENCH = {
               {
                 "id": "r-003",
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
-                "response": "Unit cubes with exactly two red faces lie on the edges of the big cube, but not at the corners.\n\nA cube has 12 edges.  \nEach edge contributes \\(10 - 2 = 8\\) such cubes.\n\nSo the total is:\n\\(12 \\times 8 = 96\\)\n\nFinal answer: 96",
+                "response": "Unit cubes with exactly two red faces are the edge cubes excluding the corners.\n\nA cube has 12 edges.  \nEach edge contributes \\(10 - 2 = 8\\) such cubes.\n\nSo the total is:\n\\[\n12 \\times 8 = 96\n\\]\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 1708,
+                "latency_ms": 1798,
                 "input_tokens": 101,
-                "output_tokens": 71,
-                "cost_usd": 0.0013175,
+                "output_tokens": 66,
+                "cost_usd": 0.0012425,
                 "error": null,
                 "answer_extracted": "96",
                 "answer_correct": true
@@ -3414,12 +3414,12 @@ window.__BENCH = {
               {
                 "id": "r-004",
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
-                "response": "Using log rules:\n\\[\n\\log_2(x) + \\log_2(x-2) = \\log_2(x(x-2)) = 3\n\\]\n\nSo:\n\\[\nx(x-2) = 2^3 = 8\n\\]\n\n\\[\nx^2 - 2x - 8 = 0\n\\]\n\nFactor:\n\\[\n(x-4)(x+2)=0\n\\]\n\nSo \\(x=4\\) or \\(x=-2\\).\n\nSince \\(x\\) must be real and positive, and also \\(x-2>0\\), the valid solution is \\(x=4\\).\n\nFinal answer: 4",
+                "response": "Use the log rule:\n\\[\n\\log_2(x) + \\log_2(x-2) = \\log_2\\big(x(x-2)\\big)=3\n\\]\n\nSo:\n\\[\nx(x-2)=2^3=8\n\\]\n\n\\[\nx^2-2x-8=0\n\\]\n\nFactor:\n\\[\n(x-4)(x+2)=0\n\\]\n\nSo \\(x=4\\) or \\(x=-2\\).\n\nSince \\(x\\) is real and positive, and also \\(x-2>0\\), the valid solution is \\(x=4\\).\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 2304,
+                "latency_ms": 2725,
                 "input_tokens": 94,
-                "output_tokens": 145,
-                "cost_usd": 0.00241,
+                "output_tokens": 141,
+                "cost_usd": 0.00235,
                 "error": null,
                 "answer_extracted": "4",
                 "answer_correct": true
@@ -3427,12 +3427,12 @@ window.__BENCH = {
               {
                 "id": "r-005",
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
-                "response": "Total circular seatings of 8 people:  \n\\[\n(8-1)! = 7! = 5040\n\\]\n\nNow count arrangements where Alice and Bob **are** adjacent.\n\nTreat Alice and Bob as one block. Then we have 7 objects around the table: the block, plus the other 6 people.  \nNumber of circular arrangements:\n\\[\n(7-1)! = 6! = 720\n\\]\n\nWithin the block, Alice and Bob can be arranged in 2 ways:\n\\[\n2 \\cdot 720 = 1440\n\\]\n\nSo the number of arrangements where Alice and Bob are **not** adjacent is:\n\\[\n5040 - 1440 = 3600\n\\]\n\nFinal answer: 3600",
+                "response": "Total circular arrangements of 8 people are\n\\[\n(8-1)! = 7! = 5040.\n\\]\n\nNow count arrangements where Alice and Bob sit together.\n\nTreat Alice and Bob as one block. Then we have 7 entities around the table, so the number of circular arrangements is\n\\[\n(7-1)! = 6! = 720.\n\\]\nAlice and Bob can switch places within their block in\n\\[\n2\n\\]\nways, so adjacent arrangements total\n\\[\n2 \\cdot 720 = 1440.\n\\]\n\nTherefore, the number of arrangements where Alice and Bob are not adjacent is\n\\[\n5040 - 1440 = 3600.\n\\]\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 4757,
+                "latency_ms": 5327,
                 "input_tokens": 105,
-                "output_tokens": 162,
-                "cost_usd": 0.0026925,
+                "output_tokens": 159,
+                "cost_usd": 0.0026475,
                 "error": null,
                 "answer_extracted": "3600",
                 "answer_correct": true
@@ -3440,12 +3440,12 @@ window.__BENCH = {
               {
                 "id": "r-006",
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
-                "response": "The word **MISSISSIPPI** has 11 letters total, with repeated letters:\n- M: 1\n- I: 4\n- S: 4\n- P: 2\n\nThe number of distinct arrangements is\n\n\\[\n\\frac{11!}{4! \\cdot 4! \\cdot 2!}\n\\]\n\nCompute:\n- \\(11! = 39916800\\)\n- \\(4! = 24\\)\n- \\(2! = 2\\)\n\nSo\n\n\\[\n\\frac{39916800}{24 \\cdot 24 \\cdot 2}\n=\n\\frac{39916800}{1152}\n=\n34650\n\\]\n\nFinal answer: 34650",
+                "response": "Count repeated letters in **MISSISSIPPI**:\n\n- M: 1  \n- I: 4  \n- S: 4  \n- P: 2  \n\nTotal letters = 11.\n\nNumber of distinct arrangements:\n\n\\[\n\\frac{11!}{4!4!2!}\n\\]\n\nCompute:\n\n\\[\n11! = 39916800,\\quad 4!=24,\\quad 2!=2\n\\]\n\n\\[\n\\frac{39916800}{24\\cdot24\\cdot2}=\\frac{39916800}{1152}=34650\n\\]\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 2280,
+                "latency_ms": 3741,
                 "input_tokens": 82,
-                "output_tokens": 155,
-                "cost_usd": 0.00253,
+                "output_tokens": 133,
+                "cost_usd": 0.0022,
                 "error": null,
                 "answer_extracted": "34650",
                 "answer_correct": true
@@ -3453,12 +3453,12 @@ window.__BENCH = {
               {
                 "id": "r-007",
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
-                "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\):\n\nFirst find the hypotenuse:\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35\n\\]\n\nThe altitude \\(h\\) from the right angle to the hypotenuse satisfies:\n\\[\n\\frac{1}{2}ab=\\frac{1}{2}ch\n\\]\nSo,\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8\n\\]\n\nFinal answer: 16.8",
+                "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\):\n\n1. Find the hypotenuse:\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35\n\\]\n\n2. Use area two ways:\n\\[\n\\frac12 ab=\\frac12 ch\n\\]\nSo,\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8\n\\]\n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 2199,
+                "latency_ms": 2320,
                 "input_tokens": 103,
-                "output_tokens": 143,
-                "cost_usd": 0.0024025,
+                "output_tokens": 126,
+                "cost_usd": 0.0021475,
                 "error": null,
                 "answer_extracted": "16.8",
                 "answer_correct": true
@@ -3466,12 +3466,12 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "For \\(f(x)=x^3-3x+1\\), check turning points:\n\n\\[\nf'(x)=3x^2-3=3(x^2-1)\n\\]\n\nSo critical points are at \\(x=\\pm 1\\).\n\nEvaluate:\n\\[\nf(-1)=(-1)^3-3(-1)+1=-1+3+1=3\n\\]\n\\[\nf(1)=1-3+1=-1\n\\]\n\nSince \\(f\\) is a cubic with positive leading coefficient, \\(f(x)\\to -\\infty\\) as \\(x\\to -\\infty\\) and \\(f(x)\\to \\infty\\) as \\(x\\to \\infty\\).\n\nThus:\n- it goes from \\(-\\infty\\) up to \\(3\\): crosses the x-axis once,\n- then from \\(3\\) down to \\(-1\\): crosses once,\n- then from \\(-1\\) up to \\(\\infty\\): crosses once.\n\nSo there are \\(3\\) distinct real roots.\n\nFinal answer: 3",
+                "response": "For \\(f(x)=x^3-3x+1\\), check how many real zeros it has.\n\nCompute critical points:\n\\[\nf'(x)=3x^2-3=3(x^2-1)\n\\]\nSo critical points are at \\(x=-1\\) and \\(x=1\\).\n\nEvaluate:\n\\[\nf(-1)=(-1)^3-3(-1)+1=-1+3+1=3\n\\]\n\\[\nf(1)=1-3+1=-1\n\\]\n\nSince \\(f\\) is a cubic with positive leading coefficient:\n- as \\(x\\to -\\infty\\), \\(f(x)\\to -\\infty\\)\n- as \\(x\\to \\infty\\), \\(f(x)\\to \\infty\\)\n\nNow track signs:\n- from \\(-\\infty\\) to \\(-1\\): goes from negative to positive, so one root\n- from \\(-1\\) to \\(1\\): goes from positive to negative, so one root\n- from \\(1\\) to \\(\\infty\\): goes from negative to positive, so one root\n\nThus there are \\(3\\) distinct real solutions.\n\nFinal answer: 3",
                 "turns": 1,
-                "latency_ms": 3700,
+                "latency_ms": 4928,
                 "input_tokens": 97,
-                "output_tokens": 236,
-                "cost_usd": 0.0037825,
+                "output_tokens": 263,
+                "cost_usd": 0.0041875,
                 "error": null,
                 "answer_extracted": "3",
                 "answer_correct": true
@@ -3479,12 +3479,12 @@ window.__BENCH = {
               {
                 "id": "r-009",
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
-                "response": "This is the Fibonacci-type sequence starting with 1, 2.\n\nCompute terms:\n- \\(a_1 = 1\\)\n- \\(a_2 = 2\\)\n- \\(a_3 = 3\\)\n- \\(a_4 = 5\\)\n- \\(a_5 = 8\\)\n- \\(a_6 = 13\\)\n- \\(a_7 = 21\\)\n- \\(a_8 = 34\\)\n- \\(a_9 = 55\\)\n- \\(a_{10} = 89\\)\n\nFinal answer: 89",
+                "response": "This is the Fibonacci-type sequence starting with 1, 2.\n\nCompute terms:\n- a₁ = 1\n- a₂ = 2\n- a₃ = 3\n- a₄ = 5\n- a₅ = 8\n- a₆ = 13\n- a₇ = 21\n- a₈ = 34\n- a₉ = 55\n- a₁₀ = 89\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 2299,
+                "latency_ms": 2245,
                 "input_tokens": 115,
-                "output_tokens": 127,
-                "cost_usd": 0.0021925,
+                "output_tokens": 107,
+                "cost_usd": 0.0018925,
                 "error": null,
                 "answer_extracted": "89",
                 "answer_correct": true
@@ -3494,7 +3494,7 @@ window.__BENCH = {
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
                 "response": "Total marbles: 12.\n\nTotal ways to draw 3 marbles:\n\\[\n\\binom{12}{3} = 220\n\\]\n\nFavorable ways: all 3 the same color.\n\n- All red: \\(\\binom{3}{3} = 1\\)\n- All blue: \\(\\binom{4}{3} = 4\\)\n- All green: \\(\\binom{5}{3} = 10\\)\n\nTotal favorable:\n\\[\n1+4+10=15\n\\]\n\nProbability:\n\\[\n\\frac{15}{220}=\\frac{3}{44}\n\\]\n\nFinal answer: 3/44",
                 "turns": 1,
-                "latency_ms": 14443,
+                "latency_ms": 4276,
                 "input_tokens": 121,
                 "output_tokens": 143,
                 "cost_usd": 0.0024475,
@@ -3508,15 +3508,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2304,
-                "p95": 14443,
-                "p99": 14443,
-                "mean": 4047
+                "p50": 3710,
+                "p95": 6142,
+                "p99": 6142,
+                "mean": 3721
               },
               "cost_usd": {
-                "total": 0.0273575,
-                "mean": 0.00273575,
-                "per_1k_evals": 2.73575
+                "total": 0.0257675,
+                "mean": 0.00257675,
+                "per_1k_evals": 2.57675
               },
               "turns": {
                 "mean": 1,
@@ -3539,12 +3539,12 @@ window.__BENCH = {
               {
                 "id": "r-001",
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
-                "response": "To compute \\(7^{100} \\mod 11\\), apply Fermat's Little Theorem, which states that if \\(p\\) is prime and \\(p\\) does not divide \\(a\\), then \\(a^{p-1} \\equiv 1 \\pmod{p}\\).\n\nHere \\(p = 11\\) (prime) and \\(a = 7\\) (not divisible by 11), so \\(7^{10} \\equiv 1 \\pmod{11}\\).\n\nNow express the exponent: \\(100 = 10 \\times 10\\), so\n\\[\n7^{100} = (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nTo confirm \\(7^{10} \\equiv 1 \\pmod{11}\\), first compute intermediate powers:\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 = 49 \\equiv 5 \\pmod{11}\\) (since \\(49 - 4 \\times 11 = 5\\))\n- \\(7^4 = (7^2)^2 \\equiv 5^2 = 25 \\equiv 3 \\pmod{11}\\) (since \\(25 - 2 \\times 11 = 3\\))\n- \\(7^5 = 7^4 \\times 7 \\equiv 3 \\times 7 = 21 \\equiv -1 \\pmod{11}\\) (since \\(21 - 11 \\times 2 = -1\\))\n- Thus \\(7^{10} = (7^5)^2 \\equiv (-1)^2 = 1 \\pmod{11}\\).\n\nThis verifies the result, so the remainder is 1.\n\nFinal answer: 1",
+                "response": "Final answer: 1\n\n\nThe solution uses Fermat's Little Theorem, which states that for prime \\(p = 11\\) and \\(a = 7\\) (coprime to 11), \\(7^{10} \\equiv 1 \\pmod{11}\\).  \nRewrite the exponent: \\(100 = 10 \\times 10\\), so \\(7^{100} = (7^{10})^{10}\\).  \nSubstitute the congruence: \\((7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}\\).  \nVerification via successive powers confirms \\(7^5 \\equiv -1 \\pmod{11}\\), hence \\(7^{100} = (7^5)^{20} \\equiv (-1)^{20} \\equiv 1 \\pmod{11}\\).",
                 "turns": 1,
-                "latency_ms": 9277,
+                "latency_ms": 6305,
                 "input_tokens": 197,
-                "output_tokens": 1394,
-                "cost_usd": 0.008758,
+                "output_tokens": 1172,
+                "cost_usd": 0.007426,
                 "error": null,
                 "answer_extracted": "1",
                 "answer_correct": true
@@ -3552,12 +3552,12 @@ window.__BENCH = {
               {
                 "id": "r-002",
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
-                "response": "The positive integers less than 1000 are the integers from 1 to 999.\n\nThe multiples of 7 in this range are 7, 14, ..., up to the largest such multiple ≤999. This is 7×142=994, so there are exactly 142 such multiples (computed as ⌊999/7⌋=142).\n\nAmong these, the ones also divisible by 5 are the multiples of both 7 and 5. Since 7 and 5 are coprime, these are exactly the multiples of 35=7×5.\n\nThe multiples of 35 in this range are 35, 70, ..., up to the largest such multiple ≤999. This is 35×28=980, so there are exactly 28 such multiples (computed as ⌊999/35⌋=28).\n\nSubtract to exclude those also divisible by 5: 142−28=114.\n\nThis count includes only positive multiples (starting from 7 and 35) and excludes any multiple ≥1000 (such as 1001 or 1015).\n\nFinal answer: 114",
+                "response": "The multiples of 7 below 1000 are 7, 14, ..., 994, and there are \\(\\lfloor 999/7 \\rfloor = 142\\) such numbers.\n\nThe multiples of both 7 and 5 are the multiples of 35 (their LCM), which are 35, 70, ..., 980, and there are \\(\\lfloor 999/35 \\rfloor = 28\\) such numbers.\n\nSubtract to get the count of multiples of 7 but not 5: 142 - 28.\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 3381,
+                "latency_ms": 5070,
                 "input_tokens": 202,
-                "output_tokens": 642,
-                "cost_usd": 0.004256,
+                "output_tokens": 706,
+                "cost_usd": 0.00464,
                 "error": null,
                 "answer_extracted": "114",
                 "answer_correct": true
@@ -3565,12 +3565,12 @@ window.__BENCH = {
               {
                 "id": "r-003",
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
-                "response": "A 10×10×10 cube painted on all outer faces is divided into 1×1×1 unit cubes.  \nThe unit cubes with exactly two painted faces lie along the 12 edges of the large cube (but not at the 8 corners, which have three painted faces).  \nEach edge consists of 10 unit cubes, but the two endpoints are corners, leaving 10−2=8 unit cubes per edge with exactly two painted faces.  \nThus, the total is 12×8=96.  \n(This matches the general formula for an n×n×n cube: 12(n−2), which yields 96 when n=10.)  \n\nFinal answer: 96",
+                "response": "A large cube of side length \\(n=10\\) is painted on all exterior faces before being divided into \\(n^3 = 1000\\) unit cubes. The small cubes with paint on exactly two faces must lie along the edges of the large cube (where two faces meet) but cannot be at the corners (where three faces meet).\n\nThe large cube has exactly 12 edges. Along each edge of length 10, the two endpoint positions are corners, leaving \\(10-2=8\\) positions per edge with precisely two faces exposed and painted.\n\nThus, the total is obtained by multiplying the number of edges by the count per edge: \\(12 \\times 8 = 96\\).\n\nThis matches the general formula for an \\(n \\times n \\times n\\) cube where \\(n > 2\\): \\(12(n-2)\\).\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 5604,
+                "latency_ms": 5758,
                 "input_tokens": 218,
-                "output_tokens": 968,
-                "cost_usd": 0.006244,
+                "output_tokens": 831,
+                "cost_usd": 0.005422,
                 "error": null,
                 "answer_extracted": "96",
                 "answer_correct": true
@@ -3578,12 +3578,12 @@ window.__BENCH = {
               {
                 "id": "r-004",
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
-                "response": "Final answer: 4",
+                "response": "Using the sum of logs property:  \n\\(\\log_2(x) + \\log_2(x-2) = \\log_2[x(x-2)] = 3\\).  \n\nThis implies \\(x(x-2) = 2^3 = 8\\).  \n\nRearrange to quadratic: \\(x^2 - 2x - 8 = 0\\).  \n\nSolutions: \\(x = \\frac{2 \\pm \\sqrt{4 + 32}}{2} = \\frac{2 \\pm 6}{2}\\), so \\(x=4\\) or \\(x=-2\\).  \n\nDomain requires \\(x > 2\\) (for logs to be defined) and \\(x > 0\\), so discard \\(x=-2\\).  \n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 1642,
+                "latency_ms": 5092,
                 "input_tokens": 211,
-                "output_tokens": 258,
-                "cost_usd": 0.00197,
+                "output_tokens": 723,
+                "cost_usd": 0.00476,
                 "error": null,
                 "answer_extracted": "4",
                 "answer_correct": true
@@ -3591,12 +3591,12 @@ window.__BENCH = {
               {
                 "id": "r-005",
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
-                "response": "First fix one person's position (Alice) to account for rotational symmetry in a circle. This leaves 7 seats for the remaining people. There are 2 seats adjacent to Alice, so Bob has 5 valid choices out of the 7. The other 6 people can then be arranged in the remaining 6 seats in 6! ways. Thus the total is 5 × 720 = 3600. (Equivalently: total arrangements with Alice fixed are 7!; arrangements where Bob is adjacent are 2 × 6!; subtract to get 5040 - 1440 = 3600.)\n\nFinal answer: 3600",
+                "response": "The standard approach for distinct seating arrangements around a circular table (where rotations are considered identical) is to use (n-1)! for n people. For 8 distinct people with no restrictions, this gives (8-1)! = 7! = 5040 arrangements.\n\nTo account for the restriction that Alice and Bob cannot sit next to each other, first compute the complementary count where they sit together. Treat Alice and Bob as a single combined unit, reducing the problem to arranging 7 units in a circle: (7-1)! = 6!. Within the combined unit, Alice and Bob can switch places in 2 ways, so the arrangements where they are adjacent total 2 × 6! = 1440.\n\nSubtract this from the unrestricted total: 5040 - 1440 = 3600.\n\nTo confirm via an alternative method, fix Alice's position (which eliminates rotational symmetry). This leaves 7 possible seats for the remaining people. Exactly 2 of these seats are adjacent to Alice, so Bob has 5 valid choices. The remaining 6 people can then be arranged in the remaining seats in 6! ways, yielding 5 × 720 = 3600.\n\nThis matches exactly, and the problem specifies equivalence only under rotation (not reflection), so no further adjustment is needed.\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 6765,
+                "latency_ms": 7744,
                 "input_tokens": 222,
-                "output_tokens": 1026,
-                "cost_usd": 0.0066,
+                "output_tokens": 938,
+                "cost_usd": 0.006072,
                 "error": null,
                 "answer_extracted": "3600",
                 "answer_correct": true
@@ -3604,12 +3604,12 @@ window.__BENCH = {
               {
                 "id": "r-006",
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
-                "response": "The word MISSISSIPPI consists of 11 letters with the following frequencies: M appears once, I appears 4 times, S appears 4 times, and P appears twice.\n\nThe number of distinct arrangements of these letters is given by the multinomial coefficient:\n\\[\n\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}\n\\]\nSince \\(1! = 1\\), this simplifies to:\n\\[\n\\frac{11!}{4! \\cdot 4! \\cdot 2!}\n\\]\n\nThis can equivalently be computed by sequentially choosing positions:\n- Choose 4 positions out of 11 for the I's: \\(\\binom{11}{4} = 330\\).\n- Choose 4 positions out of the remaining 7 for the S's: \\(\\binom{7}{4} = 35\\).\n- Choose 2 positions out of the remaining 3 for the P's: \\(\\binom{3}{2} = 3\\).\n- The final position is for the single M (1 way).\n\nMultiplying these values: \\(330 \\times 35 = 11550\\), and \\(11550 \\times 3 = 34650\\).\n\nTo verify, compute directly: \\(11! = 39916800\\), and the denominator is \\(24 \\times 24 \\times 2 = 1152\\). Then \\(39916800 \\div 1152 = 34650\\).\n\nFinal answer: 34650",
+                "response": "The word MISSISSIPPI consists of 11 letters with the following frequencies: M appears 1 time, I appears 4 times, S appears 4 times, and P appears 2 times.\n\nThe number of distinct permutations is given by the formula for permutations of a multiset:  \n\\[\n\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}\n\\]\n\nThis is equivalent to sequentially choosing positions for each letter:  \n- Choose 4 positions out of 11 for the I's: \\(\\binom{11}{4} = 330\\).  \n- Choose 4 positions out of the remaining 7 for the S's: \\(\\binom{7}{4} = 35\\).  \n- Choose 2 positions out of the remaining 3 for the P's: \\(\\binom{3}{2} = 3\\).  \n- The last position is for the M: \\(\\binom{1}{1} = 1\\).\n\nMultiplying these values: \\(330 \\times 35 = 11550\\), then \\(11550 \\times 3 = 34650\\).\n\nThis matches the direct computation of \\(11! / (4! \\cdot 4! \\cdot 2!) = 39916800 / 1152 = 34650\\).\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 9173,
+                "latency_ms": 4725,
                 "input_tokens": 199,
-                "output_tokens": 1432,
-                "cost_usd": 0.00899,
+                "output_tokens": 1171,
+                "cost_usd": 0.007424,
                 "error": null,
                 "answer_extracted": "34650",
                 "answer_correct": true
@@ -3617,12 +3617,12 @@ window.__BENCH = {
               {
                 "id": "r-007",
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
-                "response": "The legs are \\(a = 21\\) and \\(b = 28\\).\n\nThe hypotenuse \\(c\\) satisfies \\(c = \\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\).\n\nThe area of the triangle is \\(\\frac12 \\times 21 \\times 28 = 294\\).\n\nThis area is also equal to \\(\\frac12 \\times 35 \\times h\\), so \\(17.5h = 294\\).\n\nThus \\(h = 294 / 17.5 = 16.8\\).\n\nAlternatively, \\(h = (21 \\times 28) / 35 = 588 / 35 = 16.8\\).\n\nFinal answer: 16.8",
+                "response": "First, find the hypotenuse length using the Pythagorean theorem: \\(\\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\).\n\nThe area of the triangle is \\(\\frac{1}{2} \\times 21 \\times 28 = 294\\).\n\nThis area can also be expressed using the hypotenuse and the altitude \\(h\\) to it: \\(\\frac{1}{2} \\times 35 \\times h = 294\\).\n\nSolving for \\(h\\): \\(h = \\frac{588}{35} = 16.8\\).\n\nAlternatively, use the direct formula for the altitude to the hypotenuse: \\(h = \\frac{21 \\times 28}{35} = 16.8\\).\n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 5615,
+                "latency_ms": 3803,
                 "input_tokens": 220,
-                "output_tokens": 911,
-                "cost_usd": 0.005906,
+                "output_tokens": 808,
+                "cost_usd": 0.005288,
                 "error": null,
                 "answer_extracted": "16.8",
                 "answer_correct": true
@@ -3630,12 +3630,12 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "The cubic \\(f(x) = x^3 - 3x + 1\\) has derivative \\(f'(x) = 3(x^2 - 1)\\), with critical points at \\(x = \\pm 1\\).\n\nEvaluate: \\(f(-1) = 3 > 0\\) (local max) and \\(f(1) = -1 < 0\\) (local min).\n\nAs \\(x \\to -\\infty\\), \\(f(x) \\to -\\infty\\), so \\(f(x)\\) crosses the x-axis once in \\((-\\infty, -1)\\).\n\nIt then decreases from positive local max to negative local min, crossing once in \\((-1, 1)\\).\n\nIt then increases from negative local min to \\(+\\infty\\), crossing once in \\((1, \\infty)\\).\n\nThe local extema are nonzero, so the crossings are at distinct points. Sign checks confirm intervals: one root in \\((-2, -1)\\), one in \\((0, 1)\\), one in \\((1, 2)\\).\n\nThus, exactly three distinct real roots.\n\nFinal answer: 3",
+                "response": "The cubic function \\(f(x) = x^3 - 3x + 1\\) has derivative \\(f'(x) = 3x^2 - 3 = 3(x^2 - 1)\\), with critical points at \\(x = -1\\) and \\(x = 1\\).\n\nEvaluate: \\(f(-1) = 3 > 0\\) (local maximum) and \\(f(1) = -1 < 0\\) (local minimum).\n\nAs \\(x \\to -\\infty\\), \\(f(x) \\to -\\infty\\), so \\(f(x)\\) crosses the x-axis once in \\((-\\infty, -1)\\).\n\nIt then decreases from a positive local maximum to a negative local minimum, crossing the x-axis once in \\((-1, 1)\\).\n\nFinally, as \\(x \\to \\infty\\), \\(f(x) \\to \\infty\\), so it crosses the x-axis once in \\((1, \\infty)\\).\n\nThe local extremum values are nonzero, confirming the roots are distinct.\n\nFor the depressed cubic \\(x^3 + px + q = 0\\) (here \\(p = -3\\), \\(q = 1\\)), the quantity \\((q/2)^2 + (p/3)^3 = 0.25 - 1 = -0.75 < 0\\), which confirms three distinct real roots.\n\nThus, there are three distinct real solutions to \\(f(x) = 0\\).\n\nFinal answer: 3",
                 "turns": 1,
-                "latency_ms": 5458,
+                "latency_ms": 7589,
                 "input_tokens": 214,
-                "output_tokens": 1042,
-                "cost_usd": 0.00668,
+                "output_tokens": 1075,
+                "cost_usd": 0.006878,
                 "error": null,
                 "answer_extracted": "3",
                 "answer_correct": true
@@ -3643,12 +3643,12 @@ window.__BENCH = {
               {
                 "id": "r-009",
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
-                "response": "a1 = 1  \na2 = 2  \na3 = 3  \na4 = 5  \na5 = 8  \na6 = 13  \na7 = 21  \na8 = 34  \na9 = 55  \na10 = 89  \n\nFinal answer: 89",
+                "response": "Final answer: 89\n\n\nThe sequence follows the recurrence a_{n+2} = a_{n+1} + a_n with initial terms a_1 = 1 and a_2 = 2. Compute each subsequent term iteratively:\n\n- a_3 = a_2 + a_1 = 2 + 1 = 3\n- a_4 = a_3 + a_2 = 3 + 2 = 5\n- a_5 = a_4 + a_3 = 5 + 3 = 8\n- a_6 = a_5 + a_4 = 8 + 5 = 13\n- a_7 = a_6 + a_5 = 13 + 8 = 21\n- a_8 = a_7 + a_6 = 21 + 13 = 34\n- a_9 = a_8 + a_7 = 34 + 21 = 55\n- a_10 = a_9 + a_8 = 55 + 34 = 89\n\nThis matches the 10th term in the shifted Fibonacci-like sequence starting from 1, 2.",
                 "turns": 1,
-                "latency_ms": 2668,
+                "latency_ms": 5666,
                 "input_tokens": 232,
-                "output_tokens": 668,
-                "cost_usd": 0.004472,
+                "output_tokens": 807,
+                "cost_usd": 0.005306,
                 "error": null,
                 "answer_extracted": "89",
                 "answer_correct": true
@@ -3656,12 +3656,12 @@ window.__BENCH = {
               {
                 "id": "r-010",
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
-                "response": "Final answer: 3/44\n\n\nThe total number of ways to choose 3 marbles from 12 is the combination C(12,3), calculated as (12 × 11 × 10) / (3 × 2 × 1) = 220.\n\nThe favorable outcomes are the ways to draw 3 marbles of the same color:\n- All red: C(3,3) = 1\n- All blue: C(4,3) = 4\n- All green: C(5,3) = 10\n\nSumming these gives 1 + 4 + 10 = 15 favorable outcomes.\n\nThe probability is therefore 15/220. Simplifying by dividing both numerator and denominator by 5 yields 3/44, which is in lowest terms since 3 and 44 share no common factors other than 1.",
+                "response": "Total marbles: 12.  \nTotal ways to choose 3: C(12,3) = 220.  \n\nFavorable:  \n- All red: C(3,3) = 1  \n- All blue: C(4,3) = 4  \n- All green: C(5,3) = 10  \nTotal favorable: 15.  \n\nProbability: 15/220. Simplify by dividing numerator and denominator by 5 to get 3/44.  \n\n(Sequential calculation yields equivalent result: P(all red) = 1/220, P(all blue) = 4/220, P(all green) = 10/220; sum is 15/220 = 3/44.)  \n\nFinal answer: 3/44",
                 "turns": 1,
-                "latency_ms": 4671,
+                "latency_ms": 6503,
                 "input_tokens": 236,
-                "output_tokens": 1016,
-                "cost_usd": 0.006568,
+                "output_tokens": 1168,
+                "cost_usd": 0.00748,
                 "error": null,
                 "answer_extracted": "3/44",
                 "answer_correct": true
@@ -3672,15 +3672,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 5458,
-                "p95": 9277,
-                "p99": 9277,
-                "mean": 5425
+                "p50": 5666,
+                "p95": 7744,
+                "p99": 7744,
+                "mean": 5826
               },
               "cost_usd": {
-                "total": 0.06044399999999999,
-                "mean": 0.006044399999999999,
-                "per_1k_evals": 6.0443999999999996
+                "total": 0.060696,
+                "mean": 0.0060696,
+                "per_1k_evals": 6.069599999999999
               },
               "turns": {
                 "mean": 1,
@@ -3705,7 +3705,7 @@ window.__BENCH = {
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
                 "response": "7^10 ≡ 1 mod 11, so 7^100 ≡ 1.\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 1250,
+                "latency_ms": 1423,
                 "input_tokens": 111,
                 "output_tokens": 42,
                 "cost_usd": 0.001605,
@@ -3718,7 +3718,7 @@ window.__BENCH = {
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
                 "response": "Divisible by 7: floor(999/7)=142. By 35: floor(999/35)=28. 142-28=114.\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 1376,
+                "latency_ms": 1561,
                 "input_tokens": 118,
                 "output_tokens": 51,
                 "cost_usd": 0.001865,
@@ -3731,7 +3731,7 @@ window.__BENCH = {
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
                 "response": "96\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 1226,
+                "latency_ms": 1452,
                 "input_tokens": 143,
                 "output_tokens": 14,
                 "cost_usd": 0.001065,
@@ -3744,7 +3744,7 @@ window.__BENCH = {
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
                 "response": "x(x-2)=8, x²-2x-8=0, x=4.\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 1484,
+                "latency_ms": 1353,
                 "input_tokens": 126,
                 "output_tokens": 35,
                 "cost_usd": 0.001505,
@@ -3757,7 +3757,7 @@ window.__BENCH = {
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
                 "response": "7! - 2·6! = 5040 - 1440 = 3600\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 1460,
+                "latency_ms": 1623,
                 "input_tokens": 153,
                 "output_tokens": 36,
                 "cost_usd": 0.001665,
@@ -3770,7 +3770,7 @@ window.__BENCH = {
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
                 "response": "11!/(4!4!2!) = 39916800/(24·24·2) = 39916800/1152 = 34650\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 1455,
+                "latency_ms": 2394,
                 "input_tokens": 120,
                 "output_tokens": 51,
                 "cost_usd": 0.001875,
@@ -3783,7 +3783,7 @@ window.__BENCH = {
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
                 "response": "Hypotenuse = 35. Altitude = 21*28/35 = 588/35 = 16.8\n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 2052,
+                "latency_ms": 2367,
                 "input_tokens": 146,
                 "output_tokens": 48,
                 "cost_usd": 0.00193,
@@ -3794,12 +3794,12 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "Discriminant of x³+px+q: -4p³-27q². Here p=-3, q=1: -4(-27)-27 = 108-27=81>0, three real roots.\n\nFinal answer: 3",
+                "response": "Discriminant of x³+px+q: -4p³-27q². Here p=-3, q=1: -4(-27)-27(1)=108-27=81>0, three real roots.\n\nFinal answer: 3",
                 "turns": 1,
-                "latency_ms": 1645,
+                "latency_ms": 1714,
                 "input_tokens": 130,
-                "output_tokens": 68,
-                "cost_usd": 0.00235,
+                "output_tokens": 69,
+                "cost_usd": 0.002375,
                 "error": null,
                 "answer_extracted": "3",
                 "answer_correct": true
@@ -3809,7 +3809,7 @@ window.__BENCH = {
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
                 "response": "1,2,3,5,8,13,21,34,55,89\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 1536,
+                "latency_ms": 2367,
                 "input_tokens": 152,
                 "output_tokens": 32,
                 "cost_usd": 0.00156,
@@ -3820,12 +3820,12 @@ window.__BENCH = {
               {
                 "id": "r-010",
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
-                "response": "C(3,3)+C(4,3)+C(5,3) = 1+4+10 = 15. C(12,3)=220. 15/220=3/44.\n\nFinal answer: 3/44",
+                "response": "C(3,3)+C(4,3)+C(5,3) = 1+4+10=15. C(12,3)=220. 15/220=3/44.\n\nFinal answer: 3/44",
                 "turns": 1,
-                "latency_ms": 1583,
+                "latency_ms": 1487,
                 "input_tokens": 168,
-                "output_tokens": 64,
-                "cost_usd": 0.00244,
+                "output_tokens": 62,
+                "cost_usd": 0.00239,
                 "error": null,
                 "answer_extracted": "3/44",
                 "answer_correct": true
@@ -3836,15 +3836,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1460,
-                "p95": 2052,
-                "p99": 2052,
-                "mean": 1507
+                "p50": 1561,
+                "p95": 2394,
+                "p99": 2394,
+                "mean": 1774
               },
               "cost_usd": {
-                "total": 0.01786,
-                "mean": 0.001786,
-                "per_1k_evals": 1.786
+                "total": 0.017835,
+                "mean": 0.0017835,
+                "per_1k_evals": 1.7834999999999999
               },
               "turns": {
                 "mean": 1,
@@ -3863,66 +3863,66 @@ window.__BENCH = {
             {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 1460
+              "value": 1561
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 2304
+              "value": 3710
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 5458
+              "value": 5666
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 6937
+              "value": 7115
             }
           ],
           "latency_p95_ms": [
             {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 2052
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 7960
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-reasoning",
-              "value": 9277
+              "value": 2394
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 14443
+              "value": 6142
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 7434
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 7744
             }
           ],
           "cost_per_1k_evals_usd": [
             {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 1.786
+              "value": 1.7834999999999999
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 2.73575
+              "value": 2.57675
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 6.0443999999999996
+              "value": 6.069599999999999
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 8.568999999999997
+              "value": 8.5834
             }
           ],
           "success_rate": [
@@ -4318,9 +4318,624 @@ window.__BENCH = {
               }
             }
           ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T01-58-35-682Z",
+          "started_at": "2026-04-19T01:57:25.948Z",
+          "completed_at": "2026-04-19T01:58:35.682Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 6835,
+                  "p95": 8608,
+                  "p99": 8608,
+                  "mean": 6973
+                },
+                "cost_usd": {
+                  "total": 0.08933799999999999,
+                  "mean": 0.008933799999999999,
+                  "per_1k_evals": 8.933799999999998
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 8,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2464,
+                  "p95": 24021,
+                  "p99": 24021,
+                  "mean": 4724
+                },
+                "cost_usd": {
+                  "total": 0.024237500000000002,
+                  "mean": 0.00242375,
+                  "per_1k_evals": 2.42375
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4739,
+                  "p95": 9554,
+                  "p99": 9554,
+                  "mean": 4951
+                },
+                "cost_usd": {
+                  "total": 0.05936999999999999,
+                  "mean": 0.005937,
+                  "per_1k_evals": 5.936999999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1334,
+                  "p95": 1889,
+                  "p99": 1889,
+                  "mean": 1467
+                },
+                "cost_usd": {
+                  "total": 0.01696,
+                  "mean": 0.001696,
+                  "per_1k_evals": 1.696
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T01-59-50-356Z",
+          "started_at": "2026-04-19T01:58:43.246Z",
+          "completed_at": "2026-04-19T01:59:50.356Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 6594,
+                  "p95": 7252,
+                  "p99": 7252,
+                  "mean": 6711
+                },
+                "cost_usd": {
+                  "total": 0.08314599999999998,
+                  "mean": 0.008314599999999998,
+                  "per_1k_evals": 8.314599999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 9,
+                  "rate": 0.9
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2616,
+                  "p95": 22241,
+                  "p99": 22241,
+                  "mean": 4492
+                },
+                "cost_usd": {
+                  "total": 0.023832500000000003,
+                  "mean": 0.0023832500000000004,
+                  "per_1k_evals": 2.3832500000000003
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4394,
+                  "p95": 8399,
+                  "p99": 8399,
+                  "mean": 4916
+                },
+                "cost_usd": {
+                  "total": 0.060731999999999994,
+                  "mean": 0.006073199999999999,
+                  "per_1k_evals": 6.073199999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1420,
+                  "p95": 2469,
+                  "p99": 2469,
+                  "mean": 1571
+                },
+                "cost_usd": {
+                  "total": 0.017135,
+                  "mean": 0.0017135000000000002,
+                  "per_1k_evals": 1.7135000000000002
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-01-05-955Z",
+          "started_at": "2026-04-19T01:59:57.818Z",
+          "completed_at": "2026-04-19T02:01:05.955Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 6675,
+                  "p95": 7689,
+                  "p99": 7689,
+                  "mean": 6813
+                },
+                "cost_usd": {
+                  "total": 0.08570199999999999,
+                  "mean": 0.008570199999999998,
+                  "per_1k_evals": 8.570199999999998
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 8,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2616,
+                  "p95": 4266,
+                  "p99": 4266,
+                  "mean": 2809
+                },
+                "cost_usd": {
+                  "total": 0.027072500000000003,
+                  "mean": 0.0027072500000000005,
+                  "per_1k_evals": 2.7072500000000006
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4253,
+                  "p95": 6934,
+                  "p99": 6934,
+                  "mean": 4600
+                },
+                "cost_usd": {
+                  "total": 0.054863999999999996,
+                  "mean": 0.0054864,
+                  "per_1k_evals": 5.4864
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1626,
+                  "p95": 2984,
+                  "p99": 2984,
+                  "mean": 1823
+                },
+                "cost_usd": {
+                  "total": 0.017885,
+                  "mean": 0.0017885000000000002,
+                  "per_1k_evals": 1.7885000000000002
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-02-22-560Z",
+          "started_at": "2026-04-19T02:01:13.322Z",
+          "completed_at": "2026-04-19T02:02:22.560Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 6814,
+                  "p95": 7880,
+                  "p99": 7880,
+                  "mean": 6924
+                },
+                "cost_usd": {
+                  "total": 0.08610999999999999,
+                  "mean": 0.008610999999999999,
+                  "per_1k_evals": 8.610999999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 8,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2472,
+                  "p95": 3410,
+                  "p99": 3410,
+                  "mean": 2521
+                },
+                "cost_usd": {
+                  "total": 0.0231875,
+                  "mean": 0.00231875,
+                  "per_1k_evals": 2.31875
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5492,
+                  "p95": 9954,
+                  "p99": 9954,
+                  "mean": 5965
+                },
+                "cost_usd": {
+                  "total": 0.064362,
+                  "mean": 0.0064362,
+                  "per_1k_evals": 6.4362
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1603,
+                  "p95": 2202,
+                  "p99": 2202,
+                  "mean": 1606
+                },
+                "cost_usd": {
+                  "total": 0.016985,
+                  "mean": 0.0016985,
+                  "per_1k_evals": 1.6985
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-03-39-472Z",
+          "started_at": "2026-04-19T02:02:29.912Z",
+          "completed_at": "2026-04-19T02:03:39.472Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 7115,
+                  "p95": 7434,
+                  "p99": 7434,
+                  "mean": 6956
+                },
+                "cost_usd": {
+                  "total": 0.085834,
+                  "mean": 0.0085834,
+                  "per_1k_evals": 8.5834
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 9,
+                  "rate": 0.9
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3710,
+                  "p95": 6142,
+                  "p99": 6142,
+                  "mean": 3721
+                },
+                "cost_usd": {
+                  "total": 0.0257675,
+                  "mean": 0.00257675,
+                  "per_1k_evals": 2.57675
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5666,
+                  "p95": 7744,
+                  "p99": 7744,
+                  "mean": 5826
+                },
+                "cost_usd": {
+                  "total": 0.060696,
+                  "mean": 0.0060696,
+                  "per_1k_evals": 6.069599999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1561,
+                  "p95": 2394,
+                  "p99": 2394,
+                  "mean": 1774
+                },
+                "cost_usd": {
+                  "total": 0.017835,
+                  "mean": 0.0017835,
+                  "per_1k_evals": 1.7834999999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            }
+          ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/reasoning/runs/comparison_2026-04-19T01-53-36-879Z.json"
+      "source_path": "skills/custom-model-bench/examples/reasoning/runs/comparison_2026-04-19T02-03-39-472Z.json"
     }
   ]
 };

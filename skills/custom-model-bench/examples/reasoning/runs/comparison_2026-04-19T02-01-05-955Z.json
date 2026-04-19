@@ -1,0 +1,757 @@
+{
+  "comparison_id": "comparison_2026-04-19T02-01-05-955Z",
+  "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/reasoning/dataset.jsonl",
+  "n_rows": 10,
+  "n_candidates": 4,
+  "started_at": "2026-04-19T01:59:57.818Z",
+  "completed_at": "2026-04-19T02:01:05.955Z",
+  "runs": [
+    {
+      "config_file": "config-gemini.ts",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+      "temperature": 0,
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "r-001",
+          "prompt": "What is the remainder when 7^100 is divided by 11?",
+          "response": "To find the remainder when 7^100 is divided by 11, we can use Fermat's Little Theorem, which states that a^(p-1) ≡ 1 (mod p) for a prime p. Since 11 is prime, 7^10 ≡ 1 (mod 11). Raising both sides to the 10th power gives 7^100 ≡ 1^10 ≡ 1 (mod 11).\n\nFinal answer: 1",
+          "turns": 1,
+          "latency_ms": 6279,
+          "input_tokens": 76,
+          "output_tokens": 608,
+          "cost_usd": 0.007448,
+          "error": null,
+          "answer_extracted": "1",
+          "answer_correct": true
+        },
+        {
+          "id": "r-002",
+          "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+          "response": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we first count the total multiples of 7 and then subtract the multiples of both 7 and 5 (which are multiples of 35). \n\nThere are 142 multiples of 7 less than 1000 (since 999 / 7 = 142.71). \nThere are 28 multiples of 35 less than 1000 (since 999 / 35 = 28.54). \n\nSubtracting the multiples of 35 from the multiples of 7 gives 142 - 28 = 114.\n\nFinal answer: 114",
+          "turns": 1,
+          "latency_ms": 6675,
+          "input_tokens": 80,
+          "output_tokens": 694,
+          "cost_usd": 0.008488,
+          "error": null,
+          "answer_extracted": "114",
+          "answer_correct": true
+        },
+        {
+          "id": "r-003",
+          "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+          "response": "To find the number of unit cubes with exactly two red faces, we look at the edges of the large cube. There are 12 edges in a cube, and each edge contains 8 unit cubes between the corners that have exactly two painted faces. Multiplying the number of edges by the number of such cubes per edge gives the total.\n\nFinal answer: 96",
+          "turns": 1,
+          "latency_ms": 7689,
+          "input_tokens": 97,
+          "output_tokens": 721,
+          "cost_usd": 0.008846,
+          "error": null,
+          "answer_extracted": "96",
+          "answer_correct": true
+        },
+        {
+          "id": "r-004",
+          "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+          "response": "To solve the equation $\\log_2(x) + \\log_2(x - 2) = 3$, we can use the properties of logarithms. \n\nFirst, combine the logarithms on the left side using the product rule, $\\log_b(m) + \\log_b(n) = \\log_b(m \\cdot n)$:\n$\\log_2(x(x - 2)) = 3$\n\nNext, rewrite the logarithmic equation in its exponential form:\n$x(x - 2) = 2^3$\n\nSimplify the right side:\n$x^2 - 2x = 8$\n\nBring all terms to one side to form a standard quadratic equation:\n$x^2 - 2x - 8 = 0$\n\nNow, factor the quadratic equation:\n$(x - 4)(x + 2) = 0$\n\nThis gives two possible solutions for $x$:\n$x = 4$ or $x = -2$\n\nThe original equation includes $\\log_2(x)$ and $\\log_2(x - 2)$, which are only defined for strictly positive arguments. Therefore, we must have $x > 0$ and $x - 2 > 0$ (which means $x > 2$). \n\nSince $x$ must be positive and greater than 2, we discard $x = -2$. \n\nThus, the only valid solution is $x = 4$.\n\nFinal answer: 4",
+          "turns": 1,
+          "latency_ms": 6242,
+          "input_tokens": 89,
+          "output_tokens": 680,
+          "cost_usd": 0.008338,
+          "error": null,
+          "answer_extracted": "4",
+          "answer_correct": true
+        },
+        {
+          "id": "r-005",
+          "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+          "response": "To find the number of valid seating arrangements, we first calculate the total number of ways to seat 8 people around a round table. Then, we subtract the number of arrangements where Alice and Bob are seated next to each other by treating them as a single combined unit. Subtracting these restricted arrangements from the total gives the final number of valid seating configurations.\n\nFinal answer: 3600",
+          "turns": 1,
+          "latency_ms": 7614,
+          "input_tokens": 98,
+          "output_tokens": 720,
+          "cost_usd": 0.008836,
+          "error": null,
+          "answer_extracted": "3600",
+          "answer_correct": true
+        },
+        {
+          "id": "r-006",
+          "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+          "response": "To find the number of distinct arrangements, we count the total number of letters and the frequencies of each repeating letter. There are 11 letters in total, with 'I' appearing 4 times, 'S' appearing 4 times, and 'P' appearing 2 times. We divide the factorial of the total number of letters by the factorials of the frequencies of the repeating letters: 11! / (4! * 4! * 2!). This evaluates to 34,650.\n\nFinal answer: 34650",
+          "turns": 1,
+          "latency_ms": 6304,
+          "input_tokens": 75,
+          "output_tokens": 616,
+          "cost_usd": 0.007542,
+          "error": null,
+          "answer_extracted": "34650",
+          "answer_correct": true
+        },
+        {
+          "id": "r-007",
+          "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+          "response": "To find the altitude drawn to the hypotenuse, first calculate the length of the hypotenuse using the Pythagorean theorem. Then, use the relationship that the product of the legs equals the product of the hypotenuse and the altitude to solve for the missing length. \n\nFinal answer: 16.8",
+          "turns": 1,
+          "latency_ms": 5934,
+          "input_tokens": 98,
+          "output_tokens": 560,
+          "cost_usd": 0.006916,
+          "error": null,
+          "answer_extracted": "16.8",
+          "answer_correct": true
+        },
+        {
+          "id": "r-008",
+          "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+          "response": "To find the number of distinct real values of x for which f(x) = 0, we can analyze the critical points of the function f(x) = x^3 - 3x + 1.\n\nFirst, we find the derivative of f(x):\nf'(x) = 3x^2 - 3\n\nNext, we set the derivative equal to zero to find the critical points:\n3x^2 - 3 = 0\n3(x^2 - 1) = 0\nx^2 = 1\nx = 1  or  x = -1\n\nNow, we evaluate the original function f(x) at these critical points to find the local extrema:\nFor x = -1 (local maximum):\nf(-1) = (-1)^3 - 3(-1) + 1 = -1 + 3 + 1 = 3\n\nFor x = ",
+          "turns": 1,
+          "latency_ms": 6959,
+          "input_tokens": 92,
+          "output_tokens": 796,
+          "cost_usd": 0.009736,
+          "error": null,
+          "answer_extracted": "3",
+          "answer_correct": true
+        },
+        {
+          "id": "r-009",
+          "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+          "response": "To find the 10th term of the sequence, we iteratively apply the recurrence relation $a_{n+2} = a_{n+",
+          "turns": 1,
+          "latency_ms": 7532,
+          "input_tokens": 111,
+          "output_tokens": 796,
+          "cost_usd": 0.009774,
+          "error": null,
+          "answer_extracted": "To find the 10th term of the sequence, we iteratively apply the recurrence relation $a_{n+2} = a_{n+",
+          "answer_correct": false
+        },
+        {
+          "id": "r-010",
+          "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+          "response": "To find the probability that all three marbles drawn are the same color, we first need to determine the total number of ways to draw 3 marbles from",
+          "turns": 1,
+          "latency_ms": 6906,
+          "input_tokens": 113,
+          "output_tokens": 796,
+          "cost_usd": 0.009778,
+          "error": null,
+          "answer_extracted": "To find the probability that all three marbles drawn are the same color, we first need to determine the total number of ways to draw 3 marbles from",
+          "answer_correct": false
+        }
+      ],
+      "aggregate": {
+        "n": 10,
+        "n_success": 10,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 6675,
+          "p95": 7689,
+          "p99": 7689,
+          "mean": 6813
+        },
+        "cost_usd": {
+          "total": 0.08570199999999999,
+          "mean": 0.008570199999999998,
+          "per_1k_evals": 8.570199999999998
+        },
+        "turns": {
+          "mean": 1,
+          "max": 1
+        },
+        "answer_accuracy": {
+          "graded": 10,
+          "correct": 8,
+          "rate": 0.8
+        }
+      }
+    },
+    {
+      "config_file": "config-gpt5.ts",
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "r-001",
+          "prompt": "What is the remainder when 7^100 is divided by 11?",
+          "response": "Powers of 7 modulo 11 cycle:\n\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 = 49 \\equiv 5 \\pmod{11}\\)\n- \\(7^3 \\equiv 7 \\cdot 5 = 35 \\equiv 2 \\pmod{11}\\)\n- \\(7^4 \\equiv 7 \\cdot 2 = 14 \\equiv 3 \\pmod{11}\\)\n- \\(7^5 \\equiv 7 \\cdot 3 = 21 \\equiv 10 \\pmod{11}\\)\n- \\(7^6 \\equiv 7 \\cdot 10 = 70 \\equiv 4 \\pmod{11}\\)\n- \\(7^7 \\equiv 7 \\cdot 4 = 28 \\equiv 6 \\pmod{11}\\)\n- \\(7^8 \\equiv 7 \\cdot 6 = 42 \\equiv 9 \\pmod{11}\\)\n- \\(7^9 \\equiv 7 \\cdot 9 = 63 \\equiv 8 \\pmod{11}\\)\n- \\(7^{10} \\equiv 7 \\cdot 8 = 56 \\equiv 1 \\pmod{11}\\)\n\nSo the cycle length is 10. Since \\(100 \\equiv 0 \\pmod{10}\\),\n\n\\[\n7^{100} \\equiv (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nFinal answer: 1",
+          "turns": 1,
+          "latency_ms": 4266,
+          "input_tokens": 80,
+          "output_tokens": 358,
+          "cost_usd": 0.00557,
+          "error": null,
+          "answer_extracted": "1",
+          "answer_correct": true
+        },
+        {
+          "id": "r-002",
+          "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+          "response": "Positive integers less than 1000 divisible by 7:  \n\\(\\left\\lfloor \\frac{999}{7} \\right\\rfloor = 142\\)\n\nAmong these, those also divisible by 5 are divisible by \\(\\text{lcm}(7,5)=35\\):  \n\\(\\left\\lfloor \\frac{999}{35} \\right\\rfloor = 28\\)\n\nSo the count divisible by 7 but not by 5 is:  \n\\(142 - 28 = 114\\)\n\nFinal answer: 114",
+          "turns": 1,
+          "latency_ms": 2757,
+          "input_tokens": 85,
+          "output_tokens": 120,
+          "cost_usd": 0.0020125,
+          "error": null,
+          "answer_extracted": "114",
+          "answer_correct": true
+        },
+        {
+          "id": "r-003",
+          "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+          "response": "Cubes with exactly two red faces lie on the edges but not at the corners.\n\nA cube has 12 edges.  \nEach edge contributes \\(10 - 2 = 8\\) such unit cubes (excluding the 2 corner cubes).\n\nSo the total is:\n\\(12 \\times 8 = 96\\)\n\nFinal answer: 96",
+          "turns": 1,
+          "latency_ms": 2076,
+          "input_tokens": 101,
+          "output_tokens": 74,
+          "cost_usd": 0.0013625,
+          "error": null,
+          "answer_extracted": "96",
+          "answer_correct": true
+        },
+        {
+          "id": "r-004",
+          "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+          "response": "\\[\n\\log_2(x)+\\log_2(x-2)=3\n\\]\n\nCombine logs:\n\n\\[\n\\log_2\\big(x(x-2)\\big)=3\n\\]\n\nSo:\n\n\\[\nx(x-2)=2^3=8\n\\]\n\n\\[\nx^2-2x-8=0\n\\]\n\nFactor:\n\n\\[\n(x-4)(x+2)=0\n\\]\n\nSo \\(x=4\\) or \\(x=-2\\).\n\nSince \\(x\\) is real and positive, and also \\(x-2>0\\), we need \\(x>2\\). Thus only \\(x=4\\) works.\n\nFinal answer: 4",
+          "turns": 1,
+          "latency_ms": 2616,
+          "input_tokens": 94,
+          "output_tokens": 151,
+          "cost_usd": 0.0025,
+          "error": null,
+          "answer_extracted": "4",
+          "answer_correct": true
+        },
+        {
+          "id": "r-005",
+          "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+          "response": "Total circular arrangements of 8 distinct people:  \n\\[\n(8-1)! = 7! = 5040\n\\]\n\nNow count arrangements where Alice and Bob sit together.\n\nTreat Alice and Bob as a single block. Then we have 7 objects around the table, so the number of circular arrangements is  \n\\[\n(7-1)! = 6! = 720\n\\]\n\nWithin the block, Alice and Bob can be arranged in 2 ways:  \n\\[\n2 \\cdot 720 = 1440\n\\]\n\nSo the number of arrangements where Alice and Bob are **not** together is  \n\\[\n5040 - 1440 = 3600\n\\]\n\nFinal answer: 3600",
+          "turns": 1,
+          "latency_ms": 2921,
+          "input_tokens": 105,
+          "output_tokens": 154,
+          "cost_usd": 0.0025725,
+          "error": null,
+          "answer_extracted": "3600",
+          "answer_correct": true
+        },
+        {
+          "id": "r-006",
+          "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+          "response": "The word **MISSISSIPPI** has 11 letters with repetitions:\n- M: 1\n- I: 4\n- S: 4\n- P: 2\n\nThe number of distinct arrangements is\n\n\\[\n\\frac{11!}{4!4!2!}\n\\]\n\nCompute:\n- \\(11! = 39916800\\)\n- \\(4! = 24\\)\n- \\(2! = 2\\)\n\nSo\n\n\\[\n\\frac{39916800}{24 \\cdot 24 \\cdot 2}\n= \\frac{39916800}{1152}\n= 34650\n\\]\n\nFinal answer: 34650",
+          "turns": 1,
+          "latency_ms": 2661,
+          "input_tokens": 82,
+          "output_tokens": 145,
+          "cost_usd": 0.00238,
+          "error": null,
+          "answer_extracted": "34650",
+          "answer_correct": true
+        },
+        {
+          "id": "r-007",
+          "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+          "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\):\n\nFirst find the hypotenuse:\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35\n\\]\n\nThe altitude \\(h\\) from the right angle to the hypotenuse satisfies:\n\\[\n\\frac12 ab=\\frac12 ch\n\\]\nSo,\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8\n\\]\n\nFinal answer: 16.8",
+          "turns": 1,
+          "latency_ms": 2254,
+          "input_tokens": 103,
+          "output_tokens": 135,
+          "cost_usd": 0.0022825,
+          "error": null,
+          "answer_extracted": "16.8",
+          "answer_correct": true
+        },
+        {
+          "id": "r-008",
+          "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+          "response": "For \\(f(x)=x^3-3x+1\\), check turning points:\n\n\\[\nf'(x)=3x^2-3=3(x-1)(x+1)\n\\]\n\nCritical points are at \\(x=-1\\) and \\(x=1\\).\n\nEvaluate:\n\\[\nf(-1)=(-1)^3-3(-1)+1=-1+3+1=3\n\\]\n\\[\nf(1)=1-3+1=-1\n\\]\n\nSince this cubic has positive leading coefficient, \\(f(x)\\to -\\infty\\) as \\(x\\to -\\infty\\) and \\(f(x)\\to \\infty\\) as \\(x\\to \\infty\\).\n\nSo the graph:\n- starts negative,\n- rises to \\(3\\) at \\(x=-1\\),\n- falls to \\(-1\\) at \\(x=1\\),\n- then rises to positive infinity.\n\nBecause it goes negative to positive, then positive to negative, then negative to positive, it crosses the \\(x\\)-axis 3 times.\n\nFinal answer: 3",
+          "turns": 1,
+          "latency_ms": 3881,
+          "input_tokens": 97,
+          "output_tokens": 238,
+          "cost_usd": 0.0038125,
+          "error": null,
+          "answer_extracted": "3",
+          "answer_correct": true
+        },
+        {
+          "id": "r-009",
+          "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+          "response": "This is the Fibonacci-type sequence starting with 1, 2:\n\n- \\(a_1 = 1\\)\n- \\(a_2 = 2\\)\n- \\(a_3 = 3\\)\n- \\(a_4 = 5\\)\n- \\(a_5 = 8\\)\n- \\(a_6 = 13\\)\n- \\(a_7 = 21\\)\n- \\(a_8 = 34\\)\n- \\(a_9 = 55\\)\n- \\(a_{10} = 89\\)\n\nFinal answer: 89",
+          "turns": 1,
+          "latency_ms": 2273,
+          "input_tokens": 115,
+          "output_tokens": 124,
+          "cost_usd": 0.0021475,
+          "error": null,
+          "answer_extracted": "89",
+          "answer_correct": true
+        },
+        {
+          "id": "r-010",
+          "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+          "response": "Total marbles: 12. Total ways to draw 3 marbles:\n\\[\n\\binom{12}{3} = 220\n\\]\n\nFavorable ways for all 3 to be the same color:\n- 3 red: \\(\\binom{3}{3}=1\\)\n- 3 blue: \\(\\binom{4}{3}=4\\)\n- 3 green: \\(\\binom{5}{3}=10\\)\n\nTotal favorable:\n\\[\n1+4+10=15\n\\]\n\nProbability:\n\\[\n\\frac{15}{220}=\\frac{3}{44}\n\\]\n\nFinal answer: 3/44",
+          "turns": 1,
+          "latency_ms": 2389,
+          "input_tokens": 121,
+          "output_tokens": 142,
+          "cost_usd": 0.0024325,
+          "error": null,
+          "answer_extracted": "3/44",
+          "answer_correct": true
+        }
+      ],
+      "aggregate": {
+        "n": 10,
+        "n_success": 10,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 2616,
+          "p95": 4266,
+          "p99": 4266,
+          "mean": 2809
+        },
+        "cost_usd": {
+          "total": 0.027072500000000003,
+          "mean": 0.0027072500000000005,
+          "per_1k_evals": 2.7072500000000006
+        },
+        "turns": {
+          "mean": 1,
+          "max": 1
+        },
+        "answer_accuracy": {
+          "graded": 10,
+          "correct": 10,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-grok.ts",
+      "provider": "xai",
+      "model": "grok-4.20-0309-reasoning",
+      "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "r-001",
+          "prompt": "What is the remainder when 7^100 is divided by 11?",
+          "response": "To compute \\(7^{100} \\mod 11\\), note that 11 is prime and does not divide 7. By Fermat's Little Theorem, \\(7^{10} \\equiv 1 \\pmod{11}\\).\n\nRewrite the exponent: \\(100 = 10 \\times 10\\), so\n\\[\n7^{100} = (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nThis holds because the powers of 7 modulo 11 are periodic with period 10 (the order divides 10). Verification for small cases confirms \\(7^5 \\equiv -1 \\pmod{11}\\), so \\(7^{10} \\equiv 1 \\pmod{11}\\), and thus the result for exponent 100 follows directly.\n\nFinal answer: 1",
+          "turns": 1,
+          "latency_ms": 6168,
+          "input_tokens": 197,
+          "output_tokens": 1143,
+          "cost_usd": 0.007252,
+          "error": null,
+          "answer_extracted": "1",
+          "answer_correct": true
+        },
+        {
+          "id": "r-002",
+          "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+          "response": "142 - 28 = 114\n\nFinal answer: 114",
+          "turns": 1,
+          "latency_ms": 3712,
+          "input_tokens": 202,
+          "output_tokens": 607,
+          "cost_usd": 0.004046,
+          "error": null,
+          "answer_extracted": "114",
+          "answer_correct": true
+        },
+        {
+          "id": "r-003",
+          "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+          "response": "Final answer: 96",
+          "turns": 1,
+          "latency_ms": 4767,
+          "input_tokens": 218,
+          "output_tokens": 822,
+          "cost_usd": 0.005368,
+          "error": null,
+          "answer_extracted": "96",
+          "answer_correct": true
+        },
+        {
+          "id": "r-004",
+          "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+          "response": "Final answer: 4",
+          "turns": 1,
+          "latency_ms": 2028,
+          "input_tokens": 211,
+          "output_tokens": 314,
+          "cost_usd": 0.002306,
+          "error": null,
+          "answer_extracted": "4",
+          "answer_correct": true
+        },
+        {
+          "id": "r-005",
+          "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+          "response": "The total number of distinct circular arrangements of 8 people (considering rotations as equivalent) is (8-1)! = 7! = 5040.\n\nTo find arrangements where Alice and Bob are not adjacent, subtract the arrangements where they sit next to each other from the total.\n\nTreat Alice and Bob as a single combined unit. This gives 7 units to arrange in a circle, which can be done in (7-1)! = 6! ways. Within their unit, Alice and Bob can switch places in 2 ways. Thus, arrangements where they are together: 2 × 6! = 1440.\n\nArrangements where they are apart: 5040 - 1440 = 3600.\n\nAlternatively, fix Alice's position to account for rotational symmetry. This leaves 7 seats for the remaining people. There are 7 possible seats for Bob, but 2 are adjacent to Alice and thus forbidden, leaving 5 valid seats for Bob. The remaining 6 people can then be seated in the remaining 6 seats in 6! ways. Thus: 5 × 6! = 5 × 720 = 3600.\n\nThe two methods agree. The problem specifies equivalence only under rotation (not reflection), so no further division by 2 is applied.\n\nFinal answer: 3600",
+          "turns": 1,
+          "latency_ms": 5516,
+          "input_tokens": 222,
+          "output_tokens": 881,
+          "cost_usd": 0.00573,
+          "error": null,
+          "answer_extracted": "3600",
+          "answer_correct": true
+        },
+        {
+          "id": "r-006",
+          "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+          "response": "The word MISSISSIPPI has 11 letters with the following frequencies: M appears 1 time, I appears 4 times, S appears 4 times, and P appears 2 times.\n\nThe number of distinct permutations is given by the multinomial coefficient  \n\\[\n\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}.\n\\]\n\nThis is equivalent to sequentially choosing positions:  \n- Choose 4 positions out of 11 for the I's: \\(\\binom{11}{4} = 330\\).  \n- Choose 4 positions out of the remaining 7 for the S's: \\(\\binom{7}{4} = 35\\).  \n- Choose 2 positions out of the remaining 3 for the P's: \\(\\binom{3}{2} = 3\\).  \n- The last position is for the single M (1 way).  \n\nMultiply these values: \\(330 \\times 35 = 11550\\), and \\(11550 \\times 3 = 34650\\).\n\nThis matches the direct evaluation of \\(39916800 / (24 \\times 24 \\times 2) = 34650\\).\n\nFinal answer: 34650",
+          "turns": 1,
+          "latency_ms": 5721,
+          "input_tokens": 199,
+          "output_tokens": 1221,
+          "cost_usd": 0.007724,
+          "error": null,
+          "answer_extracted": "34650",
+          "answer_correct": true
+        },
+        {
+          "id": "r-007",
+          "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+          "response": "The legs are 21 and 28. Hypotenuse is \\(\\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\).\n\nArea is \\(\\frac12 \\times 21 \\times 28 = 294\\).\n\nArea is also \\(\\frac12 \\times 35 \\times h\\), so \\(h = \\frac{588}{35} = 16.8\\).\n\nAlternatively, \\(h = \\frac{21 \\times 28}{35} = 16.8\\).\n\nFinal answer: 16.8",
+          "turns": 1,
+          "latency_ms": 4253,
+          "input_tokens": 220,
+          "output_tokens": 941,
+          "cost_usd": 0.006086,
+          "error": null,
+          "answer_extracted": "16.8",
+          "answer_correct": true
+        },
+        {
+          "id": "r-008",
+          "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+          "response": "The function \\(f(x) = x^3 - 3x + 1\\) is a cubic polynomial, which must have at least one real root by the intermediate value theorem, as \\(\\lim_{x \\to \\infty} f(x) = \\infty\\) and \\(\\lim_{x \\to -\\infty} f(x) = -\\infty\\).\n\nTo determine the exact number of distinct real roots, compute the first derivative:  \n\\(f'(x) = 3x^2 - 3 = 3(x^2 - 1)\\).  \nThe critical points are at \\(x = -1\\) and \\(x = 1\\).\n\nEvaluate \\(f\\) at these points:  \n\\(f(-1) = (-1)^3 - 3(-1) + 1 = -1 + 3 + 1 = 3 > 0\\) (local maximum),  \n\\(f(1) = 1^3 - 3(1) + 1 = 1 - 3 + 1 = -1 < 0\\) (local minimum).\n\n- As \\(x \\to -\\infty\\), \\(f(x) < 0\\), and \\(f(-1) > 0\\), so by the intermediate value theorem there is one root in \\((-\\infty, -1)\\).  \n- \\(f(-1) > 0\\) and \\(f(1) < 0\\), so there is one root in \\((-1, 1)\\).  \n- \\(f(1) < 0\\) and as \\(x \\to \\infty\\), \\(f(x) > 0\\), so there is one root in \\((1, \\infty)\\).\n\nTo confirm the roots are distinct (i.e., no multiple roots), note that any multiple root must satisfy both \\(f(x) = 0\\) and \\(f'(x) = 0\\). But \\(f(-1) = 3 \\neq 0\\) and \\(f(1) = -1 \\neq 0\\), so there are no multiple roots.\n\nThus, there are exactly three distinct real roots. This can be further verified by sign changes:  \n\\(f(-2) = -1 < 0\\), \\(f(-1) = 3 > 0\\) (root in \\((-2, -1)\\));  \n\\(f(0) = 1 > 0\\), \\(f(1) = -1 < 0\\) (root in \\((0, 1)\\));  \n\\(f(2) = 3 > 0\\) (root in \\((1, 2)\\)).\n\nFinal answer: 3",
+          "turns": 1,
+          "latency_ms": 6934,
+          "input_tokens": 214,
+          "output_tokens": 1222,
+          "cost_usd": 0.00776,
+          "error": null,
+          "answer_extracted": "3",
+          "answer_correct": true
+        },
+        {
+          "id": "r-009",
+          "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+          "response": "1 2 3 5 8 13 21 34 55 89\nFinal answer: 89",
+          "turns": 1,
+          "latency_ms": 4051,
+          "input_tokens": 232,
+          "output_tokens": 651,
+          "cost_usd": 0.00437,
+          "error": null,
+          "answer_extracted": "89",
+          "answer_correct": true
+        },
+        {
+          "id": "r-010",
+          "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+          "response": "Total marbles: 12.  \nTotal ways: C(12,3) = 220.  \nFavorable: C(3,3) + C(4,3) + C(5,3) = 1 + 4 + 10 = 15.  \n15/220 reduces to 3/44.  \n\nFinal answer: 3/44",
+          "turns": 1,
+          "latency_ms": 2850,
+          "input_tokens": 236,
+          "output_tokens": 625,
+          "cost_usd": 0.004222,
+          "error": null,
+          "answer_extracted": "3/44",
+          "answer_correct": true
+        }
+      ],
+      "aggregate": {
+        "n": 10,
+        "n_success": 10,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 4253,
+          "p95": 6934,
+          "p99": 6934,
+          "mean": 4600
+        },
+        "cost_usd": {
+          "total": 0.054863999999999996,
+          "mean": 0.0054864,
+          "per_1k_evals": 5.4864
+        },
+        "turns": {
+          "mean": 1,
+          "max": 1
+        },
+        "answer_accuracy": {
+          "graded": 10,
+          "correct": 10,
+          "rate": 1
+        }
+      }
+    },
+    {
+      "config_file": "config-opus.ts",
+      "provider": "anthropic",
+      "model": "claude-opus-4-7",
+      "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+      "maxOutputTokens": 800,
+      "results": [
+        {
+          "id": "r-001",
+          "prompt": "What is the remainder when 7^100 is divided by 11?",
+          "response": "7^10 ≡ 1 mod 11, so 7^100 ≡ 1.\n\nFinal answer: 1",
+          "turns": 1,
+          "latency_ms": 1866,
+          "input_tokens": 111,
+          "output_tokens": 42,
+          "cost_usd": 0.001605,
+          "error": null,
+          "answer_extracted": "1",
+          "answer_correct": true
+        },
+        {
+          "id": "r-002",
+          "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+          "response": "Divisible by 7: floor(999/7)=142. Divisible by 35: floor(999/35)=28. 142-28=114.\n\nFinal answer: 114",
+          "turns": 1,
+          "latency_ms": 1442,
+          "input_tokens": 118,
+          "output_tokens": 55,
+          "cost_usd": 0.001965,
+          "error": null,
+          "answer_extracted": "114",
+          "answer_correct": true
+        },
+        {
+          "id": "r-003",
+          "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+          "response": "96\n\nFinal answer: 96",
+          "turns": 1,
+          "latency_ms": 1353,
+          "input_tokens": 143,
+          "output_tokens": 14,
+          "cost_usd": 0.001065,
+          "error": null,
+          "answer_extracted": "96",
+          "answer_correct": true
+        },
+        {
+          "id": "r-004",
+          "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+          "response": "x(x-2)=8, x²-2x-8=0, x=4.\n\nFinal answer: 4",
+          "turns": 1,
+          "latency_ms": 2030,
+          "input_tokens": 126,
+          "output_tokens": 35,
+          "cost_usd": 0.001505,
+          "error": null,
+          "answer_extracted": "4",
+          "answer_correct": true
+        },
+        {
+          "id": "r-005",
+          "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+          "response": "7! - 2·6! = 5040 - 1440 = 3600\n\nFinal answer: 3600",
+          "turns": 1,
+          "latency_ms": 1345,
+          "input_tokens": 153,
+          "output_tokens": 36,
+          "cost_usd": 0.001665,
+          "error": null,
+          "answer_extracted": "3600",
+          "answer_correct": true
+        },
+        {
+          "id": "r-006",
+          "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+          "response": "11!/(4!4!2!) = 39916800/(24·24·2) = 39916800/1152 = 34650\n\nFinal answer: 34650",
+          "turns": 1,
+          "latency_ms": 1828,
+          "input_tokens": 120,
+          "output_tokens": 51,
+          "cost_usd": 0.001875,
+          "error": null,
+          "answer_extracted": "34650",
+          "answer_correct": true
+        },
+        {
+          "id": "r-007",
+          "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+          "response": "Hypotenuse = 35. Altitude = 21*28/35 = 588/35 = 16.8\n\nFinal answer: 16.8",
+          "turns": 1,
+          "latency_ms": 1573,
+          "input_tokens": 146,
+          "output_tokens": 48,
+          "cost_usd": 0.00193,
+          "error": null,
+          "answer_extracted": "16.8",
+          "answer_correct": true
+        },
+        {
+          "id": "r-008",
+          "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+          "response": "Discriminant of x³+px+q with p=-3, q=1: -4p³-27q² = -4(-27)-27 = 108-27=81>0, three real roots.\n\nFinal answer: 3",
+          "turns": 1,
+          "latency_ms": 2984,
+          "input_tokens": 130,
+          "output_tokens": 67,
+          "cost_usd": 0.002325,
+          "error": null,
+          "answer_extracted": "3",
+          "answer_correct": true
+        },
+        {
+          "id": "r-009",
+          "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+          "response": "1,2,3,5,8,13,21,34,55,89\n\nFinal answer: 89",
+          "turns": 1,
+          "latency_ms": 2181,
+          "input_tokens": 152,
+          "output_tokens": 32,
+          "cost_usd": 0.00156,
+          "error": null,
+          "answer_extracted": "89",
+          "answer_correct": true
+        },
+        {
+          "id": "r-010",
+          "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+          "response": "C(3,3)+C(4,3)+C(5,3) = 1+4+10=15. C(12,3)=220. 15/220=3/44.\n\nFinal answer: 3/44",
+          "turns": 1,
+          "latency_ms": 1626,
+          "input_tokens": 168,
+          "output_tokens": 62,
+          "cost_usd": 0.00239,
+          "error": null,
+          "answer_extracted": "3/44",
+          "answer_correct": true
+        }
+      ],
+      "aggregate": {
+        "n": 10,
+        "n_success": 10,
+        "n_error": 0,
+        "latency_ms": {
+          "p50": 1626,
+          "p95": 2984,
+          "p99": 2984,
+          "mean": 1823
+        },
+        "cost_usd": {
+          "total": 0.017885,
+          "mean": 0.0017885000000000002,
+          "per_1k_evals": 1.7885000000000002
+        },
+        "turns": {
+          "mean": 1,
+          "max": 1
+        },
+        "answer_accuracy": {
+          "graded": 10,
+          "correct": 10,
+          "rate": 1
+        }
+      }
+    }
+  ],
+  "leaderboard": {
+    "latency_p50_ms": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 1626
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 2616
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 4253
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "value": 6675
+      }
+    ],
+    "latency_p95_ms": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 2984
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 4266
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 6934
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "value": 7689
+      }
+    ],
+    "cost_per_1k_evals_usd": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 1.7885000000000002
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 2.7072500000000006
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 5.4864
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "value": 8.570199999999998
+      }
+    ],
+    "success_rate": [
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "value": 1
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "value": 1
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.20-0309-reasoning",
+        "value": 1
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-7",
+        "value": 1
+      }
+    ]
+  }
+}

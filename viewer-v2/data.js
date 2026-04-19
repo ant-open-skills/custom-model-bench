@@ -9,17 +9,17 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T02-09-08-013Z",
+        "comparison_id": "comparison_2026-04-19T02-42-43-435Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/demo/dataset.jsonl",
         "n_rows": 5,
-        "n_candidates": 4,
-        "started_at": "2026-04-19T02:08:53.635Z",
-        "completed_at": "2026-04-19T02:09:08.013Z",
+        "n_candidates": 12,
+        "started_at": "2026-04-19T02:42:21.948Z",
+        "completed_at": "2026-04-19T02:42:43.435Z",
         "runs": [
           {
-            "config_file": "config-google.ts",
+            "config_file": "config-gemini-flash.ts",
             "provider": "google",
-            "model": "gemini-3.1-pro-preview",
+            "model": "gemini-3-flash-preview",
             "systemPrompt": "You are a concise assistant. Answer in one sentence.",
             "temperature": 0,
             "maxOutputTokens": 200,
@@ -29,10 +29,10 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 2216,
+                "latency_ms": 932,
                 "input_tokens": 19,
-                "output_tokens": 99,
-                "cost_usd": 0.001226,
+                "output_tokens": 48,
+                "cost_usd": 0.0001535,
                 "error": null,
                 "answer_extracted": "Paris",
                 "answer_correct": true
@@ -40,12 +40,12 @@ window.__BENCH = {
               {
                 "id": "ex-002",
                 "prompt": "Name three primary colors.",
-                "response": "The three traditional primary",
+                "response": "The three primary colors are red, yellow, and blue.",
                 "turns": 1,
-                "latency_ms": 2838,
+                "latency_ms": 1108,
                 "input_tokens": 17,
-                "output_tokens": 196,
-                "cost_usd": 0.002386,
+                "output_tokens": 138,
+                "cost_usd": 0.0004225,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -55,10 +55,10 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is 391.",
                 "turns": 1,
-                "latency_ms": 3258,
+                "latency_ms": 1107,
                 "input_tokens": 23,
-                "output_tokens": 149,
-                "cost_usd": 0.001834,
+                "output_tokens": 138,
+                "cost_usd": 0.0004255,
                 "error": null,
                 "answer_extracted": "391",
                 "answer_correct": true
@@ -68,10 +68,10 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "The Apollo 11 mission landed on the Moon in 1969.",
                 "turns": 1,
-                "latency_ms": 2613,
+                "latency_ms": 1154,
                 "input_tokens": 27,
-                "output_tokens": 149,
-                "cost_usd": 0.001842,
+                "output_tokens": 138,
+                "cost_usd": 0.0004275,
                 "error": null,
                 "answer_extracted": "1969",
                 "answer_correct": true
@@ -79,12 +79,12 @@ window.__BENCH = {
               {
                 "id": "ex-005",
                 "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by",
+                "response": "Photosynthesis is the process by which green plants and other organisms use sunlight to convert carbon dioxide and water into chemical energy in the form of glucose, releasing oxygen as a byproduct.",
                 "turns": 1,
-                "latency_ms": 3450,
+                "latency_ms": 1228,
                 "input_tokens": 21,
-                "output_tokens": 196,
-                "cost_usd": 0.002394,
+                "output_tokens": 169,
+                "cost_usd": 0.0005175,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -95,15 +95,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2838,
-                "p95": 3450,
-                "p99": 3450,
-                "mean": 2875
+                "p50": 1108,
+                "p95": 1228,
+                "p99": 1228,
+                "mean": 1106
               },
               "cost_usd": {
-                "total": 0.009682,
-                "mean": 0.0019364,
-                "per_1k_evals": 1.9364000000000001
+                "total": 0.0019464999999999999,
+                "mean": 0.0003893,
+                "per_1k_evals": 0.3893
               },
               "turns": {
                 "mean": 1,
@@ -117,9 +117,9 @@ window.__BENCH = {
             }
           },
           {
-            "config_file": "config-openai.ts",
-            "provider": "openai",
-            "model": "gpt-5.4-mini",
+            "config_file": "config-gemini-lite.ts",
+            "provider": "google",
+            "model": "gemini-3.1-flash-lite-preview",
             "systemPrompt": "You are a concise assistant. Answer in one sentence.",
             "temperature": 0,
             "maxOutputTokens": 200,
@@ -129,7 +129,305 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 978,
+                "latency_ms": 1170,
+                "input_tokens": 19,
+                "output_tokens": 7,
+                "cost_usd": 0.00001525,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "The three primary colors are red, yellow, and blue.",
+                "turns": 1,
+                "latency_ms": 752,
+                "input_tokens": 17,
+                "output_tokens": 12,
+                "cost_usd": 0.00002225,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 multiplied by 23 is 391.",
+                "turns": 1,
+                "latency_ms": 985,
+                "input_tokens": 23,
+                "output_tokens": 13,
+                "cost_usd": 0.00002525,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "The Apollo 11 mission landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 852,
+                "input_tokens": 27,
+                "output_tokens": 17,
+                "cost_usd": 0.00003225,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the biological process by which green plants and certain other organisms convert light energy into chemical energy, using sunlight to synthesize nutrients from carbon dioxide and water.",
+                "turns": 1,
+                "latency_ms": 715,
+                "input_tokens": 21,
+                "output_tokens": 32,
+                "cost_usd": 0.00005325,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 852,
+                "p95": 1170,
+                "p99": 1170,
+                "mean": 895
+              },
+              "cost_usd": {
+                "total": 0.00014825,
+                "mean": 0.00002965,
+                "per_1k_evals": 0.02965
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-gemini-pro.ts",
+            "provider": "google",
+            "model": "gemini-3.1-pro-preview",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "temperature": 0,
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "The capital of France is Paris.",
+                "turns": 1,
+                "latency_ms": 2178,
+                "input_tokens": 19,
+                "output_tokens": 99,
+                "cost_usd": 0.001226,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "The three primary colors are",
+                "turns": 1,
+                "latency_ms": 2226,
+                "input_tokens": 17,
+                "output_tokens": 196,
+                "cost_usd": 0.002386,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 multiplied by 23 is 391.",
+                "turns": 1,
+                "latency_ms": 3488,
+                "input_tokens": 23,
+                "output_tokens": 130,
+                "cost_usd": 0.001606,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "The Apollo 11 mission landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 2604,
+                "input_tokens": 27,
+                "output_tokens": 149,
+                "cost_usd": 0.001842,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process",
+                "turns": 1,
+                "latency_ms": 2947,
+                "input_tokens": 21,
+                "output_tokens": 196,
+                "cost_usd": 0.002394,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 2604,
+                "p95": 3488,
+                "p99": 3488,
+                "mean": 2689
+              },
+              "cost_usd": {
+                "total": 0.009454,
+                "mean": 0.0018908000000000002,
+                "per_1k_evals": 1.8908000000000003
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-gpt-5-4.ts",
+            "provider": "openai",
+            "model": "gpt-5.4",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "Paris.",
+                "turns": 1,
+                "latency_ms": 1682,
+                "input_tokens": 28,
+                "output_tokens": 6,
+                "cost_usd": 0.00016,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "Red, blue, and yellow.",
+                "turns": 1,
+                "latency_ms": 1233,
+                "input_tokens": 26,
+                "output_tokens": 11,
+                "cost_usd": 0.00023,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 multiplied by 23 is 391.",
+                "turns": 1,
+                "latency_ms": 1584,
+                "input_tokens": 30,
+                "output_tokens": 13,
+                "cost_usd": 0.00027,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "Apollo 11 landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 1254,
+                "input_tokens": 35,
+                "output_tokens": 16,
+                "cost_usd": 0.0003275,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
+                "turns": 1,
+                "latency_ms": 1229,
+                "input_tokens": 31,
+                "output_tokens": 31,
+                "cost_usd": 0.0005425,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1254,
+                "p95": 1682,
+                "p99": 1682,
+                "mean": 1396
+              },
+              "cost_usd": {
+                "total": 0.0015300000000000001,
+                "mean": 0.000306,
+                "per_1k_evals": 0.306
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-gpt-mini.ts",
+            "provider": "openai",
+            "model": "gpt-5.4-mini",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "The capital of France is Paris.",
+                "turns": 1,
+                "latency_ms": 1838,
                 "input_tokens": 28,
                 "output_tokens": 11,
                 "cost_usd": 0.0000705,
@@ -142,7 +440,7 @@ window.__BENCH = {
                 "prompt": "Name three primary colors.",
                 "response": "Red, blue, and yellow.",
                 "turns": 1,
-                "latency_ms": 1051,
+                "latency_ms": 9939,
                 "input_tokens": 26,
                 "output_tokens": 11,
                 "cost_usd": 0.000069,
@@ -155,7 +453,7 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is 391.",
                 "turns": 1,
-                "latency_ms": 836,
+                "latency_ms": 778,
                 "input_tokens": 30,
                 "output_tokens": 13,
                 "cost_usd": 0.000081,
@@ -168,7 +466,7 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "Apollo 11 landed on the Moon in 1969.",
                 "turns": 1,
-                "latency_ms": 920,
+                "latency_ms": 886,
                 "input_tokens": 35,
                 "output_tokens": 16,
                 "cost_usd": 0.00009825,
@@ -181,7 +479,7 @@ window.__BENCH = {
                 "prompt": "Give a one-sentence definition of photosynthesis.",
                 "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
                 "turns": 1,
-                "latency_ms": 1242,
+                "latency_ms": 8043,
                 "input_tokens": 31,
                 "output_tokens": 31,
                 "cost_usd": 0.00016275,
@@ -195,10 +493,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 978,
-                "p95": 1242,
-                "p99": 1242,
-                "mean": 1005
+                "p50": 1838,
+                "p95": 9939,
+                "p99": 9939,
+                "mean": 4297
               },
               "cost_usd": {
                 "total": 0.00048150000000000005,
@@ -217,11 +515,10 @@ window.__BENCH = {
             }
           },
           {
-            "config_file": "config-xai.ts",
-            "provider": "xai",
-            "model": "grok-4",
+            "config_file": "config-gpt-nano.ts",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
             "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
             "maxOutputTokens": 200,
             "results": [
               {
@@ -229,10 +526,10 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 1296,
-                "input_tokens": 703,
-                "output_tokens": 66,
-                "cost_usd": 0.001802,
+                "latency_ms": 2099,
+                "input_tokens": 28,
+                "output_tokens": 11,
+                "cost_usd": 0.000019350000000000003,
                 "error": null,
                 "answer_extracted": "Paris",
                 "answer_correct": true
@@ -240,12 +537,12 @@ window.__BENCH = {
               {
                 "id": "ex-002",
                 "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, yellow, and blue.",
+                "response": "Red, blue, and yellow.",
                 "turns": 1,
-                "latency_ms": 2820,
-                "input_tokens": 701,
-                "output_tokens": 136,
-                "cost_usd": 0.002218,
+                "latency_ms": 775,
+                "input_tokens": 26,
+                "output_tokens": 11,
+                "cost_usd": 0.00001895,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -253,12 +550,12 @@ window.__BENCH = {
               {
                 "id": "ex-003",
                 "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
+                "response": "17 × 23 = 391.",
                 "turns": 1,
-                "latency_ms": 2298,
-                "input_tokens": 705,
-                "output_tokens": 124,
-                "cost_usd": 0.002154,
+                "latency_ms": 840,
+                "input_tokens": 30,
+                "output_tokens": 12,
+                "cost_usd": 0.000021,
                 "error": null,
                 "answer_extracted": "391",
                 "answer_correct": true
@@ -266,12 +563,12 @@ window.__BENCH = {
               {
                 "id": "ex-004",
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in 1969.",
+                "response": "Apollo 11 landed on the Moon in **1969**.",
                 "turns": 1,
-                "latency_ms": 1902,
-                "input_tokens": 710,
-                "output_tokens": 97,
-                "cost_usd": 0.002002,
+                "latency_ms": 1228,
+                "input_tokens": 35,
+                "output_tokens": 17,
+                "cost_usd": 0.00002825,
                 "error": null,
                 "answer_extracted": "1969",
                 "answer_correct": true
@@ -279,12 +576,12 @@ window.__BENCH = {
               {
                 "id": "ex-005",
                 "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the biological process by which green plants, algae, and some bacteria convert light energy from the sun into chemical energy, using carbon dioxide and water to produce glucose and oxygen.",
+                "response": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy by turning carbon dioxide and water into glucose and releasing oxygen.",
                 "turns": 1,
-                "latency_ms": 2724,
-                "input_tokens": 705,
-                "output_tokens": 149,
-                "cost_usd": 0.002304,
+                "latency_ms": 965,
+                "input_tokens": 31,
+                "output_tokens": 36,
+                "cost_usd": 0.000051200000000000004,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -295,15 +592,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2298,
-                "p95": 2820,
-                "p99": 2820,
-                "mean": 2208
+                "p50": 965,
+                "p95": 2099,
+                "p99": 2099,
+                "mean": 1181
               },
               "cost_usd": {
-                "total": 0.010480000000000001,
-                "mean": 0.002096,
-                "per_1k_evals": 2.096
+                "total": 0.00013875,
+                "mean": 0.000027750000000000004,
+                "per_1k_evals": 0.027750000000000004
               },
               "turns": {
                 "mean": 1,
@@ -317,7 +614,505 @@ window.__BENCH = {
             }
           },
           {
-            "config_file": "config.ts",
+            "config_file": "config-grok-420.ts",
+            "provider": "xai",
+            "model": "grok-4.20-0309-non-reasoning",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "temperature": 0,
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "Paris.",
+                "turns": 1,
+                "latency_ms": 442,
+                "input_tokens": 143,
+                "output_tokens": 2,
+                "cost_usd": 0.000298,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "Red, yellow, and blue.",
+                "turns": 1,
+                "latency_ms": 454,
+                "input_tokens": 141,
+                "output_tokens": 7,
+                "cost_usd": 0.000324,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "391",
+                "turns": 1,
+                "latency_ms": 342,
+                "input_tokens": 145,
+                "output_tokens": 1,
+                "cost_usd": 0.000296,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "1969.",
+                "turns": 1,
+                "latency_ms": 378,
+                "input_tokens": 150,
+                "output_tokens": 3,
+                "cost_usd": 0.000318,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert sunlight, carbon dioxide, and water into glucose and oxygen.",
+                "turns": 1,
+                "latency_ms": 459,
+                "input_tokens": 145,
+                "output_tokens": 28,
+                "cost_usd": 0.000458,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 442,
+                "p95": 459,
+                "p99": 459,
+                "mean": 415
+              },
+              "cost_usd": {
+                "total": 0.001694,
+                "mean": 0.0003388,
+                "per_1k_evals": 0.3388
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-fast.ts",
+            "provider": "xai",
+            "model": "grok-4-1-fast-non-reasoning",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "temperature": 0,
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "The capital of France is Paris.",
+                "turns": 1,
+                "latency_ms": 556,
+                "input_tokens": 186,
+                "output_tokens": 7,
+                "cost_usd": 0.0000407,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "Red, blue, and yellow.",
+                "turns": 1,
+                "latency_ms": 499,
+                "input_tokens": 184,
+                "output_tokens": 7,
+                "cost_usd": 0.000040300000000000004,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 × 23 = 391.",
+                "turns": 1,
+                "latency_ms": 369,
+                "input_tokens": 188,
+                "output_tokens": 8,
+                "cost_usd": 0.0000416,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "The Apollo 11 mission landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 376,
+                "input_tokens": 193,
+                "output_tokens": 14,
+                "cost_usd": 0.000045600000000000004,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy from the sun into chemical energy stored in glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
+                "turns": 1,
+                "latency_ms": 705,
+                "input_tokens": 188,
+                "output_tokens": 40,
+                "cost_usd": 0.000057600000000000004,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 499,
+                "p95": 705,
+                "p99": 705,
+                "mean": 501
+              },
+              "cost_usd": {
+                "total": 0.0002258,
+                "mean": 0.00004516,
+                "per_1k_evals": 0.04516
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-reasoning.ts",
+            "provider": "xai",
+            "model": "grok-4.20-0309-reasoning",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "The capital of France is Paris. \n\\confidence{100}",
+                "turns": 1,
+                "latency_ms": 1918,
+                "input_tokens": 145,
+                "output_tokens": 254,
+                "cost_usd": 0.001814,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "The three primary colors are red, yellow, and blue.",
+                "turns": 1,
+                "latency_ms": 871,
+                "input_tokens": 143,
+                "output_tokens": 98,
+                "cost_usd": 0.000874,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 multiplied by 23 equals 391. \n\\confidence{100}",
+                "turns": 1,
+                "latency_ms": 1605,
+                "input_tokens": 147,
+                "output_tokens": 200,
+                "cost_usd": 0.001494,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "The Apollo 11 mission landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 888,
+                "input_tokens": 152,
+                "output_tokens": 138,
+                "cost_usd": 0.001132,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert sunlight, carbon dioxide, and water into glucose and oxygen.",
+                "turns": 1,
+                "latency_ms": 1198,
+                "input_tokens": 147,
+                "output_tokens": 177,
+                "cost_usd": 0.001356,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1198,
+                "p95": 1918,
+                "p99": 1918,
+                "mean": 1296
+              },
+              "cost_usd": {
+                "total": 0.006670000000000001,
+                "mean": 0.0013340000000000001,
+                "per_1k_evals": 1.334
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-haiku.ts",
+            "provider": "anthropic",
+            "model": "claude-haiku-4-5",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "temperature": 0,
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "The capital of France is Paris.",
+                "turns": 1,
+                "latency_ms": 569,
+                "input_tokens": 26,
+                "output_tokens": 10,
+                "cost_usd": 0.000076,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "The three primary colors are red, yellow, and blue.",
+                "turns": 1,
+                "latency_ms": 493,
+                "input_tokens": 24,
+                "output_tokens": 15,
+                "cost_usd": 0.000099,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 multiplied by 23 is 391.",
+                "turns": 1,
+                "latency_ms": 492,
+                "input_tokens": 30,
+                "output_tokens": 16,
+                "cost_usd": 0.00011,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "Apollo 11 landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 493,
+                "input_tokens": 34,
+                "output_tokens": 16,
+                "cost_usd": 0.000114,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+                "turns": 1,
+                "latency_ms": 545,
+                "input_tokens": 31,
+                "output_tokens": 29,
+                "cost_usd": 0.000176,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 493,
+                "p95": 569,
+                "p99": 569,
+                "mean": 518
+              },
+              "cost_usd": {
+                "total": 0.000575,
+                "mean": 0.000115,
+                "per_1k_evals": 0.115
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-opus-4-7.ts",
+            "provider": "anthropic",
+            "model": "claude-opus-4-7",
+            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
+            "maxOutputTokens": 200,
+            "results": [
+              {
+                "id": "ex-001",
+                "prompt": "What is the capital of France?",
+                "response": "The capital of France is Paris.",
+                "turns": 1,
+                "latency_ms": 1021,
+                "input_tokens": 38,
+                "output_tokens": 14,
+                "cost_usd": 0.00054,
+                "error": null,
+                "answer_extracted": "Paris",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-002",
+                "prompt": "Name three primary colors.",
+                "response": "The three primary colors are red, blue, and yellow.",
+                "turns": 1,
+                "latency_ms": 973,
+                "input_tokens": 38,
+                "output_tokens": 21,
+                "cost_usd": 0.000715,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              },
+              {
+                "id": "ex-003",
+                "prompt": "What is 17 multiplied by 23?",
+                "response": "17 multiplied by 23 is 391.",
+                "turns": 1,
+                "latency_ms": 1043,
+                "input_tokens": 43,
+                "output_tokens": 19,
+                "cost_usd": 0.00069,
+                "error": null,
+                "answer_extracted": "391",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-004",
+                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
+                "response": "Apollo 11 landed on the Moon in 1969.",
+                "turns": 1,
+                "latency_ms": 1204,
+                "input_tokens": 51,
+                "output_tokens": 23,
+                "cost_usd": 0.00083,
+                "error": null,
+                "answer_extracted": "1969",
+                "answer_correct": true
+              },
+              {
+                "id": "ex-005",
+                "prompt": "Give a one-sentence definition of photosynthesis.",
+                "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
+                "turns": 1,
+                "latency_ms": 1448,
+                "input_tokens": 48,
+                "output_tokens": 55,
+                "cost_usd": 0.001615,
+                "error": null,
+                "answer_extracted": null,
+                "answer_correct": null
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1043,
+                "p95": 1448,
+                "p99": 1448,
+                "mean": 1138
+              },
+              "cost_usd": {
+                "total": 0.00439,
+                "mean": 0.000878,
+                "per_1k_evals": 0.878
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 3,
+                "correct": 3,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-sonnet.ts",
             "provider": "anthropic",
             "model": "claude-sonnet-4-6",
             "systemPrompt": "You are a concise assistant. Answer in one sentence.",
@@ -329,7 +1124,7 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 881,
+                "latency_ms": 839,
                 "input_tokens": 27,
                 "output_tokens": 10,
                 "cost_usd": 0.000231,
@@ -340,12 +1135,12 @@ window.__BENCH = {
               {
                 "id": "ex-002",
                 "prompt": "Name three primary colors.",
-                "response": "The three primary colors are **red**, **blue**, and **yellow**.",
+                "response": "The three primary colors are red, blue, and yellow.",
                 "turns": 1,
-                "latency_ms": 887,
+                "latency_ms": 932,
                 "input_tokens": 25,
-                "output_tokens": 18,
-                "cost_usd": 0.000345,
+                "output_tokens": 15,
+                "cost_usd": 0.0003,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -355,7 +1150,7 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is **391**.",
                 "turns": 1,
-                "latency_ms": 1636,
+                "latency_ms": 657,
                 "input_tokens": 31,
                 "output_tokens": 16,
                 "cost_usd": 0.000333,
@@ -368,7 +1163,7 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "The Apollo 11 mission landed on the Moon in **1969**.",
                 "turns": 1,
-                "latency_ms": 1051,
+                "latency_ms": 1081,
                 "input_tokens": 35,
                 "output_tokens": 18,
                 "cost_usd": 0.000375,
@@ -381,7 +1176,7 @@ window.__BENCH = {
                 "prompt": "Give a one-sentence definition of photosynthesis.",
                 "response": "Photosynthesis is the biological process by which plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored as glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
                 "turns": 1,
-                "latency_ms": 2046,
+                "latency_ms": 1642,
                 "input_tokens": 32,
                 "output_tokens": 52,
                 "cost_usd": 0.000876,
@@ -395,15 +1190,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1051,
-                "p95": 2046,
-                "p99": 2046,
-                "mean": 1300
+                "p50": 932,
+                "p95": 1642,
+                "p99": 1642,
+                "mean": 1030
               },
               "cost_usd": {
-                "total": 0.00216,
-                "mean": 0.000432,
-                "per_1k_evals": 0.432
+                "total": 0.002115,
+                "mean": 0.00042300000000000004,
+                "per_1k_evals": 0.42300000000000004
               },
               "turns": {
                 "mean": 1,
@@ -420,49 +1215,144 @@ window.__BENCH = {
         "leaderboard": {
           "latency_p50_ms": [
             {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 978
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 442
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 493
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 499
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 852
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 1051
+              "value": 932
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 965
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 1043
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 1108
             },
             {
               "provider": "xai",
-              "model": "grok-4",
-              "value": 2298
+              "model": "grok-4.20-0309-reasoning",
+              "value": 1198
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 1254
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 1838
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 2838
+              "value": 2604
             }
           ],
           "latency_p95_ms": [
             {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 1242
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 459
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 569
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 705
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 1170
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 1228
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 1448
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 2046
+              "value": 1642
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 1682
             },
             {
               "provider": "xai",
-              "model": "grok-4",
-              "value": 2820
+              "model": "grok-4.20-0309-reasoning",
+              "value": 1918
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 2099
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 3450
+              "value": 3488
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 9939
             }
           ],
           "cost_per_1k_evals_usd": [
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 0.027750000000000004
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 0.02965
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 0.04516
+            },
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
@@ -470,24 +1360,64 @@ window.__BENCH = {
             },
             {
               "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 0.115
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 0.306
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 0.3388
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 0.3893
+            },
+            {
+              "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 0.432
+              "value": 0.42300000000000004
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 0.878
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 1.334
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 1.9364000000000001
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4",
-              "value": 2.096
+              "value": 1.8908000000000003
             }
           ],
           "success_rate": [
             {
               "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 1
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 1
+            },
+            {
+              "provider": "google",
               "model": "gemini-3.1-pro-preview",
+              "value": 1
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
               "value": 1
             },
             {
@@ -496,8 +1426,33 @@ window.__BENCH = {
               "value": 1
             },
             {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 1
+            },
+            {
               "provider": "xai",
-              "model": "grok-4",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
               "value": 1
             },
             {
@@ -2599,1213 +3554,53 @@ window.__BENCH = {
               }
             }
           ]
-        }
-      ],
-      "source_path": "skills/custom-model-bench/examples/demo/runs/comparison_2026-04-19T02-09-08-013Z.json"
-    },
-    {
-      "id": "anthropic",
-      "label": "Anthropic tiers",
-      "kind": "intra",
-      "provider": "anthropic",
-      "comparison": {
-        "comparison_id": "comparison_2026-04-18T22-29-45-193Z",
-        "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/anthropic-tiers/dataset.jsonl",
-        "n_rows": 5,
-        "n_candidates": 3,
-        "started_at": "2026-04-18T22:29:38.914Z",
-        "completed_at": "2026-04-18T22:29:45.193Z",
-        "runs": [
-          {
-            "config_file": "config-haiku.ts",
-            "provider": "anthropic",
-            "model": "claude-haiku-4-5",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 969,
-                "input_tokens": 26,
-                "output_tokens": 10,
-                "cost_usd": 0.000076,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, yellow, and blue.",
-                "turns": 1,
-                "latency_ms": 563,
-                "input_tokens": 24,
-                "output_tokens": 15,
-                "cost_usd": 0.000099,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 527,
-                "input_tokens": 30,
-                "output_tokens": 16,
-                "cost_usd": 0.00011,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "Apollo 11 landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 478,
-                "input_tokens": 34,
-                "output_tokens": 16,
-                "cost_usd": 0.000114,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
-                "turns": 1,
-                "latency_ms": 598,
-                "input_tokens": 31,
-                "output_tokens": 29,
-                "cost_usd": 0.000176,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 563,
-                "p95": 969,
-                "p99": 969,
-                "mean": 627
-              },
-              "cost_usd": {
-                "total": 0.000575,
-                "mean": 0.000115,
-                "per_1k_evals": 0.115
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-opus.ts",
-            "provider": "anthropic",
-            "model": "claude-opus-4-7",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 1774,
-                "input_tokens": 38,
-                "output_tokens": 14,
-                "cost_usd": 0.00054,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, blue, and yellow.",
-                "turns": 1,
-                "latency_ms": 1166,
-                "input_tokens": 38,
-                "output_tokens": 21,
-                "cost_usd": 0.000715,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 992,
-                "input_tokens": 43,
-                "output_tokens": 19,
-                "cost_usd": 0.00069,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 1084,
-                "input_tokens": 51,
-                "output_tokens": 26,
-                "cost_usd": 0.000905,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
-                "turns": 1,
-                "latency_ms": 1260,
-                "input_tokens": 48,
-                "output_tokens": 55,
-                "cost_usd": 0.001615,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 1166,
-                "p95": 1774,
-                "p99": 1774,
-                "mean": 1255
-              },
-              "cost_usd": {
-                "total": 0.004465,
-                "mean": 0.000893,
-                "per_1k_evals": 0.893
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-sonnet.ts",
-            "provider": "anthropic",
-            "model": "claude-sonnet-4-6",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 967,
-                "input_tokens": 27,
-                "output_tokens": 10,
-                "cost_usd": 0.000231,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are **red**, **blue**, and **yellow**.",
-                "turns": 1,
-                "latency_ms": 882,
-                "input_tokens": 25,
-                "output_tokens": 18,
-                "cost_usd": 0.000345,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is **391**.",
-                "turns": 1,
-                "latency_ms": 712,
-                "input_tokens": 31,
-                "output_tokens": 16,
-                "cost_usd": 0.000333,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in **1969**.",
-                "turns": 1,
-                "latency_ms": 1531,
-                "input_tokens": 35,
-                "output_tokens": 18,
-                "cost_usd": 0.000375,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the biological process by which plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored as glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
-                "turns": 1,
-                "latency_ms": 2183,
-                "input_tokens": 32,
-                "output_tokens": 52,
-                "cost_usd": 0.000876,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 967,
-                "p95": 2183,
-                "p99": 2183,
-                "mean": 1255
-              },
-              "cost_usd": {
-                "total": 0.00216,
-                "mean": 0.000432,
-                "per_1k_evals": 0.432
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          }
-        ],
-        "leaderboard": {
-          "latency_p50_ms": [
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 563
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 967
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 1166
-            }
-          ],
-          "latency_p95_ms": [
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 969
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 1774
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 2183
-            }
-          ],
-          "cost_per_1k_evals_usd": [
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 0.115
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 0.432
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 0.893
-            }
-          ],
-          "success_rate": [
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "value": 1
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "value": 1
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "value": 1
-            }
-          ]
-        }
-      },
-      "history": [
+        },
         {
-          "comparison_id": "comparison_2026-04-18T22-29-45-193Z",
-          "started_at": "2026-04-18T22:29:38.914Z",
-          "completed_at": "2026-04-18T22:29:45.193Z",
-          "runs": [
-            {
-              "provider": "anthropic",
-              "model": "claude-haiku-4-5",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 563,
-                  "p95": 969,
-                  "p99": 969,
-                  "mean": 627
-                },
-                "cost_usd": {
-                  "total": 0.000575,
-                  "mean": 0.000115,
-                  "per_1k_evals": 0.115
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
-                }
-              }
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-opus-4-7",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 1166,
-                  "p95": 1774,
-                  "p99": 1774,
-                  "mean": 1255
-                },
-                "cost_usd": {
-                  "total": 0.004465,
-                  "mean": 0.000893,
-                  "per_1k_evals": 0.893
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
-                }
-              }
-            },
-            {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 967,
-                  "p95": 2183,
-                  "p99": 2183,
-                  "mean": 1255
-                },
-                "cost_usd": {
-                  "total": 0.00216,
-                  "mean": 0.000432,
-                  "per_1k_evals": 0.432
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "source_path": "skills/custom-model-bench/examples/anthropic-tiers/runs/comparison_2026-04-18T22-29-45-193Z.json"
-    },
-    {
-      "id": "openai",
-      "label": "OpenAI tiers",
-      "kind": "intra",
-      "provider": "openai",
-      "comparison": {
-        "comparison_id": "comparison_2026-04-18T22-30-10-178Z",
-        "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/openai-tiers/dataset.jsonl",
-        "n_rows": 5,
-        "n_candidates": 3,
-        "started_at": "2026-04-18T22:29:51.358Z",
-        "completed_at": "2026-04-18T22:30:10.178Z",
-        "runs": [
-          {
-            "config_file": "config-gpt5-mini.ts",
-            "provider": "openai",
-            "model": "gpt-5.4-mini",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 916,
-                "input_tokens": 28,
-                "output_tokens": 11,
-                "cost_usd": 0.0000705,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "Red, blue, and yellow.",
-                "turns": 1,
-                "latency_ms": 14723,
-                "input_tokens": 26,
-                "output_tokens": 11,
-                "cost_usd": 0.000069,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 874,
-                "input_tokens": 30,
-                "output_tokens": 13,
-                "cost_usd": 0.000081,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "Apollo 11 landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 1052,
-                "input_tokens": 35,
-                "output_tokens": 16,
-                "cost_usd": 0.00009825,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into sugars, releasing oxygen as a byproduct.",
-                "turns": 1,
-                "latency_ms": 1253,
-                "input_tokens": 31,
-                "output_tokens": 36,
-                "cost_usd": 0.00018525,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 1052,
-                "p95": 14723,
-                "p99": 14723,
-                "mean": 3764
-              },
-              "cost_usd": {
-                "total": 0.000504,
-                "mean": 0.0001008,
-                "per_1k_evals": 0.1008
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-gpt5-nano.ts",
-            "provider": "openai",
-            "model": "gpt-5.4-nano",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 1095,
-                "input_tokens": 28,
-                "output_tokens": 11,
-                "cost_usd": 0.000019350000000000003,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, blue, and yellow.",
-                "turns": 1,
-                "latency_ms": 801,
-                "input_tokens": 26,
-                "output_tokens": 16,
-                "cost_usd": 0.0000252,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 × 23 = 391.",
-                "turns": 1,
-                "latency_ms": 872,
-                "input_tokens": 30,
-                "output_tokens": 12,
-                "cost_usd": 0.000021,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "Apollo 11 landed on the Moon in **1969**.",
-                "turns": 1,
-                "latency_ms": 946,
-                "input_tokens": 35,
-                "output_tokens": 17,
-                "cost_usd": 0.00002825,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and release oxygen.",
-                "turns": 1,
-                "latency_ms": 2362,
-                "input_tokens": 31,
-                "output_tokens": 32,
-                "cost_usd": 0.000046200000000000005,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 946,
-                "p95": 2362,
-                "p99": 2362,
-                "mean": 1215
-              },
-              "cost_usd": {
-                "total": 0.00014,
-                "mean": 0.000027999999999999996,
-                "per_1k_evals": 0.027999999999999997
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-gpt5.ts",
-            "provider": "openai",
-            "model": "gpt-5.4",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 1093,
-                "input_tokens": 28,
-                "output_tokens": 11,
-                "cost_usd": 0.000235,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "Red, blue, and yellow.",
-                "turns": 1,
-                "latency_ms": 1134,
-                "input_tokens": 26,
-                "output_tokens": 11,
-                "cost_usd": 0.00023,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 1131,
-                "input_tokens": 30,
-                "output_tokens": 13,
-                "cost_usd": 0.00027,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "Apollo 11 landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 1023,
-                "input_tokens": 35,
-                "output_tokens": 16,
-                "cost_usd": 0.0003275,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
-                "turns": 1,
-                "latency_ms": 1283,
-                "input_tokens": 31,
-                "output_tokens": 31,
-                "cost_usd": 0.0005425,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 1131,
-                "p95": 1283,
-                "p99": 1283,
-                "mean": 1133
-              },
-              "cost_usd": {
-                "total": 0.001605,
-                "mean": 0.000321,
-                "per_1k_evals": 0.321
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          }
-        ],
-        "leaderboard": {
-          "latency_p50_ms": [
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "value": 946
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 1052
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 1131
-            }
-          ],
-          "latency_p95_ms": [
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 1283
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "value": 2362
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 14723
-            }
-          ],
-          "cost_per_1k_evals_usd": [
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "value": 0.027999999999999997
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 0.1008
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 0.321
-            }
-          ],
-          "success_rate": [
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 1
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "value": 1
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "value": 1
-            }
-          ]
-        }
-      },
-      "history": [
-        {
-          "comparison_id": "comparison_2026-04-18T22-30-10-178Z",
-          "started_at": "2026-04-18T22:29:51.358Z",
-          "completed_at": "2026-04-18T22:30:10.178Z",
-          "runs": [
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 1052,
-                  "p95": 14723,
-                  "p99": 14723,
-                  "mean": 3764
-                },
-                "cost_usd": {
-                  "total": 0.000504,
-                  "mean": 0.0001008,
-                  "per_1k_evals": 0.1008
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
-                }
-              }
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4-nano",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 946,
-                  "p95": 2362,
-                  "p99": 2362,
-                  "mean": 1215
-                },
-                "cost_usd": {
-                  "total": 0.00014,
-                  "mean": 0.000027999999999999996,
-                  "per_1k_evals": 0.027999999999999997
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
-                }
-              }
-            },
-            {
-              "provider": "openai",
-              "model": "gpt-5.4",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 1131,
-                  "p95": 1283,
-                  "p99": 1283,
-                  "mean": 1133
-                },
-                "cost_usd": {
-                  "total": 0.001605,
-                  "mean": 0.000321,
-                  "per_1k_evals": 0.321
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "source_path": "skills/custom-model-bench/examples/openai-tiers/runs/comparison_2026-04-18T22-30-10-178Z.json"
-    },
-    {
-      "id": "google",
-      "label": "Google tiers",
-      "kind": "intra",
-      "provider": "google",
-      "comparison": {
-        "comparison_id": "comparison_2026-04-18T22-30-22-845Z",
-        "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/google-tiers/dataset.jsonl",
-        "n_rows": 5,
-        "n_candidates": 3,
-        "started_at": "2026-04-18T22:30:10.288Z",
-        "completed_at": "2026-04-18T22:30:22.845Z",
-        "runs": [
-          {
-            "config_file": "config-flash-lite.ts",
-            "provider": "google",
-            "model": "gemini-3.1-flash-lite-preview",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 557,
-                "input_tokens": 19,
-                "output_tokens": 7,
-                "cost_usd": 0.00001525,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, yellow, and blue.",
-                "turns": 1,
-                "latency_ms": 628,
-                "input_tokens": 17,
-                "output_tokens": 12,
-                "cost_usd": 0.00002225,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 653,
-                "input_tokens": 23,
-                "output_tokens": 13,
-                "cost_usd": 0.00002525,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 542,
-                "input_tokens": 27,
-                "output_tokens": 17,
-                "cost_usd": 0.00003225,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the biological process by which green plants and certain other organisms convert light energy into chemical energy, using sunlight to synthesize nutrients from carbon dioxide and water.",
-                "turns": 1,
-                "latency_ms": 891,
-                "input_tokens": 21,
-                "output_tokens": 32,
-                "cost_usd": 0.00005325,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 628,
-                "p95": 891,
-                "p99": 891,
-                "mean": 654
-              },
-              "cost_usd": {
-                "total": 0.00014825,
-                "mean": 0.00002965,
-                "per_1k_evals": 0.02965
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-flash.ts",
-            "provider": "google",
-            "model": "gemini-3-flash-preview",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 781,
-                "input_tokens": 19,
-                "output_tokens": 48,
-                "cost_usd": 0.0001535,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, yellow, and blue.",
-                "turns": 1,
-                "latency_ms": 1465,
-                "input_tokens": 17,
-                "output_tokens": 139,
-                "cost_usd": 0.0004255,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 1107,
-                "input_tokens": 23,
-                "output_tokens": 132,
-                "cost_usd": 0.0004075,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 1041,
-                "input_tokens": 27,
-                "output_tokens": 124,
-                "cost_usd": 0.0003855,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the biological process by which green plants, algae, and some bacteria convert light energy into chemical energy by transforming water and carbon dioxide into glucose and oxygen.",
-                "turns": 1,
-                "latency_ms": 1333,
-                "input_tokens": 21,
-                "output_tokens": 164,
-                "cost_usd": 0.0005025,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 1107,
-                "p95": 1465,
-                "p99": 1465,
-                "mean": 1145
-              },
-              "cost_usd": {
-                "total": 0.0018744999999999999,
-                "mean": 0.00037489999999999995,
-                "per_1k_evals": 0.37489999999999996
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-pro.ts",
-            "provider": "google",
-            "model": "gemini-3.1-pro-preview",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 2247,
-                "input_tokens": 19,
-                "output_tokens": 99,
-                "cost_usd": 0.001226,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three traditional primary",
-                "turns": 1,
-                "latency_ms": 2661,
-                "input_tokens": 17,
-                "output_tokens": 196,
-                "cost_usd": 0.002386,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 2424,
-                "input_tokens": 23,
-                "output_tokens": 149,
-                "cost_usd": 0.001834,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 2296,
-                "input_tokens": 27,
-                "output_tokens": 155,
-                "cost_usd": 0.001914,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by",
-                "turns": 1,
-                "latency_ms": 2927,
-                "input_tokens": 21,
-                "output_tokens": 196,
-                "cost_usd": 0.002394,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 2424,
-                "p95": 2927,
-                "p99": 2927,
-                "mean": 2511
-              },
-              "cost_usd": {
-                "total": 0.009754,
-                "mean": 0.0019508000000000001,
-                "per_1k_evals": 1.9508
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          }
-        ],
-        "leaderboard": {
-          "latency_p50_ms": [
-            {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 628
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3-flash-preview",
-              "value": 1107
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 2424
-            }
-          ],
-          "latency_p95_ms": [
-            {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 891
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3-flash-preview",
-              "value": 1465
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 2927
-            }
-          ],
-          "cost_per_1k_evals_usd": [
-            {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 0.02965
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3-flash-preview",
-              "value": 0.37489999999999996
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 1.9508
-            }
-          ],
-          "success_rate": [
-            {
-              "provider": "google",
-              "model": "gemini-3.1-flash-lite-preview",
-              "value": 1
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3-flash-preview",
-              "value": 1
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 1
-            }
-          ]
-        }
-      },
-      "history": [
-        {
-          "comparison_id": "comparison_2026-04-18T22-30-22-845Z",
-          "started_at": "2026-04-18T22:30:10.288Z",
-          "completed_at": "2026-04-18T22:30:22.845Z",
+          "comparison_id": "comparison_2026-04-19T02-42-43-435Z",
+          "started_at": "2026-04-19T02:42:21.948Z",
+          "completed_at": "2026-04-19T02:42:43.435Z",
           "runs": [
             {
               "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1108,
+                  "p95": 1228,
+                  "p99": 1228,
+                  "mean": 1106
+                },
+                "cost_usd": {
+                  "total": 0.0019464999999999999,
+                  "mean": 0.0003893,
+                  "per_1k_evals": 0.3893
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
               "model": "gemini-3.1-flash-lite-preview",
               "aggregate": {
                 "n": 5,
                 "n_success": 5,
                 "n_error": 0,
                 "latency_ms": {
-                  "p50": 628,
-                  "p95": 891,
-                  "p99": 891,
-                  "mean": 654
+                  "p50": 852,
+                  "p95": 1170,
+                  "p99": 1170,
+                  "mean": 895
                 },
                 "cost_usd": {
                   "total": 0.00014825,
@@ -3815,30 +3610,11 @@ window.__BENCH = {
                 "turns": {
                   "mean": 1,
                   "max": 1
-                }
-              }
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3-flash-preview",
-              "aggregate": {
-                "n": 5,
-                "n_success": 5,
-                "n_error": 0,
-                "latency_ms": {
-                  "p50": 1107,
-                  "p95": 1465,
-                  "p99": 1465,
-                  "mean": 1145
                 },
-                "cost_usd": {
-                  "total": 0.0018744999999999999,
-                  "mean": 0.00037489999999999995,
-                  "per_1k_evals": 0.37489999999999996
-                },
-                "turns": {
-                  "mean": 1,
-                  "max": 1
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
                 }
               }
             },
@@ -3850,394 +3626,111 @@ window.__BENCH = {
                 "n_success": 5,
                 "n_error": 0,
                 "latency_ms": {
-                  "p50": 2424,
-                  "p95": 2927,
-                  "p99": 2927,
-                  "mean": 2511
+                  "p50": 2604,
+                  "p95": 3488,
+                  "p99": 3488,
+                  "mean": 2689
                 },
                 "cost_usd": {
-                  "total": 0.009754,
-                  "mean": 0.0019508000000000001,
-                  "per_1k_evals": 1.9508
+                  "total": 0.009454,
+                  "mean": 0.0018908000000000002,
+                  "per_1k_evals": 1.8908000000000003
                 },
                 "turns": {
                   "mean": 1,
                   "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
                 }
               }
-            }
-          ]
-        }
-      ],
-      "source_path": "skills/custom-model-bench/examples/google-tiers/runs/comparison_2026-04-18T22-30-22-845Z.json"
-    },
-    {
-      "id": "xai",
-      "label": "xAI tiers",
-      "kind": "intra",
-      "provider": "xai",
-      "comparison": {
-        "comparison_id": "comparison_2026-04-18T22-30-29-059Z",
-        "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/xai-tiers/dataset.jsonl",
-        "n_rows": 5,
-        "n_candidates": 3,
-        "started_at": "2026-04-18T22:30:22.968Z",
-        "completed_at": "2026-04-18T22:30:29.059Z",
-        "runs": [
-          {
-            "config_file": "config-grok41-fast.ts",
-            "provider": "xai",
-            "model": "grok-4-1-fast-non-reasoning",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris.",
-                "turns": 1,
-                "latency_ms": 546,
-                "input_tokens": 186,
-                "output_tokens": 7,
-                "cost_usd": 0.0000407,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, blue, and yellow.",
-                "turns": 1,
-                "latency_ms": 343,
-                "input_tokens": 184,
-                "output_tokens": 12,
-                "cost_usd": 0.000042800000000000004,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 × 23 = 391.",
-                "turns": 1,
-                "latency_ms": 357,
-                "input_tokens": 188,
-                "output_tokens": 8,
-                "cost_usd": 0.0000416,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "**1969**",
-                "turns": 1,
-                "latency_ms": 402,
-                "input_tokens": 193,
-                "output_tokens": 4,
-                "cost_usd": 0.000040600000000000004,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy from the sun into chemical energy stored in glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
-                "turns": 1,
-                "latency_ms": 512,
-                "input_tokens": 188,
-                "output_tokens": 40,
-                "cost_usd": 0.000057600000000000004,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 402,
-                "p95": 546,
-                "p99": 546,
-                "mean": 432
-              },
-              "cost_usd": {
-                "total": 0.0002233,
-                "mean": 0.00004466,
-                "per_1k_evals": 0.044660000000000005
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-grok420-non-reasoning.ts",
-            "provider": "xai",
-            "model": "grok-4.20-0309-non-reasoning",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "Paris.",
-                "turns": 1,
-                "latency_ms": 509,
-                "input_tokens": 143,
-                "output_tokens": 2,
-                "cost_usd": 0.000298,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "Red, yellow, and blue.",
-                "turns": 1,
-                "latency_ms": 344,
-                "input_tokens": 141,
-                "output_tokens": 7,
-                "cost_usd": 0.000324,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "391",
-                "turns": 1,
-                "latency_ms": 389,
-                "input_tokens": 145,
-                "output_tokens": 1,
-                "cost_usd": 0.000296,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "1969.",
-                "turns": 1,
-                "latency_ms": 407,
-                "input_tokens": 150,
-                "output_tokens": 3,
-                "cost_usd": 0.000318,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which green plants, algae, and some bacteria convert sunlight, carbon dioxide, and water into glucose and oxygen.",
-                "turns": 1,
-                "latency_ms": 391,
-                "input_tokens": 145,
-                "output_tokens": 28,
-                "cost_usd": 0.000458,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 391,
-                "p95": 509,
-                "p99": 509,
-                "mean": 408
-              },
-              "cost_usd": {
-                "total": 0.001694,
-                "mean": 0.0003388,
-                "per_1k_evals": 0.3388
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          },
-          {
-            "config_file": "config-grok420-reasoning.ts",
-            "provider": "xai",
-            "model": "grok-4.20-0309-reasoning",
-            "systemPrompt": "You are a concise assistant. Answer in one sentence.",
-            "temperature": 0,
-            "maxOutputTokens": 200,
-            "results": [
-              {
-                "id": "ex-001",
-                "prompt": "What is the capital of France?",
-                "response": "The capital of France is Paris. \n\\confidence{100}",
-                "turns": 1,
-                "latency_ms": 1696,
-                "input_tokens": 145,
-                "output_tokens": 209,
-                "cost_usd": 0.001544,
-                "error": null
-              },
-              {
-                "id": "ex-002",
-                "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, yellow, and blue.",
-                "turns": 1,
-                "latency_ms": 873,
-                "input_tokens": 143,
-                "output_tokens": 110,
-                "cost_usd": 0.000946,
-                "error": null
-              },
-              {
-                "id": "ex-003",
-                "prompt": "What is 17 multiplied by 23?",
-                "response": "17 multiplied by 23 is 391.",
-                "turns": 1,
-                "latency_ms": 869,
-                "input_tokens": 147,
-                "output_tokens": 98,
-                "cost_usd": 0.000882,
-                "error": null
-              },
-              {
-                "id": "ex-004",
-                "prompt": "In which year did the Apollo 11 mission land on the Moon?",
-                "response": "The Apollo 11 mission landed on the Moon in 1969.",
-                "turns": 1,
-                "latency_ms": 1102,
-                "input_tokens": 152,
-                "output_tokens": 187,
-                "cost_usd": 0.001426,
-                "error": null
-              },
-              {
-                "id": "ex-005",
-                "prompt": "Give a one-sentence definition of photosynthesis.",
-                "response": "Photosynthesis is the process by which green plants and certain other organisms convert sunlight, carbon dioxide, and water into glucose and oxygen.",
-                "turns": 1,
-                "latency_ms": 1550,
-                "input_tokens": 147,
-                "output_tokens": 263,
-                "cost_usd": 0.001872,
-                "error": null
-              }
-            ],
-            "aggregate": {
-              "n": 5,
-              "n_success": 5,
-              "n_error": 0,
-              "latency_ms": {
-                "p50": 1102,
-                "p95": 1696,
-                "p99": 1696,
-                "mean": 1218
-              },
-              "cost_usd": {
-                "total": 0.006670000000000001,
-                "mean": 0.0013340000000000001,
-                "per_1k_evals": 1.334
-              },
-              "turns": {
-                "mean": 1,
-                "max": 1
-              }
-            }
-          }
-        ],
-        "leaderboard": {
-          "latency_p50_ms": [
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-non-reasoning",
-              "value": 391
             },
             {
-              "provider": "xai",
-              "model": "grok-4-1-fast-non-reasoning",
-              "value": 402
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-reasoning",
-              "value": 1102
-            }
-          ],
-          "latency_p95_ms": [
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-non-reasoning",
-              "value": 509
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4-1-fast-non-reasoning",
-              "value": 546
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-reasoning",
-              "value": 1696
-            }
-          ],
-          "cost_per_1k_evals_usd": [
-            {
-              "provider": "xai",
-              "model": "grok-4-1-fast-non-reasoning",
-              "value": 0.044660000000000005
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-non-reasoning",
-              "value": 0.3388
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-reasoning",
-              "value": 1.334
-            }
-          ],
-          "success_rate": [
-            {
-              "provider": "xai",
-              "model": "grok-4-1-fast-non-reasoning",
-              "value": 1
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-non-reasoning",
-              "value": 1
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4.20-0309-reasoning",
-              "value": 1
-            }
-          ]
-        }
-      },
-      "history": [
-        {
-          "comparison_id": "comparison_2026-04-18T22-30-29-059Z",
-          "started_at": "2026-04-18T22:30:22.968Z",
-          "completed_at": "2026-04-18T22:30:29.059Z",
-          "runs": [
-            {
-              "provider": "xai",
-              "model": "grok-4-1-fast-non-reasoning",
+              "provider": "openai",
+              "model": "gpt-5.4",
               "aggregate": {
                 "n": 5,
                 "n_success": 5,
                 "n_error": 0,
                 "latency_ms": {
-                  "p50": 402,
-                  "p95": 546,
-                  "p99": 546,
-                  "mean": 432
+                  "p50": 1254,
+                  "p95": 1682,
+                  "p99": 1682,
+                  "mean": 1396
                 },
                 "cost_usd": {
-                  "total": 0.0002233,
-                  "mean": 0.00004466,
-                  "per_1k_evals": 0.044660000000000005
+                  "total": 0.0015300000000000001,
+                  "mean": 0.000306,
+                  "per_1k_evals": 0.306
                 },
                 "turns": {
                   "mean": 1,
                   "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1838,
+                  "p95": 9939,
+                  "p99": 9939,
+                  "mean": 4297
+                },
+                "cost_usd": {
+                  "total": 0.00048150000000000005,
+                  "mean": 0.00009630000000000001,
+                  "per_1k_evals": 0.09630000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 965,
+                  "p95": 2099,
+                  "p99": 2099,
+                  "mean": 1181
+                },
+                "cost_usd": {
+                  "total": 0.00013875,
+                  "mean": 0.000027750000000000004,
+                  "per_1k_evals": 0.027750000000000004
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
                 }
               }
             },
@@ -4249,10 +3742,10 @@ window.__BENCH = {
                 "n_success": 5,
                 "n_error": 0,
                 "latency_ms": {
-                  "p50": 391,
-                  "p95": 509,
-                  "p99": 509,
-                  "mean": 408
+                  "p50": 442,
+                  "p95": 459,
+                  "p99": 459,
+                  "mean": 415
                 },
                 "cost_usd": {
                   "total": 0.001694,
@@ -4262,6 +3755,40 @@ window.__BENCH = {
                 "turns": {
                   "mean": 1,
                   "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 499,
+                  "p95": 705,
+                  "p99": 705,
+                  "mean": 501
+                },
+                "cost_usd": {
+                  "total": 0.0002258,
+                  "mean": 0.00004516,
+                  "per_1k_evals": 0.04516
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
                 }
               }
             },
@@ -4273,10 +3800,10 @@ window.__BENCH = {
                 "n_success": 5,
                 "n_error": 0,
                 "latency_ms": {
-                  "p50": 1102,
-                  "p95": 1696,
-                  "p99": 1696,
-                  "mean": 1218
+                  "p50": 1198,
+                  "p95": 1918,
+                  "p99": 1918,
+                  "mean": 1296
                 },
                 "cost_usd": {
                   "total": 0.006670000000000001,
@@ -4286,13 +3813,105 @@ window.__BENCH = {
                 "turns": {
                   "mean": 1,
                   "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 493,
+                  "p95": 569,
+                  "p99": 569,
+                  "mean": 518
+                },
+                "cost_usd": {
+                  "total": 0.000575,
+                  "mean": 0.000115,
+                  "per_1k_evals": 0.115
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1043,
+                  "p95": 1448,
+                  "p99": 1448,
+                  "mean": 1138
+                },
+                "cost_usd": {
+                  "total": 0.00439,
+                  "mean": 0.000878,
+                  "per_1k_evals": 0.878
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 932,
+                  "p95": 1642,
+                  "p99": 1642,
+                  "mean": 1030
+                },
+                "cost_usd": {
+                  "total": 0.002115,
+                  "mean": 0.00042300000000000004,
+                  "per_1k_evals": 0.42300000000000004
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
                 }
               }
             }
           ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/xai-tiers/runs/comparison_2026-04-18T22-30-29-059Z.json"
+      "source_path": "skills/custom-model-bench/examples/demo/runs/comparison_2026-04-19T02-42-43-435Z.json"
     },
     {
       "id": "reasoning",
@@ -4300,15 +3919,345 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T02-03-39-472Z",
+        "comparison_id": "comparison_2026-04-19T02-44-39-023Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/reasoning/dataset.jsonl",
         "n_rows": 10,
-        "n_candidates": 4,
-        "started_at": "2026-04-19T02:02:29.912Z",
-        "completed_at": "2026-04-19T02:03:39.472Z",
+        "n_candidates": 12,
+        "started_at": "2026-04-19T02:43:29.132Z",
+        "completed_at": "2026-04-19T02:44:39.023Z",
         "runs": [
           {
-            "config_file": "config-gemini.ts",
+            "config_file": "config-gemini-flash.ts",
+            "provider": "google",
+            "model": "gemini-3-flash-preview",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "To find the remainder when $7^{100}$ is divided by 11, we can use Fermat's Little Theorem",
+                "turns": 1,
+                "latency_ms": 3502,
+                "input_tokens": 76,
+                "output_tokens": 796,
+                "cost_usd": 0.002426,
+                "error": null,
+                "answer_extracted": "To find the remainder when $7^{100}$ is divided by 11, we can use Fermat's Little Theorem",
+                "answer_correct": false
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we follow",
+                "turns": 1,
+                "latency_ms": 3545,
+                "input_tokens": 80,
+                "output_tokens": 795,
+                "cost_usd": 0.002425,
+                "error": null,
+                "answer_extracted": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we follow",
+                "answer_correct": false
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "To find the number of unit cubes with exactly two red faces, we consider the structure of the large cube.\n\n1.  **Identify the location of cubes with two red faces:** These cubes are located along the edges of the large cube, but they do not include the corner cubes (which have three red faces).\n2.  **Determine the number of edges:** A cube has 12 edges.\n3.  **",
+                "turns": 1,
+                "latency_ms": 3993,
+                "input_tokens": 97,
+                "output_tokens": 796,
+                "cost_usd": 0.0024365,
+                "error": null,
+                "answer_extracted": "3.  **",
+                "answer_correct": false
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "To solve the equation log_2(x) + log_2(x - 2) = 3, we follow these steps:\n\n1.  **Identify the domain:** For the logarithmic terms to be defined, the arguments must be positive.\n    *   x > 0\n    *   x - 2 > 0  =>  x > 2\n    Combining these, we must have x > 2.\n\n2.  **Apply logarithmic properties:** Use the property log_b(a) + log_b(c) = log_b(a * c).\n    log_2(x * (x - 2)) = 3\n\n3.  **Convert to exponential form:** If log_b(y) = z, then y = b^z.\n    x(x - 2) = 2^3\n    x^2 - 2x = 8\n\n4.  **Solve the quadratic equation:**\n    x^2 - 2x - 8 = 0\n    (x - 4)(x + 2) = 0\n    This gives two potential solutions: x = 4 and x = -2.\n\n5.  **Check against the domain:**\n    *   x = 4: Since 4 > 2, this is a valid solution.\n    *   x = -2: Since -2 is not greater than 2, this solution is extraneous.\n\n6.  **Verify the solution:**\n    log_2(4) + log_2(4 - 2) = log_2(4) + log_2(2)\n    Since 2^2 = 4, log_2(4) = 2.\n",
+                "turns": 1,
+                "latency_ms": 3723,
+                "input_tokens": 89,
+                "output_tokens": 796,
+                "cost_usd": 0.0024325,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "To find the number of ways 8 people can be seated around a round table such that Alice and Bob do not sit next to each other,",
+                "turns": 1,
+                "latency_ms": 4206,
+                "input_tokens": 98,
+                "output_tokens": 796,
+                "cost_usd": 0.002437,
+                "error": null,
+                "answer_extracted": "To find the number of ways 8 people can be seated around a round table such that Alice and Bob do not sit next to each other,",
+                "answer_correct": false
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "To find the number of distinct arrangements of the letters in the word MISSISSIPPI, we use the formula for permutations of a mult",
+                "turns": 1,
+                "latency_ms": 3523,
+                "input_tokens": 75,
+                "output_tokens": 796,
+                "cost_usd": 0.0024255,
+                "error": null,
+                "answer_extracted": "To find the number of distinct arrangements of the letters in the word MISSISSIPPI, we use the formula for permutations of a mult",
+                "answer_correct": false
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "The legs of the right triangle are $a = 21$ and $b = 28$. To find the length of the hypotenuse $",
+                "turns": 1,
+                "latency_ms": 3631,
+                "input_tokens": 98,
+                "output_tokens": 796,
+                "cost_usd": 0.002437,
+                "error": null,
+                "answer_extracted": "The legs of the right triangle are $a = 21$ and $b = 28$. To find the length of the hypotenuse $",
+                "answer_correct": false
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "To find the number of distinct real roots of the function $f(x) = x^3 - 3x + 1$, we analyze",
+                "turns": 1,
+                "latency_ms": 3320,
+                "input_tokens": 92,
+                "output_tokens": 796,
+                "cost_usd": 0.002434,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "To find the 10th term of the sequence $a_n$, we use the given recursive formula $a_{n+2} =",
+                "turns": 1,
+                "latency_ms": 3321,
+                "input_tokens": 111,
+                "output_tokens": 796,
+                "cost_usd": 0.0024435,
+                "error": null,
+                "answer_extracted": "To find the 10th term of the sequence $a_n$, we use the given recursive formula $a_{n+2} =",
+                "answer_correct": false
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "To find the probability that all three marbles drawn are the same color, we first determine the total number of ways to choose 3 marbles from the bag and then",
+                "turns": 1,
+                "latency_ms": 3489,
+                "input_tokens": 113,
+                "output_tokens": 796,
+                "cost_usd": 0.0024445,
+                "error": null,
+                "answer_extracted": "To find the probability that all three marbles drawn are the same color, we first determine the total number of ways to choose 3 marbles from the bag and then",
+                "answer_correct": false
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 3523,
+                "p95": 4206,
+                "p99": 4206,
+                "mean": 3625
+              },
+              "cost_usd": {
+                "total": 0.0243415,
+                "mean": 0.00243415,
+                "per_1k_evals": 2.43415
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 2,
+                "rate": 0.2
+              }
+            }
+          },
+          {
+            "config_file": "config-gemini-lite.ts",
+            "provider": "google",
+            "model": "gemini-3.1-flash-lite-preview",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "To find the remainder when $7^{100}$ is divided by 11, we can use Fermat's Little Theorem.\n\nFermat's Little Theorem states that if $p$ is a prime number and $a$ is an integer not divisible by $p$, then:\n$a^{p-1} \\equiv 1 \\pmod{p}$\n\nIn this problem, $a = 7$ and $p = 11$. Since 11 is prime and 7 is not divisible by 11, we have:\n$7^{11-1} \\equiv 1 \\pmod{11}$\n$7^{10} \\equiv 1 \\pmod{11}$\n\nWe want to find $7^{100} \\pmod{11}$. We can express $7^{100}$ in terms of $7^{10}$:\n$7^{100} = (7^{10})^{10}$\n\nUsing the congruence we found:\n$7^{100} \\equiv (1)^{10} \\pmod{11}$\n$7^{100} \\equiv 1 \\pmod{11}$\n\nThus, the remainder when $7^{100}$ is divided by 11 is 1.\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 1563,
+                "input_tokens": 76,
+                "output_tokens": 283,
+                "cost_usd": 0.0004435,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we can use the principle of inclusion-exclusion.\n\n1.  **Find the number of positive integers less than 1000 divisible by 7:**\n    These are integers of the form $7k$. We need $7k < 1000$.\n    $k < \\frac{1000}{7} \\approx 142.857$\n    So, $k$ can range from 1 to 142.\n    There are 142 such integers.\n\n2.  **Find the number of positive integers less than 1000 divisible by both 7 and 5:**\n    An integer is divisible by both 7 and 5 if and only if it is divisible by their least common multiple, $\\text{lcm}(7, 5) = 35$.\n    These are integers of the form $35k$. We need $35k < 1000$.\n    $k < \\frac{1000}{35} = \\frac{200}{7} \\approx 28.57$\n    So, $k$ can range from 1 to 28.\n    There are 28 such integers.\n\n3.  **Calculate the number of integers divisible by 7 but not by 5:**\n    We subtract the count of integers divisible by both 7 and 5 from the count of integers divisible by 7.\n    Number = (Integers divisible by 7) - (Integers divisible by 35)\n    Number = 142 - 28\n    Number = 114\n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 2064,
+                "input_tokens": 80,
+                "output_tokens": 391,
+                "cost_usd": 0.0006065,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "To find the number of unit cubes with exactly two red faces, we analyze the structure of the $10 \\times 10 \\times 10$ cube:\n\n1.  **Total cubes:** The cube is cut into $10 \\times 10 \\times 10 = 1000$ unit cubes.\n2.  **Categorizing the unit cubes:**\n    *   **3 red faces:** These are the corner cubes. A cube has 8 corners, so there are 8 such cubes.\n    *   **2 red faces:** These are the cubes located along the edges of the large cube, excluding the corner cubes.\n    *   **1 red face:** These are the cubes on the faces of the large cube, excluding the edges and corners.\n    *   **0 red faces:** These are the interior cubes.\n\n3.  **Calculating the cubes with 2 red faces:**\n    *   A cube has 12 edges.\n    *   Each edge of the $10 \\times 10 \\times 10$ cube has a length of 10 units.\n    *   On each edge, there are 10 unit cubes.\n    *   Two of these cubes are corner cubes (which have 3 red faces).\n    *   Therefore, the number of cubes with exactly two red faces on each edge is $10 - 2 = 8$.\n    *   Since there are 12 edges, the total number of cubes with exactly two red faces is $12 \\times 8$.\n\n4.  **Calculation:**\n    $12 \\times 8 = 96$.\n\nFinal answer: 96",
+                "turns": 1,
+                "latency_ms": 1641,
+                "input_tokens": 97,
+                "output_tokens": 362,
+                "cost_usd": 0.00056725,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "To solve the equation $\\log_2(x) + \\log_2(x - 2) = 3$ for $x > 0$:\n\n1.  **Identify the domain:**\n    The arguments of the logarithms must be positive:\n    $x > 0$ and $x - 2 > 0 \\implies x > 2$.\n    So, we require $x > 2$.\n\n2.  **Combine the logarithms:**\n    Using the property $\\log_b(a) + \\log_b(c) = \\log_b(ac)$:\n    $\\log_2(x(x - 2)) = 3$\n\n3.  **Convert to exponential form:**\n    $x(x - 2) = 2^3$\n    $x^2 - 2x = 8$\n\n4.  **Solve the quadratic equation:**\n    $x^2 - 2x - 8 = 0$\n    Factor the quadratic:\n    $(x - 4)(x + 2) = 0$\n\n5.  **Find the roots:**\n    $x = 4$ or $x = -2$.\n\n6.  **Check against the domain:**\n    We established that $x > 2$.\n    $x = 4$ satisfies $4 > 2$.\n    $x = -2$ does not satisfy $x > 2$.\n\nTherefore, the only valid solution is $x = 4$.\n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 2413,
+                "input_tokens": 89,
+                "output_tokens": 331,
+                "cost_usd": 0.00051875,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "To find the number of ways to seat 8 people around a round table such that Alice and Bob do not sit next to each other, we can use the complement method:\nTotal arrangements - Arrangements where Alice and Bob sit together.\n\n1. **Total arrangements:**\nThe number of ways to seat $n$ people around a round table is $(n-1)!$.\nFor $n=8$, the total number of arrangements is $(8-1)! = 7!$.\n$7! = 5040$.\n\n2. **Arrangements where Alice and Bob sit together:**\nTreat Alice and Bob as a single unit (AB). Now we have 7 units to arrange around the table (the (AB) unit plus the other 6 people).\nThe number of ways to arrange 7 units around a round table is $(7-1)! = 6!$.\nWithin the (AB) unit, Alice and Bob can be arranged in $2! = 2$ ways (AB or BA).\nSo, the number of arrangements where Alice and Bob sit together is $6! \\times 2$.\n$6! = 720$.\n$720 \\times 2 = 1440$.\n\n3. **Subtract the restricted arrangements from the total:**\nNumber of ways = Total - (Alice and Bob together)\nNumber of ways = $5040 - 1440 = 3600$.\n\nFinal answer: 3600",
+                "turns": 1,
+                "latency_ms": 1543,
+                "input_tokens": 98,
+                "output_tokens": 317,
+                "cost_usd": 0.0005,
+                "error": null,
+                "answer_extracted": "3600",
+                "answer_correct": true
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "To find the number of distinct arrangements of the letters in the word \"MISSISSIPPI\", we use the formula for permutations of a multiset:\n\n$$\\frac{n!}{n_1! \\cdot n_2! \\cdot \\dots \\cdot n_k!}$$\n\n1.  **Count the total number of letters ($n$):**\n    The word MISSISSIPPI has 11 letters.\n    $n = 11$\n\n2.  **Count the frequency of each letter:**\n    *   M: 1\n    *   I: 4 (at positions 2, 5, 8, 11)\n    *   S: 4 (at positions 3, 4, 6, 7)\n    *   P: 2 (at positions 9, 10)\n\n    Check: $1 + 4 + 4 + 2 = 11$.\n\n3.  **Apply the formula:**\n    $$\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}$$\n\n4.  **Calculate the factorials:**\n    *   $11! = 39,916,800$\n    *   $1! = 1$\n    *   $4! = 24$\n    *   $2! = 2$\n\n5.  **Perform the division:**\n    $$\\text{Arrangements} = \\frac{39,916,800}{1 \\cdot 24 \\cdot 24 \\cdot 2}$$\n    $$\\text{Arrangements} = \\frac{39,916,800}{1,152}$$\n\n    Alternatively, simplify the fraction:\n    $$\\frac{11 \\cdot 10 \\cdot 9 \\cdot 8 \\cdot 7 \\cdot 6 \\cdot 5 \\cdot 4!}{4! \\cdot 24 \\cdot 2}$$\n    $$\\frac{11 \\cdot 10 \\cdot 9 \\cdot 8 \\cdot 7 \\cdot 6 \\cdot 5}{24 \\cdot 2}$$\n    $$\\frac{11 \\cdot 10 \\cdot 9 \\cdot 8 \\cdot 7 \\cdot 6 \\cdot 5}{48}$$\n    Since $8 \\cdot 6 = 48$:\n    $$11 \\cdot 10 \\cdot 9 \\cdot 7 \\cdot 5$$\n    $$11 \\cdot 10 \\cdot 63 \\cdot 5$$\n    $$11 \\cdot 10 \\cdot 315$$\n    $$11 \\cdot 3150 = 34,650$$\n\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 2199,
+                "input_tokens": 75,
+                "output_tokens": 616,
+                "cost_usd": 0.00094275,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "To find the length of the altitude drawn from the right angle to the hypotenuse of a right triangle with legs $a = 21$ and $b = 28$, we follow these steps:\n\n1.  **Find the length of the hypotenuse ($c$):**\n    Using the Pythagorean theorem, $c = \\sqrt{a^2 + b^2}$.\n    $c = \\sqrt{21^2 + 28^2}$\n    $c = \\sqrt{441 + 784}$\n    $c = \\sqrt{1225}$\n    $c = 35$\n\n2.  **Use the area formula to find the altitude ($h$):**\n    The area of a right triangle can be calculated in two ways:\n    - Area = $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times a \\times b$\n    - Area = $\\frac{1}{2} \\times \\text{hypotenuse} \\times \\text{altitude} = \\frac{1}{2} \\times c \\times h$\n\n    Equating the two:\n    $\\frac{1}{2} \\times 21 \\times 28 = \\frac{1}{2} \\times 35 \\times h$\n    $21 \\times 28 = 35 \\times h$\n    $588 = 35 \\times h$\n\n3.  **Solve for $h$:**\n    $h = \\frac{588}{35}$\n    Divide both by 7:\n    $h = \\frac{84}{5}$\n    $h = 16.8$\n\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 1837,
+                "input_tokens": 98,
+                "output_tokens": 399,
+                "cost_usd": 0.000623,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "To determine the number of distinct real roots of the function $f(x) = x^3 - 3x + 1$, we can analyze its behavior using its derivative.\n\n1.  **Find the derivative:**\n    $f'(x) = 3x^2 - 3$\n\n2.  **Find the critical points:**\n    Set $f'(x) = 0$:\n    $3x^2 - 3 = 0$\n    $x^2 = 1$\n    $x = 1$ or $x = -1$\n\n3.  **Evaluate the function at the critical points:**\n    *   For $x = -1$:\n        $f(-1) = (-1)^3 - 3(-1) + 1 = -1 + 3 + 1 = 3$\n        Since $f(-1) = 3 > 0$, there is a local maximum at $(-1, 3)$.\n    *   For $x = 1$:\n        $f(1) = (1)^3 - 3(1) + 1 = 1 - 3 + 1 = -1$\n        Since $f(1) = -1 < 0$, there is a local minimum at $(1, -1)$.\n\n4.  **Analyze the behavior of the function:**\n    *   As $x \\to -\\infty$, $f(x) \\to -\\infty$.\n    *   As $x \\to \\infty$, $f(x) \\to \\infty$.\n    *   Since the function is continuous:\n        *   Because $f(x)$ goes from $-\\infty$ to $3$ on the interval $(-\\infty, -1)$, there must be at least one root in $(-\\infty, -1)$.\n        *   Because $f(x)$ goes from $3$ to $-1$ on the interval $(-1, 1)$, there must be at least one root in $(-1, 1)$.\n        *   Because $f(x)$ goes from $-1$ to $\\infty$ on the interval $(1, \\infty)$, there must be at least one root in $(1, \\infty)$.\n\nSince the function is a cubic polynomial, it can have at most 3 real roots. We have identified intervals containing three distinct roots.\n\nFinal answer: 3",
+                "turns": 1,
+                "latency_ms": 2169,
+                "input_tokens": 92,
+                "output_tokens": 509,
+                "cost_usd": 0.0007865,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "To find the 10th term of the sequence defined by $a_1 = 1$, $a_2 = 2$, and $a_{n+2} = a_{n+1} + a_n$, we calculate the terms step-by-step:\n\n1.  $a_1 = 1$\n2.  $a_2 = 2$\n3.  $a_3 = a_2 + a_1 = 2 + 1 = 3$\n4.  $a_4 = a_3 + a_2 = 3 + 2 = 5$\n5.  $a_5 = a_4 + a_3 = 5 + 3 = 8$\n6.  $a_6 = a_5 + a_4 = 8 + 5 = 13$\n7.  $a_7 = a_6 + a_5 = 13 + 8 = 21$\n8.  $a_8 = a_7 + a_6 = 21 + 13 = 34$\n9.  $a_9 = a_8 + a_7 = 34 + 21 = 55$\n10. $a_{10} = a_9 + a_8 = 55 + 34 = 89$\n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 1515,
+                "input_tokens": 111,
+                "output_tokens": 312,
+                "cost_usd": 0.00049575,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "To find the probability that all three marbles drawn are the same color, we first determine the total number of ways to choose 3 marbles from the bag.\n\nThe total number of marbles is $3 + 4 + 5 = 12$.\nThe number of ways to choose 3 marbles from 12 is given by the combination formula $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$:\n$\\binom{12}{3} = \\frac{12 \\times 11 \\times 10}{3 \\times 2 \\times 1} = 2 \\times 11 \\times 10 = 220$.\n\nNext, we calculate the number of ways to choose 3 marbles of the same color:\n1. **All red:** There are 3 red marbles. The number of ways to choose 3 is $\\binom{3}{3} = 1$.\n2. **All blue:** There are 4 blue marbles. The number of ways to choose 3 is $\\binom{4}{3} = 4$.\n3. **All green:** There are 5 green marbles. The number of ways to choose 3 is $\\binom{5}{3} = \\frac{5 \\times 4}{2 \\times 1} = 10$.\n\nThe total number of favorable outcomes is the sum of these possibilities:\n$1 + 4 + 10 = 15$.\n\nThe probability is the ratio of favorable outcomes to total outcomes:\n$P = \\frac{15}{220}$.\n\nTo simplify the fraction, we divide both the numerator and the denominator by their greatest common divisor, which is 5:\n$15 \\div 5 = 3$\n$220 \\div 5 = 44$\n\nThus, the probability is $3/44$.\n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 2025,
+                "input_tokens": 113,
+                "output_tokens": 412,
+                "cost_usd": 0.00064625,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1837,
+                "p95": 2413,
+                "p99": 2413,
+                "mean": 1897
+              },
+              "cost_usd": {
+                "total": 0.00613025,
+                "mean": 0.000613025,
+                "per_1k_evals": 0.613025
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 10,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-gemini-pro.ts",
             "provider": "google",
             "model": "gemini-3.1-pro-preview",
             "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
@@ -4318,12 +4267,12 @@ window.__BENCH = {
               {
                 "id": "r-001",
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
-                "response": "To find the remainder of 7^100 divided by 11, we can apply Fermat's Little Theorem, which states that a^(p-1) ≡ 1 (mod p) for any prime p. Since 11 is a prime number, 7^10 ≡ 1 (mod 11). By raising both sides to the 10th power, we find that 7^100 ≡ 1^10 ≡ 1 (mod 11).\n\nFinal answer: 1",
+                "response": "To find the remainder when 7^100 is divided by 11, we can use Fermat's Little Theorem, which states that a^(p-1) ≡ 1 (mod p) for a prime p. Since 11 is prime, 7^10 ≡ 1 (mod 11). Raising both sides to the 10th power gives 7^100 ≡ 1^10 ≡ 1 (mod 11).\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 7413,
+                "latency_ms": 6518,
                 "input_tokens": 76,
-                "output_tokens": 779,
-                "cost_usd": 0.0095,
+                "output_tokens": 608,
+                "cost_usd": 0.007448,
                 "error": null,
                 "answer_extracted": "1",
                 "answer_correct": true
@@ -4333,7 +4282,7 @@ window.__BENCH = {
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
                 "response": "To find the number of positive integers less than 1000 that are divisible by 7 but not by 5, we first count the total multiples of 7 and then subtract the multiples of both 7 and 5 (which are multiples of 35). \n\nThere are 142 multiples of 7 less than 1000 (since 999 / 7 = 142.71). \nThere are 28 multiples of 35 less than 1000 (since 999 / 35 = 28.54). \n\nSubtracting the multiples of 35 from the multiples of 7 gives 142 - 28 = 114.\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 7434,
+                "latency_ms": 6881,
                 "input_tokens": 80,
                 "output_tokens": 694,
                 "cost_usd": 0.008488,
@@ -4346,7 +4295,7 @@ window.__BENCH = {
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
                 "response": "To find the number of unit cubes with exactly two red faces, we look at the edges of the large cube. There are 12 edges in a cube, and each edge contains 8 unit cubes between the corners that have exactly two painted faces. Multiplying the number of edges by the number of such cubes per edge gives the total.\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 7392,
+                "latency_ms": 7131,
                 "input_tokens": 97,
                 "output_tokens": 721,
                 "cost_usd": 0.008846,
@@ -4359,7 +4308,7 @@ window.__BENCH = {
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
                 "response": "To solve the equation $\\log_2(x) + \\log_2(x - 2) = 3$, we can use the properties of logarithms. \n\nFirst, combine the logarithms on the left side using the product rule, $\\log_b(m) + \\log_b(n) = \\log_b(m \\cdot n)$:\n$\\log_2(x(x - 2)) = 3$\n\nNext, rewrite the logarithmic equation in its exponential form:\n$x(x - 2) = 2^3$\n\nSimplify the right side:\n$x^2 - 2x = 8$\n\nBring all terms to one side to form a standard quadratic equation:\n$x^2 - 2x - 8 = 0$\n\nNow, factor the quadratic equation:\n$(x - 4)(x + 2) = 0$\n\nThis gives two possible solutions for $x$:\n$x = 4$ or $x = -2$\n\nThe original equation includes $\\log_2(x)$ and $\\log_2(x - 2)$, which are only defined for strictly positive arguments. Therefore, we must have $x > 0$ and $x - 2 > 0$ (which means $x > 2$). \n\nSince $x$ must be positive and greater than 2, we discard $x = -2$. \n\nThus, the only valid solution is $x = 4$.\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 5980,
+                "latency_ms": 7890,
                 "input_tokens": 89,
                 "output_tokens": 680,
                 "cost_usd": 0.008338,
@@ -4372,7 +4321,7 @@ window.__BENCH = {
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
                 "response": "To find the number of valid seating arrangements, we first calculate the total number of ways to seat 8 people around a round table. Then, we subtract the number of arrangements where Alice and Bob are seated next to each other by treating them as a single unit. Subtracting these restricted arrangements from the total gives the final number of valid seating options.\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 7115,
+                "latency_ms": 7253,
                 "input_tokens": 98,
                 "output_tokens": 688,
                 "cost_usd": 0.008452,
@@ -4383,12 +4332,12 @@ window.__BENCH = {
               {
                 "id": "r-006",
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
-                "response": "To find the number of distinct arrangements of the letters in the word MISSISSIPPI, we count the total number of letters and the frequencies of each repeating letter. There are 11 letters in total, with 'I' appearing 4 times, 'S' appearing 4 times, and 'P' appearing 2 times. We use the permutation formula for multisets, dividing the factorial of the total number of letters by the product of the factorials of the frequencies. This gives 11! / (4! * 4! * 2!), which equals 34,650.\n\nFinal answer: 34650",
+                "response": "To find the number of distinct arrangements, we count the total number of letters and the frequencies of each repeating letter. There are 11 letters in total, with 'I' appearing 4 times, 'S' appearing 4 times, and 'P' appearing 2 times. We divide the factorial of the total number of letters by the factorials of the frequencies of the repeating letters: 11! / (4! * 4! * 2!). This evaluates to 34,650.\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 6750,
+                "latency_ms": 6559,
                 "input_tokens": 75,
-                "output_tokens": 682,
-                "cost_usd": 0.008334,
+                "output_tokens": 616,
+                "cost_usd": 0.007542,
                 "error": null,
                 "answer_extracted": "34650",
                 "answer_correct": true
@@ -4398,7 +4347,7 @@ window.__BENCH = {
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
                 "response": "To find the altitude drawn to the hypotenuse, first calculate the length of the hypotenuse using the Pythagorean theorem. Then, use the relationship that the product of the legs equals the product of the hypotenuse and the altitude to solve for the missing length. \n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 6319,
+                "latency_ms": 6590,
                 "input_tokens": 98,
                 "output_tokens": 560,
                 "cost_usd": 0.006916,
@@ -4409,9 +4358,9 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "To find the number of distinct real values of x for which f(x) = 0, we can analyze the critical points and the behavior of the function f(x) = x^3 -",
+                "response": "To find the number of distinct real values of x for which f(x) = 0, we can analyze the critical points of the function f(x) = x^3 - 3x + 1.\n\nFirst, we find the derivative of f(x):\nf'(x) = 3x^2 - 3\n\nNext, we set the derivative equal to zero to find the critical points:\n3x^2 - 3 = 0\n3(x^2 - 1) = 0\nx^2 = 1\nx = 1  or  x = -1\n\nNow, we evaluate the original function f(x) at these critical points to find the local extrema:\nFor x = -1 (local maximum):\nf(-1) = (-1)^3 - 3(-1) + 1 = -1 + 3 + 1 = 3\n\nFor x = ",
                 "turns": 1,
-                "latency_ms": 7230,
+                "latency_ms": 7239,
                 "input_tokens": 92,
                 "output_tokens": 796,
                 "cost_usd": 0.009736,
@@ -4424,7 +4373,7 @@ window.__BENCH = {
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
                 "response": "To find the 10th term of the sequence, we can iteratively apply the recurrence relation starting from the given initial values. By continuously adding the two previous terms to find the next term, we arrive at the value for the 10th term.\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 6805,
+                "latency_ms": 7010,
                 "input_tokens": 111,
                 "output_tokens": 602,
                 "cost_usd": 0.007446,
@@ -4437,7 +4386,7 @@ window.__BENCH = {
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
                 "response": "To find the probability that all three marbles drawn are the same color, we first need to determine the total number of ways to draw 3 marbles from",
                 "turns": 1,
-                "latency_ms": 7120,
+                "latency_ms": 6817,
                 "input_tokens": 113,
                 "output_tokens": 796,
                 "cost_usd": 0.009778,
@@ -4451,15 +4400,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 7115,
-                "p95": 7434,
-                "p99": 7434,
-                "mean": 6956
+                "p50": 6881,
+                "p95": 7890,
+                "p99": 7890,
+                "mean": 6989
               },
               "cost_usd": {
-                "total": 0.085834,
-                "mean": 0.0085834,
-                "per_1k_evals": 8.5834
+                "total": 0.08298999999999998,
+                "mean": 0.008298999999999997,
+                "per_1k_evals": 8.298999999999998
               },
               "turns": {
                 "mean": 1,
@@ -4473,7 +4422,7 @@ window.__BENCH = {
             }
           },
           {
-            "config_file": "config-gpt5.ts",
+            "config_file": "config-gpt-5-4.ts",
             "provider": "openai",
             "model": "gpt-5.4",
             "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
@@ -4482,12 +4431,12 @@ window.__BENCH = {
               {
                 "id": "r-001",
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
-                "response": "Powers of 7 modulo 11 repeat:\n\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 \\equiv 49 \\equiv 5 \\pmod{11}\\)\n- \\(7^3 \\equiv 35 \\equiv 2 \\pmod{11}\\)\n- \\(7^4 \\equiv 14 \\equiv 3 \\pmod{11}\\)\n- \\(7^5 \\equiv 21 \\equiv 10 \\pmod{11}\\)\n- \\(7^6 \\equiv 70 \\equiv 4 \\pmod{11}\\)\n- \\(7^7 \\equiv 28 \\equiv 6 \\pmod{11}\\)\n- \\(7^8 \\equiv 42 \\equiv 9 \\pmod{11}\\)\n- \\(7^9 \\equiv 63 \\equiv 8 \\pmod{11}\\)\n- \\(7^{10} \\equiv 56 \\equiv 1 \\pmod{11}\\)\n\nSo the cycle length is 10. Since \\(100 \\equiv 0 \\pmod{10}\\),\n\n\\[\n7^{100} \\equiv (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nFinal answer: 1",
+                "response": "Since 11 is prime, use Fermat's little theorem:\n\n\\(7^{10} \\equiv 1 \\pmod{11}\\)\n\nNow reduce the exponent modulo 10:\n\n\\(100 \\equiv 0 \\pmod{10}\\)\n\nSo\n\n\\(7^{100} = (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}\\)\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 3710,
+                "latency_ms": 3905,
                 "input_tokens": 80,
-                "output_tokens": 296,
-                "cost_usd": 0.00464,
+                "output_tokens": 97,
+                "cost_usd": 0.001655,
                 "error": null,
                 "answer_extracted": "1",
                 "answer_correct": true
@@ -4495,9 +4444,9 @@ window.__BENCH = {
               {
                 "id": "r-002",
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
-                "response": "Positive integers less than 1000 divisible by 7:  \n\\(\\left\\lfloor \\frac{999}{7} \\right\\rfloor = 142\\)\n\nAmong these, those also divisible by 5 are divisible by \\(\\text{lcm}(7,5)=35\\):  \n\\(\\left\\lfloor \\frac{999}{35} \\right\\rfloor = 28\\)\n\nSo the count divisible by 7 but not by 5 is:  \n\\(142 - 28 = 114\\)\n\nFinal answer: 114",
+                "response": "Positive integers less than 1000 divisible by 7:  \n\\(\\left\\lfloor \\frac{999}{7} \\right\\rfloor = 142\\).\n\nAmong these, those also divisible by 5 are divisible by \\(\\text{lcm}(7,5)=35\\):  \n\\(\\left\\lfloor \\frac{999}{35} \\right\\rfloor = 28\\).\n\nSo the count divisible by 7 but not by 5 is:  \n\\(142 - 28 = 114\\).\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 6142,
+                "latency_ms": 2704,
                 "input_tokens": 85,
                 "output_tokens": 120,
                 "cost_usd": 0.0020125,
@@ -4508,12 +4457,12 @@ window.__BENCH = {
               {
                 "id": "r-003",
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
-                "response": "Unit cubes with exactly two red faces are the edge cubes excluding the corners.\n\nA cube has 12 edges.  \nEach edge contributes \\(10 - 2 = 8\\) such cubes.\n\nSo the total is:\n\\[\n12 \\times 8 = 96\n\\]\n\nFinal answer: 96",
+                "response": "Unit cubes with exactly two red faces are the edge cubes that are not corners.\n\nA cube has 12 edges.  \nEach edge of length 10 contains 10 unit cubes, but the 2 corner cubes on each edge have 3 red faces, not 2.  \nSo each edge contributes \\(10 - 2 = 8\\) cubes with exactly 2 red faces.\n\nTotal:\n\\[\n12 \\times 8 = 96\n\\]\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 1798,
+                "latency_ms": 3334,
                 "input_tokens": 101,
-                "output_tokens": 66,
-                "cost_usd": 0.0012425,
+                "output_tokens": 102,
+                "cost_usd": 0.0017825,
                 "error": null,
                 "answer_extracted": "96",
                 "answer_correct": true
@@ -4521,12 +4470,12 @@ window.__BENCH = {
               {
                 "id": "r-004",
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
-                "response": "Use the log rule:\n\\[\n\\log_2(x) + \\log_2(x-2) = \\log_2\\big(x(x-2)\\big)=3\n\\]\n\nSo:\n\\[\nx(x-2)=2^3=8\n\\]\n\n\\[\nx^2-2x-8=0\n\\]\n\nFactor:\n\\[\n(x-4)(x+2)=0\n\\]\n\nSo \\(x=4\\) or \\(x=-2\\).\n\nSince \\(x\\) is real and positive, and also \\(x-2>0\\), the valid solution is \\(x=4\\).\n\nFinal answer: 4",
+                "response": "Use the log rule:\n\\[\n\\log_2(x) + \\log_2(x-2) = \\log_2(x(x-2)) = 3\n\\]\n\nSo:\n\\[\nx(x-2) = 2^3 = 8\n\\]\n\n\\[\nx^2 - 2x - 8 = 0\n\\]\n\nFactor:\n\\[\n(x-4)(x+2)=0\n\\]\n\nSo \\(x=4\\) or \\(x=-2\\).\n\nSince \\(x\\) is real and positive, and also \\(x-2>0\\), the valid solution is \\(x=4\\).\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 2725,
+                "latency_ms": 2476,
                 "input_tokens": 94,
-                "output_tokens": 141,
-                "cost_usd": 0.00235,
+                "output_tokens": 145,
+                "cost_usd": 0.00241,
                 "error": null,
                 "answer_extracted": "4",
                 "answer_correct": true
@@ -4534,12 +4483,12 @@ window.__BENCH = {
               {
                 "id": "r-005",
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
-                "response": "Total circular arrangements of 8 people are\n\\[\n(8-1)! = 7! = 5040.\n\\]\n\nNow count arrangements where Alice and Bob sit together.\n\nTreat Alice and Bob as one block. Then we have 7 entities around the table, so the number of circular arrangements is\n\\[\n(7-1)! = 6! = 720.\n\\]\nAlice and Bob can switch places within their block in\n\\[\n2\n\\]\nways, so adjacent arrangements total\n\\[\n2 \\cdot 720 = 1440.\n\\]\n\nTherefore, the number of arrangements where Alice and Bob are not adjacent is\n\\[\n5040 - 1440 = 3600.\n\\]\n\nFinal answer: 3600",
+                "response": "For 8 people around a round table, the total number of distinct circular arrangements is\n\n\\[\n(8-1)! = 7! = 5040\n\\]\n\nNow count the arrangements where Alice and Bob sit next to each other.\n\nTreat Alice and Bob as one block. Then we have 7 objects around the table: the AB block plus the other 6 people. The number of circular arrangements is\n\n\\[\n(7-1)! = 6! = 720\n\\]\n\nWithin the block, Alice and Bob can be ordered in 2 ways: AB or BA, so\n\n\\[\n2 \\cdot 6! = 2 \\cdot 720 = 1440\n\\]\n\nTherefore, the number of arrangements where Alice and Bob are **not** adjacent is\n\n\\[\n5040 - 1440 = 3600\n\\]\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 5327,
+                "latency_ms": 3142,
                 "input_tokens": 105,
-                "output_tokens": 159,
-                "cost_usd": 0.0026475,
+                "output_tokens": 189,
+                "cost_usd": 0.0030975,
                 "error": null,
                 "answer_extracted": "3600",
                 "answer_correct": true
@@ -4547,12 +4496,12 @@ window.__BENCH = {
               {
                 "id": "r-006",
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
-                "response": "Count repeated letters in **MISSISSIPPI**:\n\n- M: 1  \n- I: 4  \n- S: 4  \n- P: 2  \n\nTotal letters = 11.\n\nNumber of distinct arrangements:\n\n\\[\n\\frac{11!}{4!4!2!}\n\\]\n\nCompute:\n\n\\[\n11! = 39916800,\\quad 4!=24,\\quad 2!=2\n\\]\n\n\\[\n\\frac{39916800}{24\\cdot24\\cdot2}=\\frac{39916800}{1152}=34650\n\\]\n\nFinal answer: 34650",
+                "response": "Count repeated letters in **MISSISSIPPI**:\n\n- M: 1  \n- I: 4  \n- S: 4  \n- P: 2  \n\nTotal letters = 11.\n\nNumber of distinct arrangements:\n\\[\n\\frac{11!}{4!4!2!}\n\\]\n\nCompute:\n\\[\n11! = 39916800,\\quad 4!=24,\\quad 2!=2\n\\]\n\\[\n\\frac{39916800}{24\\cdot 24\\cdot 2}=\\frac{39916800}{1152}=34650\n\\]\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 3741,
+                "latency_ms": 2490,
                 "input_tokens": 82,
-                "output_tokens": 133,
-                "cost_usd": 0.0022,
+                "output_tokens": 135,
+                "cost_usd": 0.00223,
                 "error": null,
                 "answer_extracted": "34650",
                 "answer_correct": true
@@ -4560,12 +4509,12 @@ window.__BENCH = {
               {
                 "id": "r-007",
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
-                "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\):\n\n1. Find the hypotenuse:\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35\n\\]\n\n2. Use area two ways:\n\\[\n\\frac12 ab=\\frac12 ch\n\\]\nSo,\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8\n\\]\n\nFinal answer: 16.8",
+                "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\):\n\nFirst find the hypotenuse:\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35\n\\]\n\nThe altitude \\(h\\) from the right angle to the hypotenuse satisfies:\n\\[\n\\frac{1}{2}ab=\\frac{1}{2}ch\n\\]\nSo,\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8\n\\]\n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 2320,
+                "latency_ms": 2330,
                 "input_tokens": 103,
-                "output_tokens": 126,
-                "cost_usd": 0.0021475,
+                "output_tokens": 143,
+                "cost_usd": 0.0024025,
                 "error": null,
                 "answer_extracted": "16.8",
                 "answer_correct": true
@@ -4573,12 +4522,12 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "For \\(f(x)=x^3-3x+1\\), check how many real zeros it has.\n\nCompute critical points:\n\\[\nf'(x)=3x^2-3=3(x^2-1)\n\\]\nSo critical points are at \\(x=-1\\) and \\(x=1\\).\n\nEvaluate:\n\\[\nf(-1)=(-1)^3-3(-1)+1=-1+3+1=3\n\\]\n\\[\nf(1)=1-3+1=-1\n\\]\n\nSince \\(f\\) is a cubic with positive leading coefficient:\n- as \\(x\\to -\\infty\\), \\(f(x)\\to -\\infty\\)\n- as \\(x\\to \\infty\\), \\(f(x)\\to \\infty\\)\n\nNow track signs:\n- from \\(-\\infty\\) to \\(-1\\): goes from negative to positive, so one root\n- from \\(-1\\) to \\(1\\): goes from positive to negative, so one root\n- from \\(1\\) to \\(\\infty\\): goes from negative to positive, so one root\n\nThus there are \\(3\\) distinct real solutions.\n\nFinal answer: 3",
+                "response": "For \\(f(x)=x^3-3x+1\\), check its turning points.\n\n\\[\nf'(x)=3x^2-3=3(x^2-1)\n\\]\n\nSo critical points are at \\(x=\\pm 1\\).\n\nEvaluate:\n\\[\nf(-1)=(-1)^3-3(-1)+1=-1+3+1=3\n\\]\n\\[\nf(1)=1-3+1=-1\n\\]\n\nA cubic with positive leading coefficient goes to \\(-\\infty\\) as \\(x\\to -\\infty\\) and \\(+\\infty\\) as \\(x\\to +\\infty\\).\n\nSince:\n- it rises from \\(-\\infty\\) to \\(f(-1)=3>0\\), it crosses the x-axis once before \\(x=-1\\),\n- then falls from \\(3\\) to \\(-1\\), crossing once between \\(-1\\) and \\(1\\),\n- then rises from \\(-1\\) to \\(+\\infty\\), crossing once after \\(x=1\\).\n\nSo there are 3 distinct real roots.\n\nFinal answer: 3",
                 "turns": 1,
-                "latency_ms": 4928,
+                "latency_ms": 4020,
                 "input_tokens": 97,
-                "output_tokens": 263,
-                "cost_usd": 0.0041875,
+                "output_tokens": 251,
+                "cost_usd": 0.0040075,
                 "error": null,
                 "answer_extracted": "3",
                 "answer_correct": true
@@ -4586,12 +4535,12 @@ window.__BENCH = {
               {
                 "id": "r-009",
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
-                "response": "This is the Fibonacci-type sequence starting with 1, 2.\n\nCompute terms:\n- a₁ = 1\n- a₂ = 2\n- a₃ = 3\n- a₄ = 5\n- a₅ = 8\n- a₆ = 13\n- a₇ = 21\n- a₈ = 34\n- a₉ = 55\n- a₁₀ = 89\n\nFinal answer: 89",
+                "response": "This is the Fibonacci-type sequence starting with 1, 2:\n\n- \\(a_1 = 1\\)\n- \\(a_2 = 2\\)\n- \\(a_3 = 3\\)\n- \\(a_4 = 5\\)\n- \\(a_5 = 8\\)\n- \\(a_6 = 13\\)\n- \\(a_7 = 21\\)\n- \\(a_8 = 34\\)\n- \\(a_9 = 55\\)\n- \\(a_{10} = 89\\)\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 2245,
+                "latency_ms": 2879,
                 "input_tokens": 115,
-                "output_tokens": 107,
-                "cost_usd": 0.0018925,
+                "output_tokens": 124,
+                "cost_usd": 0.0021475,
                 "error": null,
                 "answer_extracted": "89",
                 "answer_correct": true
@@ -4599,9 +4548,9 @@ window.__BENCH = {
               {
                 "id": "r-010",
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
-                "response": "Total marbles: 12.\n\nTotal ways to draw 3 marbles:\n\\[\n\\binom{12}{3} = 220\n\\]\n\nFavorable ways: all 3 the same color.\n\n- All red: \\(\\binom{3}{3} = 1\\)\n- All blue: \\(\\binom{4}{3} = 4\\)\n- All green: \\(\\binom{5}{3} = 10\\)\n\nTotal favorable:\n\\[\n1+4+10=15\n\\]\n\nProbability:\n\\[\n\\frac{15}{220}=\\frac{3}{44}\n\\]\n\nFinal answer: 3/44",
+                "response": "Total marbles: 12.\n\nWays to draw 3 marbles total:\n\\[\n\\binom{12}{3} = 220\n\\]\n\nWays to draw 3 of the same color:\n- All red: \\(\\binom{3}{3} = 1\\)\n- All blue: \\(\\binom{4}{3} = 4\\)\n- All green: \\(\\binom{5}{3} = 10\\)\n\nTotal favorable ways:\n\\[\n1+4+10=15\n\\]\n\nProbability:\n\\[\n\\frac{15}{220}=\\frac{3}{44}\n\\]\n\nFinal answer: 3/44",
                 "turns": 1,
-                "latency_ms": 4276,
+                "latency_ms": 2683,
                 "input_tokens": 121,
                 "output_tokens": 143,
                 "cost_usd": 0.0024475,
@@ -4615,15 +4564,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3710,
-                "p95": 6142,
-                "p99": 6142,
-                "mean": 3721
+                "p50": 2704,
+                "p95": 4020,
+                "p99": 4020,
+                "mean": 2996
               },
               "cost_usd": {
-                "total": 0.0257675,
-                "mean": 0.00257675,
-                "per_1k_evals": 2.57675
+                "total": 0.0241925,
+                "mean": 0.00241925,
+                "per_1k_evals": 2.41925
               },
               "turns": {
                 "mean": 1,
@@ -4637,21 +4586,21 @@ window.__BENCH = {
             }
           },
           {
-            "config_file": "config-grok.ts",
-            "provider": "xai",
-            "model": "grok-4.20-0309-reasoning",
+            "config_file": "config-gpt-mini.ts",
+            "provider": "openai",
+            "model": "gpt-5.4-mini",
             "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
             "maxOutputTokens": 800,
             "results": [
               {
                 "id": "r-001",
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
-                "response": "Final answer: 1\n\n\nThe solution uses Fermat's Little Theorem, which states that for prime \\(p = 11\\) and \\(a = 7\\) (coprime to 11), \\(7^{10} \\equiv 1 \\pmod{11}\\).  \nRewrite the exponent: \\(100 = 10 \\times 10\\), so \\(7^{100} = (7^{10})^{10}\\).  \nSubstitute the congruence: \\((7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}\\).  \nVerification via successive powers confirms \\(7^5 \\equiv -1 \\pmod{11}\\), hence \\(7^{100} = (7^5)^{20} \\equiv (-1)^{20} \\equiv 1 \\pmod{11}\\).",
+                "response": "Since powers of 7 mod 11 cycle:\n\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 \\equiv 49 \\equiv 5 \\pmod{11}\\)\n- \\(7^3 \\equiv 35 \\equiv 2 \\pmod{11}\\)\n- \\(7^4 \\equiv 14 \\equiv 3 \\pmod{11}\\)\n- \\(7^5 \\equiv 21 \\equiv 10 \\pmod{11}\\)\n- \\(7^6 \\equiv 70 \\equiv 4 \\pmod{11}\\)\n- \\(7^7 \\equiv 28 \\equiv 6 \\pmod{11}\\)\n- \\(7^8 \\equiv 42 \\equiv 9 \\pmod{11}\\)\n- \\(7^9 \\equiv 63 \\equiv 8 \\pmod{11}\\)\n- \\(7^{10} \\equiv 56 \\equiv 1 \\pmod{11}\\)\n\nSo the cycle length is 10. Since \\(100\\) is divisible by \\(10\\),\n\n\\[\n7^{100} \\equiv (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 6305,
-                "input_tokens": 197,
-                "output_tokens": 1172,
-                "cost_usd": 0.007426,
+                "latency_ms": 2626,
+                "input_tokens": 80,
+                "output_tokens": 299,
+                "cost_usd": 0.0014055,
                 "error": null,
                 "answer_extracted": "1",
                 "answer_correct": true
@@ -4659,12 +4608,12 @@ window.__BENCH = {
               {
                 "id": "r-002",
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
-                "response": "The multiples of 7 below 1000 are 7, 14, ..., 994, and there are \\(\\lfloor 999/7 \\rfloor = 142\\) such numbers.\n\nThe multiples of both 7 and 5 are the multiples of 35 (their LCM), which are 35, 70, ..., 980, and there are \\(\\lfloor 999/35 \\rfloor = 28\\) such numbers.\n\nSubtract to get the count of multiples of 7 but not 5: 142 - 28.\n\nFinal answer: 114",
+                "response": "Count the multiples of 7 below 1000:\n\n- Largest is 994, so there are ⌊999/7⌋ = 142 multiples of 7.\n\nNow subtract those also divisible by 5, i.e. multiples of 35:\n\n- ⌊999/35⌋ = 28\n\nSo the count is:\n\n142 - 28 = 114\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 5070,
-                "input_tokens": 202,
-                "output_tokens": 706,
-                "cost_usd": 0.00464,
+                "latency_ms": 1279,
+                "input_tokens": 85,
+                "output_tokens": 94,
+                "cost_usd": 0.00048675,
                 "error": null,
                 "answer_extracted": "114",
                 "answer_correct": true
@@ -4672,12 +4621,12 @@ window.__BENCH = {
               {
                 "id": "r-003",
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
-                "response": "A large cube of side length \\(n=10\\) is painted on all exterior faces before being divided into \\(n^3 = 1000\\) unit cubes. The small cubes with paint on exactly two faces must lie along the edges of the large cube (where two faces meet) but cannot be at the corners (where three faces meet).\n\nThe large cube has exactly 12 edges. Along each edge of length 10, the two endpoint positions are corners, leaving \\(10-2=8\\) positions per edge with precisely two faces exposed and painted.\n\nThus, the total is obtained by multiplying the number of edges by the count per edge: \\(12 \\times 8 = 96\\).\n\nThis matches the general formula for an \\(n \\times n \\times n\\) cube where \\(n > 2\\): \\(12(n-2)\\).\n\nFinal answer: 96",
+                "response": "A unit cube has exactly two red faces if it lies on an edge but is not a corner cube.\n\nA cube of side length 10 has 12 edges, and each edge contains 10 unit cubes. Excluding the 2 corner cubes on each edge leaves \\(10 - 2 = 8\\) such cubes per edge.\n\nSo the total is:\n\\[\n12 \\times 8 = 96\n\\]\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 5758,
-                "input_tokens": 218,
-                "output_tokens": 831,
-                "cost_usd": 0.005422,
+                "latency_ms": 1252,
+                "input_tokens": 101,
+                "output_tokens": 95,
+                "cost_usd": 0.00050325,
                 "error": null,
                 "answer_extracted": "96",
                 "answer_correct": true
@@ -4685,12 +4634,12 @@ window.__BENCH = {
               {
                 "id": "r-004",
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
-                "response": "Using the sum of logs property:  \n\\(\\log_2(x) + \\log_2(x-2) = \\log_2[x(x-2)] = 3\\).  \n\nThis implies \\(x(x-2) = 2^3 = 8\\).  \n\nRearrange to quadratic: \\(x^2 - 2x - 8 = 0\\).  \n\nSolutions: \\(x = \\frac{2 \\pm \\sqrt{4 + 32}}{2} = \\frac{2 \\pm 6}{2}\\), so \\(x=4\\) or \\(x=-2\\).  \n\nDomain requires \\(x > 2\\) (for logs to be defined) and \\(x > 0\\), so discard \\(x=-2\\).  \n\nFinal answer: 4",
+                "response": "Since the logs are defined, we need \\(x>2\\).\n\n\\[\n\\log_2(x)+\\log_2(x-2)=3\n\\]\n\nCombine the logs:\n\n\\[\n\\log_2\\big(x(x-2)\\big)=3\n\\]\n\nConvert to exponential form:\n\n\\[\nx(x-2)=2^3=8\n\\]\n\n\\[\nx^2-2x-8=0\n\\]\n\nFactor:\n\n\\[\n(x-4)(x+2)=0\n\\]\n\nSo \\(x=4\\) or \\(x=-2\\). Since \\(x>2\\), the valid solution is \\(x=4\\).\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 5092,
-                "input_tokens": 211,
-                "output_tokens": 723,
-                "cost_usd": 0.00476,
+                "latency_ms": 1300,
+                "input_tokens": 94,
+                "output_tokens": 148,
+                "cost_usd": 0.0007365,
                 "error": null,
                 "answer_extracted": "4",
                 "answer_correct": true
@@ -4698,12 +4647,12 @@ window.__BENCH = {
               {
                 "id": "r-005",
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
-                "response": "The standard approach for distinct seating arrangements around a circular table (where rotations are considered identical) is to use (n-1)! for n people. For 8 distinct people with no restrictions, this gives (8-1)! = 7! = 5040 arrangements.\n\nTo account for the restriction that Alice and Bob cannot sit next to each other, first compute the complementary count where they sit together. Treat Alice and Bob as a single combined unit, reducing the problem to arranging 7 units in a circle: (7-1)! = 6!. Within the combined unit, Alice and Bob can switch places in 2 ways, so the arrangements where they are adjacent total 2 × 6! = 1440.\n\nSubtract this from the unrestricted total: 5040 - 1440 = 3600.\n\nTo confirm via an alternative method, fix Alice's position (which eliminates rotational symmetry). This leaves 7 possible seats for the remaining people. Exactly 2 of these seats are adjacent to Alice, so Bob has 5 valid choices. The remaining 6 people can then be arranged in the remaining seats in 6! ways, yielding 5 × 720 = 3600.\n\nThis matches exactly, and the problem specifies equivalence only under rotation (not reflection), so no further adjustment is needed.\n\nFinal answer: 3600",
+                "response": "Fix Alice to break rotational symmetry. Then there are \\(7!\\) total seatings of the remaining 7 people.\n\nCount seatings where Alice and Bob are adjacent: treat them as a block, which can be ordered in 2 ways (AB or BA). Then we have 7 objects around the circle, giving \\((7-1)! = 6!\\) arrangements.\n\nSo adjacent seatings = \\(2 \\cdot 6! = 1440\\).\n\nTotal valid seatings:\n\\[\n7! - 2\\cdot 6! = 5040 - 1440 = 3600\n\\]\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 7744,
-                "input_tokens": 222,
-                "output_tokens": 938,
-                "cost_usd": 0.006072,
+                "latency_ms": 3075,
+                "input_tokens": 105,
+                "output_tokens": 139,
+                "cost_usd": 0.00070425,
                 "error": null,
                 "answer_extracted": "3600",
                 "answer_correct": true
@@ -4711,12 +4660,12 @@ window.__BENCH = {
               {
                 "id": "r-006",
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
-                "response": "The word MISSISSIPPI consists of 11 letters with the following frequencies: M appears 1 time, I appears 4 times, S appears 4 times, and P appears 2 times.\n\nThe number of distinct permutations is given by the formula for permutations of a multiset:  \n\\[\n\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}\n\\]\n\nThis is equivalent to sequentially choosing positions for each letter:  \n- Choose 4 positions out of 11 for the I's: \\(\\binom{11}{4} = 330\\).  \n- Choose 4 positions out of the remaining 7 for the S's: \\(\\binom{7}{4} = 35\\).  \n- Choose 2 positions out of the remaining 3 for the P's: \\(\\binom{3}{2} = 3\\).  \n- The last position is for the M: \\(\\binom{1}{1} = 1\\).\n\nMultiplying these values: \\(330 \\times 35 = 11550\\), then \\(11550 \\times 3 = 34650\\).\n\nThis matches the direct computation of \\(11! / (4! \\cdot 4! \\cdot 2!) = 39916800 / 1152 = 34650\\).\n\nFinal answer: 34650",
+                "response": "The word MISSISSIPPI has 11 letters with repeats: M once, I 4 times, S 4 times, P 2 times.\n\nSo the number of distinct arrangements is:\n\n11! / (4! 4! 2!) = 34650\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 4725,
-                "input_tokens": 199,
-                "output_tokens": 1171,
-                "cost_usd": 0.007424,
+                "latency_ms": 3807,
+                "input_tokens": 82,
+                "output_tokens": 72,
+                "cost_usd": 0.0003855,
                 "error": null,
                 "answer_extracted": "34650",
                 "answer_correct": true
@@ -4724,12 +4673,12 @@ window.__BENCH = {
               {
                 "id": "r-007",
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
-                "response": "First, find the hypotenuse length using the Pythagorean theorem: \\(\\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\).\n\nThe area of the triangle is \\(\\frac{1}{2} \\times 21 \\times 28 = 294\\).\n\nThis area can also be expressed using the hypotenuse and the altitude \\(h\\) to it: \\(\\frac{1}{2} \\times 35 \\times h = 294\\).\n\nSolving for \\(h\\): \\(h = \\frac{588}{35} = 16.8\\).\n\nAlternatively, use the direct formula for the altitude to the hypotenuse: \\(h = \\frac{21 \\times 28}{35} = 16.8\\).\n\nFinal answer: 16.8",
+                "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\), the hypotenuse is\n\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35\n\\]\n\nThe altitude from the right angle to the hypotenuse is\n\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8\n\\]\n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 3803,
-                "input_tokens": 220,
-                "output_tokens": 808,
-                "cost_usd": 0.005288,
+                "latency_ms": 1092,
+                "input_tokens": 103,
+                "output_tokens": 115,
+                "cost_usd": 0.00059475,
                 "error": null,
                 "answer_extracted": "16.8",
                 "answer_correct": true
@@ -4737,12 +4686,12 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "The cubic function \\(f(x) = x^3 - 3x + 1\\) has derivative \\(f'(x) = 3x^2 - 3 = 3(x^2 - 1)\\), with critical points at \\(x = -1\\) and \\(x = 1\\).\n\nEvaluate: \\(f(-1) = 3 > 0\\) (local maximum) and \\(f(1) = -1 < 0\\) (local minimum).\n\nAs \\(x \\to -\\infty\\), \\(f(x) \\to -\\infty\\), so \\(f(x)\\) crosses the x-axis once in \\((-\\infty, -1)\\).\n\nIt then decreases from a positive local maximum to a negative local minimum, crossing the x-axis once in \\((-1, 1)\\).\n\nFinally, as \\(x \\to \\infty\\), \\(f(x) \\to \\infty\\), so it crosses the x-axis once in \\((1, \\infty)\\).\n\nThe local extremum values are nonzero, confirming the roots are distinct.\n\nFor the depressed cubic \\(x^3 + px + q = 0\\) (here \\(p = -3\\), \\(q = 1\\)), the quantity \\((q/2)^2 + (p/3)^3 = 0.25 - 1 = -0.75 < 0\\), which confirms three distinct real roots.\n\nThus, there are three distinct real solutions to \\(f(x) = 0\\).\n\nFinal answer: 3",
+                "response": "We can analyze the cubic\n\\[\nf(x)=x^3-3x+1.\n\\]\n\nCompute its derivative:\n\\[\nf'(x)=3x^2-3=3(x^2-1),\n\\]\nso the critical points are at \\(x=-1\\) and \\(x=1\\).\n\nEvaluate \\(f\\) there:\n\\[\nf(-1)=(-1)^3-3(-1)+1=-1+3+1=3,\n\\]\n\\[\nf(1)=1-3+1=-1.\n\\]\n\nSo the graph has a local maximum above the x-axis and a local minimum below the x-axis. Since it is a cubic with positive leading coefficient, it goes to \\(-\\infty\\) as \\(x\\to -\\infty\\) and to \\(+\\infty\\) as \\(x\\to +\\infty\\). Therefore it must cross the x-axis three times.\n\nFinal answer: 3",
                 "turns": 1,
-                "latency_ms": 7589,
-                "input_tokens": 214,
-                "output_tokens": 1075,
-                "cost_usd": 0.006878,
+                "latency_ms": 1933,
+                "input_tokens": 97,
+                "output_tokens": 212,
+                "cost_usd": 0.00102675,
                 "error": null,
                 "answer_extracted": "3",
                 "answer_correct": true
@@ -4750,12 +4699,12 @@ window.__BENCH = {
               {
                 "id": "r-009",
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
-                "response": "Final answer: 89\n\n\nThe sequence follows the recurrence a_{n+2} = a_{n+1} + a_n with initial terms a_1 = 1 and a_2 = 2. Compute each subsequent term iteratively:\n\n- a_3 = a_2 + a_1 = 2 + 1 = 3\n- a_4 = a_3 + a_2 = 3 + 2 = 5\n- a_5 = a_4 + a_3 = 5 + 3 = 8\n- a_6 = a_5 + a_4 = 8 + 5 = 13\n- a_7 = a_6 + a_5 = 13 + 8 = 21\n- a_8 = a_7 + a_6 = 21 + 13 = 34\n- a_9 = a_8 + a_7 = 34 + 21 = 55\n- a_10 = a_9 + a_8 = 55 + 34 = 89\n\nThis matches the 10th term in the shifted Fibonacci-like sequence starting from 1, 2.",
+                "response": "The sequence is:\n\n1, 2, 3, 5, 8, 13, 21, 34, 55, 89\n\nSo \\(a_{10} = 89\\).\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 5666,
-                "input_tokens": 232,
-                "output_tokens": 807,
-                "cost_usd": 0.005306,
+                "latency_ms": 854,
+                "input_tokens": 115,
+                "output_tokens": 59,
+                "cost_usd": 0.00035175,
                 "error": null,
                 "answer_extracted": "89",
                 "answer_correct": true
@@ -4763,12 +4712,12 @@ window.__BENCH = {
               {
                 "id": "r-010",
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
-                "response": "Total marbles: 12.  \nTotal ways to choose 3: C(12,3) = 220.  \n\nFavorable:  \n- All red: C(3,3) = 1  \n- All blue: C(4,3) = 4  \n- All green: C(5,3) = 10  \nTotal favorable: 15.  \n\nProbability: 15/220. Simplify by dividing numerator and denominator by 5 to get 3/44.  \n\n(Sequential calculation yields equivalent result: P(all red) = 1/220, P(all blue) = 4/220, P(all green) = 10/220; sum is 15/220 = 3/44.)  \n\nFinal answer: 3/44",
+                "response": "Total marbles: 12\n\nWe want all 3 drawn to be the same color:\n- 3 red: choose 3 from 3 = 1\n- 4 blue: choose 3 from 4 = 4\n- 5 green: choose 3 from 5 = 10\n\nFavorable outcomes = 1 + 4 + 10 = 15\n\nTotal ways to draw 3 from 12 = 12 choose 3 = 220\n\nProbability = 15/220 = 3/44\n\nFinal answer: 3/44",
                 "turns": 1,
-                "latency_ms": 6503,
-                "input_tokens": 236,
-                "output_tokens": 1168,
-                "cost_usd": 0.00748,
+                "latency_ms": 3380,
+                "input_tokens": 121,
+                "output_tokens": 128,
+                "cost_usd": 0.00066675,
                 "error": null,
                 "answer_extracted": "3/44",
                 "answer_correct": true
@@ -4779,15 +4728,15 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 5666,
-                "p95": 7744,
-                "p99": 7744,
-                "mean": 5826
+                "p50": 1300,
+                "p95": 3807,
+                "p99": 3807,
+                "mean": 2060
               },
               "cost_usd": {
-                "total": 0.060696,
-                "mean": 0.0060696,
-                "per_1k_evals": 6.069599999999999
+                "total": 0.006861749999999999,
+                "mean": 0.0006861749999999999,
+                "per_1k_evals": 0.6861749999999999
               },
               "turns": {
                 "mean": 1,
@@ -4801,7 +4750,830 @@ window.__BENCH = {
             }
           },
           {
-            "config_file": "config-opus.ts",
+            "config_file": "config-gpt-nano.ts",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "We want \\(7^{100} \\bmod 11\\).\n\nCompute powers of 7 mod 11:\n- \\(7^1 \\equiv 7\\)\n- \\(7^2 = 49 \\equiv 5\\)\n- \\(7^3 \\equiv 5\\cdot 7 = 35 \\equiv 2\\)\n- \\(7^4 \\equiv 2\\cdot 7 = 14 \\equiv 3\\)\n- \\(7^5 \\equiv 3\\cdot 7 = 21 \\equiv 10\\)\n- \\(7^6 \\equiv 10\\cdot 7 = 70 \\equiv 4\\)\n- \\(7^7 \\equiv 4\\cdot 7 = 28 \\equiv 6\\)\n- \\(7^8 \\equiv 6\\cdot 7 = 42 \\equiv 9\\)\n- \\(7^9 \\equiv 9\\cdot 7 = 63 \\equiv 8\\)\n- \\(7^{10} \\equiv 8\\cdot 7 = 56 \\equiv 1\\)\n\nSo the cycle length is 10: \\(7^{10} \\equiv 1 \\pmod{11}\\).\n\nNow \\(100 \\div 10\\) gives remainder 0, so\n\\[\n7^{100} = (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 4205,
+                "input_tokens": 80,
+                "output_tokens": 337,
+                "cost_usd": 0.00043725,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "We count multiples of 7 less than 1000, then subtract those also divisible by 5.\n\nMultiples of 7: \\(\\left\\lfloor \\frac{999}{7} \\right\\rfloor = 142\\).\n\nMultiples of \\(\\text{lcm}(7,5)=35\\): \\(\\left\\lfloor \\frac{999}{35} \\right\\rfloor = 28\\).\n\nSo divisible by 7 but not by 5: \\(142 - 28 = 114\\).\n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 1750,
+                "input_tokens": 85,
+                "output_tokens": 120,
+                "cost_usd": 0.000167,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "A unit cube has exactly two painted faces when it lies along an edge but not at a corner.\n\n- The original cube has side length 10, so each edge is made of 10 unit cubes.\n- Along each edge, the two corner unit cubes are the ones with 3 red faces, so they are excluded.\n- Therefore, unit cubes on an edge with exactly two red faces: \\(10 - 2 = 8\\) per edge.\n- A cube has 12 edges, so total is \\(12 \\times 8 = 96\\).\n\nFinal answer: 96",
+                "turns": 1,
+                "latency_ms": 1285,
+                "input_tokens": 101,
+                "output_tokens": 123,
+                "cost_usd": 0.00017395,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "We need \\(x>2\\) for both logarithms to be defined.\n\n\\[\n\\log_2(x)+\\log_2(x-2)=\\log_2\\big(x(x-2)\\big)=3\n\\]\n\\[\nx(x-2)=2^3=8\n\\]\n\\[\nx^2-2x-8=0\n\\]\n\\[\n(x-4)(x+2)=0\n\\]\nSo \\(x=4\\) or \\(x=-2\\). With \\(x>2\\), \\(x=4\\).\n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 1731,
+                "input_tokens": 94,
+                "output_tokens": 129,
+                "cost_usd": 0.00018005,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "Total circular arrangements of 8 distinct people: \\((8-1)! = 7! = 5040\\).\n\nFix Alice at a reference seat. Then Bob cannot be in either of the 2 adjacent seats, so Bob has \\(6\\) choices remaining. The other 6 people can be arranged in \\(6! = 720\\) ways.\n\nSo the number of valid arrangements is:\n\\[\n6 \\cdot 6! = 6 \\cdot 720 = 4320.\n\\]\n\nFinal answer: 4320",
+                "turns": 1,
+                "latency_ms": 1799,
+                "input_tokens": 105,
+                "output_tokens": 116,
+                "cost_usd": 0.000166,
+                "error": null,
+                "answer_extracted": "4320",
+                "answer_correct": false
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "MISSISSIPPI has 11 letters total. Repeated counts: M=1, I=4, S=4, P=2.  \nNumber of distinct arrangements:\n\\[\n\\frac{11!}{4!\\,4!\\,2!}\n\\]\nCompute:\n\\[\n\\frac{39916800}{24\\cdot 24 \\cdot 2}=\\frac{39916800}{1152}=34650\n\\]\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 1646,
+                "input_tokens": 82,
+                "output_tokens": 103,
+                "cost_usd": 0.00014515,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "For a right triangle with legs \\(a=21\\) and \\(b=28\\), the hypotenuse is\n\\[\nc=\\sqrt{21^2+28^2}=\\sqrt{441+784}=\\sqrt{1225}=35.\n\\]\nThe altitude \\(h\\) from the right angle to the hypotenuse satisfies\n\\[\nh=\\frac{ab}{c}=\\frac{21\\cdot 28}{35}=\\frac{588}{35}=16.8.\n\\]\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 2805,
+                "input_tokens": 103,
+                "output_tokens": 119,
+                "cost_usd": 0.00016935,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "We need the number of distinct real roots of  \n\\(f(x)=x^3-3x+1\\).\n\nCompute the derivative:  \n\\(f'(x)=3x^2-3=3(x^2-1)\\).  \nCritical points at \\(x=\\pm 1\\).\n\nEvaluate \\(f\\) at these points:  \n\\(f(1)=1-3+1=-1\\).  \n\\(f(-1)=-1+3+1=3\\).\n\nSo the cubic crosses the \\(x\\)-axis once between \\(-\\infty\\) and \\(-1\\) because \\(f(-\\infty)\\to -\\infty\\) and \\(f(-1)=3>0\\).  \nIt crosses again between \\(-1\\) and \\(1\\) because \\(f(-1)=3>0\\) and \\(f(1)=-1<0\\).  \nFor \\(x>1\\), since \\(f(1)=-1<0\\) and \\(f(\\infty)\\to \\infty\\), it crosses a third time.\n\nTherefore there are 3 distinct real solutions.\n\nFinal answer: 3",
+                "turns": 1,
+                "latency_ms": 3483,
+                "input_tokens": 97,
+                "output_tokens": 247,
+                "cost_usd": 0.00032815,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "This is the Fibonacci recurrence shifted:  \n\\(a_1=1, a_2=2\\), and \\(a_{n+2}=a_{n+1}+a_n\\).  \nCompute terms:\n- \\(a_1=1\\)\n- \\(a_2=2\\)\n- \\(a_3=a_2+a_1=2+1=3\\)\n- \\(a_4=a_3+a_2=3+2=5\\)\n- \\(a_5=a_4+a_3=5+3=8\\)\n- \\(a_6=a_5+a_4=8+5=13\\)\n- \\(a_7=a_6+a_5=13+8=21\\)\n- \\(a_8=a_7+a_6=21+13=34\\)\n- \\(a_9=a_8+a_7=34+21=55\\)\n- \\(a_{10}=a_9+a_8=55+34=89\\)\n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 2408,
+                "input_tokens": 115,
+                "output_tokens": 224,
+                "cost_usd": 0.000303,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "Total ways to choose 3 marbles from 12:  \n\\(\\binom{12}{3} = 220\\)\n\nWays to choose 3 of the same color:  \nRed: \\(\\binom{3}{3}=1\\)  \nBlue: \\(\\binom{4}{3}=4\\)  \nGreen: \\(\\binom{5}{3}=10\\)\n\nTotal favorable: \\(1+4+10=15\\)\n\nProbability: \\(\\frac{15}{220}=\\frac{3}{44}\\)\n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 1608,
+                "input_tokens": 121,
+                "output_tokens": 124,
+                "cost_usd": 0.0001792,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1750,
+                "p95": 4205,
+                "p99": 4205,
+                "mean": 2272
+              },
+              "cost_usd": {
+                "total": 0.0022490999999999995,
+                "mean": 0.00022490999999999996,
+                "per_1k_evals": 0.22490999999999997
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 9,
+                "rate": 0.9
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-420.ts",
+            "provider": "xai",
+            "model": "grok-4.20-0309-non-reasoning",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "To find the remainder when \\(7^{100}\\) is divided by 11, use Fermat's Little Theorem since 11 is prime and 7 is not divisible by 11. The theorem states that \\(a^{p-1} \\equiv 1 \\pmod{p}\\), so \\(7^{10} \\equiv 1 \\pmod{11}\\).\n\nExpress the exponent 100 in terms of multiples of 10: \\(100 = 10 \\times 10\\), so \\(7^{100} = (7^{10})^{10}\\).\n\nBy Fermat's Little Theorem, \\((7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}\\).\n\nThus, the remainder is 1.\n\nTo verify, compute the pattern of powers of 7 modulo 11:\n\n- \\(7^1 \\equiv 7 \\pmod{11}\\)\n- \\(7^2 = 49 \\equiv 5 \\pmod{11}\\) (since 49 - 4×11 = 49 - 44 = 5)\n- \\(7^3 \\equiv 7 \\times 5 = 35 \\equiv 2 \\pmod{11}\\) (35 - 3×11 = 35 - 33 = 2)\n- \\(7^4 \\equiv 7 \\times 2 = 14 \\equiv 3 \\pmod{11}\\) (14 - 11 = 3)\n- \\(7^5 \\equiv 7 \\times 3 = 21 \\equiv -1 \\pmod{11}\\) (21 - 11×2 = 21 - 22 = -1)\n- \\(7^{10} = (7^5)^2 \\equiv (-1)^2 = 1 \\pmod{11}\\), confirming the theorem.\n\nTherefore, \\(7^{100} = (7^{10})^{10} \\equiv 1^{10} = 1 \\pmod{11}\\).\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 2429,
+                "input_tokens": 195,
+                "output_tokens": 413,
+                "cost_usd": 0.002868,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "To solve this, find the count of positive integers n where n < 1000, n is divisible by 7, but n is not divisible by 5.\n\nThis is equivalent to the number of multiples of 7 below 1000 minus the number of multiples of both 7 and 5 (i.e., multiples of LCM(7,5)=35) below 1000.\n\nThe largest integer k such that 7k < 1000 is k = floor(999/7) = 142. So there are 142 multiples of 7.\n\nThe largest integer m such that 35m < 1000 is m = floor(999/35) = 28. So there are 28 multiples of 35.\n\nTherefore, the count is 142 - 28 = 114.\n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 1073,
+                "input_tokens": 200,
+                "output_tokens": 171,
+                "cost_usd": 0.001426,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "The problem: A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?\n\nWe have a big 10x10x10 cube painted on the outside and cut into 1x1x1 cubes. We need to find how many small cubes have exactly two faces painted red.\n\nCubes with exactly two red faces are on the edges but not the corners. Corners have three faces painted.\n\nA cube has 12 edges. Each edge of the big cube is 10 units long. The two ends of each edge are corner cubes with three faces painted. So, the middle part of each edge has 10 - 2 = 8 small cubes that have exactly two faces painted.\n\nFor each of the 12 edges, there are 8 such cubes.\n\nTotal: 12 edges * 8 cubes per edge = 96.\n\nThat seems right. For an n x n x n cube, the number of small cubes with exactly two faces painted is 12*(n-2).\n\nHere n=10, so 12*(10-2)=12*8=96.\n\nYes.\n\nThe answer should be 96.\n\nThe problem says \"cut into 1000 unit cubes\" which is correct, 10^3=1000.\n\nI think that's it.",
+                "turns": 1,
+                "latency_ms": 2211,
+                "input_tokens": 216,
+                "output_tokens": 279,
+                "cost_usd": 0.002106,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "The equation to solve is \\(\\log_2(x) + \\log_2(x - 2) = 3\\), where \\(x\\) is real and positive.\n\nUsing the property of logarithms that \\(\\log_b(a) + \\log_b(c) = \\log_b(a \\cdot c)\\), combine the logs:\n\n\\(\\log_2(x(x - 2)) = 3\\)\n\nThis means \\(x(x - 2) = 2^3 = 8\\).\n\nSo, \\(x^2 - 2x - 8 = 0\\).\n\nSolve the quadratic equation: \\(x = \\frac{2 \\pm \\sqrt{4 + 32}}{2} = \\frac{2 \\pm \\sqrt{36}}{2} = \\frac{2 \\pm 6}{2}\\).\n\nThus, \\(x = 4\\) or \\(x = -2\\).\n\nSince \\(x\\) must be real and positive, and also \\(x > 2\\) for the logs to be defined (because \\(x - 2 > 0\\)), \\(x = 4\\).\n\nVerification: \\(\\log_2(4) + \\log_2(2) = 2 + 1 = 3\\), which matches.\n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 1388,
+                "input_tokens": 209,
+                "output_tokens": 263,
+                "cost_usd": 0.001996,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "The problem asks: \"In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)\"\n\nFor circular permutations of n distinct objects, the number of distinct arrangements is (n-1)! because rotations are considered the same.\n\nTotal ways to seat 8 people around a round table without restrictions: (8-1)! = 7! = 5040.\n\nAlice and Bob refuse to sit next to each other, so we subtract the cases where they are sitting next to each other.\n\nTo find cases where Alice and Bob are together: Treat Alice and Bob as a single unit. So now we have 7 units to arrange around the table: (7-1)! = 6! = 720.\n\nWithin the unit, Alice and Bob can switch places: 2 ways (Alice left of Bob or Bob left of Alice).\n\nSo, arrangements where they are together: 2 * 6! = 2 * 720 = 1440.\n\nTherefore, arrangements where they are not together: total - together = 5040 - 1440 = 3600.\n\nThe problem specifies \"Consider two arrangements equivalent if one is a rotation of the other.\" It doesn't mention reflections, so we shouldn't consider reflections as the same. It's not mentioning anything about flipping the table, so probably just rotations.\n\nMy calculation seems standard.\n\nFix Alice's position to handle the circularity.\n\nSince it's a round table and rotations are the same, fix Alice at one position. Now, there are 7 seats left for the other 7 people, including Bob.\n\nTotal ways with Alice fixed: 7! = 5040. But since we fixed Alice, this matches the (8-1)!.\n\nWith Alice fixed, there are 7 possible seats for Bob, but 2 of them are next to Alice.\n\nSo, seats not next to Alice: 7 - 2 = 5.\n\nThen, for each choice of Bob's seat, the remaining 6 people can be seated in the remaining 6 seats in 6! ways.\n\nSo, 5 * 6! = 5 * 720 = 3600.\n\nSame answer.\n\nIf the table had distinguishable directions or something, but yeah.\n\nI think 3600 is the answer.\n\nThe problem says \"in how many ways\", and it's a number.\n\nIs there any consideration for reflections? The problem only says \"if one is a rotation of the other\", it doesn't say reflection, so no.\n\nIn many problems, if it's a necklace or something, they consider flips, but here it's seating, and usually for people, clockwise and counterclockwise are different if the seats are not symmetric that way.\n\nBut the problem explicitly says only rotations.\n\nSo, I think 3600.\n\nThe final answer should be a number or short phrase.\n\nThe instruction: \"END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.\"\n\nI need to think step by step, show work if useful, and then end with that.\n\nIn the response, I have to have the reasoning, and at the end, that line.\n\nThe system prompt says: \"Your team's answer should be a number or short phrase\"\n\nNo, that's for the human message.\n\nAnyway.\n\nI think the answer is 3600.\n\nSometimes they consider the table fixed or not.\n\nAnother way: total linear arrangements 8!, divide by 8 for rotations: 7!.\n\nYes.\n\nI think it's correct.",
+                "turns": 1,
+                "latency_ms": 4284,
+                "input_tokens": 220,
+                "output_tokens": 741,
+                "cost_usd": 0.004886,
+                "error": null,
+                "answer_extracted": "3600",
+                "answer_correct": true
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "The word MISSISSIPPI has 11 letters in total.\n\n- M appears 1 time\n- I appears 4 times\n- S appears 4 times\n- P appears 2 times\n\nThe formula for distinct permutations of a multiset is:\n\n\\[\n\\frac{11!}{1! \\times 4! \\times 4! \\times 2!}\n\\]\n\nFirst compute the numerator: 11! = 39916800\n\nDenominator: 1! = 1  \n4! = 24  \n4! = 24  \n2! = 2  \n\nSo denominator = 1 × 24 × 24 × 2 = 1152\n\nNow divide: 39916800 ÷ 1152 = 34650\n\nThis can also be computed step-by-step by choosing positions sequentially:\n\n- Choose 4 positions out of 11 for the I's: C(11,4) = 330\n- Choose 4 positions out of the remaining 7 for the S's: C(7,4) = 35\n- Choose 2 positions out of the remaining 3 for the P's: C(3,2) = 3\n- The last position is for M: C(1,1) = 1\n\nMultiply: 330 × 35 = 11550  \n11550 × 3 = 34650\n\nBoth methods confirm the same result.\n\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 1778,
+                "input_tokens": 197,
+                "output_tokens": 297,
+                "cost_usd": 0.002176,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "The problem asks: \"A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.\"\n\nFirst, visualize a right triangle with legs a = 21 and b = 28. The right angle is between these legs. I need the altitude from the right angle vertex to the hypotenuse.\n\nLet the triangle be ABC, with right angle at C. So, AC = 21, BC = 28. Hypotenuse AB = c.\n\nFind c using Pythagoras: c = sqrt(21² + 28²) = sqrt(441 + 784) = sqrt(1225) = 35.\n\nThe area of the triangle is (1/2)*21*28 = (1/2)*588 = 294.\n\nThe area can also be expressed as (1/2)*hypotenuse*altitude = (1/2)*35*h = 294.\n\nSo, (35/2)h = 294 → 35h = 588 → h = 588 / 35.\n\nCalculate that: 35 * 16 = 560, 588 - 560 = 28, so 16 and 28/35 = 16 and 4/5 = 16.8.\n\n588 ÷ 35: 35 * 16.8 = 35*16 + 35*0.8 = 560 + 28 = 588. Yes, exactly 16.8.\n\nIn a right triangle, the altitude to the hypotenuse is (a*b)/c.\n\nYes, because area is (1/2)ab = (1/2)c h ⇒ h = (a b)/c.\n\nSo, (21*28)/35 = (588)/35 = 16.8.\n\nThe length is 16.8.\n\nThe problem says \"Give your answer as a decimal.\" So, 16.8 is fine.\n\nI think that's it.\n\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 2144,
+                "input_tokens": 218,
+                "output_tokens": 420,
+                "cost_usd": 0.002956,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "The problem asks: Let \\( f(x) = x^3 - 3x + 1 \\). At how many distinct real values of \\( x \\) is \\( f(x) = 0 \\)?\n\nI need to find the number of distinct real roots of the cubic equation \\( x^3 - 3x + 1 = 0 \\).\n\nCubic equations always have at least one real root because they go to positive infinity as x goes to infinity and negative infinity as x goes to negative infinity, so they must cross the x-axis at least once.\n\nTo find how many real roots, I should look at the derivative to find local maxima and minima.\n\nThe derivative is \\( f'(x) = 3x^2 - 3 = 3(x^2 - 1) \\).\n\nCritical points at x=1 and x=-1.\n\nf(1) = 1 - 3 + 1 = -1 < 0\n\nf(-1) = -1 + 3 + 1 = 3 > 0\n\nLocal maximum at x=-1 with f=3>0, local minimum at x=1 with f=-1<0.\n\nThe function comes from negative infinity, increases to a local max at (-1,3) which is positive, so it must have crossed the x-axis once before x=-1.\n\nThen from local max, it decreases to local min at (1,-1) which is negative, so it crosses the x-axis once between -1 and 1.\n\nThen from local min at (1,-1), it goes up to positive infinity, so crosses the x-axis once more after x=1.\n\nSo three distinct real roots.\n\nI could try to solve it exactly. The cubic equation x^3 + px + q =0, here it's x^3 -3x +1=0, so p=-3, q=1.\n\nThe discriminant for cubic x^3 + a x^2 + b x + c=0, but here no x^2 term.\n\nFor depressed cubic x^3 + p x + q =0, discriminant d= -4p^3 -27q^2.\n\nThe number of real roots: if (q/2)^2 + (p/3)^3 <0 then three real roots.\n\nHere p=-3, q=1.\n\n(q/2)^2 = (0.5)^2=0.25\n\n(p/3)^3 = (-1)^3 = -1\n\nSo 0.25 -1 = -0.75 <0, yes three distinct real roots.\n\nIf it were zero, multiple roots.\n\nSo yes.\n\nThe answer should be 3.\n\nThe problem says \"at how many distinct real values of x is f(x)=0\", so 3.\n\nI need to confirm they are distinct. Since the local max and min are on opposite sides of x-axis, yes, three distinct.\n\nI could try to find approximate values.\n\nOne root between -2 and -1: f(-2)= -8 +6 +1=-1<0, f(-1)=3>0, wait f(-2)=-1<0, and as x-> -inf, f-> -inf, wait no:\n\nf(-2)= -8 -3(-2)+1= -8+6+1=-1<0\n\nLocal max at -1 is 3>0, so from -inf negative, but f(-2)=-1<0, must cross before -2? f(-3)= -27 +9 +1= -17<0.\n\nDerivative zero at -1, but let's plot points.\n\nf'(x)=3(x^2-1), so for |x|>1, f' >0, increasing.\n\nFor |x|<1, f'<0, decreasing.\n\nFrom -inf, f=-inf, increasing to x=-1, f(-1)=",
+                "turns": 1,
+                "latency_ms": 4987,
+                "input_tokens": 212,
+                "output_tokens": 800,
+                "cost_usd": 0.005224,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "The sequence is defined by a1 = 1, a2 = 2, and a_{n+2} = a_{n+1} + a_n for n ≥ 1. This is the Fibonacci recurrence, but with different starting values.\n\nI need to find a10. I'll compute the terms step by step.\n\na1 = 1  \na2 = 2  \n\na3 = a2 + a1 = 2 + 1 = 3  \na4 = a3 + a2 = 3 + 2 = 5  \na5 = a4 + a3 = 5 + 3 = 8  \na6 = a5 + a4 = 8 + 5 = 13  \na7 = a6 + a5 = 13 + 8 = 21  \na8 = a7 + a6 = 21 + 13 = 34  \na9 = a8 + a7 = 34 + 21 = 55  \na10 = a9 + a8 = 55 + 34 = 89  \n\nSo a10 is 89.\n\nThis sequence is like the Fibonacci sequence but shifted. Standard Fibonacci is usually F1=1, F2=1, F3=2, etc. Here it starts 1,2,3,5,8,... so it's like F2=1, F3=2, F4=3, F5=5, ..., up to F11=89. Yes, that matches.\n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 1616,
+                "input_tokens": 230,
+                "output_tokens": 316,
+                "cost_usd": 0.002356,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "The bag contains 3 red, 4 blue, and 5 green marbles, for a total of 3 + 4 + 5 = 12 marbles.\n\nWe are drawing 3 marbles without replacement, and we want the probability that all three are the same color. This can happen in three mutually exclusive ways: all red, all blue, or all green.\n\nThe total number of ways to draw 3 marbles out of 12 is the combination C(12,3):\n\nC(12,3) = 12! / (3! * 9!) = (12 × 11 × 10) / (3 × 2 × 1) = 220.\n\nFor all red: There are only 3 red marbles, so the number of ways is C(3,3) = 1.\n\nFor all blue: There are 4 blue marbles, so C(4,3) = 4.\n\nFor all green: There are 5 green marbles, so C(5,3) = (5 × 4 × 3) / (3 × 2 × 1) = 10.\n\nThe total number of favorable outcomes is 1 + 4 + 10 = 15.\n\nTherefore, the probability is 15/220.\n\nSimplifying 15/220 by dividing numerator and denominator by 5 gives 3/44.\n\nThis is in lowest terms.\n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 1812,
+                "input_tokens": 234,
+                "output_tokens": 294,
+                "cost_usd": 0.002232,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1812,
+                "p95": 4987,
+                "p99": 4987,
+                "mean": 2372
+              },
+              "cost_usd": {
+                "total": 0.028226,
+                "mean": 0.0028226,
+                "per_1k_evals": 2.8226
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 10,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-fast.ts",
+            "provider": "xai",
+            "model": "grok-4-1-fast-non-reasoning",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "To find \\(7^{100} \\mod 11\\), use Fermat's Little Theorem. Since 11 is prime and 7 is not divisible by 11, \\(7^{10} \\equiv 1 \\mod 11\\).\n\nExpress 100 as \\(10 \\times 10 + 0\\), so \\(7^{100} = (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\mod 11\\).\n\n**Verification with pattern:**  \nPowers of 7 mod 11:  \n\\(7^1 = 7 \\equiv 7\\)  \n\\(7^2 = 49 \\equiv 5\\) (49 - 4×11 = 49 - 44)  \n\\(7^3 \\equiv 7×5 = 35 \\equiv 2\\) (35 - 3×11 = 35 - 33)  \n\\(7^4 \\equiv 7×2 = 14 \\equiv 3\\)  \n\\(7^5 \\equiv 7×3 = 21 \\equiv 10 \\equiv -1\\)  \n\\(7^{10} = (7^5)^2 \\equiv (-1)^2 = 1 \\mod 11\\).\n\nConfirms \\(7^{100} \\equiv 1 \\mod 11\\).\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 2255,
+                "input_tokens": 238,
+                "output_tokens": 273,
+                "cost_usd": 0.0001841,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "**Step 1: Find numbers less than 1000 divisible by 7.**  \nThe largest integer \\( k \\) such that \\( 7k < 1000 \\) is \\( k = 142 \\) (since \\( 7 \\times 142 = 994 \\) and \\( 7 \\times 143 = 1001 > 1000 \\)).  \nSo, there are 142 positive multiples of 7 less than 1000.\n\n**Step 2: Find numbers less than 1000 divisible by both 7 and 5 (i.e., by LCM(7,5) = 35).**  \nThe largest integer \\( m \\) such that \\( 35m < 1000 \\) is \\( m = 28 \\) (since \\( 35 \\times 28 = 980 \\) and \\( 35 \\times 29 = 1015 > 1000 \\)).  \nSo, there are 28 positive multiples of 35 less than 1000.\n\n**Step 3: Subtract.**  \nNumbers divisible by 7 but not by 5: \\( 142 - 28 = 114 \\).\n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 2067,
+                "input_tokens": 243,
+                "output_tokens": 236,
+                "cost_usd": 0.00016659999999999998,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "A cube with side length 10 is cut into 1000 unit cubes (10×10×10).\n\nUnit cubes with exactly two red faces are edge cubes (not corners).\n\nThe large cube has 12 edges.\n\nEach edge has 10 unit cubes, but the 2 corners per edge have three faces painted.\n\nSo, per edge: 10 - 2 = 8 cubes with exactly two faces painted.\n\nTotal: 12 × 8 = 96.\n\nFinal answer: 96",
+                "turns": 1,
+                "latency_ms": 862,
+                "input_tokens": 259,
+                "output_tokens": 100,
+                "cost_usd": 0.00010180000000000001,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "Combine the logarithms:  \nlog₂(x) + log₂(x - 2) = log₂[x(x - 2)] = 3  \n\nSo, x(x - 2) = 2³ = 8  \n\nx² - 2x - 8 = 0  \n\nQuadratic formula: x = [2 ± √(4 + 32)] / 2 = [2 ± √36]/2 = [2 ± 6]/2  \n\nx = (2 + 6)/2 = 4  \nx = (2 - 6)/2 = -2 (discard, since x > 0)  \n\nCheck domain: x > 2 for log₂(x - 2) defined. x = 4 satisfies.  \nlog₂(4) + log₂(2) = 2 + 1 = 3 ✓  \n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 1530,
+                "input_tokens": 252,
+                "output_tokens": 182,
+                "cost_usd": 0.0001414,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "**Step-by-step solution:**\n\nFor circular permutations of \\(n\\) distinct objects (where rotations are considered the same), the number of distinct arrangements is \\((n-1)!\\).\n\n**Total arrangements without restrictions:**  \nFor 8 people: \\((8-1)! = 7! = 5040\\).\n\n**Arrangements where Alice and Bob sit next to each other:**  \nTreat Alice and Bob as a single \"block.\" This gives 7 units to arrange circularly: \\((7-1)! = 6! = 720\\).  \nWithin the block, Alice and Bob can switch places: \\(720 \\times 2 = 1440\\).\n\n**Arrangements where Alice and Bob do not sit next to each other:**  \n\\(5040 - 1440 = 3600\\).\n\nFinal answer: 3600",
+                "turns": 1,
+                "latency_ms": 1396,
+                "input_tokens": 263,
+                "output_tokens": 172,
+                "cost_usd": 0.00013859999999999998,
+                "error": null,
+                "answer_extracted": "3600",
+                "answer_correct": true
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "The word \"MISSISSIPPI\" has 11 letters:  \n- M: 1  \n- I: 4  \n- S: 4  \n- P: 2  \n\nThe number of distinct arrangements is the multinomial coefficient:  \n\\[\n\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!} = \\frac{39916800}{1 \\cdot 24 \\cdot 24 \\cdot 2} = \\frac{39916800}{1152} = 34650\n\\]\n\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 1113,
+                "input_tokens": 240,
+                "output_tokens": 119,
+                "cost_usd": 0.0001075,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "First, find the hypotenuse \\(c\\) using the Pythagorean theorem:  \n\\(c = \\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\).\n\nThe area of the triangle is \\(\\frac{1}{2} \\times 21 \\times 28 = 294\\).\n\nAlso, area = \\(\\frac{1}{2} \\times c \\times h = \\frac{1}{2} \\times 35 \\times h\\), so \\(35h = 588\\) and \\(h = \\frac{588}{35} = 16.8\\).\n\nAlternatively, \\(h = \\frac{21 \\times 28}{35} = \\frac{588}{35} = 16.8\\).\n\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 1661,
+                "input_tokens": 261,
+                "output_tokens": 176,
+                "cost_usd": 0.0001402,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "To determine the number of distinct real roots of \\(f(x) = x^3 - 3x + 1 = 0\\), analyze the function's behavior.\n\nCompute the derivative: \\(f'(x) = 3x^2 - 3 = 3(x^2 - 1)\\).  \nCritical points: \\(x = \\pm 1\\).  \n- \\(f''(x) = 6x\\), so \\(x = -1\\) is a local max (\\(f(-1) = 3 > 0\\)) and \\(x = 1\\) is a local min (\\(f(1) = -1 < 0\\)).\n\nEvaluate at key points:  \n- \\(f(-2) = -9 < 0\\)  \n- \\(f(-1) = 3 > 0\\)  \n- \\(f(1) = -1 < 0\\)  \n- \\(f(2) = 5 > 0\\)\n\nSign changes: negative to positive over \\((-2, -1)\\), positive to negative over \\((-1, 1)\\), negative to positive over \\((1, 2)\\).  \nBy Intermediate Value Theorem and the cubic's end behavior (\\(f(x) \\to -\\infty\\) as \\(x \\to -\\infty\\), \\(f(x) \\to \\infty\\) as \\(x \\to \\infty\\)), there is exactly one root in each interval: \\((-\\infty, -1)\\), \\((-1, 1)\\), and \\((1, \\infty)\\).\n\nThus, three distinct real roots.\n\nFinal answer: 3",
+                "turns": 1,
+                "latency_ms": 2765,
+                "input_tokens": 255,
+                "output_tokens": 333,
+                "cost_usd": 0.0002175,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "The sequence is the Fibonacci sequence starting with a_1 = 1, a_2 = 2.\n\nCompute step-by-step:  \na_3 = a_2 + a_1 = 2 + 1 = 3  \na_4 = a_3 + a_2 = 3 + 2 = 5  \na_5 = a_4 + a_3 = 5 + 3 = 8  \na_6 = a_5 + a_4 = 8 + 5 = 13  \na_7 = a_6 + a_5 = 13 + 8 = 21  \na_8 = a_7 + a_6 = 21 + 13 = 34  \na_9 = a_8 + a_7 = 34 + 21 = 55  \na_10 = a_9 + a_8 = 55 + 34 = 89  \n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 1301,
+                "input_tokens": 273,
+                "output_tokens": 201,
+                "cost_usd": 0.0001551,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "Total marbles: 3 + 4 + 5 = 12.\n\nTotal ways to draw 3 marbles:  \n\\[\n\\binom{12}{3} = \\frac{12 \\times 11 \\times 10}{6} = 220\n\\]\n\nFavorable outcomes:  \n- All red: \\(\\binom{3}{3} = 1\\)  \n- All blue: \\(\\binom{4}{3} = 4\\)  \n- All green: \\(\\binom{5}{3} = 10\\)  \n\nTotal favorable: \\(1 + 4 + 10 = 15\\)\n\nProbability: \\(\\frac{15}{220} = \\frac{3}{44}\\)\n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 1097,
+                "input_tokens": 277,
+                "output_tokens": 148,
+                "cost_usd": 0.0001294,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1396,
+                "p95": 2765,
+                "p99": 2765,
+                "mean": 1605
+              },
+              "cost_usd": {
+                "total": 0.0014822,
+                "mean": 0.00014822,
+                "per_1k_evals": 0.14822
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 10,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-reasoning.ts",
+            "provider": "xai",
+            "model": "grok-4.20-0309-reasoning",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "To compute \\(7^{100} \\mod 11\\), apply Fermat's Little Theorem, which states that if \\(p\\) is prime and \\(a\\) is not divisible by \\(p\\), then \\(a^{p-1} \\equiv 1 \\pmod{p}\\).\n\nHere \\(p = 11\\) (prime) and \\(a = 7\\) (coprime to 11), so \\(7^{10} \\equiv 1 \\pmod{11}\\).\n\nNow express the exponent: \\(100 = 10 \\times 10\\), so\n\\[\n7^{100} = (7^{10})^{10} \\equiv 1^{10} \\equiv 1 \\pmod{11}.\n\\]\n\nTo confirm, first compute some smaller powers modulo 11:\n- \\(7^1 \\equiv 7\\)\n- \\(7^2 = 49 \\equiv 5\\) (since \\(49 - 4 \\times 11 = 5\\))\n- \\(7^4 = (7^2)^2 \\equiv 5^2 = 25 \\equiv 3\\) (since \\(25 - 2 \\times 11 = 3\\))\n- \\(7^5 = 7^4 \\times 7 \\equiv 3 \\times 7 = 21 \\equiv -1\\) (since \\(21 - 2 \\times 11 = -1\\))\n\nThen \\(7^{10} = (7^5)^2 \\equiv (-1)^2 = 1 \\pmod{11}\\), which aligns with Fermat's Little Theorem.\n\nAlternatively, \\(7^{100} = (7^5)^{20} \\equiv (-1)^{20} = 1 \\pmod{11}\\).\n\nThus, the remainder is 1.\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 11024,
+                "input_tokens": 197,
+                "output_tokens": 1466,
+                "cost_usd": 0.00919,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "The multiples of 7 below 1000 are 7, 14, ..., 994, and there are exactly 142 such numbers (since ⌊999/7⌋ = 142).  \nAmong these, the ones also divisible by 5 are the multiples of lcm(7,5) = 35 (as 7 and 5 are coprime). These are 35, 70, ..., 980, and there are exactly 28 such numbers (since ⌊999/35⌋ = 28).  \nSubtract to get the count of multiples of 7 that are not multiples of 5: 142 - 28.  \n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 4147,
+                "input_tokens": 202,
+                "output_tokens": 746,
+                "cost_usd": 0.00488,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "A 10x10x10 cube has 12 edges. Each edge consists of 10 small cubes, but the 2 at each end are corners with 3 painted faces. This leaves 8 small cubes per edge with exactly 2 painted faces. Thus, the total is 12 * 8.  \n\n\nFinal answer: 96",
+                "turns": 1,
+                "latency_ms": 3506,
+                "input_tokens": 218,
+                "output_tokens": 603,
+                "cost_usd": 0.004054,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "log₂(x(x - 2)) = 3  \nx(x - 2) = 8  \nx² - 2x - 8 = 0  \nx = [2 ± 6]/2  \nx = 4 (positive root, x > 2)  \n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 2901,
+                "input_tokens": 211,
+                "output_tokens": 579,
+                "cost_usd": 0.003896,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "The standard approach for seating \\(n\\) distinct people around a round table (where rotations are considered identical) is to use \\((n-1)!\\) arrangements. For 8 people with no restrictions, this gives \\(7! = 5040\\).\n\nTo account for the restriction that Alice and Bob cannot sit next to each other, subtract the arrangements where they sit together from the total. Treat Alice and Bob as a single combined unit, resulting in 7 units to arrange circularly: \\((7-1)! = 6!\\). Within their unit, Alice and Bob can switch places in 2 ways, so the arrangements where they sit together total \\(2 \\times 6! = 1440\\).\n\nSubtract: \\(5040 - 1440 = 3600\\).\n\nTo confirm via an alternative approach, fix Alice's position to eliminate rotational symmetry. This leaves 7 possible seats for the remaining people. Bob has 7 possible seats but cannot take the 2 adjacent to Alice, leaving 5 valid seats. The remaining 6 people can then be seated in the 6 open seats in \\(6!\\) ways. Thus, the total is \\(5 \\times 720 = 3600\\).\n\nThe two methods agree, and the problem specifies equivalence only under rotation (not reflection), so no further adjustments are needed.\n\nFinal answer: 3600",
+                "turns": 1,
+                "latency_ms": 5590,
+                "input_tokens": 222,
+                "output_tokens": 917,
+                "cost_usd": 0.005946,
+                "error": null,
+                "answer_extracted": "3600",
+                "answer_correct": true
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "The word MISSISSIPPI has 11 letters with the following frequencies: M appears 1 time, I appears 4 times, S appears 4 times, and P appears 2 times.\n\nThe number of distinct permutations of a multiset is given by the formula \\(\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}\\).\n\nThis is equivalent to the sequential binomial coefficients: \\(\\binom{11}{4} \\times \\binom{7}{4} \\times \\binom{3}{2} \\times \\binom{1}{1}\\).\n\n\\(\\binom{11}{4} = 330\\)\n\n\\(\\binom{7}{4} = 35\\)\n\n\\(\\binom{3}{2} = 3\\)\n\n\\(\\binom{1}{1} = 1\\)\n\nMultiplying these values: \\(330 \\times 35 = 11550\\), then \\(11550 \\times 3 = 34650\\), and \\(34650 \\times 1 = 34650\\).\n\nThis matches the direct computation of \\(39916800 / (24 \\times 24 \\times 2) = 34650\\).\n\n\\confidence{90}\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 11844,
+                "input_tokens": 199,
+                "output_tokens": 1208,
+                "cost_usd": 0.007646,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "The triangle has legs 21 and 28. Hypotenuse length is \\(\\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35\\).\n\nArea is \\(\\frac12 \\times 21 \\times 28 = 294\\).\n\nArea is also \\(\\frac12 \\times 35 \\times h\\), so \\(17.5h = 294\\).\n\nThus \\(h = 294 / 17.5 = 16.8\\).\n\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 6755,
+                "input_tokens": 220,
+                "output_tokens": 877,
+                "cost_usd": 0.005702,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "The function \\(f(x) = x^3 - 3x + 1\\) is a cubic polynomial, so it has either one or three real roots (counting multiplicity). To determine the exact number of distinct real roots, compute the first derivative: \\(f'(x) = 3x^2 - 3 = 3(x^2 - 1)\\). The critical points occur at \\(x = -1\\) and \\(x = 1\\).\n\nEvaluate the function at these points: \\(f(-1) = 3 > 0\\) (local maximum) and \\(f(1) = -1 < 0\\) (local minimum). As \\(x \\to -\\infty\\), \\(f(x) \\to -\\infty\\), and as \\(x \\to \\infty\\), \\(f(x) \\to \\infty\\).\n\n- Starting from \\(-\\infty\\), the graph increases and crosses the x-axis once to reach the local maximum above the x-axis (before \\(x = -1\\)).\n- It then decreases from the local maximum (positive) to the local minimum (negative), crossing the x-axis once in \\((-1, 1)\\).\n- Finally, it increases from the local minimum (negative) to \\(\\infty\\), crossing the x-axis once after \\(x = 1\\).\n\nThe local extremum values are nonzero, so there are no roots at the critical points. Thus, there are three distinct real roots. This is confirmed by the discriminant of the depressed cubic \\(x^3 + px + q = 0\\) (with \\(p = -3\\), \\(q = 1\\)), which is positive, indicating three distinct real roots when \\(p < 0\\).\n\nFinal answer: 3",
+                "turns": 1,
+                "latency_ms": 7144,
+                "input_tokens": 214,
+                "output_tokens": 1318,
+                "cost_usd": 0.008336,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "a1 = 1  \na2 = 2  \na3 = 3  \na4 = 5  \na5 = 8  \na6 = 13  \na7 = 21  \na8 = 34  \na9 = 55  \na10 = 89  \n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 3047,
+                "input_tokens": 232,
+                "output_tokens": 601,
+                "cost_usd": 0.00407,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "The total number of marbles is 12. The total ways to choose 3 marbles is C(12,3) = 220.\n\nFavorable outcomes:  \n- All red: C(3,3) = 1  \n- All blue: C(4,3) = 4  \n- All green: C(5,3) = 10  \n\nTotal favorable: 1 + 4 + 10 = 15.  \n\nThus, probability is 15/220. Simplifying by dividing numerator and denominator by 5 gives 3/44.  \n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 5888,
+                "input_tokens": 236,
+                "output_tokens": 1065,
+                "cost_usd": 0.006862,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 5590,
+                "p95": 11844,
+                "p99": 11844,
+                "mean": 6185
+              },
+              "cost_usd": {
+                "total": 0.060582,
+                "mean": 0.0060582,
+                "per_1k_evals": 6.058199999999999
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 10,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-haiku.ts",
+            "provider": "anthropic",
+            "model": "claude-haiku-4-5",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "I need to find the remainder when 7^100 is divided by 11.\n\nI'll use Fermat's Little Theorem, which states that if p is prime and gcd(a,p) = 1, then a^(p-1) ≡ 1 (mod p).\n\nSince 11 is prime and gcd(7,11) = 1, I have:\n7^10 ≡ 1 (mod 11)\n\nNow I need to express 100 in terms of 10:\n100 = 10 × 10\n\nTherefore:\n7^100 = 7^(10×10) = (7^10)^10 ≡ 1^10 ≡ 1 (mod 11)\n\nLet me verify this with a quick check by computing some powers of 7 mod 11:\n- 7^1 ≡ 7 (mod 11)\n- 7^2 ≡ 49 ≡ 5 (mod 11)\n- 7^3 ≡ 7 × 5 ≡ 35 ≡ 2 (mod 11)\n- 7^4 ≡ 7 × 2 ≡ 14 ≡ 3 (mod 11)\n- 7^5 ≡ 7 × 3 ≡ 21 ≡ 10 (mod 11)\n- 7^10 ≡ (7^5)^2 ≡ 10^2 ≡ 100 ≡ 1 (mod 11) ✓\n\nThis confirms that 7^10 ≡ 1 (mod 11).\n\nTherefore: 7^100 = (7^10)^10 ≡ 1^10 ≡ 1 (mod 11)\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 2345,
+                "input_tokens": 82,
+                "output_tokens": 474,
+                "cost_usd": 0.002452,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "I need to find positive integers less than 1000 that are divisible by 7 but not by 5.\n\n**Step 1: Count positive integers less than 1000 divisible by 7.**\n\nThe positive multiples of 7 less than 1000 are: 7, 14, 21, ..., 994\n\nTo find how many: $\\lfloor 999/7 \\rfloor = \\lfloor 142.71... \\rfloor = 142$\n\nSo there are 142 multiples of 7 less than 1000.\n\n**Step 2: Count positive integers less than 1000 divisible by both 7 and 5.**\n\nA number is divisible by both 7 and 5 if and only if it's divisible by lcm(7,5) = 35 (since 7 and 5 are coprime).\n\nThe positive multiples of 35 less than 1000 are: 35, 70, 105, ..., 980\n\nTo find how many: $\\lfloor 999/35 \\rfloor = \\lfloor 28.54... \\rfloor = 28$\n\nSo there are 28 multiples of 35 less than 1000.\n\n**Step 3: Apply inclusion-exclusion.**\n\nThe count of positive integers less than 1000 divisible by 7 but not by 5 is:\n$$142 - 28 = 114$$\n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 1883,
+                "input_tokens": 89,
+                "output_tokens": 354,
+                "cost_usd": 0.001859,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "I need to find how many unit cubes have exactly two red faces after a 10×10×10 cube is painted red on all faces and cut into unit cubes.\n\nLet me think about where unit cubes with exactly two red faces are located.\n\n**Understanding the structure:**\n- The original cube is 10×10×10, so it's cut into 1000 unit cubes\n- Only the cubes on the surface of the original cube will have painted faces\n- Interior cubes have no painted faces\n\n**Categorizing unit cubes by number of red faces:**\n\n1. **Corner cubes**: Located at the 8 corners of the cube\n   - Each corner cube has 3 faces exposed\n   - So corner cubes have exactly 3 red faces\n\n2. **Edge cubes** (not at corners): Located along the 12 edges\n   - Each edge has 10 cubes total\n   - 2 of these are corners\n   - So each edge has 10 - 2 = 8 non-corner cubes\n   - Each edge cube has exactly 2 faces exposed\n   - So edge cubes have exactly 2 red faces\n\n3. **Face cubes** (not on edges): Located on the 6 faces\n   - Each face is 10×10\n   - The perimeter of each face consists of edge and corner cubes\n   - The interior of each face (not touching any edge) has cubes with exactly 1 red face\n   - Each face has (10-2)×(10-2) = 8×8 = 64 interior cubes\n   - So face cubes have exactly 1 red face\n\n4. **Interior cubes**: Not on any face\n   - These have 0 red faces\n   - There are (10-2)³ = 8³ = 512 interior cubes\n\n**Calculating edge cubes with exactly 2 red faces:**\n\nThe cube has 12 edges. Each edge has 10 unit cubes, but 2 are corners.\n- Non-corner cubes per edge: 10 - 2 = 8\n- Total edge cubes (non-corner): 12 × 8 = 96\n\nLet me verify this makes sense:\n- Corner cubes: 8 (with 3 red faces)\n- Edge cubes (non-corner): 96 (with 2 red faces)\n- Face cubes (non-edge): 6 × 64 = 384 (with 1 red face)\n- Interior cubes: 512 (with 0 red faces)\n- Total: 8 + 96 + 384 + 512 = 1000 ✓\n\nTherefore, the number of unit cubes with exactly two red faces is **96**.\n\nFinal answer: 96",
+                "turns": 1,
+                "latency_ms": 4485,
+                "input_tokens": 106,
+                "output_tokens": 649,
+                "cost_usd": 0.003351,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "I need to solve log₂(x) + log₂(x - 2) = 3 where x is real and positive.\n\n**Step 1: Use logarithm properties to combine the left side.**\n\nUsing the property log_a(m) + log_a(n) = log_a(mn):\nlog₂(x) + log₂(x - 2) = log₂(x(x - 2))\n\nSo the equation becomes:\nlog₂(x(x - 2)) = 3\n\n**Step 2: Convert from logarithmic to exponential form.**\n\nIf log₂(y) = 3, then y = 2³ = 8\n\nTherefore:\nx(x - 2) = 8\n\n**Step 3: Expand and rearrange into standard form.**\n\nx² - 2x = 8\nx² - 2x - 8 = 0\n\n**Step 4: Solve the quadratic equation.**\n\nUsing the quadratic formula or factoring:\nx² - 2x - 8 = (x - 4)(x + 2) = 0\n\nThis gives x = 4 or x = -2\n\n**Step 5: Check domain restrictions.**\n\nFor the original equation to be valid, I need:\n- x > 0 (given that x is positive)\n- x - 2 > 0 (for log₂(x - 2) to be defined)\n\nThis means x > 2.\n\n- x = 4 satisfies x > 2 ✓\n- x = -2 does not satisfy x > 0 ✗\n\n**Step 6: Verify the solution.**\n\nFor x = 4:\nlog₂(4) + log₂(4 - 2) = log₂(4) + log₂(2) = 2 + 1 = 3 ✓\n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 2741,
+                "input_tokens": 98,
+                "output_tokens": 455,
+                "cost_usd": 0.002373,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "I need to find the number of ways to seat 8 people around a round table where Alice and Bob are not adjacent, considering rotations as equivalent.\n\n**Step 1: Find total arrangements of 8 people around a round table (considering rotations as equivalent).**\n\nFor circular arrangements where rotations are considered the same, the number of arrangements is $(n-1)!$.\n\nTotal arrangements = $(8-1)! = 7! = 5040$\n\n**Step 2: Find arrangements where Alice and Bob ARE sitting next to each other.**\n\nI'll use complementary counting: subtract the \"bad\" arrangements from the total.\n\nTo count arrangements where Alice and Bob sit together:\n- Treat Alice and Bob as a single unit\n- Now I have 7 units to arrange around a round table (the Alice-Bob unit plus 6 other people)\n- These 7 units can be arranged in $(7-1)! = 6! = 720$ ways\n- Within their unit, Alice and Bob can be arranged in $2! = 2$ ways (Alice-Bob or Bob-Alice)\n\nArrangements with Alice and Bob adjacent = $6! \\times 2! = 720 \\times 2 = 1440$\n\n**Step 3: Find arrangements where Alice and Bob are NOT adjacent.**\n\nArrangements where Alice and Bob are not adjacent = Total arrangements - Arrangements where they are adjacent\n\n= $7! - 6! \\times 2!$\n= $5040 - 1440$\n= $3600$\n\nFinal answer: 3600",
+                "turns": 1,
+                "latency_ms": 2937,
+                "input_tokens": 107,
+                "output_tokens": 353,
+                "cost_usd": 0.001872,
+                "error": null,
+                "answer_extracted": "3600",
+                "answer_correct": true
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "I need to find the number of distinct arrangements of the letters in MISSISSIPPI.\n\nFirst, let me count the letters:\nM-I-S-S-I-S-S-I-P-P-I\n\nTotal letters: 11\n\nNow let me count each distinct letter:\n- M: 1\n- I: 4\n- S: 4\n- P: 2\n\nThe formula for distinct arrangements when there are repeated elements is:\n\n$$\\frac{n!}{n_1! \\cdot n_2! \\cdot n_3! \\cdot ... \\cdot n_k!}$$\n\nwhere n is the total number of items and $n_i$ is the frequency of each repeated item.\n\nIn this case:\n$$\\frac{11!}{1! \\cdot 4! \\cdot 4! \\cdot 2!}$$\n\nLet me calculate:\n- 11! = 39,916,800\n- 1! = 1\n- 4! = 24\n- 4! = 24\n- 2! = 2\n\n$$\\frac{39,916,800}{1 \\cdot 24 \\cdot 24 \\cdot 2} = \\frac{39,916,800}{1,152}$$\n\nLet me divide:\n39,916,800 ÷ 1,152 = 34,650\n\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 2217,
+                "input_tokens": 82,
+                "output_tokens": 332,
+                "cost_usd": 0.001742,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "I need to find the altitude from the right angle to the hypotenuse in a right triangle with legs 21 and 28.\n\n**Step 1: Find the hypotenuse.**\n\nUsing the Pythagorean theorem:\n$$c = \\sqrt{21^2 + 28^2} = \\sqrt{441 + 784} = \\sqrt{1225} = 35$$\n\n**Step 2: Use the area method to find the altitude.**\n\nThe area of a right triangle can be calculated in two ways:\n- Using the two legs: $A = \\frac{1}{2} \\times 21 \\times 28$\n- Using the hypotenuse and altitude to it: $A = \\frac{1}{2} \\times 35 \\times h$\n\nwhere $h$ is the altitude to the hypotenuse.\n\n**Step 3: Set the areas equal.**\n\n$$\\frac{1}{2} \\times 21 \\times 28 = \\frac{1}{2} \\times 35 \\times h$$\n\n$$21 \\times 28 = 35 \\times h$$\n\n$$588 = 35h$$\n\n$$h = \\frac{588}{35} = \\frac{588}{35}$$\n\n**Step 4: Simplify the fraction.**\n\nLet me find the GCD of 588 and 35:\n- $588 = 35 \\times 16 + 28$\n- $35 = 28 \\times 1 + 7$\n- $28 = 7 \\times 4 + 0$\n\nSo GCD(588, 35) = 7\n\n$$h = \\frac{588}{35} = \\frac{84}{5} = 16.8$$\n\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 2877,
+                "input_tokens": 106,
+                "output_tokens": 424,
+                "cost_usd": 0.002226,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "I need to find the number of distinct real roots of f(x) = x³ - 3x + 1 = 0.\n\nLet me analyze this by studying the function f(x) = x³ - 3x + 1.\n\n**Step 1: Find critical points**\n\nf'(x) = 3x² - 3 = 3(x² - 1) = 3(x - 1)(x + 1)\n\nCritical points are at x = -1 and x = 1.\n\n**Step 2: Determine local extrema**\n\nf''(x) = 6x\n\n- At x = -1: f''(-1) = -6 < 0, so x = -1 is a local maximum\n- At x = 1: f''(1) = 6 > 0, so x = 1 is a local minimum\n\n**Step 3: Evaluate f at critical points**\n\nf(-1) = (-1)³ - 3(-1) + 1 = -1 + 3 + 1 = 3\n\nf(1) = (1)³ - 3(1) + 1 = 1 - 3 + 1 = -1\n\n**Step 4: Analyze the behavior**\n\n- Local maximum at x = -1: f(-1) = 3 > 0\n- Local minimum at x = 1: f(1) = -1 < 0\n\n**Step 5: Check end behavior**\n\n- As x → -∞: f(x) → -∞\n- As x → +∞: f(x) → +∞\n\n**Step 6: Count roots using the Intermediate Value Theorem**\n\nSince f is continuous:\n\n1. For x < -1: f(x) goes from -∞ to f(-1) = 3\n   - Since f goes from negative to positive, there is **one root** in (-∞, -1)\n\n2. For -1 < x < 1: f(x) goes from f(-1) = 3 to f(1) = -1\n   - Since f goes from positive to negative, there is **one root** in (-1, 1)\n\n3. For x > 1: f(x) goes from f(1) = -1 to +∞\n   - Since f goes from negative to positive, there is **one root** in (1, +∞)\n\nTherefore, there are **3 distinct real roots**.\n\nFinal answer: 3",
+                "turns": 1,
+                "latency_ms": 3220,
+                "input_tokens": 101,
+                "output_tokens": 593,
+                "cost_usd": 0.003066,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "I need to find the 10th term of a sequence where a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n.\n\nThis is a Fibonacci-like sequence. Let me calculate each term step by step.\n\na_1 = 1\na_2 = 2\na_3 = a_2 + a_1 = 2 + 1 = 3\na_4 = a_3 + a_2 = 3 + 2 = 5\na_5 = a_4 + a_3 = 5 + 3 = 8\na_6 = a_5 + a_4 = 8 + 5 = 13\na_7 = a_6 + a_5 = 13 + 8 = 21\na_8 = a_7 + a_6 = 21 + 13 = 34\na_9 = a_8 + a_7 = 34 + 21 = 55\na_10 = a_9 + a_8 = 55 + 34 = 89\n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 1710,
+                "input_tokens": 120,
+                "output_tokens": 300,
+                "cost_usd": 0.00162,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "I need to find the probability that all 3 marbles drawn are the same color.\n\n**Total number of marbles:** 3 + 4 + 5 = 12\n\n**Total ways to draw 3 marbles without replacement:**\n$$\\binom{12}{3} = \\frac{12!}{3!9!} = \\frac{12 \\times 11 \\times 10}{3 \\times 2 \\times 1} = \\frac{1320}{6} = 220$$\n\n**Ways to draw 3 marbles of the same color:**\n\n*All 3 red:*\n$$\\binom{3}{3} = 1$$\n\n*All 3 blue:*\n$$\\binom{4}{3} = \\frac{4!}{3!1!} = 4$$\n\n*All 3 green:*\n$$\\binom{5}{3} = \\frac{5!}{3!2!} = \\frac{5 \\times 4}{2 \\times 1} = 10$$\n\n**Total favorable outcomes:**\n$$1 + 4 + 10 = 15$$\n\n**Probability:**\n$$P(\\text{all same color}) = \\frac{15}{220}$$\n\n**Simplify to lowest terms:**\nFind GCD(15, 220):\n- 15 = 3 × 5\n- 220 = 4 × 55 = 4 × 5 × 11 = 2² × 5 × 11\n\nGCD(15, 220) = 5\n\n$$\\frac{15}{220} = \\frac{15 \\div 5}{220 \\div 5} = \\frac{3}{44}$$\n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 2908,
+                "input_tokens": 126,
+                "output_tokens": 426,
+                "cost_usd": 0.002256,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 2741,
+                "p95": 4485,
+                "p99": 4485,
+                "mean": 2732
+              },
+              "cost_usd": {
+                "total": 0.022817,
+                "mean": 0.0022817000000000002,
+                "per_1k_evals": 2.2817000000000003
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 10,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-opus-4-7.ts",
             "provider": "anthropic",
             "model": "claude-opus-4-7",
             "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
@@ -4812,7 +5584,7 @@ window.__BENCH = {
                 "prompt": "What is the remainder when 7^100 is divided by 11?",
                 "response": "7^10 ≡ 1 mod 11, so 7^100 ≡ 1.\n\nFinal answer: 1",
                 "turns": 1,
-                "latency_ms": 1423,
+                "latency_ms": 2360,
                 "input_tokens": 111,
                 "output_tokens": 42,
                 "cost_usd": 0.001605,
@@ -4823,12 +5595,12 @@ window.__BENCH = {
               {
                 "id": "r-002",
                 "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
-                "response": "Divisible by 7: floor(999/7)=142. By 35: floor(999/35)=28. 142-28=114.\n\nFinal answer: 114",
+                "response": "Divisible by 7 under 1000: floor(999/7)=142. Divisible by 35: floor(999/35)=28. 142-28=114.\n\nFinal answer: 114",
                 "turns": 1,
-                "latency_ms": 1561,
+                "latency_ms": 1611,
                 "input_tokens": 118,
-                "output_tokens": 51,
-                "cost_usd": 0.001865,
+                "output_tokens": 60,
+                "cost_usd": 0.00209,
                 "error": null,
                 "answer_extracted": "114",
                 "answer_correct": true
@@ -4838,7 +5610,7 @@ window.__BENCH = {
                 "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
                 "response": "96\n\nFinal answer: 96",
                 "turns": 1,
-                "latency_ms": 1452,
+                "latency_ms": 1153,
                 "input_tokens": 143,
                 "output_tokens": 14,
                 "cost_usd": 0.001065,
@@ -4851,7 +5623,7 @@ window.__BENCH = {
                 "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
                 "response": "x(x-2)=8, x²-2x-8=0, x=4.\n\nFinal answer: 4",
                 "turns": 1,
-                "latency_ms": 1353,
+                "latency_ms": 1889,
                 "input_tokens": 126,
                 "output_tokens": 35,
                 "cost_usd": 0.001505,
@@ -4864,7 +5636,7 @@ window.__BENCH = {
                 "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
                 "response": "7! - 2·6! = 5040 - 1440 = 3600\n\nFinal answer: 3600",
                 "turns": 1,
-                "latency_ms": 1623,
+                "latency_ms": 1493,
                 "input_tokens": 153,
                 "output_tokens": 36,
                 "cost_usd": 0.001665,
@@ -4877,7 +5649,7 @@ window.__BENCH = {
                 "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
                 "response": "11!/(4!4!2!) = 39916800/(24·24·2) = 39916800/1152 = 34650\n\nFinal answer: 34650",
                 "turns": 1,
-                "latency_ms": 2394,
+                "latency_ms": 1444,
                 "input_tokens": 120,
                 "output_tokens": 51,
                 "cost_usd": 0.001875,
@@ -4890,7 +5662,7 @@ window.__BENCH = {
                 "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
                 "response": "Hypotenuse = 35. Altitude = 21*28/35 = 588/35 = 16.8\n\nFinal answer: 16.8",
                 "turns": 1,
-                "latency_ms": 2367,
+                "latency_ms": 1525,
                 "input_tokens": 146,
                 "output_tokens": 48,
                 "cost_usd": 0.00193,
@@ -4901,12 +5673,12 @@ window.__BENCH = {
               {
                 "id": "r-008",
                 "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
-                "response": "Discriminant of x³+px+q: -4p³-27q². Here p=-3, q=1: -4(-27)-27(1)=108-27=81>0, three real roots.\n\nFinal answer: 3",
+                "response": "Discriminant of x³+px+q: -4p³-27q². Here p=-3, q=1: -4(-27)-27=108-27=81>0, three real roots.\n\nFinal answer: 3",
                 "turns": 1,
-                "latency_ms": 1714,
+                "latency_ms": 1650,
                 "input_tokens": 130,
-                "output_tokens": 69,
-                "cost_usd": 0.002375,
+                "output_tokens": 66,
+                "cost_usd": 0.0023,
                 "error": null,
                 "answer_extracted": "3",
                 "answer_correct": true
@@ -4916,7 +5688,7 @@ window.__BENCH = {
                 "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
                 "response": "1,2,3,5,8,13,21,34,55,89\n\nFinal answer: 89",
                 "turns": 1,
-                "latency_ms": 2367,
+                "latency_ms": 934,
                 "input_tokens": 152,
                 "output_tokens": 32,
                 "cost_usd": 0.00156,
@@ -4927,12 +5699,12 @@ window.__BENCH = {
               {
                 "id": "r-010",
                 "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
-                "response": "C(3,3)+C(4,3)+C(5,3) = 1+4+10=15. C(12,3)=220. 15/220=3/44.\n\nFinal answer: 3/44",
+                "response": "C(3,3)+C(4,3)+C(5,3) = 1+4+10 = 15\nC(12,3) = 220\n15/220 = 3/44\n\nFinal answer: 3/44",
                 "turns": 1,
-                "latency_ms": 1487,
+                "latency_ms": 1583,
                 "input_tokens": 168,
-                "output_tokens": 62,
-                "cost_usd": 0.00239,
+                "output_tokens": 65,
+                "cost_usd": 0.002465,
                 "error": null,
                 "answer_extracted": "3/44",
                 "answer_correct": true
@@ -4943,15 +5715,180 @@ window.__BENCH = {
               "n_success": 10,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1561,
-                "p95": 2394,
-                "p99": 2394,
-                "mean": 1774
+                "p50": 1525,
+                "p95": 2360,
+                "p99": 2360,
+                "mean": 1564
               },
               "cost_usd": {
-                "total": 0.017835,
-                "mean": 0.0017835,
-                "per_1k_evals": 1.7834999999999999
+                "total": 0.01806,
+                "mean": 0.0018059999999999999,
+                "per_1k_evals": 1.8059999999999998
+              },
+              "turns": {
+                "mean": 1,
+                "max": 1
+              },
+              "answer_accuracy": {
+                "graded": 10,
+                "correct": 10,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-sonnet.ts",
+            "provider": "anthropic",
+            "model": "claude-sonnet-4-6",
+            "systemPrompt": "You are solving a reasoning problem. Think step-by-step, show your work if useful, and END your response with a line formatted exactly: `Final answer: <answer>`. The answer should be a number or short phrase — no units, no explanations, no punctuation.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "r-001",
+                "prompt": "What is the remainder when 7^100 is divided by 11?",
+                "response": "I need to find 7^100 mod 11.\n\nBy Fermat's Little Theorem, since 11 is prime and gcd(7,11) = 1:\n7^10 ≡ 1 (mod 11)\n\n100 = 10 × 10, so:\n7^100 = (7^10)^10 ≡ 1^10 = 1 (mod 11)\n\nFinal answer: 1",
+                "turns": 1,
+                "latency_ms": 4776,
+                "input_tokens": 83,
+                "output_tokens": 112,
+                "cost_usd": 0.001929,
+                "error": null,
+                "answer_extracted": "1",
+                "answer_correct": true
+              },
+              {
+                "id": "r-002",
+                "prompt": "How many positive integers less than 1000 are divisible by 7 but not by 5?",
+                "response": "I need to find positive integers less than 1000 that are divisible by 7 but not by 5.\n\n**Step 1: Count integers less than 1000 divisible by 7.**\n\n⌊999/7⌋ = 142 (since 7 × 142 = 994)\n\n**Step 2: Count integers less than 1000 divisible by both 7 and 5 (i.e., divisible by 35).**\n\n⌊999/35⌋ = 28 (since 35 × 28 = 980)\n\n**Step 3: Subtract.**\n\n142 - 28 = 114\n\nFinal answer: 114",
+                "turns": 1,
+                "latency_ms": 2654,
+                "input_tokens": 90,
+                "output_tokens": 167,
+                "cost_usd": 0.002775,
+                "error": null,
+                "answer_extracted": "114",
+                "answer_correct": true
+              },
+              {
+                "id": "r-003",
+                "prompt": "A cube with side length 10 is painted red on all six faces and then cut into 1000 unit cubes. How many of the unit cubes have exactly two red faces?",
+                "response": "The unit cubes with exactly two red faces are the edge pieces (not corners).\n\nEach edge of the cube has 10 unit cubes along it. The 2 corner cubes on each edge have 3 painted faces, so each edge contributes 10 - 2 = 8 unit cubes with exactly 2 red faces.\n\nA cube has 12 edges, so the total is 12 × 8 = 96.\n\nFinal answer: 96",
+                "turns": 1,
+                "latency_ms": 3543,
+                "input_tokens": 107,
+                "output_tokens": 110,
+                "cost_usd": 0.001971,
+                "error": null,
+                "answer_extracted": "96",
+                "answer_correct": true
+              },
+              {
+                "id": "r-004",
+                "prompt": "Solve for x given that x is real and positive: log_2(x) + log_2(x - 2) = 3.",
+                "response": "We need to solve: log₂(x) + log₂(x - 2) = 3\n\nCombining the logarithms:\nlog₂(x(x - 2)) = 3\n\nx(x - 2) = 2³ = 8\n\nx² - 2x = 8\n\nx² - 2x - 8 = 0\n\n(x - 4)(x + 2) = 0\n\nx = 4 or x = -2\n\nSince x must be real and positive (and x > 2 for the domain), x = 4.\n\nFinal answer: 4",
+                "turns": 1,
+                "latency_ms": 2363,
+                "input_tokens": 99,
+                "output_tokens": 146,
+                "cost_usd": 0.002487,
+                "error": null,
+                "answer_extracted": "4",
+                "answer_correct": true
+              },
+              {
+                "id": "r-005",
+                "prompt": "In how many ways can 8 people be seated around a round table if Alice and Bob refuse to sit next to each other? (Consider two arrangements equivalent if one is a rotation of the other.)",
+                "response": "Total arrangements around a round table with 8 people: (8-1)! = 7! = 5040\n\nArrangements where Alice and Bob ARE next to each other:\n- Fix Alice, treat Alice and Bob as a unit: arrange 7 units around a round table = 6! ways, but Alice and Bob can switch within the pair = 2 × 6! = 2 × 720 = 1440\n\nArrangements where Alice and Bob are NOT next to each other:\n5040 - 1440 = 3600\n\nFinal answer: 3600",
+                "turns": 1,
+                "latency_ms": 2621,
+                "input_tokens": 108,
+                "output_tokens": 133,
+                "cost_usd": 0.002319,
+                "error": null,
+                "answer_extracted": "3600",
+                "answer_correct": true
+              },
+              {
+                "id": "r-006",
+                "prompt": "How many distinct arrangements are there of the letters in the word MISSISSIPPI?",
+                "response": "The word MISSISSIPPI has 11 letters:\n- M: 1\n- I: 4\n- S: 4\n- P: 2\n\nThe number of distinct arrangements = 11! / (1! × 4! × 4! × 2!)\n\n= 39,916,800 / (1 × 24 × 24 × 2)\n\n= 39,916,800 / 1,152\n\n= 34,650\n\nFinal answer: 34650",
+                "turns": 1,
+                "latency_ms": 1920,
+                "input_tokens": 83,
+                "output_tokens": 116,
+                "cost_usd": 0.001989,
+                "error": null,
+                "answer_extracted": "34650",
+                "answer_correct": true
+              },
+              {
+                "id": "r-007",
+                "prompt": "A right triangle has legs of length 21 and 28. What is the length of the altitude drawn from the right angle to the hypotenuse? Give your answer as a decimal.",
+                "response": "The hypotenuse = √(21² + 28²) = √(441 + 784) = √1225 = 35.\n\nThe altitude from the right angle to the hypotenuse = (leg1 × leg2) / hypotenuse = (21 × 28) / 35 = 588 / 35 = 16.8.\n\nFinal answer: 16.8",
+                "turns": 1,
+                "latency_ms": 2791,
+                "input_tokens": 107,
+                "output_tokens": 97,
+                "cost_usd": 0.001776,
+                "error": null,
+                "answer_extracted": "16.8",
+                "answer_correct": true
+              },
+              {
+                "id": "r-008",
+                "prompt": "Let f(x) = x^3 - 3x + 1. At how many distinct real values of x is f(x) = 0?",
+                "response": "The function f(x) = x³ - 3x + 1.\n\nTo find the number of real roots, I'll analyze the critical points.\n\nf'(x) = 3x² - 3 = 3(x² - 1) = 0\nCritical points at x = -1 and x = 1.\n\nf(-1) = (-1)³ - 3(-1) + 1 = -1 + 3 + 1 = 3 > 0\nf(1) = (1)³ - 3(1) + 1 = 1 - 3 + 1 = -1 < 0\n\nSince f(-1) = 3 > 0 (local max) and f(1) = -1 < 0 (local min), the function crosses the x-axis three times:\n- Once for x < -1 (since f → -∞ as x → -∞ and f(-1) = 3 > 0)\n- Once between x = -1 and x = 1 (since f(-1) = 3 > 0 and f(1) = -1 < 0)\n- Once for x > 1 (since f(1) = -1 < 0 and f → +∞ as x → +∞)\n\nFinal answer: 3",
+                "turns": 1,
+                "latency_ms": 4198,
+                "input_tokens": 102,
+                "output_tokens": 327,
+                "cost_usd": 0.005211,
+                "error": null,
+                "answer_extracted": "3",
+                "answer_correct": true
+              },
+              {
+                "id": "r-009",
+                "prompt": "The sequence a_n is defined by a_1 = 1, a_2 = 2, and a_{n+2} = a_{n+1} + a_n for n >= 1. What is a_10?",
+                "response": "This is the Fibonacci sequence starting with 1, 2.\n\na_1 = 1\na_2 = 2\na_3 = 3\na_4 = 5\na_5 = 8\na_6 = 13\na_7 = 21\na_8 = 34\na_9 = 55\na_10 = 89\n\nFinal answer: 89",
+                "turns": 1,
+                "latency_ms": 1528,
+                "input_tokens": 121,
+                "output_tokens": 103,
+                "cost_usd": 0.001908,
+                "error": null,
+                "answer_extracted": "89",
+                "answer_correct": true
+              },
+              {
+                "id": "r-010",
+                "prompt": "A bag contains 3 red, 4 blue, and 5 green marbles. If 3 marbles are drawn without replacement, what is the probability that all three are the same color? Express as a fraction in lowest terms (for example, 1/10).",
+                "response": "I need to find the probability that all 3 marbles drawn are the same color.\n\n**Total ways to draw 3 marbles from 12:**\nC(12,3) = 12!/(3!·9!) = (12·11·10)/(3·2·1) = 220\n\n**Ways to get all same color:**\n\n- All 3 red: C(3,3) = 1\n- All 3 blue: C(4,3) = 4\n- All 3 green: C(5,3) = 10\n\nTotal favorable = 1 + 4 + 10 = 15\n\n**Probability:**\n15/220 = 3/44\n\nFinal answer: 3/44",
+                "turns": 1,
+                "latency_ms": 2506,
+                "input_tokens": 127,
+                "output_tokens": 173,
+                "cost_usd": 0.002976,
+                "error": null,
+                "answer_extracted": "3/44",
+                "answer_correct": true
+              }
+            ],
+            "aggregate": {
+              "n": 10,
+              "n_success": 10,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 2621,
+                "p95": 4776,
+                "p99": 4776,
+                "mean": 2890
+              },
+              "cost_usd": {
+                "total": 0.025341,
+                "mean": 0.0025341,
+                "per_1k_evals": 2.5341
               },
               "turns": {
                 "mean": 1,
@@ -4968,73 +5905,203 @@ window.__BENCH = {
         "leaderboard": {
           "latency_p50_ms": [
             {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 1300
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 1396
+            },
+            {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 1561
+              "value": 1525
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 1750
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 1812
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 1837
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 2621
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 3710
+              "value": 2704
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 2741
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 3523
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 5666
+              "value": 5590
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 7115
+              "value": 6881
             }
           ],
           "latency_p95_ms": [
             {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 2394
+              "value": 2360
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 2413
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 2765
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 3807
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 6142
+              "value": 4020
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 4205
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 4206
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 4485
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 4776
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 4987
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 7434
+              "value": 7890
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 7744
+              "value": 11844
             }
           ],
           "cost_per_1k_evals_usd": [
             {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 0.14822
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 0.22490999999999997
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 0.613025
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 0.6861749999999999
+            },
+            {
               "provider": "anthropic",
               "model": "claude-opus-4-7",
-              "value": 1.7834999999999999
+              "value": 1.8059999999999998
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 2.2817000000000003
             },
             {
               "provider": "openai",
               "model": "gpt-5.4",
-              "value": 2.57675
+              "value": 2.41925
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 2.43415
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 2.5341
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 2.8226
             },
             {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
-              "value": 6.069599999999999
+              "value": 6.058199999999999
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 8.5834
+              "value": 8.298999999999998
             }
           ],
           "success_rate": [
             {
               "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 1
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 1
+            },
+            {
+              "provider": "google",
               "model": "gemini-3.1-pro-preview",
               "value": 1
             },
@@ -5044,13 +6111,43 @@ window.__BENCH = {
               "value": 1
             },
             {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 1
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 1
+            },
+            {
               "provider": "xai",
               "model": "grok-4.20-0309-reasoning",
               "value": 1
             },
             {
               "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
               "model": "claude-opus-4-7",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
               "value": 1
             }
           ]
@@ -6040,9 +7137,364 @@ window.__BENCH = {
               }
             }
           ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-44-39-023Z",
+          "started_at": "2026-04-19T02:43:29.132Z",
+          "completed_at": "2026-04-19T02:44:39.023Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3523,
+                  "p95": 4206,
+                  "p99": 4206,
+                  "mean": 3625
+                },
+                "cost_usd": {
+                  "total": 0.0243415,
+                  "mean": 0.00243415,
+                  "per_1k_evals": 2.43415
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 2,
+                  "rate": 0.2
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1837,
+                  "p95": 2413,
+                  "p99": 2413,
+                  "mean": 1897
+                },
+                "cost_usd": {
+                  "total": 0.00613025,
+                  "mean": 0.000613025,
+                  "per_1k_evals": 0.613025
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 6881,
+                  "p95": 7890,
+                  "p99": 7890,
+                  "mean": 6989
+                },
+                "cost_usd": {
+                  "total": 0.08298999999999998,
+                  "mean": 0.008298999999999997,
+                  "per_1k_evals": 8.298999999999998
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 9,
+                  "rate": 0.9
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2704,
+                  "p95": 4020,
+                  "p99": 4020,
+                  "mean": 2996
+                },
+                "cost_usd": {
+                  "total": 0.0241925,
+                  "mean": 0.00241925,
+                  "per_1k_evals": 2.41925
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1300,
+                  "p95": 3807,
+                  "p99": 3807,
+                  "mean": 2060
+                },
+                "cost_usd": {
+                  "total": 0.006861749999999999,
+                  "mean": 0.0006861749999999999,
+                  "per_1k_evals": 0.6861749999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1750,
+                  "p95": 4205,
+                  "p99": 4205,
+                  "mean": 2272
+                },
+                "cost_usd": {
+                  "total": 0.0022490999999999995,
+                  "mean": 0.00022490999999999996,
+                  "per_1k_evals": 0.22490999999999997
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 9,
+                  "rate": 0.9
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1812,
+                  "p95": 4987,
+                  "p99": 4987,
+                  "mean": 2372
+                },
+                "cost_usd": {
+                  "total": 0.028226,
+                  "mean": 0.0028226,
+                  "per_1k_evals": 2.8226
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1396,
+                  "p95": 2765,
+                  "p99": 2765,
+                  "mean": 1605
+                },
+                "cost_usd": {
+                  "total": 0.0014822,
+                  "mean": 0.00014822,
+                  "per_1k_evals": 0.14822
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5590,
+                  "p95": 11844,
+                  "p99": 11844,
+                  "mean": 6185
+                },
+                "cost_usd": {
+                  "total": 0.060582,
+                  "mean": 0.0060582,
+                  "per_1k_evals": 6.058199999999999
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2741,
+                  "p95": 4485,
+                  "p99": 4485,
+                  "mean": 2732
+                },
+                "cost_usd": {
+                  "total": 0.022817,
+                  "mean": 0.0022817000000000002,
+                  "per_1k_evals": 2.2817000000000003
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1525,
+                  "p95": 2360,
+                  "p99": 2360,
+                  "mean": 1564
+                },
+                "cost_usd": {
+                  "total": 0.01806,
+                  "mean": 0.0018059999999999999,
+                  "per_1k_evals": 1.8059999999999998
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 10,
+                "n_success": 10,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2621,
+                  "p95": 4776,
+                  "p99": 4776,
+                  "mean": 2890
+                },
+                "cost_usd": {
+                  "total": 0.025341,
+                  "mean": 0.0025341,
+                  "per_1k_evals": 2.5341
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 10,
+                  "correct": 10,
+                  "rate": 1
+                }
+              }
+            }
+          ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/reasoning/runs/comparison_2026-04-19T02-03-39-472Z.json"
+      "source_path": "skills/custom-model-bench/examples/reasoning/runs/comparison_2026-04-19T02-44-39-023Z.json"
     },
     {
       "id": "tool-bench",
@@ -6050,17 +7502,17 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T02-20-25-391Z",
+        "comparison_id": "comparison_2026-04-19T02-43-21-377Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-bench/dataset.jsonl",
         "n_rows": 5,
-        "n_candidates": 4,
-        "started_at": "2026-04-19T02:19:26.411Z",
-        "completed_at": "2026-04-19T02:20:25.391Z",
+        "n_candidates": 12,
+        "started_at": "2026-04-19T02:42:54.356Z",
+        "completed_at": "2026-04-19T02:43:21.376Z",
         "runs": [
           {
-            "config_file": "config-anthropic.ts",
-            "provider": "anthropic",
-            "model": "claude-sonnet-4-6",
+            "config_file": "config-gemini-flash.ts",
+            "provider": "google",
+            "model": "gemini-3-flash-preview",
             "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
             "temperature": 0,
             "maxOutputTokens": 800,
@@ -6070,10 +7522,10 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 3798,
-                "input_tokens": 1348,
-                "output_tokens": 16,
-                "cost_usd": 0.004284,
+                "latency_ms": 2888,
+                "input_tokens": 834,
+                "output_tokens": 265,
+                "cost_usd": 0.001212,
                 "error": null,
                 "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
@@ -6085,7 +7537,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01Rou5Hbu4vj8nMfPQGVLZf3"
+                    "id": "2SoQyg5Fpx0e8FZc"
                   },
                   {
                     "type": "tool_result",
@@ -6131,7 +7583,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01Rou5Hbu4vj8nMfPQGVLZf3"
+                    "id": "2SoQyg5Fpx0e8FZc"
                   },
                   {
                     "type": "assistant_text",
@@ -6142,16 +7594,16 @@ window.__BENCH = {
               },
               {
                 "id": "tb-002",
-                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
-                "response": "Supabase's most-starred repository on GitHub is **supabase** (the main repo), with **76,000 stars**. It is primarily written in **TypeScript**.",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 6382,
-                "input_tokens": 1340,
-                "output_tokens": 43,
-                "cost_usd": 0.004665,
+                "latency_ms": 2135,
+                "input_tokens": 850,
+                "output_tokens": 36,
+                "cost_usd": 0.000533,
                 "error": null,
-                "answer_extracted": "Supabase's most-starred repository on GitHub is **supabase** (the main repo), with **76,000 stars**. It is primarily written in **TypeScript**.",
-                "answer_correct": false,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
                 "trace": [
                   {
                     "type": "tool_call",
@@ -6160,7 +7612,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_011Jc4mfUAyeBj1nANZFn548"
+                    "id": "U4VpAhdrSedHspzr"
                   },
                   {
                     "type": "tool_result",
@@ -6206,24 +7658,24 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_011Jc4mfUAyeBj1nANZFn548"
+                    "id": "U4VpAhdrSedHspzr"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Supabase's most-starred repository on GitHub is **supabase** (the main repo), with **76,000 stars**. It is primarily written in **TypeScript**."
+                    "text": "TypeScript"
                   }
                 ]
               },
               {
                 "id": "tb-003",
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
-                "response": "**Vercel**",
+                "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2761,
-                "input_tokens": 1304,
-                "output_tokens": 8,
-                "cost_usd": 0.004032,
+                "latency_ms": 1877,
+                "input_tokens": 756,
+                "output_tokens": 3,
+                "cost_usd": 0.000387,
                 "error": null,
                 "answer_extracted": "Vercel",
                 "answer_correct": true,
@@ -6235,7 +7687,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "toolu_01E3L9ZyJ6ev3mQvi8LaQHpQ"
+                    "id": "Tj96qcbwqH9qvw5h"
                   },
                   {
                     "type": "tool_result",
@@ -6250,33 +7702,28 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "toolu_01E3L9ZyJ6ev3mQvi8LaQHpQ"
+                    "id": "Tj96qcbwqH9qvw5h"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "**Vercel**"
+                    "text": "Vercel"
                   }
                 ]
               },
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Here's a side-by-side comparison of the top language mixes for both orgs:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### Key Observations:\n- **Vercel** is heavily JavaScript-ecosystem focused, with **TypeScript (62%)** and **JavaScript (22%)** dominating, plus **Rust** for performance-critical tooling (e.g., Turborepo).\n- **Supabase** is more polyglot, with **TypeScript (58%)** for its main platform, **Elixir (14%)** for its Realtime engine, and **Go (12%)** for backend services like GoTrue (auth).\n\n### One language that appears in **both** orgs' top-language mix:\n> ✅ **TypeScript** — It's the #1 language in both Vercel (62%) and Supabase (58%), reflecting the modern full-stack ecosystem both platforms serve.",
+                "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 7431,
-                "input_tokens": 1601,
-                "output_tokens": 326,
-                "cost_usd": 0.009693,
+                "latency_ms": 2171,
+                "input_tokens": 992,
+                "output_tokens": 93,
+                "cost_usd": 0.000775,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
                 "trace": [
-                  {
-                    "type": "assistant_text",
-                    "step": 0,
-                    "text": "I'll look up both GitHub orgs simultaneously right away!"
-                  },
                   {
                     "type": "tool_call",
                     "step": 0,
@@ -6284,7 +7731,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "toolu_01H8jfbSFSFmQsWruDfXpAoU"
+                    "id": "JZ5wpYhbdlSv0X5Q"
                   },
                   {
                     "type": "tool_call",
@@ -6293,7 +7740,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "toolu_01EZJ1pTmpQRp9Dp8ECj7EpW"
+                    "id": "AXKYSirDFhvmpEKb"
                   },
                   {
                     "type": "tool_result",
@@ -6339,7 +7786,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01H8jfbSFSFmQsWruDfXpAoU"
+                    "id": "JZ5wpYhbdlSv0X5Q"
                   },
                   {
                     "type": "tool_result",
@@ -6385,24 +7832,24 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "toolu_01EZJ1pTmpQRp9Dp8ECj7EpW"
+                    "id": "AXKYSirDFhvmpEKb"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Here's a side-by-side comparison of the top language mixes for both orgs:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### Key Observations:\n- **Vercel** is heavily JavaScript-ecosystem focused, with **TypeScript (62%)** and **JavaScript (22%)** dominating, plus **Rust** for performance-critical tooling (e.g., Turborepo).\n- **Supabase** is more polyglot, with **TypeScript (58%)** for its main platform, **Elixir (14%)** for its Realtime engine, and **Go (12%)** for backend services like GoTrue (auth).\n\n### One language that appears in **both** orgs' top-language mix:\n> ✅ **TypeScript** — It's the #1 language in both Vercel (62%) and Supabase (58%), reflecting the modern full-stack ecosystem both platforms serve."
+                    "text": "TypeScript"
                   }
                 ]
               },
               {
                 "id": "tb-005",
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
-                "response": "The page title, exactly as written, is:\n\n**Example Domain**",
+                "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 2158,
-                "input_tokens": 1228,
-                "output_tokens": 18,
-                "cost_usd": 0.003954,
+                "latency_ms": 1527,
+                "input_tokens": 592,
+                "output_tokens": 22,
+                "cost_usd": 0.000362,
                 "error": null,
                 "answer_extracted": "Example Domain",
                 "answer_correct": true,
@@ -6414,7 +7861,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "toolu_01GRxdQkX7D6qPgm9qfgMNdr"
+                    "id": "GzhyGD4tRlwEZhbM"
                   },
                   {
                     "type": "tool_result",
@@ -6426,12 +7873,12 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "toolu_01GRxdQkX7D6qPgm9qfgMNdr"
+                    "id": "GzhyGD4tRlwEZhbM"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "The page title, exactly as written, is:\n\n**Example Domain**"
+                    "text": "Example Domain"
                   }
                 ]
               }
@@ -6441,15 +7888,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3798,
-                "p95": 7431,
-                "p99": 7431,
-                "mean": 4506
+                "p50": 2135,
+                "p95": 2888,
+                "p99": 2888,
+                "mean": 2120
               },
               "cost_usd": {
-                "total": 0.026628,
-                "mean": 0.0053256,
-                "per_1k_evals": 5.3256
+                "total": 0.003269,
+                "mean": 0.0006538000000000001,
+                "per_1k_evals": 0.6538
               },
               "turns": {
                 "mean": 2,
@@ -6457,15 +7904,15 @@ window.__BENCH = {
               },
               "answer_accuracy": {
                 "graded": 5,
-                "correct": 4,
-                "rate": 0.8
+                "correct": 5,
+                "rate": 1
               }
             }
           },
           {
-            "config_file": "config-google.ts",
+            "config_file": "config-gemini-lite.ts",
             "provider": "google",
-            "model": "gemini-3.1-pro-preview",
+            "model": "gemini-3.1-flash-lite-preview",
             "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
             "temperature": 0,
             "maxOutputTokens": 800,
@@ -6475,10 +7922,10 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 6563,
-                "input_tokens": 831,
-                "output_tokens": 241,
-                "cost_usd": 0.004554,
+                "latency_ms": 2009,
+                "input_tokens": 703,
+                "output_tokens": 13,
+                "cost_usd": 0.00019525,
                 "error": null,
                 "answer_extracted": "Top repos: next.js, swr, turborepo",
                 "answer_correct": true,
@@ -6490,7 +7937,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "illykhwoCNHLuWn3"
+                    "id": "3CJRf2nkmz58hj1z"
                   },
                   {
                     "type": "tool_result",
@@ -6536,7 +7983,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "illykhwoCNHLuWn3"
+                    "id": "3CJRf2nkmz58hj1z"
                   },
                   {
                     "type": "assistant_text",
@@ -6547,16 +7994,16 @@ window.__BENCH = {
               },
               {
                 "id": "tb-002",
-                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
-                "response": "Supabase's most-starred repository is **`supabase`** (with 76,000 stars), and it is primarily written in **TypeScript**.",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 4642,
-                "input_tokens": 824,
-                "output_tokens": 72,
-                "cost_usd": 0.002512,
+                "latency_ms": 1561,
+                "input_tokens": 688,
+                "output_tokens": 1,
+                "cost_usd": 0.0001735,
                 "error": null,
-                "answer_extracted": "Supabase's most-starred repository is **`supabase`** (with 76,000 stars), and it is primarily written in **TypeScript**.",
-                "answer_correct": false,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
                 "trace": [
                   {
                     "type": "tool_call",
@@ -6565,7 +8012,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "Se07nTMtk3rMQwat"
+                    "id": "onnJRiIqQVLIQrfV"
                   },
                   {
                     "type": "tool_result",
@@ -6611,12 +8058,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "Se07nTMtk3rMQwat"
+                    "id": "onnJRiIqQVLIQrfV"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Supabase's most-starred repository is **`supabase`** (with 76,000 stars), and it is primarily written in **TypeScript**."
+                    "text": "TypeScript"
                   }
                 ]
               },
@@ -6625,10 +8072,10 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 4060,
-                "input_tokens": 757,
-                "output_tokens": 38,
-                "cost_usd": 0.00197,
+                "latency_ms": 1232,
+                "input_tokens": 640,
+                "output_tokens": 3,
+                "cost_usd": 0.0001645,
                 "error": null,
                 "answer_extracted": "Vercel",
                 "answer_correct": true,
@@ -6640,7 +8087,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "830s7sOtZVgVRzf1"
+                    "id": "OwPhPA5KUzdo9p9e"
                   },
                   {
                     "type": "tool_result",
@@ -6655,7 +8102,407 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "830s7sOtZVgVRzf1"
+                    "id": "OwPhPA5KUzdo9p9e"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "The top language mix for Vercel is dominated by TypeScript (62%), followed by JavaScript (22%), Rust (9%), and Go (4%). Supabase's top language mix is also led by TypeScript (58%), followed by Elixir (14%), Go (12%), and Shell (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**.",
+                "turns": 2,
+                "latency_ms": 1938,
+                "input_tokens": 907,
+                "output_tokens": 84,
+                "cost_usd": 0.00035275,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "weZivX9XU5B0claY"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "Y7Mjf1jux6RUFUlE"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "weZivX9XU5B0claY"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "Y7Mjf1jux6RUFUlE"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "The top language mix for Vercel is dominated by TypeScript (62%), followed by JavaScript (22%), Rust (9%), and Go (4%). Supabase's top language mix is also led by TypeScript (58%), followed by Elixir (14%), Go (12%), and Shell (8%).\n\nOne language that appears in the top-language mix of both organizations is **TypeScript**."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 1541,
+                "input_tokens": 562,
+                "output_tokens": 2,
+                "cost_usd": 0.0001435,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "xGnsIUtG3nauChgF"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "xGnsIUtG3nauChgF"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1561,
+                "p95": 2009,
+                "p99": 2009,
+                "mean": 1656
+              },
+              "cost_usd": {
+                "total": 0.0010295,
+                "mean": 0.00020590000000000002,
+                "per_1k_evals": 0.20590000000000003
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-gemini-pro.ts",
+            "provider": "google",
+            "model": "gemini-3.1-pro-preview",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 5672,
+                "input_tokens": 821,
+                "output_tokens": 241,
+                "cost_usd": 0.004534,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "qbYi0U0o35E16fcg"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "qbYi0U0o35E16fcg"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 4706,
+                "input_tokens": 836,
+                "output_tokens": 40,
+                "cost_usd": 0.002152,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "cjF0oWi5LzxkPaps"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "cjF0oWi5LzxkPaps"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 5025,
+                "input_tokens": 847,
+                "output_tokens": 49,
+                "cost_usd": 0.002282,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "UB9iqTtC3x4NTLrx"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "UB9iqTtC3x4NTLrx"
                   },
                   {
                     "type": "assistant_text",
@@ -6669,7 +8516,7 @@ window.__BENCH = {
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
                 "response": "**TypeScript** (or **Go**) appears in the top-language mix of both Vercel and Supabase. \n\n* **Vercel's mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)\n* **Supabase's mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)",
                 "turns": 2,
-                "latency_ms": 6235,
+                "latency_ms": 6186,
                 "input_tokens": 1093,
                 "output_tokens": 214,
                 "cost_usd": 0.004754,
@@ -6684,7 +8531,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "xCdz5W3UmxqsRFQ7"
+                    "id": "PQANZjchrpANQpCq"
                   },
                   {
                     "type": "tool_call",
@@ -6693,7 +8540,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "UdnJnmp3SvJvdf0s"
+                    "id": "vvbpgitSOmpXmzUg"
                   },
                   {
                     "type": "tool_result",
@@ -6739,7 +8586,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "xCdz5W3UmxqsRFQ7"
+                    "id": "PQANZjchrpANQpCq"
                   },
                   {
                     "type": "tool_result",
@@ -6785,7 +8632,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "UdnJnmp3SvJvdf0s"
+                    "id": "vvbpgitSOmpXmzUg"
                   },
                   {
                     "type": "assistant_text",
@@ -6799,7 +8646,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 4185,
+                "latency_ms": 4890,
                 "input_tokens": 676,
                 "output_tokens": 65,
                 "cost_usd": 0.002132,
@@ -6814,7 +8661,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "APvvcj2ruFnVaQxw"
+                    "id": "APsi6dIQl2F0LlzA"
                   },
                   {
                     "type": "tool_result",
@@ -6826,7 +8673,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "APvvcj2ruFnVaQxw"
+                    "id": "APsi6dIQl2F0LlzA"
                   },
                   {
                     "type": "assistant_text",
@@ -6841,15 +8688,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 4642,
-                "p95": 6563,
-                "p99": 6563,
-                "mean": 5137
+                "p50": 5025,
+                "p95": 6186,
+                "p99": 6186,
+                "mean": 5296
               },
               "cost_usd": {
-                "total": 0.015922,
-                "mean": 0.0031843999999999996,
-                "per_1k_evals": 3.1843999999999997
+                "total": 0.015854,
+                "mean": 0.0031708,
+                "per_1k_evals": 3.1708000000000003
               },
               "turns": {
                 "mean": 2,
@@ -6857,13 +8704,412 @@ window.__BENCH = {
               },
               "answer_accuracy": {
                 "graded": 5,
-                "correct": 4,
-                "rate": 0.8
+                "correct": 5,
+                "rate": 1
               }
             }
           },
           {
-            "config_file": "config-openai.ts",
+            "config_file": "config-gpt-5-4.ts",
+            "provider": "openai",
+            "model": "gpt-5.4",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 2516,
+                "input_tokens": 602,
+                "output_tokens": 16,
+                "cost_usd": 0.001745,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_KtxQlLHPUhPp3XDghWeZH1np"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_KtxQlLHPUhPp3XDghWeZH1np"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 2620,
+                "input_tokens": 588,
+                "output_tokens": 6,
+                "cost_usd": 0.00156,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_YUvOAmXL36AJWAgV2dSDgeiY"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_YUvOAmXL36AJWAgV2dSDgeiY"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 3183,
+                "input_tokens": 556,
+                "output_tokens": 7,
+                "cost_usd": 0.001495,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "call_ZlO1Kr1ewlvy63P28FrXVnPd"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "call_ZlO1Kr1ewlvy63P28FrXVnPd"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "Vercel: TypeScript, JavaScript, Rust, Go  \nSupabase: TypeScript, Elixir, Go, Shell\n\nOne language in both: TypeScript",
+                "turns": 2,
+                "latency_ms": 3252,
+                "input_tokens": 775,
+                "output_tokens": 38,
+                "cost_usd": 0.0025075,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_OMUfqK65B3u6l6JYWoJaT9ql"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_2Xt0bGlFQWQbXVaDvffo5Tnx"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_OMUfqK65B3u6l6JYWoJaT9ql"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_2Xt0bGlFQWQbXVaDvffo5Tnx"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel: TypeScript, JavaScript, Rust, Go  \nSupabase: TypeScript, Elixir, Go, Shell\n\nOne language in both: TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 3043,
+                "input_tokens": 489,
+                "output_tokens": 6,
+                "cost_usd": 0.0013125,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "call_SkKx5GBzQ2mA6In0hXvkwQzT"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "call_SkKx5GBzQ2mA6In0hXvkwQzT"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 3043,
+                "p95": 3252,
+                "p99": 3252,
+                "mean": 2923
+              },
+              "cost_usd": {
+                "total": 0.00862,
+                "mean": 0.0017239999999999998,
+                "per_1k_evals": 1.7239999999999998
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-gpt-mini.ts",
             "provider": "openai",
             "model": "gpt-5.4-mini",
             "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
@@ -6874,7 +9120,7 @@ window.__BENCH = {
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
                 "response": "Top repos: next.js, swr, turborepo",
                 "turns": 2,
-                "latency_ms": 4553,
+                "latency_ms": 3564,
                 "input_tokens": 602,
                 "output_tokens": 16,
                 "cost_usd": 0.0005235,
@@ -6889,7 +9135,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_Bw2BAPldb4jmlzcqsmiAnBDa"
+                    "id": "call_V7Z0vGQZJieDkSrhv2W9ONr5"
                   },
                   {
                     "type": "tool_result",
@@ -6935,7 +9181,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_Bw2BAPldb4jmlzcqsmiAnBDa"
+                    "id": "call_V7Z0vGQZJieDkSrhv2W9ONr5"
                   },
                   {
                     "type": "assistant_text",
@@ -6946,16 +9192,16 @@ window.__BENCH = {
               },
               {
                 "id": "tb-002",
-                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
-                "response": "Supabase’s most-starred repo is **`supabase`** with about **76,000 stars**, and it’s primarily written in **TypeScript**.",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 3326,
-                "input_tokens": 586,
-                "output_tokens": 37,
-                "cost_usd": 0.000606,
+                "latency_ms": 3478,
+                "input_tokens": 588,
+                "output_tokens": 6,
+                "cost_usd": 0.000468,
                 "error": null,
-                "answer_extracted": "Supabase’s most-starred repo is **`supabase`** with about **76,000 stars**, and it’s primarily written in **TypeScript**.",
-                "answer_correct": false,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
                 "trace": [
                   {
                     "type": "tool_call",
@@ -6964,7 +9210,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_wq3AKYaQoVNWTFSX0y2zjAO9"
+                    "id": "call_mEFEc6d5AuJsCgmAZjjQvEOL"
                   },
                   {
                     "type": "tool_result",
@@ -7010,12 +9256,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_wq3AKYaQoVNWTFSX0y2zjAO9"
+                    "id": "call_mEFEc6d5AuJsCgmAZjjQvEOL"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Supabase’s most-starred repo is **`supabase`** with about **76,000 stars**, and it’s primarily written in **TypeScript**."
+                    "text": "TypeScript"
                   }
                 ]
               },
@@ -7024,7 +9270,7 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 2440,
+                "latency_ms": 2815,
                 "input_tokens": 556,
                 "output_tokens": 7,
                 "cost_usd": 0.0004485,
@@ -7039,7 +9285,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_xPPibDk8JTsW6tmIDZ6MLBHg"
+                    "id": "call_INITAJT8PQo5KdKLoKgUcHRy"
                   },
                   {
                     "type": "tool_result",
@@ -7054,7 +9300,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_xPPibDk8JTsW6tmIDZ6MLBHg"
+                    "id": "call_INITAJT8PQo5KdKLoKgUcHRy"
                   },
                   {
                     "type": "assistant_text",
@@ -7066,12 +9312,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.  \n\nCommon language: **TypeScript**.",
+                "response": "Both orgs have **TypeScript** in their top-language mix.",
                 "turns": 2,
-                "latency_ms": 33766,
+                "latency_ms": 8447,
                 "input_tokens": 775,
-                "output_tokens": 49,
-                "cost_usd": 0.00080175,
+                "output_tokens": 18,
+                "cost_usd": 0.00066225,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -7083,7 +9329,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_PJAq6qbm9cJDLKdzqWbavlnm"
+                    "id": "call_XvIArNFUfVkdrHhmtJt9cJd5"
                   },
                   {
                     "type": "tool_call",
@@ -7092,7 +9338,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_tjsc1ptvDaVqxpKdiExETyVu"
+                    "id": "call_RgmlpjSzgN5H81DLGMh3hvo1"
                   },
                   {
                     "type": "tool_result",
@@ -7138,7 +9384,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_PJAq6qbm9cJDLKdzqWbavlnm"
+                    "id": "call_XvIArNFUfVkdrHhmtJt9cJd5"
                   },
                   {
                     "type": "tool_result",
@@ -7184,12 +9430,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_tjsc1ptvDaVqxpKdiExETyVu"
+                    "id": "call_RgmlpjSzgN5H81DLGMh3hvo1"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.  \n\nCommon language: **TypeScript**."
+                    "text": "Both orgs have **TypeScript** in their top-language mix."
                   }
                 ]
               },
@@ -7198,7 +9444,7 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 3360,
+                "latency_ms": 2285,
                 "input_tokens": 489,
                 "output_tokens": 6,
                 "cost_usd": 0.00039375,
@@ -7213,7 +9459,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_C8ErUDVmHJnUZq8JNr72NBOe"
+                    "id": "call_gU0Fhil6aULJZFsX271ohVDS"
                   },
                   {
                     "type": "tool_result",
@@ -7225,7 +9471,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_C8ErUDVmHJnUZq8JNr72NBOe"
+                    "id": "call_gU0Fhil6aULJZFsX271ohVDS"
                   },
                   {
                     "type": "assistant_text",
@@ -7240,15 +9486,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 3360,
-                "p95": 33766,
-                "p99": 33766,
-                "mean": 9489
+                "p50": 3478,
+                "p95": 8447,
+                "p99": 8447,
+                "mean": 4118
               },
               "cost_usd": {
-                "total": 0.0027735,
-                "mean": 0.0005547,
-                "per_1k_evals": 0.5547
+                "total": 0.002496,
+                "mean": 0.0004992,
+                "per_1k_evals": 0.4992
               },
               "turns": {
                 "mean": 2,
@@ -7256,31 +9502,30 @@ window.__BENCH = {
               },
               "answer_accuracy": {
                 "graded": 5,
-                "correct": 4,
-                "rate": 0.8
+                "correct": 5,
+                "rate": 1
               }
             }
           },
           {
-            "config_file": "config-xai.ts",
-            "provider": "xai",
-            "model": "grok-4",
+            "config_file": "config-gpt-nano.ts",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
             "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
-            "temperature": 0,
             "maxOutputTokens": 800,
             "results": [
               {
                 "id": "tb-001",
                 "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
-                "response": "Top repos: next.js, swr, turborepo",
+                "response": "Top repos: next.js, ai, swr",
                 "turns": 2,
-                "latency_ms": 15675,
-                "input_tokens": 1657,
-                "output_tokens": 601,
-                "cost_usd": 0.00692,
+                "latency_ms": 11048,
+                "input_tokens": 602,
+                "output_tokens": 14,
+                "cost_usd": 0.00013790000000000002,
                 "error": null,
-                "answer_extracted": "Top repos: next.js, swr, turborepo",
-                "answer_correct": true,
+                "answer_extracted": "Top repos: next.js, ai, swr",
+                "answer_correct": false,
                 "trace": [
                   {
                     "type": "tool_call",
@@ -7289,7 +9534,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_02729694"
+                    "id": "call_ilIXWiFcZ806IWV9LFJ6dNK8"
                   },
                   {
                     "type": "tool_result",
@@ -7335,27 +9580,27 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_02729694"
+                    "id": "call_ilIXWiFcZ806IWV9LFJ6dNK8"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Top repos: next.js, swr, turborepo"
+                    "text": "Top repos: next.js, ai, swr"
                   }
                 ]
               },
               {
                 "id": "tb-002",
-                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
-                "response": "Supabase's most-starred GitHub repo is `supabase` (76,000 stars), primarily written in TypeScript.",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
                 "turns": 2,
-                "latency_ms": 17265,
-                "input_tokens": 2179,
-                "output_tokens": 259,
-                "cost_usd": 0.005912,
+                "latency_ms": 4461,
+                "input_tokens": 588,
+                "output_tokens": 6,
+                "cost_usd": 0.0001251,
                 "error": null,
-                "answer_extracted": "Supabase's most-starred GitHub repo is `supabase` (76,000 stars), primarily written in TypeScript.",
-                "answer_correct": false,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
                 "trace": [
                   {
                     "type": "tool_call",
@@ -7364,7 +9609,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_65859932"
+                    "id": "call_K5xCi7YluezJ2KALOWP8bEIA"
                   },
                   {
                     "type": "tool_result",
@@ -7410,12 +9655,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_65859932"
+                    "id": "call_K5xCi7YluezJ2KALOWP8bEIA"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "Supabase's most-starred GitHub repo is `supabase` (76,000 stars), primarily written in TypeScript."
+                    "text": "TypeScript"
                   }
                 ]
               },
@@ -7424,10 +9669,10 @@ window.__BENCH = {
                 "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
                 "response": "Vercel",
                 "turns": 2,
-                "latency_ms": 9865,
-                "input_tokens": 1637,
-                "output_tokens": 104,
-                "cost_usd": 0.003898,
+                "latency_ms": 2244,
+                "input_tokens": 556,
+                "output_tokens": 7,
+                "cost_usd": 0.00011995,
                 "error": null,
                 "answer_extracted": "Vercel",
                 "answer_correct": true,
@@ -7439,7 +9684,7 @@ window.__BENCH = {
                     "input": {
                       "profile_slug": "guillermo-rauch"
                     },
-                    "id": "call_36088286"
+                    "id": "call_6oVgA8JGuQ68zkzcLyM1LMeB"
                   },
                   {
                     "type": "tool_result",
@@ -7454,7 +9699,7 @@ window.__BENCH = {
                       "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
                       "source": "mock"
                     },
-                    "id": "call_36088286"
+                    "id": "call_6oVgA8JGuQ68zkzcLyM1LMeB"
                   },
                   {
                     "type": "assistant_text",
@@ -7466,12 +9711,12 @@ window.__BENCH = {
               {
                 "id": "tb-004",
                 "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
-                "response": "### Comparison of Top Languages\n\n**Vercel** (by % usage): TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n\n**Supabase** (by % usage): TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\nOne language in both: TypeScript.",
+                "response": "- **Vercel top-language mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n- **Supabase top-language mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\n**One language appearing in both:** **TypeScript**.",
                 "turns": 2,
-                "latency_ms": 9754,
-                "input_tokens": 1876,
-                "output_tokens": 341,
-                "cost_usd": 0.005798,
+                "latency_ms": 4894,
+                "input_tokens": 775,
+                "output_tokens": 78,
+                "cost_usd": 0.0002525,
                 "error": null,
                 "answer_extracted": "TypeScript",
                 "answer_correct": true,
@@ -7483,7 +9728,7 @@ window.__BENCH = {
                     "input": {
                       "org": "vercel"
                     },
-                    "id": "call_57834088"
+                    "id": "call_batXr0r6Bcf6zwir9fh0lFXu"
                   },
                   {
                     "type": "tool_call",
@@ -7492,7 +9737,7 @@ window.__BENCH = {
                     "input": {
                       "org": "supabase"
                     },
-                    "id": "call_43527803"
+                    "id": "call_MIp760tFlm3e67H11ggufIHu"
                   },
                   {
                     "type": "tool_result",
@@ -7538,7 +9783,7 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_57834088"
+                    "id": "call_batXr0r6Bcf6zwir9fh0lFXu"
                   },
                   {
                     "type": "tool_result",
@@ -7584,12 +9829,12 @@ window.__BENCH = {
                       },
                       "source": "mock"
                     },
-                    "id": "call_43527803"
+                    "id": "call_MIp760tFlm3e67H11ggufIHu"
                   },
                   {
                     "type": "assistant_text",
                     "step": 1,
-                    "text": "### Comparison of Top Languages\n\n**Vercel** (by % usage): TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n\n**Supabase** (by % usage): TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\nOne language in both: TypeScript."
+                    "text": "- **Vercel top-language mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n- **Supabase top-language mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\n**One language appearing in both:** **TypeScript**."
                   }
                 ]
               },
@@ -7598,10 +9843,10 @@ window.__BENCH = {
                 "prompt": "Fetch https://example.com and return the page title exactly as written.",
                 "response": "Example Domain",
                 "turns": 2,
-                "latency_ms": 6418,
-                "input_tokens": 1588,
-                "output_tokens": 109,
-                "cost_usd": 0.00383,
+                "latency_ms": 1757,
+                "input_tokens": 489,
+                "output_tokens": 6,
+                "cost_usd": 0.00010530000000000001,
                 "error": null,
                 "answer_extracted": "Example Domain",
                 "answer_correct": true,
@@ -7613,7 +9858,7 @@ window.__BENCH = {
                     "input": {
                       "url": "https://example.com"
                     },
-                    "id": "call_43100577"
+                    "id": "call_OoqOxQsOVitV4Yg744aFyX2t"
                   },
                   {
                     "type": "tool_result",
@@ -7625,7 +9870,7 @@ window.__BENCH = {
                       "url": "https://example.com",
                       "source": "mock"
                     },
-                    "id": "call_43100577"
+                    "id": "call_OoqOxQsOVitV4Yg744aFyX2t"
                   },
                   {
                     "type": "assistant_text",
@@ -7640,15 +9885,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 9865,
-                "p95": 17265,
-                "p99": 17265,
-                "mean": 11795
+                "p50": 4461,
+                "p95": 11048,
+                "p99": 11048,
+                "mean": 4881
               },
               "cost_usd": {
-                "total": 0.026358,
-                "mean": 0.0052715999999999996,
-                "per_1k_evals": 5.271599999999999
+                "total": 0.0007407500000000001,
+                "mean": 0.00014815000000000002,
+                "per_1k_evals": 0.14815000000000003
               },
               "turns": {
                 "mean": 2,
@@ -7660,79 +9905,2607 @@ window.__BENCH = {
                 "rate": 0.8
               }
             }
+          },
+          {
+            "config_file": "config-grok-420.ts",
+            "provider": "xai",
+            "model": "grok-4.20-0309-non-reasoning",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 13002,
+                "input_tokens": 868,
+                "output_tokens": 12,
+                "cost_usd": 0.001808,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call-5db8ab3e-7cfa-4827-baa6-7d7c761ccef1-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-5db8ab3e-7cfa-4827-baa6-7d7c761ccef1-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 3216,
+                "input_tokens": 854,
+                "output_tokens": 2,
+                "cost_usd": 0.00172,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call-1b3ff9e9-11e6-40d5-905e-b716cd422964-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-1b3ff9e9-11e6-40d5-905e-b716cd422964-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 2059,
+                "input_tokens": 821,
+                "output_tokens": 3,
+                "cost_usd": 0.00166,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "call-e85e46a0-ccef-4ef0-a14f-8c3e88b21c91-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "call-e85e46a0-ccef-4ef0-a14f-8c3e88b21c91-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%).",
+                "turns": 2,
+                "latency_ms": 3313,
+                "input_tokens": 1012,
+                "output_tokens": 23,
+                "cost_usd": 0.002162,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-0"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-1"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-53db74b9-bd36-4cba-9560-a14295d8762b-1"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%)."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 1918,
+                "input_tokens": 758,
+                "output_tokens": 2,
+                "cost_usd": 0.001528,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "call-7ca38ba9-82ee-4350-9794-061a0317559a-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "call-7ca38ba9-82ee-4350-9794-061a0317559a-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 3216,
+                "p95": 13002,
+                "p99": 13002,
+                "mean": 4702
+              },
+              "cost_usd": {
+                "total": 0.008878,
+                "mean": 0.0017756,
+                "per_1k_evals": 1.7756
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-fast.ts",
+            "provider": "xai",
+            "model": "grok-4-1-fast-non-reasoning",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 5222,
+                "input_tokens": 1001,
+                "output_tokens": 12,
+                "cost_usd": 0.00020620000000000002,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_92575046"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_92575046"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 3336,
+                "input_tokens": 987,
+                "output_tokens": 2,
+                "cost_usd": 0.0001984,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_38481197"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_38481197"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 2562,
+                "input_tokens": 954,
+                "output_tokens": 3,
+                "cost_usd": 0.0001923,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "call_28357962"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "call_28357962"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%) orgs.",
+                "turns": 2,
+                "latency_ms": 2662,
+                "input_tokens": 1161,
+                "output_tokens": 26,
+                "cost_usd": 0.0002452,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_66972286"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_37416451"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_66972286"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_37416451"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**TypeScript** appears in the top-language mix of both Vercel (62%) and Supabase (58%) orgs."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "**Example Domain**",
+                "turns": 2,
+                "latency_ms": 3120,
+                "input_tokens": 891,
+                "output_tokens": 4,
+                "cost_usd": 0.00018020000000000002,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "call_76056296"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "call_76056296"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**Example Domain**"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 3120,
+                "p95": 5222,
+                "p99": 5222,
+                "mean": 3380
+              },
+              "cost_usd": {
+                "total": 0.0010223,
+                "mean": 0.00020446,
+                "per_1k_evals": 0.20446
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-grok-reasoning.ts",
+            "provider": "xai",
+            "model": "grok-4.20-0309-reasoning",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 6231,
+                "input_tokens": 985,
+                "output_tokens": 244,
+                "cost_usd": 0.003434,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call-1a999ba5-f7f1-4062-9240-8dfc9836f7b9-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-1a999ba5-f7f1-4062-9240-8dfc9836f7b9-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 5200,
+                "input_tokens": 979,
+                "output_tokens": 92,
+                "cost_usd": 0.00251,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call-8bdbc117-c229-4727-8845-323b74ed6aee-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-8bdbc117-c229-4727-8845-323b74ed6aee-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 4392,
+                "input_tokens": 952,
+                "output_tokens": 61,
+                "cost_usd": 0.00227,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "call-31c4f7a4-f122-4af8-b6cf-519deb9c3f2f-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "call-31c4f7a4-f122-4af8-b6cf-519deb9c3f2f-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 5850,
+                "input_tokens": 1107,
+                "output_tokens": 320,
+                "cost_usd": 0.004134,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-0"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-1"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call-8ea8c809-cb58-4262-a9fd-e202115e990f-1"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 5345,
+                "input_tokens": 874,
+                "output_tokens": 128,
+                "cost_usd": 0.002516,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "call-5102069c-cac0-477a-aa21-eee26ef419ca-0"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "call-5102069c-cac0-477a-aa21-eee26ef419ca-0"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 5345,
+                "p95": 6231,
+                "p99": 6231,
+                "mean": 5404
+              },
+              "cost_usd": {
+                "total": 0.014863999999999999,
+                "mean": 0.0029728,
+                "per_1k_evals": 2.9728
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-haiku.ts",
+            "provider": "anthropic",
+            "model": "claude-haiku-4-5",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 1469,
+                "input_tokens": 1359,
+                "output_tokens": 16,
+                "cost_usd": 0.001439,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01DrgAt18M8v6Vy8PMo6Ze7t"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01DrgAt18M8v6Vy8PMo6Ze7t"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 1241,
+                "input_tokens": 1353,
+                "output_tokens": 5,
+                "cost_usd": 0.001378,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_01CKtSZWaejTQwWLmkWCK3iP"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01CKtSZWaejTQwWLmkWCK3iP"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 1389,
+                "input_tokens": 1315,
+                "output_tokens": 6,
+                "cost_usd": 0.001345,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "toolu_01Gq2iW7gvU949RKb2hjY1iJ"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "toolu_01Gq2iW7gvU949RKb2hjY1iJ"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "Based on the GitHub lookup results:\n\n**Vercel's top languages:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n\n**Supabase's top languages:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**Common language:** **TypeScript** appears in the top-language mix of both organizations, being the dominant language for both Vercel (62%) and Supabase (58%).",
+                "turns": 2,
+                "latency_ms": 2097,
+                "input_tokens": 1600,
+                "output_tokens": 115,
+                "cost_usd": 0.002175,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01GCWyQaripGqiNPwSNSfZMp"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_0175BzddS84UYUkhpxYY6URf"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01GCWyQaripGqiNPwSNSfZMp"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_0175BzddS84UYUkhpxYY6URf"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Based on the GitHub lookup results:\n\n**Vercel's top languages:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%)\n\n**Supabase's top languages:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%)\n\n**Common language:** **TypeScript** appears in the top-language mix of both organizations, being the dominant language for both Vercel (62%) and Supabase (58%)."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "The page title is: **Example Domain**",
+                "turns": 2,
+                "latency_ms": 1270,
+                "input_tokens": 1239,
+                "output_tokens": 12,
+                "cost_usd": 0.001299,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "toolu_011eV3oeovZtcDh3X85WyVeh"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "toolu_011eV3oeovZtcDh3X85WyVeh"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "The page title is: **Example Domain**"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 1389,
+                "p95": 2097,
+                "p99": 2097,
+                "mean": 1493
+              },
+              "cost_usd": {
+                "total": 0.0076359999999999996,
+                "mean": 0.0015271999999999998,
+                "per_1k_evals": 1.5272
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-opus-4-7.ts",
+            "provider": "anthropic",
+            "model": "claude-opus-4-7",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 2379,
+                "input_tokens": 1855,
+                "output_tokens": 20,
+                "cost_usd": 0.009775,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01VCyqyRanqgQcJi8AH1LCnD"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01VCyqyRanqgQcJi8AH1LCnD"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 2949,
+                "input_tokens": 1840,
+                "output_tokens": 9,
+                "cost_usd": 0.009425,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_01PRksajbXdPeHwbTvXRbygm"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01PRksajbXdPeHwbTvXRbygm"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 2253,
+                "input_tokens": 1791,
+                "output_tokens": 8,
+                "cost_usd": 0.009155,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "toolu_01DWsKZe3F5vjqXB8QfFUrNi"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "toolu_01DWsKZe3F5vjqXB8QfFUrNi"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "**TypeScript** appears in the top-language mix of both orgs — dominant in each (Vercel 62%, Supabase 58%).\n\nOther overlap: **Go** also appears in both (Vercel 4%, Supabase 12%).",
+                "turns": 2,
+                "latency_ms": 3847,
+                "input_tokens": 2183,
+                "output_tokens": 81,
+                "cost_usd": 0.01294,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01SgVNzJ1aMLzL7heYBg45tU"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_016oGxMenP8f3zYqoVkcWvTg"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01SgVNzJ1aMLzL7heYBg45tU"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_016oGxMenP8f3zYqoVkcWvTg"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**TypeScript** appears in the top-language mix of both orgs — dominant in each (Vercel 62%, Supabase 58%).\n\nOther overlap: **Go** also appears in both (Vercel 4%, Supabase 12%)."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 2540,
+                "input_tokens": 1666,
+                "output_tokens": 9,
+                "cost_usd": 0.008555,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "toolu_01Gfxg3NYDAvv8y51GfvejDJ"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "toolu_01Gfxg3NYDAvv8y51GfvejDJ"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 2540,
+                "p95": 3847,
+                "p99": 3847,
+                "mean": 2794
+              },
+              "cost_usd": {
+                "total": 0.04985,
+                "mean": 0.00997,
+                "per_1k_evals": 9.969999999999999
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
+          },
+          {
+            "config_file": "config-sonnet.ts",
+            "provider": "anthropic",
+            "model": "claude-sonnet-4-6",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: **next.js**, **swr**, **turborepo**",
+                "turns": 2,
+                "latency_ms": 1854,
+                "input_tokens": 1348,
+                "output_tokens": 20,
+                "cost_usd": 0.004344,
+                "error": null,
+                "answer_extracted": "Top repos: **next.js**, **swr**, **turborepo**",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_011ujVJFn4GK5RY752bNrqaf"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_011ujVJFn4GK5RY752bNrqaf"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: **next.js**, **swr**, **turborepo**"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What primary programming language is Supabase's most-starred GitHub repo written in? Use github_lookup. Answer with just the language name.",
+                "response": "TypeScript",
+                "turns": 2,
+                "latency_ms": 2267,
+                "input_tokens": 1342,
+                "output_tokens": 5,
+                "cost_usd": 0.004101,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_01YJMnXwm79hNqCsKzCgqVUa"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01YJMnXwm79hNqCsKzCgqVUa"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "TypeScript"
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "**Vercel**",
+                "turns": 2,
+                "latency_ms": 2155,
+                "input_tokens": 1304,
+                "output_tokens": 8,
+                "cost_usd": 0.004032,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "toolu_012f7X3639JtD9dC2BV4VRxr"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "toolu_012f7X3639JtD9dC2BV4VRxr"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**Vercel**"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "Here's the comparison of the top languages used by each org:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n**Key Observations:**\n- **Vercel** is heavily TypeScript/JavaScript-focused, reflecting its frontend/web tooling roots, with a notable Rust presence (e.g., Turborepo).\n- **Supabase** is also TypeScript-dominant but has a more diverse backend mix, with Elixir (for its Realtime engine) and Go (for GoTrue auth) playing significant roles.\n\n---\n\n✅ **One language that appears in the top-language mix of *both* orgs: TypeScript** — it's the #1 language for both Vercel (62%) and Supabase (58%). **Go** is also shared by both (Vercel 4%, Supabase 12%).",
+                "turns": 2,
+                "latency_ms": 6916,
+                "input_tokens": 1599,
+                "output_tokens": 305,
+                "cost_usd": 0.009372,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "assistant_text",
+                    "step": 0,
+                    "text": "I'll look up both GitHub orgs simultaneously!"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01Lpbk2in1G1ipQ1H7tugY1x"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_01VoncVLu95KNTen9bjdGRcH"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01Lpbk2in1G1ipQ1H7tugY1x"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01VoncVLu95KNTen9bjdGRcH"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Here's the comparison of the top languages used by each org:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n**Key Observations:**\n- **Vercel** is heavily TypeScript/JavaScript-focused, reflecting its frontend/web tooling roots, with a notable Rust presence (e.g., Turborepo).\n- **Supabase** is also TypeScript-dominant but has a more diverse backend mix, with Elixir (for its Realtime engine) and Go (for GoTrue auth) playing significant roles.\n\n---\n\n✅ **One language that appears in the top-language mix of *both* orgs: TypeScript** — it's the #1 language for both Vercel (62%) and Supabase (58%). **Go** is also shared by both (Vercel 4%, Supabase 12%)."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "The page title, exactly as written, is:\n\n**Example Domain**",
+                "turns": 2,
+                "latency_ms": 6819,
+                "input_tokens": 1228,
+                "output_tokens": 18,
+                "cost_usd": 0.003954,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "toolu_01Jk83G6TpfDzgV4X7oaXck6"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "toolu_01Jk83G6TpfDzgV4X7oaXck6"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "The page title, exactly as written, is:\n\n**Example Domain**"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 2267,
+                "p95": 6916,
+                "p99": 6916,
+                "mean": 4002
+              },
+              "cost_usd": {
+                "total": 0.025803,
+                "mean": 0.0051605999999999996,
+                "per_1k_evals": 5.1606
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 5,
+                "rate": 1
+              }
+            }
           }
         ],
         "leaderboard": {
           "latency_p50_ms": [
             {
-              "provider": "openai",
-              "model": "gpt-5.4-mini",
-              "value": 3360
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 1389
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 1561
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 2135
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 3798
+              "value": 2267
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 2540
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 3043
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 3120
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 3216
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 3478
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 4461
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 4642
+              "value": 5025
             },
             {
               "provider": "xai",
-              "model": "grok-4",
-              "value": 9865
+              "model": "grok-4.20-0309-reasoning",
+              "value": 5345
             }
           ],
           "latency_p95_ms": [
             {
               "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 2009
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 2097
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 2888
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 3252
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 3847
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 5222
+            },
+            {
+              "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 6563
+              "value": 6186
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 6231
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 7431
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4",
-              "value": 17265
+              "value": 6916
             },
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 33766
+              "value": 8447
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 11048
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 13002
             }
           ],
           "cost_per_1k_evals_usd": [
             {
               "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 0.14815000000000003
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 0.20446
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "value": 0.20590000000000003
+            },
+            {
+              "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 0.5547
+              "value": 0.4992
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 0.6538
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 1.5272
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 1.7239999999999998
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 1.7756
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 2.9728
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 3.1843999999999997
-            },
-            {
-              "provider": "xai",
-              "model": "grok-4",
-              "value": 5.271599999999999
+              "value": 3.1708000000000003
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 5.3256
+              "value": 5.1606
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 9.969999999999999
             }
           ],
           "success_rate": [
             {
-              "provider": "anthropic",
-              "model": "claude-sonnet-4-6",
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "value": 1
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
               "value": 1
             },
             {
@@ -7742,12 +12515,47 @@ window.__BENCH = {
             },
             {
               "provider": "openai",
+              "model": "gpt-5.4",
+              "value": 1
+            },
+            {
+              "provider": "openai",
               "model": "gpt-5.4-mini",
               "value": 1
             },
             {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "value": 1
+            },
+            {
               "provider": "xai",
-              "model": "grok-4",
+              "model": "grok-4.20-0309-non-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "value": 1
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
               "value": 1
             }
           ]
@@ -7876,9 +12684,364 @@ window.__BENCH = {
               }
             }
           ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-43-21-377Z",
+          "started_at": "2026-04-19T02:42:54.356Z",
+          "completed_at": "2026-04-19T02:43:21.376Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3-flash-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2135,
+                  "p95": 2888,
+                  "p99": 2888,
+                  "mean": 2120
+                },
+                "cost_usd": {
+                  "total": 0.003269,
+                  "mean": 0.0006538000000000001,
+                  "per_1k_evals": 0.6538
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-flash-lite-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1561,
+                  "p95": 2009,
+                  "p99": 2009,
+                  "mean": 1656
+                },
+                "cost_usd": {
+                  "total": 0.0010295,
+                  "mean": 0.00020590000000000002,
+                  "per_1k_evals": 0.20590000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5025,
+                  "p95": 6186,
+                  "p99": 6186,
+                  "mean": 5296
+                },
+                "cost_usd": {
+                  "total": 0.015854,
+                  "mean": 0.0031708,
+                  "per_1k_evals": 3.1708000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3043,
+                  "p95": 3252,
+                  "p99": 3252,
+                  "mean": 2923
+                },
+                "cost_usd": {
+                  "total": 0.00862,
+                  "mean": 0.0017239999999999998,
+                  "per_1k_evals": 1.7239999999999998
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3478,
+                  "p95": 8447,
+                  "p99": 8447,
+                  "mean": 4118
+                },
+                "cost_usd": {
+                  "total": 0.002496,
+                  "mean": 0.0004992,
+                  "per_1k_evals": 0.4992
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-nano",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4461,
+                  "p95": 11048,
+                  "p99": 11048,
+                  "mean": 4881
+                },
+                "cost_usd": {
+                  "total": 0.0007407500000000001,
+                  "mean": 0.00014815000000000002,
+                  "per_1k_evals": 0.14815000000000003
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 4,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3216,
+                  "p95": 13002,
+                  "p99": 13002,
+                  "mean": 4702
+                },
+                "cost_usd": {
+                  "total": 0.008878,
+                  "mean": 0.0017756,
+                  "per_1k_evals": 1.7756
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4-1-fast-non-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3120,
+                  "p95": 5222,
+                  "p99": 5222,
+                  "mean": 3380
+                },
+                "cost_usd": {
+                  "total": 0.0010223,
+                  "mean": 0.00020446,
+                  "per_1k_evals": 0.20446
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4.20-0309-reasoning",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 5345,
+                  "p95": 6231,
+                  "p99": 6231,
+                  "mean": 5404
+                },
+                "cost_usd": {
+                  "total": 0.014863999999999999,
+                  "mean": 0.0029728,
+                  "per_1k_evals": 2.9728
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-haiku-4-5",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1389,
+                  "p95": 2097,
+                  "p99": 2097,
+                  "mean": 1493
+                },
+                "cost_usd": {
+                  "total": 0.0076359999999999996,
+                  "mean": 0.0015271999999999998,
+                  "per_1k_evals": 1.5272
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-opus-4-7",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2540,
+                  "p95": 3847,
+                  "p99": 3847,
+                  "mean": 2794
+                },
+                "cost_usd": {
+                  "total": 0.04985,
+                  "mean": 0.00997,
+                  "per_1k_evals": 9.969999999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2267,
+                  "p95": 6916,
+                  "p99": 6916,
+                  "mean": 4002
+                },
+                "cost_usd": {
+                  "total": 0.025803,
+                  "mean": 0.0051605999999999996,
+                  "per_1k_evals": 5.1606
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 5,
+                  "rate": 1
+                }
+              }
+            }
+          ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T02-20-25-391Z.json"
+      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T02-43-21-377Z.json"
     }
   ]
 };

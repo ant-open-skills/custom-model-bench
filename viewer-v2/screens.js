@@ -235,8 +235,15 @@
     const colspan = hasAccuracy ? 9 : 8;
     const tbody = sorted.length === 0
       ? `<tr><td colspan="${colspan}" style="text-align:center; padding:40px; color:var(--ink-3); font-style:italic; font-family:var(--serif);">No candidates match these filters.</td></tr>`
-      : sorted.map((r, i) => `
-          <tr data-cfg="${UI.esc(r.config_file)}">
+      : sorted.map((r, i) => {
+          // Top 4 rows render at full opacity; bottom rows fade to a muted
+          // variant so the focus is on "which candidate actually wins".
+          // Filter state still shows everything — this is visual emphasis,
+          // not a hard truncation.
+          const muted = i >= 4;
+          const rowStyle = muted ? "opacity:0.42; filter:saturate(0.6);" : "";
+          return `
+          <tr data-cfg="${UI.esc(r.config_file)}" style="${rowStyle}">
             <td class="rank ${i === 0 ? "top" : ""}">${i + 1}</td>
             <td class="model-cell">${UI.modelLabel(r.model, r.provider)}</td>
             <td class="fit-cell">${UI.fitBar(r.fit, r.model)}</td>
@@ -248,8 +255,8 @@
               ? `<td class="${UI.cellCls(r.accuracy, "accuracy", extremes, false)}">${r.accuracy != null ? UI.fmtRate(r.accuracy) : "—"}</td>`
               : ""}
             <td style="text-align:right; color:var(--ink-4); font-family:var(--mono); font-size:11px;">›</td>
-          </tr>
-      `).join("");
+          </tr>`;
+        }).join("");
 
     return `
       <div class="main">
@@ -666,11 +673,27 @@ bun viewer-v2:build</pre>
       provider: r.provider,
       model: r.model,
       color: UI.PROVIDER_COLORS[r.provider] || "#888",
+      _aggregate: r.aggregate,
     }));
 
-    // Respect active provider filters (but don't collapse to zero)
-    const filtered = candidates.filter(c => SEL.providers.has(c.provider));
-    const shown = filtered.length > 0 ? filtered : candidates;
+    // Apply provider + tier filters first. When a filter is active, show
+    // every matching candidate (the user asked to narrow down). When no
+    // filter is active (all providers + all tiers selected), show only the
+    // top 4 by the current use case's fit score — the trend chart is
+    // legible for ≤4 lines; 12 lines is unreadable.
+    const filtered = candidates.filter(c =>
+      SEL.providers.has(c.provider) && SEL.tiers.has(UI.modelTier(c.model))
+    );
+    const allSelected = SEL.providers.size === 4 && SEL.tiers.size === 3;
+    let shown;
+    if (allSelected) {
+      shown = [...filtered]
+        .map(c => ({ ...c, _fit: Fit.compute(c._aggregate, SEL.usecase).fit }))
+        .sort((a, b) => b._fit - a._fit)
+        .slice(0, 4);
+    } else {
+      shown = filtered.length > 0 ? filtered : candidates;
+    }
 
     // Check whether any run anywhere has answer_accuracy.
     let hasAccuracy = false;

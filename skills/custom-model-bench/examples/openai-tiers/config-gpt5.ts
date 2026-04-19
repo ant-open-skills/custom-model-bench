@@ -1,4 +1,4 @@
-import type { CandidateConfig } from "../demo/config";
+import type { CandidateConfig } from "../../scripts/types";
 
 export const candidate: CandidateConfig = {
   provider: "openai",

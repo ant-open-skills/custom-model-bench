@@ -1,9 +1,12 @@
 import type { CandidateConfig } from "../../scripts/types";
+import { TOOL_BENCH_TOOLS, TOOL_BENCH_SYSTEM } from "./tools";
 
 export const candidate: CandidateConfig = {
   provider: "google",
   model: "gemini-3.1-flash-lite-preview",
-  systemPrompt: "You are a concise assistant. Answer in one sentence.",
+  systemPrompt: TOOL_BENCH_SYSTEM,
   temperature: 0,
-  maxOutputTokens: 200,
+  maxOutputTokens: 800,
+  tools: TOOL_BENCH_TOOLS,
+  maxTurns: 6,
 };

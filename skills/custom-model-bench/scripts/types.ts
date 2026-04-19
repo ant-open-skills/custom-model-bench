@@ -26,6 +26,20 @@ export type ToolDefinition<TInput = any, TOutput = any> = {
 /** A keyed collection of tools, indexed by ToolDefinition.name. */
 export type ToolSet = Record<string, ToolDefinition>;
 
+/** Shared CandidateConfig for the whole project. Each example scope's
+ *  `config-*.ts` files export a `candidate: CandidateConfig`. */
+export type CandidateConfig = {
+  provider: "anthropic" | "openai" | "google" | "xai";
+  model: string;
+  systemPrompt?: string;
+  temperature?: number;
+  maxOutputTokens?: number;
+  /** Tools the candidate may call. When empty/undefined, single-turn only. */
+  tools?: ToolDefinition[];
+  /** Max tool-use rounds; only meaningful with `tools`. Defaults to 10. */
+  maxTurns?: number;
+};
+
 /**
  * Compact linearized record of a tool-enabled run, persisted per row so the
  * viewer (and downstream graders) can inspect exactly how the agent got from

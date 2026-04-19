@@ -2,7 +2,7 @@
  * tool-smoke/config.ts — minimal echo-tool config used to verify the
  * tool-calling loop lands in Phase A.3. Not a real benchmark.
  */
-import type { CandidateConfig } from "../demo/config";
+import type { CandidateConfig } from "../../scripts/types";
 import { z } from "zod";
 
 export const candidate: CandidateConfig = {

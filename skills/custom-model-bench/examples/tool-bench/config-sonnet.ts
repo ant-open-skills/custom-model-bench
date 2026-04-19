@@ -1,9 +1,9 @@
-import type { CandidateConfig } from "../demo/config";
+import type { CandidateConfig } from "../../scripts/types";
 import { TOOL_BENCH_TOOLS, TOOL_BENCH_SYSTEM } from "./tools";
 
 export const candidate: CandidateConfig = {
-  provider: "google",
-  model: "gemini-3.1-pro-preview",
+  provider: "anthropic",
+  model: "claude-sonnet-4-6",
   systemPrompt: TOOL_BENCH_SYSTEM,
   temperature: 0,
   maxOutputTokens: 800,

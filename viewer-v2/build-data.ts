@@ -21,9 +21,10 @@ type Scope = {
 };
 
 const SCOPES: Scope[] = [
-  { id: "flagship",   label: "Speed bench",     kind: "flagship", dir: "skills/custom-model-bench/examples/demo" },
-  { id: "reasoning",  label: "Reasoning bench", kind: "flagship", dir: "skills/custom-model-bench/examples/reasoning" },
-  { id: "tool-bench", label: "Tool bench",      kind: "flagship", dir: "skills/custom-model-bench/examples/tool-bench" },
+  { id: "flagship",     label: "Speed bench",          kind: "flagship", dir: "skills/custom-model-bench/examples/demo" },
+  { id: "reasoning",    label: "Reasoning bench",      kind: "flagship", dir: "skills/custom-model-bench/examples/reasoning" },
+  { id: "tool-bench",   label: "Tool bench",           kind: "flagship", dir: "skills/custom-model-bench/examples/tool-bench" },
+  { id: "yc-qualifier", label: "YC prospect qualifier", kind: "flagship", dir: "skills/custom-model-bench/examples/yc-qualifier" },
 ];
 
 async function comparisonFilesByMtime(runsDir: string): Promise<{ p: string; m: number }[]> {

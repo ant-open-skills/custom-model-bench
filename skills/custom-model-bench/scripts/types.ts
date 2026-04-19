@@ -25,3 +25,14 @@ export type ToolDefinition<TInput = any, TOutput = any> = {
 
 /** A keyed collection of tools, indexed by ToolDefinition.name. */
 export type ToolSet = Record<string, ToolDefinition>;
+
+/**
+ * Compact linearized record of a tool-enabled run, persisted per row so the
+ * viewer (and downstream graders) can inspect exactly how the agent got from
+ * prompt to final answer. `step` is the round-trip-to-model index, starting at
+ * 0; tool calls and their matching results share a `name` and `id`.
+ */
+export type TraceEntry =
+  | { type: "assistant_text"; step: number; text: string }
+  | { type: "tool_call"; step: number; name: string; input: unknown; id: string }
+  | { type: "tool_result"; step: number; name: string; output: unknown; id: string };

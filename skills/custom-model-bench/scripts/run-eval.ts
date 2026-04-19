@@ -24,7 +24,7 @@ import { xai } from "@ai-sdk/xai";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, join, basename } from "node:path";
 import { computeCost } from "./pricing";
-import type { ToolDefinition } from "./types";
+import type { ToolDefinition, TraceEntry } from "./types";
 
 type Provider = "anthropic" | "openai" | "google" | "xai";
 
@@ -77,7 +77,45 @@ type RowResult = {
   output_tokens: number;
   cost_usd: number;
   error: string | null;
+  /** Present only when the candidate ran with tools. Compact linearization
+   *  of the SDK's `steps` array: assistant text, tool calls, tool results
+   *  in order. See TraceEntry in ./types.ts. */
+  trace?: TraceEntry[];
 };
+
+/** Flatten the Vercel AI SDK's steps[] into a linear TraceEntry[]. Handles
+ *  minor field-name variance across SDK versions (args vs input, result vs
+ *  output). Returns an empty array for runs with no steps. */
+function flattenTrace(steps: any[] | undefined): TraceEntry[] {
+  if (!steps || steps.length === 0) return [];
+  const trace: TraceEntry[] = [];
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i] ?? {};
+    const text: string = step.text ?? "";
+    if (text.length > 0) {
+      trace.push({ type: "assistant_text", step: i, text });
+    }
+    for (const tc of step.toolCalls ?? []) {
+      trace.push({
+        type: "tool_call",
+        step: i,
+        name: tc.toolName ?? tc.name ?? "?",
+        input: tc.input ?? tc.args ?? null,
+        id: tc.toolCallId ?? tc.id ?? String(i),
+      });
+    }
+    for (const tr of step.toolResults ?? []) {
+      trace.push({
+        type: "tool_result",
+        step: i,
+        name: tr.toolName ?? tr.name ?? "?",
+        output: tr.output ?? tr.result ?? null,
+        id: tr.toolCallId ?? tr.id ?? String(i),
+      });
+    }
+  }
+  return trace;
+}
 
 function modelFor(candidate: CandidateConfig): LanguageModel {
   switch (candidate.provider) {
@@ -137,6 +175,7 @@ async function runRow(
     // With tools, turns = number of model rounds (each may carry ≥1 tool calls).
     // Without tools, always 1.
     const turns = sdkTools ? (out.steps?.length ?? 1) : 1;
+    const trace = sdkTools ? flattenTrace(out.steps as any[]) : undefined;
     return {
       id: row.id,
       prompt: row.prompt,
@@ -147,6 +186,7 @@ async function runRow(
       output_tokens,
       cost_usd,
       error: null,
+      ...(trace && trace.length > 0 ? { trace } : {}),
     };
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.message : String(e);

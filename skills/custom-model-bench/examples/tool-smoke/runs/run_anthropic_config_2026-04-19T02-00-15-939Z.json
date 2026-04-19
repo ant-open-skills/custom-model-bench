@@ -1,5 +1,5 @@
 {
-  "run_id": "run_anthropic_config_2026-04-19T01-50-11-218Z",
+  "run_id": "run_anthropic_config_2026-04-19T02-00-15-939Z",
   "candidate": {
     "provider": "anthropic",
     "model": "claude-haiku-4-5",
@@ -58,11 +58,36 @@
       "prompt": "Please test the echo tool with the message \"hello world\" and tell me what it returned.",
       "response": "The echo tool returned: **\"hello world\"**\n\nThe tool successfully echoed back the exact message I sent to it.",
       "turns": 2,
-      "latency_ms": 1413,
+      "latency_ms": 1420,
       "input_tokens": 717,
       "output_tokens": 29,
       "cost_usd": 0.000862,
-      "error": null
+      "error": null,
+      "trace": [
+        {
+          "type": "tool_call",
+          "step": 0,
+          "name": "echo",
+          "input": {
+            "message": "hello world"
+          },
+          "id": "toolu_01LQ63CdJE2VGxNeFRGvwDsi"
+        },
+        {
+          "type": "tool_result",
+          "step": 0,
+          "name": "echo",
+          "output": {
+            "echoed": "hello world"
+          },
+          "id": "toolu_01LQ63CdJE2VGxNeFRGvwDsi"
+        },
+        {
+          "type": "assistant_text",
+          "step": 1,
+          "text": "The echo tool returned: **\"hello world\"**\n\nThe tool successfully echoed back the exact message I sent to it."
+        }
+      ]
     }
   ],
   "aggregate": {
@@ -70,10 +95,10 @@
     "n_success": 1,
     "n_error": 0,
     "latency_ms": {
-      "p50": 1413,
-      "p95": 1413,
-      "p99": 1413,
-      "mean": 1413
+      "p50": 1420,
+      "p95": 1420,
+      "p99": 1420,
+      "mean": 1420
     },
     "cost_usd": {
       "total": 0.000862,

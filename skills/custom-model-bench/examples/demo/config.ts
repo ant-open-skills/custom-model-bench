@@ -17,10 +17,12 @@ export type CandidateConfig = {
   maxOutputTokens?: number;
   /**
    * Tools the candidate may call during execution. When empty or undefined,
-   * the run is a plain single-turn call. Phase A.2 wires the type through;
-   * A.3 adds the tool-calling loop in run-eval.ts.
+   * the run is a plain single-turn call.
    */
   tools?: ToolDefinition[];
+  /** Max tool-use rounds before the loop terminates. Only meaningful when
+   *  `tools` is set. Defaults to 10 in run-eval.ts. */
+  maxTurns?: number;
 };
 
 export const candidate: CandidateConfig = {

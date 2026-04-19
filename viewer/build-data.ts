@@ -67,6 +67,12 @@ const SCOPES: Scope[] = [
     kind: "flagship",
     dir: "skills/custom-model-bench/examples/reasoning",
   },
+  {
+    id: "tool-bench",
+    label: "Tool bench",
+    kind: "flagship",
+    dir: "skills/custom-model-bench/examples/tool-bench",
+  },
 ];
 
 async function comparisonFilesByMtime(runsDir: string): Promise<{ p: string; m: number }[]> {

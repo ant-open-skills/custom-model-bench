@@ -19,6 +19,7 @@
     "bench:tiers:xai": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/xai-tiers",
     "bench:tiers:all": "bun bench:tiers:anthropic && bun bench:tiers:openai && bun bench:tiers:google && bun bench:tiers:xai",
     "bench:reasoning": "bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/reasoning",
+    "bench:tools": "MOCK_TOOLS=1 bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/tool-bench",
     "viewer:build": "bun run viewer/build-data.ts",
     "viewer:serve": "bun run viewer/serve.ts",
     "viewer": "bun viewer:build && bun viewer:serve",

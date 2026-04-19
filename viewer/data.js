@@ -9,12 +9,12 @@ window.__BENCH = {
       "kind": "flagship",
       "provider": null,
       "comparison": {
-        "comparison_id": "comparison_2026-04-19T01-50-49-292Z",
+        "comparison_id": "comparison_2026-04-19T02-09-08-013Z",
         "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/demo/dataset.jsonl",
         "n_rows": 5,
         "n_candidates": 4,
-        "started_at": "2026-04-19T01:50:36.260Z",
-        "completed_at": "2026-04-19T01:50:49.292Z",
+        "started_at": "2026-04-19T02:08:53.635Z",
+        "completed_at": "2026-04-19T02:09:08.013Z",
         "runs": [
           {
             "config_file": "config-google.ts",
@@ -29,7 +29,7 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 2079,
+                "latency_ms": 2216,
                 "input_tokens": 19,
                 "output_tokens": 99,
                 "cost_usd": 0.001226,
@@ -40,9 +40,9 @@ window.__BENCH = {
               {
                 "id": "ex-002",
                 "prompt": "Name three primary colors.",
-                "response": "The three primary colors are",
+                "response": "The three traditional primary",
                 "turns": 1,
-                "latency_ms": 3043,
+                "latency_ms": 2838,
                 "input_tokens": 17,
                 "output_tokens": 196,
                 "cost_usd": 0.002386,
@@ -55,10 +55,10 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is 391.",
                 "turns": 1,
-                "latency_ms": 2313,
+                "latency_ms": 3258,
                 "input_tokens": 23,
-                "output_tokens": 130,
-                "cost_usd": 0.001606,
+                "output_tokens": 149,
+                "cost_usd": 0.001834,
                 "error": null,
                 "answer_extracted": "391",
                 "answer_correct": true
@@ -68,10 +68,10 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "The Apollo 11 mission landed on the Moon in 1969.",
                 "turns": 1,
-                "latency_ms": 2702,
+                "latency_ms": 2613,
                 "input_tokens": 27,
-                "output_tokens": 155,
-                "cost_usd": 0.001914,
+                "output_tokens": 149,
+                "cost_usd": 0.001842,
                 "error": null,
                 "answer_extracted": "1969",
                 "answer_correct": true
@@ -81,7 +81,7 @@ window.__BENCH = {
                 "prompt": "Give a one-sentence definition of photosynthesis.",
                 "response": "Photosynthesis is the process by",
                 "turns": 1,
-                "latency_ms": 2893,
+                "latency_ms": 3450,
                 "input_tokens": 21,
                 "output_tokens": 196,
                 "cost_usd": 0.002394,
@@ -95,15 +95,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 2702,
-                "p95": 3043,
-                "p99": 3043,
-                "mean": 2606
+                "p50": 2838,
+                "p95": 3450,
+                "p99": 3450,
+                "mean": 2875
               },
               "cost_usd": {
-                "total": 0.009526,
-                "mean": 0.0019052,
-                "per_1k_evals": 1.9052
+                "total": 0.009682,
+                "mean": 0.0019364,
+                "per_1k_evals": 1.9364000000000001
               },
               "turns": {
                 "mean": 1,
@@ -129,7 +129,7 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 960,
+                "latency_ms": 978,
                 "input_tokens": 28,
                 "output_tokens": 11,
                 "cost_usd": 0.0000705,
@@ -142,7 +142,7 @@ window.__BENCH = {
                 "prompt": "Name three primary colors.",
                 "response": "Red, blue, and yellow.",
                 "turns": 1,
-                "latency_ms": 897,
+                "latency_ms": 1051,
                 "input_tokens": 26,
                 "output_tokens": 11,
                 "cost_usd": 0.000069,
@@ -155,7 +155,7 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is 391.",
                 "turns": 1,
-                "latency_ms": 913,
+                "latency_ms": 836,
                 "input_tokens": 30,
                 "output_tokens": 13,
                 "cost_usd": 0.000081,
@@ -168,7 +168,7 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "Apollo 11 landed on the Moon in 1969.",
                 "turns": 1,
-                "latency_ms": 877,
+                "latency_ms": 920,
                 "input_tokens": 35,
                 "output_tokens": 16,
                 "cost_usd": 0.00009825,
@@ -181,7 +181,7 @@ window.__BENCH = {
                 "prompt": "Give a one-sentence definition of photosynthesis.",
                 "response": "Photosynthesis is the process by which plants, algae, and some bacteria use sunlight to convert carbon dioxide and water into glucose and oxygen.",
                 "turns": 1,
-                "latency_ms": 1044,
+                "latency_ms": 1242,
                 "input_tokens": 31,
                 "output_tokens": 31,
                 "cost_usd": 0.00016275,
@@ -195,10 +195,10 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 913,
-                "p95": 1044,
-                "p99": 1044,
-                "mean": 938
+                "p50": 978,
+                "p95": 1242,
+                "p99": 1242,
+                "mean": 1005
               },
               "cost_usd": {
                 "total": 0.00048150000000000005,
@@ -227,12 +227,12 @@ window.__BENCH = {
               {
                 "id": "ex-001",
                 "prompt": "What is the capital of France?",
-                "response": "Paris is the capital of France.",
+                "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 1654,
+                "latency_ms": 1296,
                 "input_tokens": 703,
-                "output_tokens": 69,
-                "cost_usd": 0.00182,
+                "output_tokens": 66,
+                "cost_usd": 0.001802,
                 "error": null,
                 "answer_extracted": "Paris",
                 "answer_correct": true
@@ -242,10 +242,10 @@ window.__BENCH = {
                 "prompt": "Name three primary colors.",
                 "response": "The three primary colors are red, yellow, and blue.",
                 "turns": 1,
-                "latency_ms": 2209,
+                "latency_ms": 2820,
                 "input_tokens": 701,
-                "output_tokens": 122,
-                "cost_usd": 0.002134,
+                "output_tokens": 136,
+                "cost_usd": 0.002218,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -255,10 +255,10 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is 391.",
                 "turns": 1,
-                "latency_ms": 1870,
+                "latency_ms": 2298,
                 "input_tokens": 705,
-                "output_tokens": 112,
-                "cost_usd": 0.002082,
+                "output_tokens": 124,
+                "cost_usd": 0.002154,
                 "error": null,
                 "answer_extracted": "391",
                 "answer_correct": true
@@ -268,7 +268,7 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "The Apollo 11 mission landed on the Moon in 1969.",
                 "turns": 1,
-                "latency_ms": 1859,
+                "latency_ms": 1902,
                 "input_tokens": 710,
                 "output_tokens": 97,
                 "cost_usd": 0.002002,
@@ -281,10 +281,10 @@ window.__BENCH = {
                 "prompt": "Give a one-sentence definition of photosynthesis.",
                 "response": "Photosynthesis is the biological process by which green plants, algae, and some bacteria convert light energy from the sun into chemical energy, using carbon dioxide and water to produce glucose and oxygen.",
                 "turns": 1,
-                "latency_ms": 3359,
+                "latency_ms": 2724,
                 "input_tokens": 705,
-                "output_tokens": 146,
-                "cost_usd": 0.002286,
+                "output_tokens": 149,
+                "cost_usd": 0.002304,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -295,15 +295,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1870,
-                "p95": 3359,
-                "p99": 3359,
-                "mean": 2190
+                "p50": 2298,
+                "p95": 2820,
+                "p99": 2820,
+                "mean": 2208
               },
               "cost_usd": {
-                "total": 0.010324,
-                "mean": 0.0020648,
-                "per_1k_evals": 2.0648
+                "total": 0.010480000000000001,
+                "mean": 0.002096,
+                "per_1k_evals": 2.096
               },
               "turns": {
                 "mean": 1,
@@ -329,7 +329,7 @@ window.__BENCH = {
                 "prompt": "What is the capital of France?",
                 "response": "The capital of France is Paris.",
                 "turns": 1,
-                "latency_ms": 952,
+                "latency_ms": 881,
                 "input_tokens": 27,
                 "output_tokens": 10,
                 "cost_usd": 0.000231,
@@ -340,12 +340,12 @@ window.__BENCH = {
               {
                 "id": "ex-002",
                 "prompt": "Name three primary colors.",
-                "response": "The three primary colors are red, blue, and yellow.",
+                "response": "The three primary colors are **red**, **blue**, and **yellow**.",
                 "turns": 1,
-                "latency_ms": 1021,
+                "latency_ms": 887,
                 "input_tokens": 25,
-                "output_tokens": 15,
-                "cost_usd": 0.0003,
+                "output_tokens": 18,
+                "cost_usd": 0.000345,
                 "error": null,
                 "answer_extracted": null,
                 "answer_correct": null
@@ -355,7 +355,7 @@ window.__BENCH = {
                 "prompt": "What is 17 multiplied by 23?",
                 "response": "17 multiplied by 23 is **391**.",
                 "turns": 1,
-                "latency_ms": 717,
+                "latency_ms": 1636,
                 "input_tokens": 31,
                 "output_tokens": 16,
                 "cost_usd": 0.000333,
@@ -368,7 +368,7 @@ window.__BENCH = {
                 "prompt": "In which year did the Apollo 11 mission land on the Moon?",
                 "response": "The Apollo 11 mission landed on the Moon in **1969**.",
                 "turns": 1,
-                "latency_ms": 1165,
+                "latency_ms": 1051,
                 "input_tokens": 35,
                 "output_tokens": 18,
                 "cost_usd": 0.000375,
@@ -381,7 +381,7 @@ window.__BENCH = {
                 "prompt": "Give a one-sentence definition of photosynthesis.",
                 "response": "Photosynthesis is the biological process by which plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored as glucose, using carbon dioxide and water while releasing oxygen as a byproduct.",
                 "turns": 1,
-                "latency_ms": 1619,
+                "latency_ms": 2046,
                 "input_tokens": 32,
                 "output_tokens": 52,
                 "cost_usd": 0.000876,
@@ -395,15 +395,15 @@ window.__BENCH = {
               "n_success": 5,
               "n_error": 0,
               "latency_ms": {
-                "p50": 1021,
-                "p95": 1619,
-                "p99": 1619,
-                "mean": 1095
+                "p50": 1051,
+                "p95": 2046,
+                "p99": 2046,
+                "mean": 1300
               },
               "cost_usd": {
-                "total": 0.002115,
-                "mean": 0.00042300000000000004,
-                "per_1k_evals": 0.42300000000000004
+                "total": 0.00216,
+                "mean": 0.000432,
+                "per_1k_evals": 0.432
               },
               "turns": {
                 "mean": 1,
@@ -422,44 +422,44 @@ window.__BENCH = {
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 913
+              "value": 978
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 1021
+              "value": 1051
             },
             {
               "provider": "xai",
               "model": "grok-4",
-              "value": 1870
+              "value": 2298
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 2702
+              "value": 2838
             }
           ],
           "latency_p95_ms": [
             {
               "provider": "openai",
               "model": "gpt-5.4-mini",
-              "value": 1044
+              "value": 1242
             },
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 1619
-            },
-            {
-              "provider": "google",
-              "model": "gemini-3.1-pro-preview",
-              "value": 3043
+              "value": 2046
             },
             {
               "provider": "xai",
               "model": "grok-4",
-              "value": 3359
+              "value": 2820
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 3450
             }
           ],
           "cost_per_1k_evals_usd": [
@@ -471,17 +471,17 @@ window.__BENCH = {
             {
               "provider": "anthropic",
               "model": "claude-sonnet-4-6",
-              "value": 0.42300000000000004
+              "value": 0.432
             },
             {
               "provider": "google",
               "model": "gemini-3.1-pro-preview",
-              "value": 1.9052
+              "value": 1.9364000000000001
             },
             {
               "provider": "xai",
               "model": "grok-4",
-              "value": 2.0648
+              "value": 2.096
             }
           ],
           "success_rate": [
@@ -1492,9 +1492,1116 @@ window.__BENCH = {
               }
             }
           ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-05-49-641Z",
+          "started_at": "2026-04-19T02:05:36.257Z",
+          "completed_at": "2026-04-19T02:05:49.641Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2602,
+                  "p95": 3048,
+                  "p99": 3048,
+                  "mean": 2677
+                },
+                "cost_usd": {
+                  "total": 0.009454,
+                  "mean": 0.0018908000000000002,
+                  "per_1k_evals": 1.8908000000000003
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 969,
+                  "p95": 1112,
+                  "p99": 1112,
+                  "mean": 935
+                },
+                "cost_usd": {
+                  "total": 0.000504,
+                  "mean": 0.0001008,
+                  "per_1k_evals": 0.1008
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2365,
+                  "p95": 2956,
+                  "p99": 2956,
+                  "mean": 2205
+                },
+                "cost_usd": {
+                  "total": 0.010426000000000001,
+                  "mean": 0.0020852,
+                  "per_1k_evals": 2.0852
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 912,
+                  "p95": 2550,
+                  "p99": 2550,
+                  "mean": 1265
+                },
+                "cost_usd": {
+                  "total": 0.002115,
+                  "mean": 0.00042300000000000004,
+                  "per_1k_evals": 0.42300000000000004
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-06-13-673Z",
+          "started_at": "2026-04-19T02:06:00.277Z",
+          "completed_at": "2026-04-19T02:06:13.673Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2687,
+                  "p95": 3291,
+                  "p99": 3291,
+                  "mean": 2679
+                },
+                "cost_usd": {
+                  "total": 0.009754,
+                  "mean": 0.0019508000000000001,
+                  "per_1k_evals": 1.9508
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1071,
+                  "p95": 7430,
+                  "p99": 7430,
+                  "mean": 2299
+                },
+                "cost_usd": {
+                  "total": 0.00048150000000000005,
+                  "mean": 0.00009630000000000001,
+                  "per_1k_evals": 0.09630000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2206,
+                  "p95": 3149,
+                  "p99": 3149,
+                  "mean": 2271
+                },
+                "cost_usd": {
+                  "total": 0.010306,
+                  "mean": 0.0020612,
+                  "per_1k_evals": 2.0612
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1479,
+                  "p95": 3006,
+                  "p99": 3006,
+                  "mean": 1593
+                },
+                "cost_usd": {
+                  "total": 0.00213,
+                  "mean": 0.000426,
+                  "per_1k_evals": 0.426
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-06-45-659Z",
+          "started_at": "2026-04-19T02:06:17.964Z",
+          "completed_at": "2026-04-19T02:06:45.659Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2618,
+                  "p95": 3134,
+                  "p99": 3134,
+                  "mean": 2568
+                },
+                "cost_usd": {
+                  "total": 0.009454,
+                  "mean": 0.0018908000000000002,
+                  "per_1k_evals": 1.8908000000000003
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1151,
+                  "p95": 23322,
+                  "p99": 23322,
+                  "mean": 5538
+                },
+                "cost_usd": {
+                  "total": 0.0005175,
+                  "mean": 0.0001035,
+                  "per_1k_evals": 0.1035
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2652,
+                  "p95": 4239,
+                  "p99": 4239,
+                  "mean": 2684
+                },
+                "cost_usd": {
+                  "total": 0.010354,
+                  "mean": 0.0020708000000000002,
+                  "per_1k_evals": 2.0708
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 876,
+                  "p95": 1812,
+                  "p99": 1812,
+                  "mean": 1070
+                },
+                "cost_usd": {
+                  "total": 0.00216,
+                  "mean": 0.000432,
+                  "per_1k_evals": 0.432
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-07-05-222Z",
+          "started_at": "2026-04-19T02:06:52.923Z",
+          "completed_at": "2026-04-19T02:07:05.222Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2543,
+                  "p95": 2909,
+                  "p99": 2909,
+                  "mean": 2460
+                },
+                "cost_usd": {
+                  "total": 0.009454,
+                  "mean": 0.0018908000000000002,
+                  "per_1k_evals": 1.8908000000000003
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 841,
+                  "p95": 3111,
+                  "p99": 3111,
+                  "mean": 1299
+                },
+                "cost_usd": {
+                  "total": 0.0005085,
+                  "mean": 0.00010169999999999999,
+                  "per_1k_evals": 0.1017
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2171,
+                  "p95": 2922,
+                  "p99": 2922,
+                  "mean": 2215
+                },
+                "cost_usd": {
+                  "total": 0.010299999999999998,
+                  "mean": 0.0020599999999999998,
+                  "per_1k_evals": 2.0599999999999996
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1457,
+                  "p95": 4878,
+                  "p99": 4878,
+                  "mean": 1902
+                },
+                "cost_usd": {
+                  "total": 0.00216,
+                  "mean": 0.000432,
+                  "per_1k_evals": 0.432
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-07-36-674Z",
+          "started_at": "2026-04-19T02:07:07.371Z",
+          "completed_at": "2026-04-19T02:07:36.674Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2469,
+                  "p95": 2603,
+                  "p99": 2603,
+                  "mean": 2372
+                },
+                "cost_usd": {
+                  "total": 0.009454,
+                  "mean": 0.0018908000000000002,
+                  "per_1k_evals": 1.8908000000000003
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1158,
+                  "p95": 20002,
+                  "p99": 20002,
+                  "mean": 5860
+                },
+                "cost_usd": {
+                  "total": 0.00048150000000000005,
+                  "mean": 0.00009630000000000001,
+                  "per_1k_evals": 0.09630000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2151,
+                  "p95": 3973,
+                  "p99": 3973,
+                  "mean": 2524
+                },
+                "cost_usd": {
+                  "total": 0.010461999999999999,
+                  "mean": 0.0020924,
+                  "per_1k_evals": 2.0924
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1013,
+                  "p95": 1667,
+                  "p99": 1667,
+                  "mean": 1102
+                },
+                "cost_usd": {
+                  "total": 0.002175,
+                  "mean": 0.00043499999999999995,
+                  "per_1k_evals": 0.43499999999999994
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-07-51-868Z",
+          "started_at": "2026-04-19T02:07:38.846Z",
+          "completed_at": "2026-04-19T02:07:51.868Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2484,
+                  "p95": 3092,
+                  "p99": 3092,
+                  "mean": 2604
+                },
+                "cost_usd": {
+                  "total": 0.009682,
+                  "mean": 0.0019364,
+                  "per_1k_evals": 1.9364000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 986,
+                  "p95": 1390,
+                  "p99": 1390,
+                  "mean": 997
+                },
+                "cost_usd": {
+                  "total": 0.000504,
+                  "mean": 0.0001008,
+                  "per_1k_evals": 0.1008
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2263,
+                  "p95": 2633,
+                  "p99": 2633,
+                  "mean": 2159
+                },
+                "cost_usd": {
+                  "total": 0.010228,
+                  "mean": 0.0020456,
+                  "per_1k_evals": 2.0456
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1508,
+                  "p95": 2033,
+                  "p99": 2033,
+                  "mean": 1354
+                },
+                "cost_usd": {
+                  "total": 0.00216,
+                  "mean": 0.000432,
+                  "per_1k_evals": 0.432
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-08-25-251Z",
+          "started_at": "2026-04-19T02:07:58.055Z",
+          "completed_at": "2026-04-19T02:08:25.251Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2671,
+                  "p95": 5454,
+                  "p99": 5454,
+                  "mean": 3072
+                },
+                "cost_usd": {
+                  "total": 0.009754,
+                  "mean": 0.0019508000000000001,
+                  "per_1k_evals": 1.9508
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 876,
+                  "p95": 15636,
+                  "p99": 15636,
+                  "mean": 5439
+                },
+                "cost_usd": {
+                  "total": 0.00048150000000000005,
+                  "mean": 0.00009630000000000001,
+                  "per_1k_evals": 0.09630000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2456,
+                  "p95": 2660,
+                  "p99": 2660,
+                  "mean": 2217
+                },
+                "cost_usd": {
+                  "total": 0.010329999999999999,
+                  "mean": 0.0020659999999999997,
+                  "per_1k_evals": 2.066
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1530,
+                  "p95": 1806,
+                  "p99": 1806,
+                  "mean": 1262
+                },
+                "cost_usd": {
+                  "total": 0.002115,
+                  "mean": 0.00042300000000000004,
+                  "per_1k_evals": 0.42300000000000004
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-08-51-464Z",
+          "started_at": "2026-04-19T02:08:27.407Z",
+          "completed_at": "2026-04-19T02:08:51.464Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2430,
+                  "p95": 3271,
+                  "p99": 3271,
+                  "mean": 2734
+                },
+                "cost_usd": {
+                  "total": 0.009682,
+                  "mean": 0.0019364,
+                  "per_1k_evals": 1.9364000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1217,
+                  "p95": 15714,
+                  "p99": 15714,
+                  "mean": 4811
+                },
+                "cost_usd": {
+                  "total": 0.000504,
+                  "mean": 0.0001008,
+                  "per_1k_evals": 0.1008
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2296,
+                  "p95": 2596,
+                  "p99": 2596,
+                  "mean": 2133
+                },
+                "cost_usd": {
+                  "total": 0.010419999999999999,
+                  "mean": 0.002084,
+                  "per_1k_evals": 2.084
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1021,
+                  "p95": 1723,
+                  "p99": 1723,
+                  "mean": 1245
+                },
+                "cost_usd": {
+                  "total": 0.00216,
+                  "mean": 0.000432,
+                  "per_1k_evals": 0.432
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "comparison_id": "comparison_2026-04-19T02-09-08-013Z",
+          "started_at": "2026-04-19T02:08:53.635Z",
+          "completed_at": "2026-04-19T02:09:08.013Z",
+          "runs": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2838,
+                  "p95": 3450,
+                  "p99": 3450,
+                  "mean": 2875
+                },
+                "cost_usd": {
+                  "total": 0.009682,
+                  "mean": 0.0019364,
+                  "per_1k_evals": 1.9364000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 978,
+                  "p95": 1242,
+                  "p99": 1242,
+                  "mean": 1005
+                },
+                "cost_usd": {
+                  "total": 0.00048150000000000005,
+                  "mean": 0.00009630000000000001,
+                  "per_1k_evals": 0.09630000000000001
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 2298,
+                  "p95": 2820,
+                  "p99": 2820,
+                  "mean": 2208
+                },
+                "cost_usd": {
+                  "total": 0.010480000000000001,
+                  "mean": 0.002096,
+                  "per_1k_evals": 2.096
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 1051,
+                  "p95": 2046,
+                  "p99": 2046,
+                  "mean": 1300
+                },
+                "cost_usd": {
+                  "total": 0.00216,
+                  "mean": 0.000432,
+                  "per_1k_evals": 0.432
+                },
+                "turns": {
+                  "mean": 1,
+                  "max": 1
+                },
+                "answer_accuracy": {
+                  "graded": 3,
+                  "correct": 3,
+                  "rate": 1
+                }
+              }
+            }
+          ]
         }
       ],
-      "source_path": "skills/custom-model-bench/examples/demo/runs/comparison_2026-04-19T01-50-49-292Z.json"
+      "source_path": "skills/custom-model-bench/examples/demo/runs/comparison_2026-04-19T02-09-08-013Z.json"
     },
     {
       "id": "anthropic",
@@ -4936,6 +6043,1842 @@ window.__BENCH = {
         }
       ],
       "source_path": "skills/custom-model-bench/examples/reasoning/runs/comparison_2026-04-19T02-03-39-472Z.json"
+    },
+    {
+      "id": "tool-bench",
+      "label": "Tool bench",
+      "kind": "flagship",
+      "provider": null,
+      "comparison": {
+        "comparison_id": "comparison_2026-04-19T02-20-25-391Z",
+        "dataset_path": "/Users/hendrikkrack/Desktop/demos/custom-model-bench/skills/custom-model-bench/examples/tool-bench/dataset.jsonl",
+        "n_rows": 5,
+        "n_candidates": 4,
+        "started_at": "2026-04-19T02:19:26.411Z",
+        "completed_at": "2026-04-19T02:20:25.391Z",
+        "runs": [
+          {
+            "config_file": "config-anthropic.ts",
+            "provider": "anthropic",
+            "model": "claude-sonnet-4-6",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 3798,
+                "input_tokens": 1348,
+                "output_tokens": 16,
+                "cost_usd": 0.004284,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01Rou5Hbu4vj8nMfPQGVLZf3"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01Rou5Hbu4vj8nMfPQGVLZf3"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
+                "response": "Supabase's most-starred repository on GitHub is **supabase** (the main repo), with **76,000 stars**. It is primarily written in **TypeScript**.",
+                "turns": 2,
+                "latency_ms": 6382,
+                "input_tokens": 1340,
+                "output_tokens": 43,
+                "cost_usd": 0.004665,
+                "error": null,
+                "answer_extracted": "Supabase's most-starred repository on GitHub is **supabase** (the main repo), with **76,000 stars**. It is primarily written in **TypeScript**.",
+                "answer_correct": false,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_011Jc4mfUAyeBj1nANZFn548"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_011Jc4mfUAyeBj1nANZFn548"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Supabase's most-starred repository on GitHub is **supabase** (the main repo), with **76,000 stars**. It is primarily written in **TypeScript**."
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "**Vercel**",
+                "turns": 2,
+                "latency_ms": 2761,
+                "input_tokens": 1304,
+                "output_tokens": 8,
+                "cost_usd": 0.004032,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "toolu_01E3L9ZyJ6ev3mQvi8LaQHpQ"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "toolu_01E3L9ZyJ6ev3mQvi8LaQHpQ"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**Vercel**"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "Here's a side-by-side comparison of the top language mixes for both orgs:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### Key Observations:\n- **Vercel** is heavily JavaScript-ecosystem focused, with **TypeScript (62%)** and **JavaScript (22%)** dominating, plus **Rust** for performance-critical tooling (e.g., Turborepo).\n- **Supabase** is more polyglot, with **TypeScript (58%)** for its main platform, **Elixir (14%)** for its Realtime engine, and **Go (12%)** for backend services like GoTrue (auth).\n\n### One language that appears in **both** orgs' top-language mix:\n> ✅ **TypeScript** — It's the #1 language in both Vercel (62%) and Supabase (58%), reflecting the modern full-stack ecosystem both platforms serve.",
+                "turns": 2,
+                "latency_ms": 7431,
+                "input_tokens": 1601,
+                "output_tokens": 326,
+                "cost_usd": 0.009693,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "assistant_text",
+                    "step": 0,
+                    "text": "I'll look up both GitHub orgs simultaneously right away!"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "toolu_01H8jfbSFSFmQsWruDfXpAoU"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "toolu_01EZJ1pTmpQRp9Dp8ECj7EpW"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01H8jfbSFSFmQsWruDfXpAoU"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "toolu_01EZJ1pTmpQRp9Dp8ECj7EpW"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Here's a side-by-side comparison of the top language mixes for both orgs:\n\n| Language   | Vercel | Supabase |\n|------------|--------|----------|\n| TypeScript | 62%    | 58%      |\n| JavaScript | 22%    | —        |\n| Rust       | 9%     | —        |\n| Go         | 4%     | 12%      |\n| Elixir     | —      | 14%      |\n| Shell      | —      | 8%       |\n| Other      | 3%     | 8%       |\n\n### Key Observations:\n- **Vercel** is heavily JavaScript-ecosystem focused, with **TypeScript (62%)** and **JavaScript (22%)** dominating, plus **Rust** for performance-critical tooling (e.g., Turborepo).\n- **Supabase** is more polyglot, with **TypeScript (58%)** for its main platform, **Elixir (14%)** for its Realtime engine, and **Go (12%)** for backend services like GoTrue (auth).\n\n### One language that appears in **both** orgs' top-language mix:\n> ✅ **TypeScript** — It's the #1 language in both Vercel (62%) and Supabase (58%), reflecting the modern full-stack ecosystem both platforms serve."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "The page title, exactly as written, is:\n\n**Example Domain**",
+                "turns": 2,
+                "latency_ms": 2158,
+                "input_tokens": 1228,
+                "output_tokens": 18,
+                "cost_usd": 0.003954,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "toolu_01GRxdQkX7D6qPgm9qfgMNdr"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "toolu_01GRxdQkX7D6qPgm9qfgMNdr"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "The page title, exactly as written, is:\n\n**Example Domain**"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 3798,
+                "p95": 7431,
+                "p99": 7431,
+                "mean": 4506
+              },
+              "cost_usd": {
+                "total": 0.026628,
+                "mean": 0.0053256,
+                "per_1k_evals": 5.3256
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 4,
+                "rate": 0.8
+              }
+            }
+          },
+          {
+            "config_file": "config-google.ts",
+            "provider": "google",
+            "model": "gemini-3.1-pro-preview",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 6563,
+                "input_tokens": 831,
+                "output_tokens": 241,
+                "cost_usd": 0.004554,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "illykhwoCNHLuWn3"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "illykhwoCNHLuWn3"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
+                "response": "Supabase's most-starred repository is **`supabase`** (with 76,000 stars), and it is primarily written in **TypeScript**.",
+                "turns": 2,
+                "latency_ms": 4642,
+                "input_tokens": 824,
+                "output_tokens": 72,
+                "cost_usd": 0.002512,
+                "error": null,
+                "answer_extracted": "Supabase's most-starred repository is **`supabase`** (with 76,000 stars), and it is primarily written in **TypeScript**.",
+                "answer_correct": false,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "Se07nTMtk3rMQwat"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "Se07nTMtk3rMQwat"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Supabase's most-starred repository is **`supabase`** (with 76,000 stars), and it is primarily written in **TypeScript**."
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 4060,
+                "input_tokens": 757,
+                "output_tokens": 38,
+                "cost_usd": 0.00197,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "830s7sOtZVgVRzf1"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "830s7sOtZVgVRzf1"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "**TypeScript** (or **Go**) appears in the top-language mix of both Vercel and Supabase. \n\n* **Vercel's mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)\n* **Supabase's mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)",
+                "turns": 2,
+                "latency_ms": 6235,
+                "input_tokens": 1093,
+                "output_tokens": 214,
+                "cost_usd": 0.004754,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "xCdz5W3UmxqsRFQ7"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "UdnJnmp3SvJvdf0s"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "xCdz5W3UmxqsRFQ7"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "UdnJnmp3SvJvdf0s"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "**TypeScript** (or **Go**) appears in the top-language mix of both Vercel and Supabase. \n\n* **Vercel's mix:** TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%)\n* **Supabase's mix:** TypeScript (58%), Elixir (14%), Go (12%), Shell (8%)"
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 4185,
+                "input_tokens": 676,
+                "output_tokens": 65,
+                "cost_usd": 0.002132,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "APvvcj2ruFnVaQxw"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "APvvcj2ruFnVaQxw"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 4642,
+                "p95": 6563,
+                "p99": 6563,
+                "mean": 5137
+              },
+              "cost_usd": {
+                "total": 0.015922,
+                "mean": 0.0031843999999999996,
+                "per_1k_evals": 3.1843999999999997
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 4,
+                "rate": 0.8
+              }
+            }
+          },
+          {
+            "config_file": "config-openai.ts",
+            "provider": "openai",
+            "model": "gpt-5.4-mini",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 4553,
+                "input_tokens": 602,
+                "output_tokens": 16,
+                "cost_usd": 0.0005235,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_Bw2BAPldb4jmlzcqsmiAnBDa"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_Bw2BAPldb4jmlzcqsmiAnBDa"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
+                "response": "Supabase’s most-starred repo is **`supabase`** with about **76,000 stars**, and it’s primarily written in **TypeScript**.",
+                "turns": 2,
+                "latency_ms": 3326,
+                "input_tokens": 586,
+                "output_tokens": 37,
+                "cost_usd": 0.000606,
+                "error": null,
+                "answer_extracted": "Supabase’s most-starred repo is **`supabase`** with about **76,000 stars**, and it’s primarily written in **TypeScript**.",
+                "answer_correct": false,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_wq3AKYaQoVNWTFSX0y2zjAO9"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_wq3AKYaQoVNWTFSX0y2zjAO9"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Supabase’s most-starred repo is **`supabase`** with about **76,000 stars**, and it’s primarily written in **TypeScript**."
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 2440,
+                "input_tokens": 556,
+                "output_tokens": 7,
+                "cost_usd": 0.0004485,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "call_xPPibDk8JTsW6tmIDZ6MLBHg"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "call_xPPibDk8JTsW6tmIDZ6MLBHg"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.  \n\nCommon language: **TypeScript**.",
+                "turns": 2,
+                "latency_ms": 33766,
+                "input_tokens": 775,
+                "output_tokens": 49,
+                "cost_usd": 0.00080175,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_PJAq6qbm9cJDLKdzqWbavlnm"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_tjsc1ptvDaVqxpKdiExETyVu"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_PJAq6qbm9cJDLKdzqWbavlnm"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_tjsc1ptvDaVqxpKdiExETyVu"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel top languages: TypeScript, JavaScript, Rust, Go, Other.  \nSupabase top languages: TypeScript, Elixir, Go, Shell, Other.  \n\nCommon language: **TypeScript**."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 3360,
+                "input_tokens": 489,
+                "output_tokens": 6,
+                "cost_usd": 0.00039375,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "call_C8ErUDVmHJnUZq8JNr72NBOe"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "call_C8ErUDVmHJnUZq8JNr72NBOe"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 3360,
+                "p95": 33766,
+                "p99": 33766,
+                "mean": 9489
+              },
+              "cost_usd": {
+                "total": 0.0027735,
+                "mean": 0.0005547,
+                "per_1k_evals": 0.5547
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 4,
+                "rate": 0.8
+              }
+            }
+          },
+          {
+            "config_file": "config-xai.ts",
+            "provider": "xai",
+            "model": "grok-4",
+            "systemPrompt": "You are an autonomous research assistant with three tools:\n  · github_lookup — look up a GitHub org (metadata, top repos, language mix)\n  · linkedin_enrich — look up a LinkedIn profile slug\n  · web_fetch — fetch and extract visible text from any https:// URL\n\nUse tools as needed to answer the user precisely and concisely.\nIf a tool returns a structured error (an object with an `error` field),\nread the error text — it may suggest a fallback tool — and act accordingly.\nKeep final answers short: when the user specifies a format, follow it exactly.",
+            "temperature": 0,
+            "maxOutputTokens": 800,
+            "results": [
+              {
+                "id": "tb-001",
+                "prompt": "Use github_lookup to find out the top 3 repos by star count for the Vercel GitHub org. Return them as: 'Top repos: repo1, repo2, repo3'.",
+                "response": "Top repos: next.js, swr, turborepo",
+                "turns": 2,
+                "latency_ms": 15675,
+                "input_tokens": 1657,
+                "output_tokens": 601,
+                "cost_usd": 0.00692,
+                "error": null,
+                "answer_extracted": "Top repos: next.js, swr, turborepo",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_02729694"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_02729694"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Top repos: next.js, swr, turborepo"
+                  }
+                ]
+              },
+              {
+                "id": "tb-002",
+                "prompt": "What is Supabase's most-starred repo on GitHub, and in what language is it primarily written? Use github_lookup.",
+                "response": "Supabase's most-starred GitHub repo is `supabase` (76,000 stars), primarily written in TypeScript.",
+                "turns": 2,
+                "latency_ms": 17265,
+                "input_tokens": 2179,
+                "output_tokens": 259,
+                "cost_usd": 0.005912,
+                "error": null,
+                "answer_extracted": "Supabase's most-starred GitHub repo is `supabase` (76,000 stars), primarily written in TypeScript.",
+                "answer_correct": false,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_65859932"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_65859932"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Supabase's most-starred GitHub repo is `supabase` (76,000 stars), primarily written in TypeScript."
+                  }
+                ]
+              },
+              {
+                "id": "tb-003",
+                "prompt": "Use linkedin_enrich to look up the profile 'guillermo-rauch' and tell me which company he leads. If the tool isn't available, fall back to web_fetch with 'https://linkedin.com/in/guillermo-rauch'. Answer with just the company name.",
+                "response": "Vercel",
+                "turns": 2,
+                "latency_ms": 9865,
+                "input_tokens": 1637,
+                "output_tokens": 104,
+                "cost_usd": 0.003898,
+                "error": null,
+                "answer_extracted": "Vercel",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "input": {
+                      "profile_slug": "guillermo-rauch"
+                    },
+                    "id": "call_36088286"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "linkedin_enrich",
+                    "output": {
+                      "full_name": "Guillermo Rauch",
+                      "headline": "CEO at Vercel",
+                      "location": "San Francisco, California",
+                      "company": "Vercel",
+                      "company_title": "CEO",
+                      "summary": "Founder and CEO of Vercel. Creator of Next.js, Socket.IO, Mongoose. Argentine engineer now in SF.",
+                      "source": "mock"
+                    },
+                    "id": "call_36088286"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Vercel"
+                  }
+                ]
+              },
+              {
+                "id": "tb-004",
+                "prompt": "Compare the top-languages used by the Vercel and Supabase GitHub orgs. Use github_lookup for both, then name one language that appears in the top-language mix of both orgs.",
+                "response": "### Comparison of Top Languages\n\n**Vercel** (by % usage): TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n\n**Supabase** (by % usage): TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\nOne language in both: TypeScript.",
+                "turns": 2,
+                "latency_ms": 9754,
+                "input_tokens": 1876,
+                "output_tokens": 341,
+                "cost_usd": 0.005798,
+                "error": null,
+                "answer_extracted": "TypeScript",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "vercel"
+                    },
+                    "id": "call_57834088"
+                  },
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "input": {
+                      "org": "supabase"
+                    },
+                    "id": "call_43527803"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Vercel",
+                      "description": "Frontend cloud for building and deploying web apps.",
+                      "public_repos": 208,
+                      "top_repos": [
+                        {
+                          "name": "next.js",
+                          "stars": 124000,
+                          "language": "JavaScript"
+                        },
+                        {
+                          "name": "ai",
+                          "stars": 12400,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "swr",
+                          "stars": 31000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "turborepo",
+                          "stars": 27200,
+                          "language": "Rust"
+                        },
+                        {
+                          "name": "satori",
+                          "stars": 11500,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 62,
+                        "JavaScript": 22,
+                        "Rust": 9,
+                        "Go": 4,
+                        "Other": 3
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_57834088"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "github_lookup",
+                    "output": {
+                      "name": "Supabase",
+                      "description": "The open source Firebase alternative — Postgres-first.",
+                      "public_repos": 180,
+                      "top_repos": [
+                        {
+                          "name": "supabase",
+                          "stars": 76000,
+                          "language": "TypeScript"
+                        },
+                        {
+                          "name": "realtime",
+                          "stars": 7300,
+                          "language": "Elixir"
+                        },
+                        {
+                          "name": "postgres",
+                          "stars": 3600,
+                          "language": "Shell"
+                        },
+                        {
+                          "name": "gotrue",
+                          "stars": 3400,
+                          "language": "Go"
+                        },
+                        {
+                          "name": "storage-api",
+                          "stars": 1300,
+                          "language": "TypeScript"
+                        }
+                      ],
+                      "language_mix": {
+                        "TypeScript": 58,
+                        "Elixir": 14,
+                        "Go": 12,
+                        "Shell": 8,
+                        "Other": 8
+                      },
+                      "source": "mock"
+                    },
+                    "id": "call_43527803"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "### Comparison of Top Languages\n\n**Vercel** (by % usage): TypeScript (62%), JavaScript (22%), Rust (9%), Go (4%), Other (3%).\n\n**Supabase** (by % usage): TypeScript (58%), Elixir (14%), Go (12%), Shell (8%), Other (8%).\n\nOne language in both: TypeScript."
+                  }
+                ]
+              },
+              {
+                "id": "tb-005",
+                "prompt": "Fetch https://example.com and return the page title exactly as written.",
+                "response": "Example Domain",
+                "turns": 2,
+                "latency_ms": 6418,
+                "input_tokens": 1588,
+                "output_tokens": 109,
+                "cost_usd": 0.00383,
+                "error": null,
+                "answer_extracted": "Example Domain",
+                "answer_correct": true,
+                "trace": [
+                  {
+                    "type": "tool_call",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "input": {
+                      "url": "https://example.com"
+                    },
+                    "id": "call_43100577"
+                  },
+                  {
+                    "type": "tool_result",
+                    "step": 0,
+                    "name": "web_fetch",
+                    "output": {
+                      "title": "Example Domain",
+                      "text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                      "url": "https://example.com",
+                      "source": "mock"
+                    },
+                    "id": "call_43100577"
+                  },
+                  {
+                    "type": "assistant_text",
+                    "step": 1,
+                    "text": "Example Domain"
+                  }
+                ]
+              }
+            ],
+            "aggregate": {
+              "n": 5,
+              "n_success": 5,
+              "n_error": 0,
+              "latency_ms": {
+                "p50": 9865,
+                "p95": 17265,
+                "p99": 17265,
+                "mean": 11795
+              },
+              "cost_usd": {
+                "total": 0.026358,
+                "mean": 0.0052715999999999996,
+                "per_1k_evals": 5.271599999999999
+              },
+              "turns": {
+                "mean": 2,
+                "max": 2
+              },
+              "answer_accuracy": {
+                "graded": 5,
+                "correct": 4,
+                "rate": 0.8
+              }
+            }
+          }
+        ],
+        "leaderboard": {
+          "latency_p50_ms": [
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 3360
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 3798
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 4642
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "value": 9865
+            }
+          ],
+          "latency_p95_ms": [
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 6563
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 7431
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "value": 17265
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 33766
+            }
+          ],
+          "cost_per_1k_evals_usd": [
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 0.5547
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 3.1843999999999997
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "value": 5.271599999999999
+            },
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 5.3256
+            }
+          ],
+          "success_rate": [
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "value": 1
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "value": 1
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "value": 1
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "value": 1
+            }
+          ]
+        }
+      },
+      "history": [
+        {
+          "comparison_id": "comparison_2026-04-19T02-20-25-391Z",
+          "started_at": "2026-04-19T02:19:26.411Z",
+          "completed_at": "2026-04-19T02:20:25.391Z",
+          "runs": [
+            {
+              "provider": "anthropic",
+              "model": "claude-sonnet-4-6",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3798,
+                  "p95": 7431,
+                  "p99": 7431,
+                  "mean": 4506
+                },
+                "cost_usd": {
+                  "total": 0.026628,
+                  "mean": 0.0053256,
+                  "per_1k_evals": 5.3256
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 4,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "google",
+              "model": "gemini-3.1-pro-preview",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 4642,
+                  "p95": 6563,
+                  "p99": 6563,
+                  "mean": 5137
+                },
+                "cost_usd": {
+                  "total": 0.015922,
+                  "mean": 0.0031843999999999996,
+                  "per_1k_evals": 3.1843999999999997
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 4,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "openai",
+              "model": "gpt-5.4-mini",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 3360,
+                  "p95": 33766,
+                  "p99": 33766,
+                  "mean": 9489
+                },
+                "cost_usd": {
+                  "total": 0.0027735,
+                  "mean": 0.0005547,
+                  "per_1k_evals": 0.5547
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 4,
+                  "rate": 0.8
+                }
+              }
+            },
+            {
+              "provider": "xai",
+              "model": "grok-4",
+              "aggregate": {
+                "n": 5,
+                "n_success": 5,
+                "n_error": 0,
+                "latency_ms": {
+                  "p50": 9865,
+                  "p95": 17265,
+                  "p99": 17265,
+                  "mean": 11795
+                },
+                "cost_usd": {
+                  "total": 0.026358,
+                  "mean": 0.0052715999999999996,
+                  "per_1k_evals": 5.271599999999999
+                },
+                "turns": {
+                  "mean": 2,
+                  "max": 2
+                },
+                "answer_accuracy": {
+                  "graded": 5,
+                  "correct": 4,
+                  "rate": 0.8
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "source_path": "skills/custom-model-bench/examples/tool-bench/runs/comparison_2026-04-19T02-20-25-391Z.json"
     }
   ]
 };

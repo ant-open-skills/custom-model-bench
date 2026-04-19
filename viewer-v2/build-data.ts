@@ -27,6 +27,7 @@ const SCOPES: Scope[] = [
   { id: "google",    label: "Google tiers",      kind: "intra", provider: "google",          dir: "skills/custom-model-bench/examples/google-tiers" },
   { id: "xai",       label: "xAI tiers",         kind: "intra", provider: "xai",             dir: "skills/custom-model-bench/examples/xai-tiers" },
   { id: "reasoning", label: "Reasoning bench",   kind: "flagship",                           dir: "skills/custom-model-bench/examples/reasoning" },
+  { id: "tool-bench", label: "Tool bench",       kind: "flagship",                           dir: "skills/custom-model-bench/examples/tool-bench" },
 ];
 
 async function comparisonFilesByMtime(runsDir: string): Promise<{ p: string; m: number }[]> {

@@ -116,13 +116,21 @@
   function tierBadge(tier) {
     return `<span class="tier-badge ${tier}">${tier}</span>`;
   }
-  function modelLabel(model, provider) {
+  // Small secondary badge shown when a candidate runs under a non-default
+  // runtime (e.g. "cagent-sdk"). Helps distinguish rows that share the same
+  // provider/model string but run through a different adapter.
+  function runtimeBadge(runtime) {
+    if (!runtime || runtime === "vercel") return "";
+    return `<span class="runtime-badge ${esc(runtime)}" title="Runtime: ${esc(runtime)}">${esc(runtime)}</span>`;
+  }
+  function modelLabel(model, provider, runtime) {
     const tier = modelTier(model);
     return `
       <div class="model-line">
         ${providerDot(provider)}
         <span class="model-name">${esc(modelDisplay(model))}</span>
         ${tierBadge(tier)}
+        ${runtimeBadge(runtime)}
       </div>
       <div class="model-provider">${esc(PROVIDER_LABEL[provider] || provider)} · <span class="mono">${esc(model)}</span></div>
     `;
@@ -171,7 +179,7 @@
     PROVIDER_COLORS, PROVIDER_LABEL, MODEL_TIER, MODEL_DISPLAY,
     modelDisplay, modelTier,
     esc, fmtMs, fmtCost1k, fmtRate, fmtTs,
-    providerDot, tierBadge, modelLabel, fitBar,
+    providerDot, tierBadge, runtimeBadge, modelLabel, fitBar,
     columnExtremes, cellCls, datasetBasename,
   };
 })();

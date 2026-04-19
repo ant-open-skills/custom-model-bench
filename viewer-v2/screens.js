@@ -202,11 +202,15 @@
         p50: r.aggregate.latency_ms.p50,
         p95: r.aggregate.latency_ms.p95,
         per1k: r.aggregate.cost_usd.per_1k_evals,
+        perTask: r.aggregate.cost_usd.per_successful_task ?? null,
         success: r.aggregate.n_success / r.aggregate.n,
         accuracy: r.aggregate.answer_accuracy?.rate ?? null,
       };
     });
     const hasAccuracy = enriched.some(r => r.accuracy != null);
+    // Only surface the $/task column on agentic scopes. For single-turn
+    // scopes per_successful_task ≈ mean cost, which duplicates $/1k.
+    const hasPerTask = scope.kind === "agentic" && enriched.some(r => r.perTask != null);
 
     const sorted = [...enriched].sort((a, b) => {
       const dir = SEL.sort.asc ? 1 : -1;
@@ -215,7 +219,7 @@
 
     const extremes = UI.columnExtremes(enriched, {
       p50: r => r.p50, p95: r => r.p95, per1k: r => r.per1k, success: r => r.success,
-      accuracy: r => r.accuracy,
+      accuracy: r => r.accuracy, perTask: r => r.perTask,
     });
 
     const uc = Fit.USECASES[SEL.usecase];
@@ -237,7 +241,8 @@
     const sortClass = (key, isNum) =>
       (SEL.sort.key === key ? `sort ${SEL.sort.asc ? "asc" : ""}` : "") + (isNum ? " num" : "");
 
-    const colspan = hasAccuracy ? 9 : 8;
+    const colspan = 8 + (hasAccuracy ? 1 : 0) + (hasPerTask ? 1 : 0);
+    const fmtPerTask = (v) => v == null ? "—" : `$${v.toFixed(v < 0.1 ? 4 : 3)}`;
     const tbody = sorted.length === 0
       ? `<tr><td colspan="${colspan}" style="text-align:center; padding:40px; color:var(--ink-3); font-style:italic; font-family:var(--serif);">No candidates match these filters.</td></tr>`
       : sorted.map((r, i) => {
@@ -250,11 +255,14 @@
           return `
           <tr data-cfg="${UI.esc(r.config_file)}" style="${rowStyle}">
             <td class="rank ${i === 0 ? "top" : ""}">${i + 1}</td>
-            <td class="model-cell">${UI.modelLabel(r.model, r.provider)}</td>
+            <td class="model-cell">${UI.modelLabel(r.model, r.provider, r.runtime)}</td>
             <td class="fit-cell">${UI.fitBar(r.fit, r.model)}</td>
             <td class="${UI.cellCls(r.p50, "p50", extremes, true)}">${UI.fmtMs(r.p50)}</td>
             <td class="${UI.cellCls(r.p95, "p95", extremes, true)}">${UI.fmtMs(r.p95)}</td>
             <td class="${UI.cellCls(r.per1k, "per1k", extremes, true)}">${UI.fmtCost1k(r.per1k)}</td>
+            ${hasPerTask
+              ? `<td class="${UI.cellCls(r.perTask, "perTask", extremes, true)}">${fmtPerTask(r.perTask)}</td>`
+              : ""}
             <td class="${UI.cellCls(r.success, "success", extremes, false)}">${UI.fmtRate(r.success)}</td>
             ${hasAccuracy
               ? `<td class="${UI.cellCls(r.accuracy, "accuracy", extremes, false)}">${r.accuracy != null ? UI.fmtRate(r.accuracy) : "—"}</td>`
@@ -310,6 +318,9 @@
                   <th class="${sortClass("p50", true)}" data-sort="p50" title="Median latency">p50 lat.</th>
                   <th class="${sortClass("p95", true)}" data-sort="p95" title="Tail latency">p95 lat.</th>
                   <th class="${sortClass("per1k", true)}" data-sort="per1k" title="Cost per 1000 evals">$/1k</th>
+                  ${hasPerTask
+                    ? `<th class="${sortClass("perTask", true)}" data-sort="perTask" title="Cost per successful task — total spend ÷ completed tasks (penalises models that waste tokens on failures)">$/task</th>`
+                    : ""}
                   <th class="${sortClass("success", true)}" data-sort="success" title="Success rate">Success</th>
                   ${hasAccuracy
                     ? `<th class="${sortClass("accuracy", true)}" data-sort="accuracy" title="Exact-match accuracy against ground-truth answers">Accuracy</th>`
@@ -410,7 +421,7 @@
       return `
         <div class="candidate">
           <div class="candidate-head">
-            ${UI.modelLabel(run.model, run.provider)}
+            ${UI.modelLabel(run.model, run.provider, run.runtime)}
             <span>${verdict}</span>
           </div>
           <div class="${bodyClass}">${bodyText}</div>

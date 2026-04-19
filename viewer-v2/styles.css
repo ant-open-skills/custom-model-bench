@@ -439,6 +439,27 @@ table.board-table {
 .tier-badge.balanced { color: var(--tier-balanced); }
 .tier-badge.fast     { color: var(--tier-fast); }
 
+.runtime-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  background: var(--paper-2);
+  color: var(--ink-2);
+  border: 1px dashed var(--ink-4);
+  vertical-align: 1px;
+}
+.runtime-badge.cagent-sdk {
+  background: color-mix(in srgb, var(--accent, #b45f06) 10%, transparent);
+  color: var(--accent, #b45f06);
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--accent, #b45f06) 40%, transparent);
+}
+
 .num-cell {
   font-family: var(--mono);
   font-size: 12px;

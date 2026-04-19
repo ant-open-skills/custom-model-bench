@@ -21,16 +21,16 @@ const REPO_ROOT = resolve(HERE, "..");
 type Scope = {
   id: string;
   label: string;
-  kind: "flagship" | "intra";
+  kind: "flagship" | "intra" | "agentic";
   provider?: "anthropic" | "openai" | "google" | "xai";
   dir: string;
 };
 
 const SCOPES: Scope[] = [
-  { id: "flagship",     label: "Speed bench",           kind: "flagship", dir: "skills/custom-model-bench/examples/demo" },
-  { id: "reasoning",    label: "Reasoning bench",       kind: "flagship", dir: "skills/custom-model-bench/examples/reasoning" },
-  { id: "tool-bench",   label: "Tool bench",            kind: "flagship", dir: "skills/custom-model-bench/examples/tool-bench" },
-  { id: "yc-qualifier", label: "YC prospect qualifier", kind: "flagship", dir: "skills/custom-model-bench/examples/yc-qualifier" },
+  { id: "flagship",     label: "Speed bench",        kind: "flagship", dir: "skills/custom-model-bench/examples/demo" },
+  { id: "reasoning",    label: "Reasoning bench",    kind: "flagship", dir: "skills/custom-model-bench/examples/reasoning" },
+  { id: "tool-bench",   label: "Tool bench",         kind: "flagship", dir: "skills/custom-model-bench/examples/tool-bench" },
+  { id: "yc-qualifier", label: "Prospect qualifier", kind: "agentic",  dir: "skills/custom-model-bench/examples/yc-qualifier" },
 ];
 
 async function comparisonFilesByMtime(runsDir: string): Promise<{ p: string; m: number }[]> {

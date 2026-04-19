@@ -8,6 +8,14 @@
   const UI = window.BENCH_UI;
   const Fit = window.FitScore;
 
+  // Which npm script reruns each scope? Shown on the Runs empty-state.
+  const RERUN_CMD = {
+    "flagship":     "bun bench:compare",
+    "reasoning":    "bun bench:reasoning",
+    "tool-bench":   "bun bench:tools",
+    "yc-qualifier": "bun bench:yc-qualifier",
+  };
+
   // ---------- Selection state ----------
   const SEL = {
     suite: localStorage.getItem("cmbv2_suite") || (B.scopes[0] && B.scopes[0].id),
@@ -94,15 +102,22 @@
 
   // ---------- Sidebar (shared across screens) ----------
   function sidebarHtml() {
+    // Render categories in this order; only show the ones that have members.
+    const CAT_ORDER = ["Cross-provider", "Agentic workflows", "Provider tiers"];
+    const CAT_FOR_KIND = {
+      flagship: "Cross-provider",
+      agentic:  "Agentic workflows",
+      intra:    "Provider tiers",
+    };
     const byCat = {};
     for (const s of B.scopes) {
-      const cat = s.kind === "flagship" ? "Cross-provider" : "Provider tiers";
+      const cat = CAT_FOR_KIND[s.kind] || "Cross-provider";
       (byCat[cat] ||= []).push(s);
     }
-    const groups = Object.entries(byCat).map(([cat, scopes]) => `
+    const groups = CAT_ORDER.filter(c => byCat[c]).map(cat => `
       <div class="side-group">
-        <h4>${UI.esc(cat)} <span class="count">${scopes.length}</span></h4>
-        ${scopes.map(s => `
+        <h4>${UI.esc(cat)} <span class="count">${byCat[cat].length}</span></h4>
+        ${byCat[cat].map(s => `
           <div class="side-item ${s.id === SEL.suite ? "active" : ""}" data-suite="${s.id}">
             <span class="label"><span>${UI.esc(s.label)}</span></span>
             <span class="count">${s.comparison.n_candidates}</span>
@@ -110,17 +125,7 @@
         `).join("")}
       </div>
     `).join("");
-
-    // Agentic workflows category (reserved for Phase C+)
-    const reserved = `
-      <div class="side-group">
-        <h4>Agentic workflows <span class="count">soon</span></h4>
-        <div class="side-item" style="opacity:.5; cursor:default;">
-          <span class="label"><span>YC prospect qualifier</span></span>
-          <span class="count">v2</span>
-        </div>
-      </div>
-    `;
+    const reserved = ""; // Agentic workflows now has a real scope entry.
 
     // Filter chips
     const providers = ["anthropic", "openai", "google", "xai"];
@@ -642,9 +647,7 @@
         `;
       }).join("");
 
-      const rerunCmd = scope.kind === "flagship"
-        ? (scope.id === "reasoning" ? "bun bench:reasoning" : "bun bench:compare")
-        : `bun bench:tiers:${scope.id}`;
+      const rerunCmd = RERUN_CMD[scope.id] || "bun bench:compare";
 
       return `
         <div class="main">
@@ -780,9 +783,7 @@ bun viewer-v2:build</pre>
       </div>
     `).join("");
 
-    const rerunCmd = scope.kind === "flagship"
-      ? (scope.id === "reasoning" ? "bun bench:reasoning" : "bun bench:compare")
-      : `bun bench:tiers:${scope.id}`;
+    const rerunCmd = RERUN_CMD[scope.id] || "bun bench:compare";
 
     const firstTs = history[0].completed_at || history[0].started_at;
     const lastTs = history[history.length - 1].completed_at || history[history.length - 1].started_at;

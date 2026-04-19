@@ -13045,8 +13045,8 @@ window.__BENCH = {
     },
     {
       "id": "yc-qualifier",
-      "label": "YC prospect qualifier",
-      "kind": "flagship",
+      "label": "Prospect qualifier",
+      "kind": "agentic",
       "provider": null,
       "comparison": {
         "comparison_id": "comparison_2026-04-19T05-22-58-984Z",

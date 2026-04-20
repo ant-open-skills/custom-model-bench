@@ -67,7 +67,7 @@ Tell the user:
 
 > Scope `<name>` ready — `<N>` candidates wired, `<M>`-row dataset in place, system prompt at `<path>`. Run it now? (yes / show-me-the-files / edit-first)
 
-If yes: invoke `/bench-run <scope-name>`, then on completion auto-suggest `/bench-view`.
+If yes: invoke `/custom-model-bench:bench-run <scope-name>`, then on completion auto-suggest `/custom-model-bench:bench-view`.
 
 After the user has seen the results (or skipped the run), enter the SKILL's "what next?" loop and offer one contextual next step (add a model, tweak the prompt, add edge cases, etc.).
 

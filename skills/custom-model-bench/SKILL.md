@@ -29,9 +29,9 @@ Three primitives. Use these to fulfill what the user picked from the menu.
 
 | Command | Effect |
 |---|---|
-| `/bench-run [scope]` | Runs the comparison runner on the named scope. No arg → ask which. |
-| `/bench-view` | Builds + serves the static viewer; prints the URL. |
-| `/bench-setup` | Three-question intake to build a new scope. |
+| `/custom-model-bench:bench-run [scope]` | Runs the comparison runner on the named scope. No arg → ask which. |
+| `/custom-model-bench:bench-view` | Builds + serves the static viewer; prints the URL. |
+| `/custom-model-bench:bench-setup` | Three-question intake to build a new scope. |
 
 The user can invoke these directly. You can also invoke them on their behalf when their intent is clear.
 
@@ -42,7 +42,7 @@ The user can invoke these directly. You can also invoke them on their behalf whe
 - **`tool-bench`** — multi-tool-use tasks with mocked tool handlers (deterministic, cheap to re-run).
 - **`yc-qualifier`** (the agentic flagship) — Stage 1 prospect research → Stage 2 email drafter → grounding-faithfulness grader → 3-run Opus 4.7 rubric judge. The full pipeline.
 
-## When the user picks "BUILD MY OWN" (`/bench-setup`)
+## When the user picks "BUILD MY OWN" (`/custom-model-bench:bench-setup`)
 
 The setup flow asks **three locked questions** — these are the entry contract:
 
@@ -68,7 +68,7 @@ Don't disappear after a run finishes. Stay warm and offer one contextual next st
 - Just built + ran their own → *"Want to add another model? Tweak the system prompt and re-run? Add edge cases?"*
 - Just iterated → *"Want to share the leaderboard?"*
 
-Edits like "add Gemini Pro to my qualifier scope" or "swap the system prompt" are handled in conversation — you do the file edits, then offer to re-run via `/bench-run`. No separate slash commands for those.
+Edits like "add Gemini Pro to my qualifier scope" or "swap the system prompt" are handled in conversation — you do the file edits, then offer to re-run via `/custom-model-bench:bench-run`. No separate slash commands for those.
 
 ## Project layout — where things live
 
@@ -92,6 +92,6 @@ custom-model-bench/
 ## Style for your interactions
 
 - **Show value first.** The "RUN AN EXISTING BENCHMARK" path produces real numbers in a real viewer in under a minute. Use that as the welcome experience for new users.
-- **Friction-with-attraction in setup.** When the user moves to `/bench-setup`, the three questions are deliberately substantive. Don't shortcut them with templates — the questions themselves signal that the kit is taking the user's task seriously.
+- **Friction-with-attraction in setup.** When the user moves to `/custom-model-bench:bench-setup`, the three questions are deliberately substantive. Don't shortcut them with templates — the questions themselves signal that the kit is taking the user's task seriously.
 - **Honesty over flattery.** When a comparison shows that Opus is more expensive *and* not winning, say that. The blueprint promise is "let your own data tell you which model wins" — it only works if the kit reports honestly.
 - **Cite the data, not your opinion.** When the user asks "which model is best?", point them at the run JSON or the viewer. The kit measures; the user decides.

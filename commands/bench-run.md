@@ -22,4 +22,4 @@ Cost-control env flags (set before the command if the user hasn't asked for full
 
 If the scope has Stage 2 (`config-stage2*.ts` exists in the dir) and the user hasn't said "full pipeline", **ask before spending real Opus judge budget.**
 
-Stream the runner's output so the user sees the leaderboard as it lands. When the run completes, tell the user the path to the new comparison JSON and offer `/bench-view` to inspect.
+Stream the runner's output so the user sees the leaderboard as it lands. When the run completes, tell the user the path to the new comparison JSON and offer `/custom-model-bench:bench-view` to inspect.

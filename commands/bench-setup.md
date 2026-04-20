@@ -4,6 +4,10 @@ description: Build a new benchmark scope tailored to the user's task. Three-ques
 
 Build a new benchmark scope from scratch, tailored to what the user is actually working on. Take the user through a deliberate intake — friction-with-attraction, not a template wizard. The questions themselves should signal that the kit is taking their task seriously.
 
+All file operations below write into `${CLAUDE_PLUGIN_ROOT}/skills/custom-model-bench/examples/<scope-name>/`. That's where the plugin is installed, regardless of the user's current working directory.
+
+**Dependency check first.** If `${CLAUDE_PLUGIN_ROOT}/node_modules/` does not exist, run `cd "${CLAUDE_PLUGIN_ROOT}" && bun install` before proceeding with scaffolding. One-time setup, ~30s.
+
 ## The four intake questions
 
 Ask **one at a time**, in order. Wait for the user's answer before moving to the next. Do not batch them.
@@ -54,7 +58,7 @@ Estimated cost per generation: ~$0.05.
 
 ## Scaffold the scope
 
-Once you have a valid dataset + system prompt + provider list, write these files into `skills/custom-model-bench/examples/<scope-name>/`:
+Once you have a valid dataset + system prompt + provider list, write these files into `${CLAUDE_PLUGIN_ROOT}/skills/custom-model-bench/examples/<scope-name>/`:
 
 - `dataset.jsonl` — the validated or generated dataset
 - `system-prompt.md` — from Q1 (or user's paste)

@@ -12,37 +12,62 @@ All file operations below write into `${CLAUDE_PLUGIN_ROOT}/skills/custom-model-
 
 Ask **one at a time**, in order. Wait for the user's answer before moving to the next. Do not batch them.
 
-1. **What are you building?**
-   Free text, 1–3 sentences. Capture the task domain — what does the agent do, who's it for, what shape of input does it take. Use the answer to derive the scope name (slugified, ≤30 chars; let the user override) and to seed the system prompt.
+Q2, Q3, and Q4 are multi-choice with multi-select — use the `AskUserQuestion` tool for those so the user gets the arrow-nav / space-to-toggle picker instead of typing option names. Q1 is open-ended and stays free-text.
 
-2. **What do you care about?**
-   Multi-choice — they pick one:
-   - speed (latency-sensitive — the user is waiting in a UI)
-   - cost (high-volume — every dollar counts)
-   - reliability (won't ship if it fails sometimes)
-   - balanced (no strong preference)
-   - free text — "tell me what matters most"
+### Q1 — What are you building?
 
-   Map this to the viewer's fit-score profile so the leaderboard is sorted by what the user actually cares about. Also use it to pick which metrics get headlined later.
+Free text, 1–3 sentences. Capture the task domain — what does the agent do, who's it for, what shape of input does it take. Use the answer to derive the scope name (slugified, ≤30 chars; let the user override) and to seed the system prompt.
 
-3. **What do you already have?**
-   Multi-choice:
-   - I have a dataset (file path, or paste the JSONL)
-   - I have a system prompt (paste it)
-   - I have nothing yet — generate it for me
-   - I have all of the above
+### Q2 — What do you care about?
 
-   This branches the rest of the flow:
+Invoke `AskUserQuestion` with:
 
-   - **has dataset** → validate (must be JSONL with at least `id` + `prompt` per row; other fields optional). On validation failure, surface the issue and offer to fix or regenerate.
-   - **has prompt only** → kick the dataset-synth sub-flow (below), seeded with their prompt.
-   - **has nothing** → kick the dataset-synth sub-flow, seeded with Q1 + Q2.
-   - **has all** → use both, validate the dataset, use their prompt verbatim.
+- `question`: `"What do you care about?"`
+- `header`: `"Priorities"`
+- `multiSelect`: `true`
+- `options`:
+  - `{ label: "Speed", description: "Latency-sensitive — the user is waiting in a UI" }`
+  - `{ label: "Cost", description: "High-volume — every dollar counts" }`
+  - `{ label: "Reliability", description: "Won't ship if it fails sometimes" }`
+  - `{ label: "Balanced", description: "No strong preference" }`
 
-4. **Which providers do you want to compare?**
-   Multi-select: Anthropic / OpenAI / Google / xAI. Default Anthropic only. Tell the user the default is conservative — the demo scopes use all 12, but for their own benchmark we keep it lean unless they pick more.
+The `AskUserQuestion` tool automatically offers an "Other" free-text option — don't add one yourself. The user can pick multiple (e.g. Speed + Reliability) because real founders have more than one priority; map the combination to the viewer's fit-score profile, lexicographically prioritizing the first non-Balanced pick.
 
-## Dataset-synth sub-flow (only if Q3 = "I have nothing" or "prompt only")
+### Q3 — What do you already have?
+
+Invoke `AskUserQuestion` with:
+
+- `question`: `"What do you already have?"`
+- `header`: `"Starting kit"`
+- `multiSelect`: `true`
+- `options`:
+  - `{ label: "A dataset", description: "JSONL file path, or paste the contents after selecting" }`
+  - `{ label: "A system prompt", description: "You'll paste it after selecting" }`
+  - `{ label: "Nothing yet", description: "Claude generates a starter dataset from a conversation" }`
+
+After the picker returns, handle the combination:
+
+- **dataset only** → prompt for the file path or pasted JSONL, then validate (must be JSONL with at least `id` + `prompt` per row; other fields optional). On validation failure, surface the issue and offer to fix or regenerate.
+- **prompt only** → prompt for the pasted prompt text, then kick the dataset-synth sub-flow (below), seeded with their prompt.
+- **dataset + prompt** → gather both, validate the dataset, use their prompt verbatim.
+- **nothing** (whether alone or selected alongside others — treat as dominant if alone, otherwise ignore) → kick the dataset-synth sub-flow, seeded with Q1 + Q2.
+
+### Q4 — Which providers do you want to compare?
+
+Invoke `AskUserQuestion` with:
+
+- `question`: `"Which providers do you want to compare?"`
+- `header`: `"Providers"`
+- `multiSelect`: `true`
+- `options`:
+  - `{ label: "Anthropic", description: "Claude Haiku 4.5, Sonnet 4.6, Opus 4.7" }`
+  - `{ label: "OpenAI", description: "GPT-5.4 nano / mini / full" }`
+  - `{ label: "Google", description: "Gemini 3.1 Flash Lite / Flash / Pro" }`
+  - `{ label: "xAI", description: "Grok 4.1 Fast / 4.20 non-reasoning / 4.20 reasoning" }`
+
+Default to Anthropic-only if the user picks nothing. Tell them the default is conservative — the demo scopes use all 12, but for their own benchmark we keep it lean unless they pick more.
+
+## Dataset-synth sub-flow (only if Q3 includes "Nothing yet", or selected "A system prompt" without "A dataset")
 
 This is the brainstorming part. Ask **3–5 follow-up questions** tailored to their Q1 answer — not a fixed list. The goal: collect enough material to generate a real, idiosyncratic dataset, not a stock template. Suggested:
 

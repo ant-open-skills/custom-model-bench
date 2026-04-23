@@ -12,7 +12,9 @@ All file operations below write into `${CLAUDE_PLUGIN_ROOT}/skills/custom-model-
 
 Ask **one at a time**, in order. Wait for the user's answer before moving to the next. Do not batch them.
 
-Q2, Q3, and Q4 are multi-choice with multi-select — use the `AskUserQuestion` tool for those so the user gets the arrow-nav / space-to-toggle picker instead of typing option names. Q1 is open-ended and stays free-text.
+**CRITICAL — how to ask Q2, Q3, and Q4:** You MUST call the `AskUserQuestion` tool for each of Q2, Q3, and Q4. Do NOT write the options out as a text message, markdown bullet list, or numbered list. Do NOT paraphrase the options into prose. The interactive picker UI (arrow-key nav, space to toggle, auto "Other" field) is the whole point of this flow — falling back to text bullets defeats it. If you find yourself about to type "pick one:" or "options:" in a chat message for Q2/Q3/Q4, stop and call `AskUserQuestion` instead.
+
+Q1 is the only free-text question.
 
 ### Q1 — What are you building?
 
@@ -20,7 +22,7 @@ Free text, 1–3 sentences. Capture the task domain — what does the agent do, 
 
 ### Q2 — What do you care about?
 
-Invoke `AskUserQuestion` with:
+Call `AskUserQuestion` now (not as a text message — as a tool call) with these exact parameters:
 
 - `question`: `"What do you care about?"`
 - `header`: `"Priorities"`
@@ -35,7 +37,7 @@ The `AskUserQuestion` tool automatically offers an "Other" free-text option — 
 
 ### Q3 — What do you already have?
 
-Invoke `AskUserQuestion` with:
+Call `AskUserQuestion` now (not as a text message — as a tool call) with these exact parameters:
 
 - `question`: `"What do you already have?"`
 - `header`: `"Starting kit"`
@@ -55,7 +57,7 @@ These four options are genuinely mutually exclusive paths through the rest of th
 
 ### Q4 — Which providers do you want to compare?
 
-Invoke `AskUserQuestion` with:
+Call `AskUserQuestion` now (not as a text message — as a tool call) with these exact parameters:
 
 - `question`: `"Which providers do you want to compare?"`
 - `header`: `"Providers"`
@@ -107,3 +109,4 @@ After the user has seen the results (or skipped the run), enter the SKILL's "wha
 - Don't paraphrase the questions. The wording is deliberate — Hendrik's video script uses the exact phrasing.
 - Don't moralize about cost or model choice. Surface tradeoffs, let the user decide.
 - If the user pastes garbage instead of an answer, ask once for clarification, then move on with a sensible default if they refuse.
+- For Q2/Q3/Q4 the picker is non-negotiable. Never render those options as chat-message bullets — always use the `AskUserQuestion` tool. If the tool is genuinely unavailable in your environment, say so explicitly before falling back to text; don't silently downgrade the UX.

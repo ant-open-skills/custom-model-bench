@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Bench · v3 — which model should I ship?</title>
+
+  <template id="__bundler_thumbnail" data-bg-color="#f2ede4">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#f2ede4"/>
+      <!-- Frontier sketch -->
+      <g transform="translate(300,180)">
+        <line x1="0" y1="420" x2="600" y2="420" stroke="#b4a697" stroke-width="2"/>
+        <line x1="0" y1="0" x2="0" y2="420" stroke="#b4a697" stroke-width="2"/>
+        <path d="M 50 380 Q 150 260 280 180 T 560 60" stroke="#b95c3a" stroke-width="4" fill="none" stroke-dasharray="8 6"/>
+        <circle cx="80" cy="360" r="16" fill="#b95c3a"/>
+        <circle cx="180" cy="260" r="22" fill="#b95c3a"/>
+        <circle cx="300" cy="190" r="19" fill="#b95c3a"/>
+        <circle cx="440" cy="120" r="14" fill="#b95c3a"/>
+        <circle cx="240" cy="340" r="10" fill="#c9bba8" opacity="0.5"/>
+        <circle cx="380" cy="300" r="12" fill="#c9bba8" opacity="0.5"/>
+      </g>
+      <text x="600" y="720" text-anchor="middle" font-family="Georgia, serif" font-size="44" font-style="italic" fill="#4a4036">the frontier</text>
+    </svg>
+  </template>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-v3.css">
+  <link rel="stylesheet" href="styles-phase-de.css">
+</head>
+<body data-theme="light" data-density="default" data-accent="terracotta">
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name">The Bench</span>
+      <span class="sub">v3 · preview</span>
+    </div>
+
+    <nav class="topnav">
+      <button data-route="frontier" class="active">Frontier</button>
+      <button data-route="trace-diff">Trace diff</button>
+      <button data-route="behavior">Behavior</button>
+      <button data-route="leaderboard">Leaderboard</button>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">◐</button>
+    <button class="icon-btn" id="tweaksBtn" title="Tweaks">tweaks</button>
+    <button class="icon-btn" id="docBtn" title="Design doc">design doc</button>
+  </header>
+
+  <div id="shell" class="shell"></div>
+</div>
+
+<!-- Tweaks drawer -->
+<aside class="tweaks-drawer" id="tweaks" aria-label="Tweaks">
+  <div class="tweaks-head">
+    <div class="title">Tweaks</div>
+    <button class="icon-btn" onclick="document.getElementById('tweaks').classList.remove('show')">close</button>
+  </div>
+  <div class="tweaks-body">
+    <div class="tweak-group">
+      <div class="lbl">Theme</div>
+      <div class="seg" data-key="theme">
+        <button data-val="light">Light</button>
+        <button data-val="dark">Dark</button>
+      </div>
+    </div>
+    <div class="tweak-group">
+      <div class="lbl">Density</div>
+      <div class="seg" data-key="density">
+        <button data-val="compact">Compact</button>
+        <button data-val="default">Default</button>
+        <button data-val="comfy">Comfy</button>
+      </div>
+    </div>
+    <div class="tweak-group">
+      <div class="lbl">Accent</div>
+      <div class="swatch-row">
+        <div class="swatch" data-accent="terracotta" style="background: oklch(62% 0.13 38);" title="Terracotta"></div>
+        <div class="swatch" data-accent="plum"       style="background: oklch(62% 0.13 330);" title="Plum"></div>
+        <div class="swatch" data-accent="teal"       style="background: oklch(62% 0.13 175);" title="Teal"></div>
+        <div class="swatch" data-accent="indigo"     style="background: oklch(62% 0.13 260);" title="Indigo"></div>
+        <div class="swatch" data-accent="moss"       style="background: oklch(62% 0.13 140);" title="Moss"></div>
+        <div class="swatch" data-accent="amber"      style="background: oklch(62% 0.13 70);"  title="Amber"></div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- Design doc drawer -->
+<aside class="doc" id="doc" aria-label="Design doc">
+  <button class="doc-close" id="docClose">close ✕</button>
+  <h2>The Bench · v3</h2>
+  <div class="subtitle">founder-facing · preview</div>
+
+  <h3>Thesis</h3>
+  <p>v2 gave you a sortable leaderboard. v3 answers a sharper question: <em>"Which model should I ship for my product?"</em> Not "which benchmark winner?" — Opus tops math benchmarks and still makes for a bad, expensive support agent. The Frontier chart shows only the models that aren't dominated on your personal trade-off; everything else is hidden as noise.</p>
+
+  <h3>Three screens</h3>
+  <ul>
+    <li><strong>Frontier</strong> — cost × latency × reliability. Move the persona slider, watch non-dominated models survive. The answer to "which?"</li>
+    <li><strong>Trace diff</strong> — same prompt × N candidates in a stacked column view, tool calls inlined. The answer to "why?"</li>
+    <li><strong>Behavior</strong> — per-candidate turns / tokens / tool mix. Surfaces the Sonnet-Agent-SDK vs Sonnet-AI-SDK verbosity gap (9 turns, 3234 tokens vs 4 turns, 772 tokens). Same model, different harness — wildly different runs.</li>
+  </ul>
+
+  <h3>Quality axis — honest</h3>
+  <p>Today "quality" = JSON-validity / success-rate. Labeled as such everywhere. A <code>quality_rubric</code> slot is reserved in the fit weights; when the backend ships rubric grading, the frontier chart upgrades without redesign.</p>
+
+  <h3>What this replaces</h3>
+  <p>If v3 earns its keep, it replaces v2 entirely. If not, v2 is untouched and we revert cleanly.</p>
+</aside>
+
+<script src="data.js"></script>
+<script src="agentic-enrich.js"></script>
+<script src="fit.js"></script>
+<script src="components.js"></script>
+<script src="frontier.js"></script>
+<script src="trace-diff.js"></script>
+<script src="behavior.js"></script>
+<script src="leaderboard-v3.js"></script>
+<script src="workflow-diagram.js"></script>
+<script src="stage2-drilldown.js"></script>
+<script src="app-v3.js"></script>
+
+</body>
+</html>

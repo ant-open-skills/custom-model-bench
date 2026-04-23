@@ -280,6 +280,45 @@
   color: var(--ink-3);
   margin-top: 2px;
 }
+.v3-axis-pickers {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 10px 12px;
+  margin: 8px 0 10px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper-2, rgba(0,0,0,0.02));
+}
+.v3-axis-row {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.v3-axis-lbl {
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.1em;
+  min-width: 46px;
+}
+.v3-axis-chip {
+  background: none; border: 1px solid var(--rule);
+  border-radius: 999px; padding: 3px 10px;
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.v3-axis-chip:hover { border-color: var(--ink-3); }
+.v3-axis-chip.active {
+  background: var(--accent, #b95c3a); border-color: transparent;
+  color: white;
+}
+.v3-axis-reset-row { margin-top: 2px; }
+.v3-axis-reset {
+  background: none; border: none;
+  font-family: var(--mono); font-size: 10px;
+  color: var(--ink-3);
+  cursor: pointer;
+  text-decoration: underline dotted;
+  padding: 0;
+}
+.v3-axis-reset:hover { color: var(--ink-2); }
+
 .v3-chart-toolbar {
   display: flex; justify-content: space-between; align-items: center;
   gap: 12px; margin-bottom: 8px; flex-wrap: wrap;

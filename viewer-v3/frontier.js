@@ -29,13 +29,24 @@
   // defines "less is better" (cost/latency) vs "more is better" (success). Dot
   // size is always success rate regardless of which two axes are on screen.
   const AXIS_DIMS = {
-    cost:    { dim: "cost",    label: "Cost per 1k runs",  shortLabel: "Cost",         tick: "cost", lessIsBetter: true,  min: 0.01, max: 200 },
-    lat50:   { dim: "p50",     label: "p50 latency",       shortLabel: "p50 latency",  tick: "lat",  lessIsBetter: true,  min: 100,  max: 120000 },
-    lat95:   { dim: "p95",     label: "p95 latency",       shortLabel: "p95 latency",  tick: "lat",  lessIsBetter: true,  min: 100,  max: 120000 },
-    success: { dim: "success", label: "Reliability",       shortLabel: "Reliability",  tick: "pct",  lessIsBetter: false, min: 0,    max: 1 },
+    cost:            { dim: "cost",            label: "Cost per 1k runs",      shortLabel: "Cost",       tick: "cost",  lessIsBetter: true,  min: 0.01, max: 200 },
+    lat50:           { dim: "p50",             label: "p50 latency",           shortLabel: "p50 lat.",   tick: "lat",   lessIsBetter: true,  min: 100,  max: 120000 },
+    lat95:           { dim: "p95",             label: "p95 latency",           shortLabel: "p95 lat.",   tick: "lat",   lessIsBetter: true,  min: 100,  max: 120000 },
+    success:         { dim: "success",         label: "Run reliability",       shortLabel: "Reliability", tick: "pct",  lessIsBetter: false, min: 0,    max: 1 },
+    quality:         { dim: "quality",         label: "Judge quality (1–5)",   shortLabel: "Quality",    tick: "judge", lessIsBetter: false, min: 3.5,  max: 5.0 },
+    recovery:        { dim: "recovery",        label: "Recovery rate",         shortLabel: "Recovery",   tick: "pct",   lessIsBetter: false, min: 0,    max: 1 },
+    task_completion: { dim: "task_completion", label: "Task completion rate",  shortLabel: "Task ✓",     tick: "pct",   lessIsBetter: false, min: 0,    max: 1 },
   };
 
   const PERSONAS = [
+    {
+      id: "premium-agent",
+      label: "Premium agent",
+      blurb: "High-stakes per task — drives revenue, contracts, compliance. Can't ship a cheap one that fabricates or bails when a tool fails.",
+      weights: { lat50: 0.07, lat95: 0.03, cost: 0.10, success: 0.10, quality: 0.30, recovery: 0.25, task_completion: 0.15 },
+      axes: { x: "cost", y: "quality" },
+      axesTagline: "",
+    },
     {
       id: "support-agent",
       label: "Customer support agent",
@@ -84,14 +95,19 @@
 
   const SEL = {
     suite:   localStorage.getItem("cmbv3_suite")   || (B.scopes[0] && B.scopes[0].id),
-    persona: localStorage.getItem("cmbv3_persona") || "support-agent",
+    persona: localStorage.getItem("cmbv3_persona") || "premium-agent",
     runtime: localStorage.getItem("cmbv3_runtime") || "all",
+    // Axis overrides — null means "use the persona's default axes".
+    axisX:   localStorage.getItem("cmbv3_axis_x") || null,
+    axisY:   localStorage.getItem("cmbv3_axis_y") || null,
     hiddenProviders: new Set(JSON.parse(localStorage.getItem("cmbv3_hiddenProv") || "[]")),
   };
   function persist() {
     localStorage.setItem("cmbv3_suite", SEL.suite);
     localStorage.setItem("cmbv3_persona", SEL.persona);
     localStorage.setItem("cmbv3_runtime", SEL.runtime);
+    if (SEL.axisX) localStorage.setItem("cmbv3_axis_x", SEL.axisX); else localStorage.removeItem("cmbv3_axis_x");
+    if (SEL.axisY) localStorage.setItem("cmbv3_axis_y", SEL.axisY); else localStorage.removeItem("cmbv3_axis_y");
     localStorage.setItem("cmbv3_hiddenProv", JSON.stringify([...SEL.hiddenProviders]));
   }
   function currentScope() {
@@ -110,26 +126,36 @@
       const p50 = a.latency_ms?.p50;
       const p95 = a.latency_ms?.p95;
       const cost = a.cost_usd?.per_1k_evals;
+      // Agentic-scope dims. Null when the scope doesn't emit them — the axis
+      // filter below drops candidates missing the active axis value.
+      const quality = a.stage2?.judge?.overall_mean ?? null;
+      const recovery = a.recovery_rate?.rate ?? null;
+      const tc = a.task_completion;
+      const task_completion = typeof tc === "number" ? tc : (tc?.rate ?? null);
       const { fit, sub } = Fit.compute(a, /* we'll redo with persona weights */ "balanced");
       return {
         idx: i,
         provider: r.provider,
         model: r.model,
         runtime: r.runtime || "",
-        success, p50, p95, cost, a,
-        fit, sub,
+        success, p50, p95, cost,
+        quality, recovery, task_completion,
+        a, fit, sub,
       };
     }).filter(c => c.cost != null && c.p50 != null);
   }
 
   // Recompute fit against persona weights (client-side).
   function fitWith(candidate, weights) {
+    const a = candidate.a || {};
     const sub = {
-      lat50:   Fit.normLat(candidate.p50),
-      lat95:   Fit.normLat(candidate.p95, 300, 5000),
-      cost:    Fit.normCost(candidate.cost),
-      success: Fit.normSuccess(candidate.success),
-      quality: 0,
+      lat50:            Fit.normLat(candidate.p50),
+      lat95:            Fit.normLat(candidate.p95, 300, 5000),
+      cost:             Fit.normCost(candidate.cost),
+      success:          Fit.normSuccess(candidate.success),
+      quality:          Fit.normQuality(a),
+      recovery:         Fit.normRecovery(a),
+      task_completion:  Fit.normTaskCompletion(a),
     };
     let total = 0, wsum = 0;
     for (const k of Object.keys(weights)) {
@@ -206,10 +232,14 @@
   function tickLabelPct(v) {
     return `${Math.round(v * 100)}%`;
   }
+  function tickLabelJudge(v) {
+    return v.toFixed(2);
+  }
   function formatTick(kind, v) {
-    if (kind === "cost") return tickLabelCost(v);
-    if (kind === "lat")  return tickLabelLat(v);
-    if (kind === "pct")  return tickLabelPct(v);
+    if (kind === "cost")  return tickLabelCost(v);
+    if (kind === "lat")   return tickLabelLat(v);
+    if (kind === "pct")   return tickLabelPct(v);
+    if (kind === "judge") return tickLabelJudge(v);
     return String(v);
   }
   // Linear nice-ticks for the success/reliability axis (0–1 range)
@@ -228,8 +258,13 @@
   function render() {
     const scope = currentScope();
     const persona = currentPersona();
-    const xAxis = AXIS_DIMS[persona.axes.x];
-    const yAxis = AXIS_DIMS[persona.axes.y];
+    // Axis overrides live in SEL; if the user hasn't picked, fall back to the
+    // persona's defaults. This lets the chart react to persona changes while
+    // still honoring an explicit user pick for this scope.
+    const xKey = (SEL.axisX && AXIS_DIMS[SEL.axisX]) ? SEL.axisX : persona.axes.x;
+    const yKey = (SEL.axisY && AXIS_DIMS[SEL.axisY]) ? SEL.axisY : persona.axes.y;
+    const xAxis = AXIS_DIMS[xKey];
+    const yAxis = AXIS_DIMS[yKey];
     const allCands = buildCandidates(scope);
     // Runtime filter
     const runtimes = [...new Set(allCands.map(c => c.runtime || ""))].sort();
@@ -254,14 +289,22 @@
     // linear for the 0–1 reliability axis.
     function buildScale(axis, range) {
       const vals = shown.map(c => c[axis.dim]).filter(v => v != null);
-      if (axis.tick === "pct") {
-        const [lo, hi] = vals.length ? linearExtent(vals) : [0, 1];
-        const ticks = linearTicks(lo, hi, 5);
+      // Linear scale for pct (0–1) and judge (1–5) dims.
+      if (axis.tick === "pct" || axis.tick === "judge") {
+        // Pct uses data-derived extent; judge uses axis config min/max so the
+        // 1–5 scale stays comparable across comparisons.
+        let lo, hi, ticks;
+        if (axis.tick === "pct") {
+          [lo, hi] = vals.length ? linearExtent(vals) : [0, 1];
+          ticks = linearTicks(lo, hi, 5);
+        } else {
+          lo = axis.min; hi = axis.max;
+          ticks = linearTicks(lo, hi, 4); // 3.5 / 4.0 / 4.5 / 5.0
+        }
         const scale = v => range[0] + (v - lo) / (hi - lo || 1) * (range[1] - range[0]);
-        // Y axes are drawn "better at top" — for less-is-better that means low values at top,
-        // for more-is-better (success) that means high values at top. We invert when needed.
         return { lo, hi, ticks, scale };
       }
+      // Log scale for cost / latency (span orders of magnitude).
       const [lo, hi] = vals.length ? axisExtent(vals) : [axis.min, axis.max];
       const ticks = niceTicks(lo, hi);
       const scale = v => range[0] + (log10(v) - log10(lo)) / (log10(hi) - log10(lo)) * (range[1] - range[0]);
@@ -312,11 +355,13 @@
 
     // Weight bars (shows what the persona actually does)
     const wKeys = [
-      { k: "lat50",   l: "latency (p50)" },
-      { k: "lat95",   l: "latency (p95)" },
-      { k: "cost",    l: "cost / 1k runs" },
-      { k: "success", l: "reliability · validity" },
-      { k: "quality", l: "quality (rubric)", reserved: true },
+      { k: "lat50",           l: "latency (p50)" },
+      { k: "lat95",           l: "latency (p95)" },
+      { k: "cost",            l: "cost / 1k runs" },
+      { k: "success",         l: "run reliability" },
+      { k: "quality",         l: "judge quality (1–5)" },
+      { k: "recovery",        l: "recovery rate" },
+      { k: "task_completion", l: "task completion" },
     ];
     const weightsHtml = wKeys.map(({ k, l, reserved }) => {
       const w = persona.weights[k] || 0;
@@ -485,18 +530,40 @@
             <div class="v3-weights">${weightsHtml}</div>
 
             <div class="v3-honesty">
-              <strong>On "quality":</strong> today this is JSON-validity / task-success-rate from real runs. A full rubric score is reserved and will drop in without redesign when the backend ships grading.
+              <strong>On "quality":</strong> the 1–5 score is the mean of a 3-run Opus 4.7 rubric judge across four dimensions (grounding / specificity / relevance / CTA). Recovery and task-completion come from the same real runs. Agentic-only — simple scopes score 0 on those dims.
             </div>
           </aside>
 
           <!-- Middle: chart -->
           <div class="v3-col-chart">
             <div class="v3-chart-head">
-              <div class="v3-chart-title">Cost × Latency × Reliability</div>
+              <div class="v3-chart-title">${UI.esc(xAxis.shortLabel)} × ${UI.esc(yAxis.shortLabel)}</div>
               <div class="v3-chart-sub">
-                <span>x: cost per 1k runs (log) · y: p50 latency (log) · dot size: success rate</span>
+                <span>x: ${UI.esc(xAxis.label)} (${xAxis.tick === "cost" || xAxis.tick === "lat" ? "log" : "linear"}) · y: ${UI.esc(yAxis.label)} (${yAxis.tick === "cost" || yAxis.tick === "lat" ? "log" : "linear"}) · dot size: success rate</span>
               </div>
             </div>
+
+            <!-- Axis pickers: swap what's on X and Y without switching persona -->
+            <div class="v3-axis-pickers">
+              <div class="v3-axis-row">
+                <span class="v3-axis-lbl">X axis</span>
+                ${Object.entries(AXIS_DIMS).map(([k, a]) => `
+                  <button class="v3-axis-chip ${k === xKey ? "active" : ""}" data-axis="x" data-key="${k}" title="${UI.esc(a.label)}">${UI.esc(a.shortLabel)}</button>
+                `).join("")}
+              </div>
+              <div class="v3-axis-row">
+                <span class="v3-axis-lbl">Y axis</span>
+                ${Object.entries(AXIS_DIMS).map(([k, a]) => `
+                  <button class="v3-axis-chip ${k === yKey ? "active" : ""}" data-axis="y" data-key="${k}" title="${UI.esc(a.label)}">${UI.esc(a.shortLabel)}</button>
+                `).join("")}
+              </div>
+              ${(SEL.axisX || SEL.axisY) ? `
+                <div class="v3-axis-reset-row">
+                  <button class="v3-axis-reset" id="v3-axis-reset">reset to persona defaults (${UI.esc(AXIS_DIMS[persona.axes.x].shortLabel)} × ${UI.esc(AXIS_DIMS[persona.axes.y].shortLabel)})</button>
+                </div>
+              ` : ""}
+            </div>
+
             <div class="v3-chart-toolbar">
               <div class="v3-legends">${legendHtml}</div>
               ${runtimeFilter}
@@ -543,9 +610,31 @@
     document.querySelectorAll(".v3-persona").forEach(el => {
       el.addEventListener("click", () => {
         SEL.persona = el.dataset.persona;
+        // Switching personas resets any axis override so the new persona's
+        // defaults take effect. The user can re-pick after if they want.
+        SEL.axisX = null;
+        SEL.axisY = null;
         persist();
         window.__APP.render();
       });
+    });
+    // Axis pickers: swap x/y dims without changing persona/weights.
+    document.querySelectorAll(".v3-axis-chip").forEach(el => {
+      el.addEventListener("click", () => {
+        const axis = el.dataset.axis;
+        const key = el.dataset.key;
+        if (axis === "x") SEL.axisX = key;
+        else if (axis === "y") SEL.axisY = key;
+        persist();
+        window.__APP.render();
+      });
+    });
+    const reset = document.getElementById("v3-axis-reset");
+    if (reset) reset.addEventListener("click", () => {
+      SEL.axisX = null;
+      SEL.axisY = null;
+      persist();
+      window.__APP.render();
     });
     document.querySelectorAll(".v3-suite").forEach(el => {
       el.addEventListener("click", () => {

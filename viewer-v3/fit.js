@@ -79,11 +79,15 @@
   function compute(aggregate, usecaseId = "balanced") {
     const uc = USECASES[usecaseId] || USECASES.balanced;
     const sub = {
-      lat50:   normLat(aggregate.latency_ms?.p50),
-      lat95:   normLat(aggregate.latency_ms?.p95, 300, 5000),
-      cost:    normCost(aggregate.cost_usd?.per_1k_evals),
-      success: normSuccess(aggregate.n_success / aggregate.n),
-      quality: 0,
+      lat50:            normLat(aggregate.latency_ms?.p50),
+      lat95:            normLat(aggregate.latency_ms?.p95, 300, 5000),
+      cost:             normCost(aggregate.cost_usd?.per_1k_evals),
+      success:          normSuccess(aggregate.n_success / aggregate.n),
+      // Agentic-scope sub-scores. 0 when the scope doesn't emit them —
+      // existing USECASES give them weight 0, so backward-compat holds.
+      quality:          normQuality(aggregate),
+      recovery:         normRecovery(aggregate),
+      task_completion:  normTaskCompletion(aggregate),
     };
     let total = 0, wsum = 0;
     for (const k of Object.keys(uc.weights)) {
@@ -94,5 +98,9 @@
     return { fit, sub, weights: uc.weights };
   }
 
-  window.FitScore = { compute, USECASES, normLat, normCost, normSuccess };
+  window.FitScore = {
+    compute, USECASES,
+    normLat, normCost, normSuccess,
+    normQuality, normRecovery, normTaskCompletion,
+  };
 })();

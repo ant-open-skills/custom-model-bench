@@ -278,6 +278,17 @@
     const xAxis = AXIS_DIMS[xKey];
     const yAxis = AXIS_DIMS[yKey];
     const allCands = buildCandidates(scope);
+    // Which models appear under more than one runtime in this scope? Only
+    // those get a runtime bracket on their chart label — keeps the label
+    // noise down for scopes where each model only runs under one runtime.
+    const modelRuntimes = {};
+    for (const c of allCands) {
+      if (!c.model) continue;
+      (modelRuntimes[c.model] = modelRuntimes[c.model] || new Set()).add(c.runtime || "default");
+    }
+    const dupModels = new Set(
+      Object.entries(modelRuntimes).filter(([, rts]) => rts.size > 1).map(([m]) => m)
+    );
     // Runtime filter
     const runtimes = [...new Set(allCands.map(c => c.runtime || ""))].sort();
     const cands = SEL.runtime === "all"
@@ -423,12 +434,20 @@
       ? `M ${frontier.map(c => `${xScale(c[xAxis.dim]).toFixed(1)} ${yScale(c[yAxis.dim]).toFixed(1)}`).join(" L ")}`
       : "";
 
+    // Turn a raw runtime id into a friendlier label for chart/tooltip badges.
+    function rtLabel(runtime) {
+      if (runtime === "vercel") return "AI-SDK";
+      if (runtime === "cagent-sdk") return "CAgent";
+      return runtime || "";
+    }
     // Dots
     const dots = shown.filter(c => c[xAxis.dim] != null && c[yAxis.dim] != null).map(c => {
       const color = UI.PROVIDER_COLORS[c.provider] || "#888";
       const dom = dominated.has(c);
       const x = xScale(c[xAxis.dim]), y = yScale(c[yAxis.dim]), r = rDot(c.success);
-      const display = UI.modelDisplay(c.model) + (c.runtime && c.runtime !== "vercel" ? ` · ${c.runtime}` : "");
+      const rt = rtLabel(c.runtime);
+      const showRt = dupModels.has(c.model) && rt;
+      const display = UI.modelDisplay(c.model) + (showRt ? ` · ${rt}` : "");
       return `
         <g class="v3-dot ${dom ? "dominated" : "frontier"}"
            data-idx="${c.idx}"
@@ -448,7 +467,7 @@
            }))}'>
           <circle cx="${x}" cy="${y}" r="${r + 4}" fill="${color}" opacity="0.12" class="halo"/>
           <circle cx="${x}" cy="${y}" r="${r}" fill="${color}" class="core"/>
-          ${!dom ? `<text x="${x + r + 6}" y="${y + 4}" class="v3-dot-label">${UI.esc(UI.modelDisplay(c.model))}</text>` : ""}
+          ${!dom ? `<text x="${x + r + 6}" y="${y + 4}" class="v3-dot-label">${UI.esc(UI.modelDisplay(c.model))}${showRt ? ` <tspan class="v3-dot-rt">(${UI.esc(rt)})</tspan>` : ""}</text>` : ""}
         </g>
       `;
     }).join("");
@@ -487,7 +506,7 @@
           <div class="rr-model">
             ${UI.providerDot(c.provider)}
             <div class="rr-name">${UI.esc(UI.modelDisplay(c.model))}</div>
-            ${c.runtime && c.runtime !== "vercel" ? `<div class="rr-rt">· ${UI.esc(c.runtime)}</div>` : ""}
+            ${dupModels.has(c.model) && rtLabel(c.runtime) ? `<div class="rr-rt">· ${UI.esc(rtLabel(c.runtime))}</div>` : ""}
           </div>
           <div class="rr-stats">
             <span>${tickLabelCost(c.cost)}</span>
@@ -517,7 +536,7 @@
           <div class="v3-rec-v">
             ${UI.providerDot(top.provider)}
             <span class="rec-name">${UI.esc(UI.modelDisplay(top.model))}</span>
-            ${top.runtime && top.runtime !== "vercel" ? `<span class="rec-rt">on ${UI.esc(top.runtime)}</span>` : ""}
+            ${dupModels.has(top.model) && rtLabel(top.runtime) ? `<span class="rec-rt">on ${UI.esc(rtLabel(top.runtime))}</span>` : ""}
           </div>
           <div class="v3-rec-why">
             ${strong

@@ -39,18 +39,19 @@ Invoke `AskUserQuestion` with:
 
 - `question`: `"What do you already have?"`
 - `header`: `"Starting kit"`
-- `multiSelect`: `true`
+- `multiSelect`: `false`
 - `options`:
   - `{ label: "A dataset", description: "JSONL file path, or paste the contents after selecting" }`
-  - `{ label: "A system prompt", description: "You'll paste it after selecting" }`
+  - `{ label: "A system prompt", description: "Evaluate your existing prompt — we'll synth a dataset around it" }`
   - `{ label: "Nothing yet", description: "Claude generates a starter dataset from a conversation" }`
+  - `{ label: "Demo first", description: "Skip setup, run one of the shipped example scopes instead" }`
 
-After the picker returns, handle the combination:
+These four options are genuinely mutually exclusive paths through the rest of the flow — that's why this question is single-select (unlike Q2 and Q4). After the picker returns, branch:
 
-- **dataset only** → prompt for the file path or pasted JSONL, then validate (must be JSONL with at least `id` + `prompt` per row; other fields optional). On validation failure, surface the issue and offer to fix or regenerate.
-- **prompt only** → prompt for the pasted prompt text, then kick the dataset-synth sub-flow (below), seeded with their prompt.
-- **dataset + prompt** → gather both, validate the dataset, use their prompt verbatim.
-- **nothing** (whether alone or selected alongside others — treat as dominant if alone, otherwise ignore) → kick the dataset-synth sub-flow, seeded with Q1 + Q2.
+- **A dataset** → prompt for the file path or pasted JSONL, then validate (must be JSONL with at least `id` + `prompt` per row; other fields optional). On validation failure, surface the issue and offer to fix or regenerate. System prompt is derived from Q1.
+- **A system prompt** → prompt for the pasted prompt text, then kick the dataset-synth sub-flow (below), seeded with their prompt. The user gets to evaluate the prompt they already wrote — not a synthesized one.
+- **Nothing yet** → kick the dataset-synth sub-flow, seeded with Q1 + Q2. System prompt is derived from Q1.
+- **Demo first** → do not scaffold a new scope. Tell the user: "Run `/custom-model-bench:bench-run yc-qualifier:mock` for the flagship agentic scope (mocked tools, ~30s, free), or `/custom-model-bench:bench-run reasoning` for a pure reasoning benchmark. Come back to `/custom-model-bench:bench-setup` when you're ready to wire up your own." Exit the setup flow.
 
 ### Q4 — Which providers do you want to compare?
 
@@ -67,7 +68,7 @@ Invoke `AskUserQuestion` with:
 
 Default to Anthropic-only if the user picks nothing. Tell them the default is conservative — the demo scopes use all 12, but for their own benchmark we keep it lean unless they pick more.
 
-## Dataset-synth sub-flow (only if Q3 includes "Nothing yet", or selected "A system prompt" without "A dataset")
+## Dataset-synth sub-flow (only if Q3 == "Nothing yet" or Q3 == "A system prompt")
 
 This is the brainstorming part. Ask **3–5 follow-up questions** tailored to their Q1 answer — not a fixed list. The goal: collect enough material to generate a real, idiosyncratic dataset, not a stock template. Suggested:
 

@@ -44,19 +44,23 @@ The user can invoke these directly. You can also invoke them on their behalf whe
 
 ## When the user picks "BUILD MY OWN" (`/custom-model-bench:bench-setup`)
 
-The setup flow asks **three locked questions** — these are the entry contract:
+The setup flow asks **four locked questions** — these are the entry contract.
 
-1. *What are you building?* (1-3 sentences — the task)
-2. *What do you care about?* (multi-choice: speed / cost / reliability / balanced — maps to the viewer's fit-score profile)
-3. *What do you already have?* (have-a-dataset / have-a-prompt / have-nothing / have-all)
+**CRITICAL — how to ask Q2, Q3, and Q4:** You MUST call the `AskUserQuestion` tool for each of these. Do NOT write the options as a text message, bullet list, or numbered list. Do NOT paraphrase the options into prose. The interactive picker (arrow-nav + space-to-toggle + automatic "Other" field) is the whole point of the flow; rendering bullets defeats it. Q1 is the only free-text question.
 
-Plus a fourth provider-picker question: *Which providers do you want to compare? (Anthropic / OpenAI / Google / xAI — pick any subset, default Anthropic only.)*
+1. *What are you building?* (1-3 sentences — free text, derive the scope name from the answer)
+2. *What do you care about?* → `AskUserQuestion`, `multiSelect: true`, options: Speed / Cost / Reliability / Balanced
+3. *What do you already have?* → `AskUserQuestion`, `multiSelect: false`, options: A dataset / A system prompt / Nothing yet / Demo first
+4. *Which providers do you want to compare?* → `AskUserQuestion`, `multiSelect: true`, options: Anthropic / OpenAI / Google / xAI (default Anthropic only)
 
-Then branch:
+The full option descriptions, parameters, and branching logic live in `commands/bench-setup.md`. Consult it for the exact `AskUserQuestion` call shape before asking each question.
 
-- **Has a dataset** → validate (JSONL with `id` + `prompt`) → scaffold the scope → run.
-- **Has a prompt only** → kick the dataset-synth sub-flow seeded with their prompt.
-- **Has nothing** → kick the dataset-synth sub-flow seeded with Q1+Q2.
+Branch on Q3:
+
+- **A dataset** → prompt for file path or pasted JSONL, validate (`id` + `prompt` required per row), scaffold the scope, run.
+- **A system prompt** → prompt for pasted prompt text, kick the dataset-synth sub-flow seeded with their prompt.
+- **Nothing yet** → kick the dataset-synth sub-flow seeded with Q1 + Q2.
+- **Demo first** → exit setup; tell the user to run `/custom-model-bench:bench-run yc-qualifier:mock` or `/custom-model-bench:bench-run reasoning` to see the kit working, and come back when ready.
 
 The dataset-synth sub-flow is brainstorming-style — 3-5 follow-up questions tailored to Q1, then one Sonnet 4.6 call generates ~10-15 synthetic test rows. The user reviews and can regenerate.
 

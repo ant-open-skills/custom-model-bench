@@ -242,6 +242,18 @@
     if (kind === "judge") return tickLabelJudge(v);
     return String(v);
   }
+  // Nice ticks for the judge (1–5) axis: snap to 0.1 or 0.25 step depending
+  // on how wide the range is. Always produces 4–6 ticks that cover [lo, hi].
+  function niceJudgeTicks(lo, hi) {
+    const span = hi - lo;
+    const step = span <= 0.5 ? 0.1 : span <= 1.2 ? 0.25 : 0.5;
+    const first = Math.ceil(lo / step) * step;
+    const out = [];
+    for (let v = first; v <= hi + 1e-6; v += step) {
+      out.push(Math.round(v * 100) / 100); // kill float drift
+    }
+    return out;
+  }
   // Linear nice-ticks for the success/reliability axis (0–1 range)
   function linearTicks(lo, hi, n = 5) {
     const out = [];
@@ -291,15 +303,32 @@
       const vals = shown.map(c => c[axis.dim]).filter(v => v != null);
       // Linear scale for pct (0–1) and judge (1–5) dims.
       if (axis.tick === "pct" || axis.tick === "judge") {
-        // Pct uses data-derived extent; judge uses axis config min/max so the
-        // 1–5 scale stays comparable across comparisons.
         let lo, hi, ticks;
         if (axis.tick === "pct") {
           [lo, hi] = vals.length ? linearExtent(vals) : [0, 1];
           ticks = linearTicks(lo, hi, 5);
         } else {
-          lo = axis.min; hi = axis.max;
-          ticks = linearTicks(lo, hi, 4); // 3.5 / 4.0 / 4.5 / 5.0
+          // Judge: data-driven with ~0.1 padding; clamped so the band
+          // never collapses below ~0.5 wide (prevents a degenerate scale
+          // when all values cluster tight). Axis.min/max act as absolute
+          // floors and ceilings.
+          if (vals.length) {
+            const dataLo = Math.min(...vals);
+            const dataHi = Math.max(...vals);
+            let lLo = dataLo - 0.1;
+            let lHi = dataHi + 0.1;
+            const minSpan = 0.5;
+            if (lHi - lLo < minSpan) {
+              const mid = (lHi + lLo) / 2;
+              lLo = mid - minSpan / 2;
+              lHi = mid + minSpan / 2;
+            }
+            lo = Math.max(axis.min, lLo);
+            hi = Math.min(axis.max, lHi);
+          } else {
+            lo = axis.min; hi = axis.max;
+          }
+          ticks = niceJudgeTicks(lo, hi);
         }
         const scale = v => range[0] + (v - lo) / (hi - lo || 1) * (range[1] - range[0]);
         return { lo, hi, ticks, scale };

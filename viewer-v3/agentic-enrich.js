@@ -199,6 +199,14 @@
   function round2(v) { return Math.round(v * 100) / 100; }
 
   function enrichRun(scope, run) {
+    // Real backend data shipped in Phase E.4 — judge.overall_mean is the
+    // tell-tale. If present, the run already carries real task_completion,
+    // recovery_rate, judge, and grounding fields; don't overwrite them with
+    // seeded synthetic values. This keeps the synth layer as a fallback for
+    // any future scope declared kind:"agentic" that doesn't emit the Phase E
+    // shapes yet.
+    if (run?.aggregate?.stage2?.judge?.overall_mean != null) return;
+
     const bias = modelBias(run.model) + runtimeBias(run.runtime || "");
     const rngAgg = makeRng(`agg|${scope.id}|${run.config_file || run.model}|${run.runtime || ""}`);
 

@@ -32,6 +32,26 @@
     if (r >= 0.95) return 80 + (r - 0.95) / 0.05 * 20;
     return Math.max(0, (r - 0.5) / 0.45 * 80);
   }
+  // Agentic-scope sub-scores. Return 0 when the aggregate doesn't carry the
+  // field, so non-agentic candidates score 0 on these dims — which is fine
+  // because agentic-aware personas are only meaningful on agentic scopes.
+  function normQuality(aggregate) {
+    const m = aggregate?.stage2?.judge?.overall_mean;
+    if (m == null) return 0;
+    return Math.max(0, Math.min(100, (m / 5) * 100));
+  }
+  function normRecovery(aggregate) {
+    const r = aggregate?.recovery_rate?.rate;
+    if (r == null) return 0;
+    return Math.max(0, Math.min(100, r * 100));
+  }
+  function normTaskCompletion(aggregate) {
+    // Emitted as either a scalar (yc-qualifier) or { rate } depending on scope.
+    const v = aggregate?.task_completion;
+    const r = typeof v === "number" ? v : v?.rate;
+    if (r == null) return 0;
+    return Math.max(0, Math.min(100, r * 100));
+  }
 
   const USECASES = {
     balanced: {

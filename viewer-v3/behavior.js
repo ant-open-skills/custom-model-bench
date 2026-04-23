@@ -186,8 +186,8 @@
     const deepS = aTight ? bS : bTight ? aS : null;
 
     const line = tight
-      ? `Same model (<strong>${UI.esc(UI.modelDisplay(a.model))}</strong>), two harnesses. The <code>${UI.esc(tight.runtime || "default")}</code> run is tighter — <strong>${tightS.meanTurns.toFixed(1)} turns</strong> / <strong>${Math.round(tightS.meanTok)}</strong> tokens — while the <code>${UI.esc(deep.runtime || "default")}</code> run goes deeper at <strong>${deepS.meanTurns.toFixed(1)} turns</strong> / <strong>${Math.round(deepS.meanTok)}</strong>. Neither one is wrong; they're different stopping strategies.`
-      : `Same model, different harnesses — behavior diverges on turns and tokens, but neither dominates the other.`;
+      ? `Same model (<strong>${UI.esc(UI.modelDisplay(a.model))}</strong>), two orchestrations. The <code>${UI.esc(tight.runtime || "default")}</code> run is tighter — <strong>${tightS.meanTurns.toFixed(1)} turns</strong> / <strong>${Math.round(tightS.meanTok)}</strong> tokens — while the <code>${UI.esc(deep.runtime || "default")}</code> run goes deeper at <strong>${deepS.meanTurns.toFixed(1)} turns</strong> / <strong>${Math.round(deepS.meanTok)}</strong>. Neither one is wrong; they're different stopping strategies.`
+      : `Same model, different orchestrations — behavior diverges on turns and tokens, but neither dominates the other.`;
 
     return `
       <section class="bh-callout">
@@ -195,7 +195,7 @@
         <div class="bh-callout-body">
           ${line}
           <div class="bh-callout-why">
-            Why this matters: the leaderboard shows cost and latency per <em>run</em>, but the <em>same</em> model will cost 3× more and take 2× longer under a different harness because it chose to take more turns. That's a product decision, not a benchmark one.
+            Why this matters: the leaderboard shows cost and latency per <em>run</em>, but the <em>same</em> model will cost 3× more and take 2× longer under a different orchestration because it chose to take more turns. That's a product decision, not a benchmark one.
           </div>
         </div>
         <div class="bh-callout-grid">
@@ -251,9 +251,9 @@
       <main class="main v3-main">
         <section class="v3-hero v3-hero-slim">
           <div class="v3-kicker">Behavior · preview</div>
-          <h1 class="v3-title">How each candidate actually <em>ran</em>.</h1>
+          <h1 class="v3-title">Same model, different <em>orchestration</em>.</h1>
           <p class="v3-blurb">
-            Aggregate stats tell you the what. Behavior tells you the how — turns, tokens, which tools got called, how often. Same model under a different harness will often behave <em>radically</em> differently.
+            Aggregate stats tell you the what. Behavior tells you the how — turns, tokens, which tools got called, how often. Same model under a different orchestration will often behave <em>radically</em> differently.
           </p>
         </section>
 

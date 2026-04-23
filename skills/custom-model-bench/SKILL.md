@@ -60,7 +60,7 @@ Branch on Q3:
 - **A dataset** → prompt for file path or pasted JSONL, validate (`id` + `prompt` required per row), scaffold the scope, run.
 - **A system prompt** → prompt for pasted prompt text, kick the dataset-synth sub-flow seeded with their prompt.
 - **Nothing yet** → kick the dataset-synth sub-flow seeded with Q1 + Q2.
-- **Demo first** → exit setup; tell the user to run `/custom-model-bench:bench-run yc-qualifier:mock` or `/custom-model-bench:bench-run reasoning` to see the kit working, and come back when ready.
+- **Demo first** → do not ask the user to run more commands. Immediately invoke `/custom-model-bench:bench-view` on their behalf (builds + serves the static viewer over shipped comparison JSONs — no API calls, instant). Say one line before invoking ("Opening the viewer on the shipped benchmarks — come back to `/bench-setup` when you're ready to wire up your own") and then call it. Exit setup.
 
 The dataset-synth sub-flow is brainstorming-style — 3-5 follow-up questions tailored to Q1, then one Sonnet 4.6 call generates ~10-15 synthetic test rows. The user reviews and can regenerate.
 

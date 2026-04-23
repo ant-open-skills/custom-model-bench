@@ -10,7 +10,7 @@
     {
       "name": "custom-model-bench",
       "description": "Benchmark your custom Claude agents and prompted workflows against curated datasets and rubric-based judges.",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "author": {
         "name": "Hendrik Krack"
       },

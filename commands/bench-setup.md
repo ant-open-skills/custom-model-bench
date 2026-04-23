@@ -53,7 +53,7 @@ These four options are genuinely mutually exclusive paths through the rest of th
 - **A dataset** → prompt for the file path or pasted JSONL, then validate (must be JSONL with at least `id` + `prompt` per row; other fields optional). On validation failure, surface the issue and offer to fix or regenerate. System prompt is derived from Q1.
 - **A system prompt** → prompt for the pasted prompt text, then kick the dataset-synth sub-flow (below), seeded with their prompt. The user gets to evaluate the prompt they already wrote — not a synthesized one.
 - **Nothing yet** → kick the dataset-synth sub-flow, seeded with Q1 + Q2. System prompt is derived from Q1.
-- **Demo first** → do not scaffold a new scope. Tell the user: "Run `/custom-model-bench:bench-run yc-qualifier:mock` for the flagship agentic scope (mocked tools, ~30s, free), or `/custom-model-bench:bench-run reasoning` for a pure reasoning benchmark. Come back to `/custom-model-bench:bench-setup` when you're ready to wire up your own." Exit the setup flow.
+- **Demo first** → do not scaffold a new scope and do not ask the user to run more commands. Immediately invoke `/custom-model-bench:bench-view` on their behalf. That builds the static viewer from the shipped comparison JSONs (no API calls, instant) and opens the leaderboard on the yc-qualifier scope by default. Say one line before invoking: "Opening the viewer on the shipped benchmarks — 15 candidates across four scopes. Come back to `/custom-model-bench:bench-setup` when you're ready to wire up your own." Then call the command. Exit the setup flow.
 
 ### Q4 — Which providers do you want to compare?
 

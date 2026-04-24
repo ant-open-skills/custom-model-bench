@@ -1,11 +1,7 @@
 #!/usr/bin/env bun
 /**
- * serve.ts — minimal Bun static server for the viewer.
- *
- *   bun viewer:serve          # defaults to port 4040
- *   PORT=3000 bun viewer:serve
- *
- * Open http://localhost:4040 to use the viewer.
+ * viewer/serve.ts — minimal Bun static server for the viewer.
+ * Default port 4040. Override with PORT env var.
  */
 import { file } from "bun";
 import { resolve, join, dirname } from "node:path";

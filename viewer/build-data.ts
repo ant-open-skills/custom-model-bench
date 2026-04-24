@@ -1,14 +1,9 @@
 #!/usr/bin/env bun
 /**
- * build-data.ts — reads the latest comparison_*.json from each of the five
- * example directories and emits viewer/data.js, which the static HTML loads
- * via <script> tag.
- *
- * Run from the repo root:
- *   bun run viewer/build-data.ts
- *
- * Or via the npm script:
- *   bun viewer:build
+ * viewer/build-data.ts — scans each scope's runs/ directory under
+ * skills/custom-model-bench/examples/, picks the newest comparison JSON,
+ * and emits viewer/data.js as a single `window.__BENCH = {...}` assignment
+ * the viewer's scripts read at load time.
  */
 
 import { readdir, readFile, writeFile, stat } from "node:fs/promises";
@@ -43,11 +38,7 @@ async function comparisonFilesByMtime(runsDir: string): Promise<{ p: string; m: 
   const files = entries.filter((f) => /^comparison_.*\.json$/.test(f));
   if (files.length === 0) return [];
   const withMtime = await Promise.all(
-    files.map(async (f) => {
-      const p = join(runsDir, f);
-      const s = await stat(p);
-      return { p, m: s.mtimeMs };
-    }),
+    files.map(async (f) => ({ p: join(runsDir, f), m: (await stat(join(runsDir, f))).mtimeMs })),
   );
   withMtime.sort((a, b) => a.m - b.m); // oldest first
   return withMtime;

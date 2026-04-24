@@ -24,13 +24,7 @@
     "bench:yc-qualifier:mock": "MOCK_TOOLS=1 bun run skills/custom-model-bench/scripts/run-comparison.ts skills/custom-model-bench/examples/yc-qualifier",
     "viewer:build": "bun run viewer/build-data.ts",
     "viewer:serve": "bun run viewer/serve.ts",
-    "viewer": "bun viewer:build && bun viewer:serve",
-    "viewer-v2:build": "bun run viewer-v2/build-data.ts",
-    "viewer-v2:serve": "bun run viewer-v2/serve.ts",
-    "viewer-v2": "bun viewer-v2:build && bun viewer-v2:serve",
-    "viewer-v3:build": "bun run viewer-v3/build-data.ts",
-    "viewer-v3:serve": "bun run viewer-v3/serve.ts",
-    "viewer-v3": "bun viewer-v3:build && bun viewer-v3:serve"
+    "viewer": "bun viewer:build && bun viewer:serve"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.71",

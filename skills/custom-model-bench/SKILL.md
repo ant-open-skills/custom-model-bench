@@ -88,7 +88,7 @@ custom-model-bench/
   │     │     ├── config-*.ts
   │     │     └── runs/comparison_*.json
   │     └── scripts/          run-comparison.ts, judge.ts, graders/, adapters/
-  ├── viewer-v2/              static HTML + JS viewer; reads data.js
+  ├── viewer/                 static HTML + JS viewer; reads data.js
   ├── docs/specs/             design docs
   └── blog/                   release content
 ```

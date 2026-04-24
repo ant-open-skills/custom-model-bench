@@ -17,7 +17,11 @@ Then ask Claude to "benchmark my prompt" or invoke `/bench-setup` directly.
 - **Code-graded metrics out of the box.** Schema compliance, task completion, recovery rate, efficiency, ground-truth match, cost per successful task.
 - **Rubric-graded metrics for agentic workflows.** 3-run Opus 4.7 judge with variance reporting across grounding / specificity / relevance / call-to-action.
 - **Grounding faithfulness grader.** Two-stage claim extraction + deterministic match — catches when your agent makes things up.
-- **Static viewer.** Editorial-aesthetic web UI with a leaderboard, eval drilldowns with trace visualization, dataset browser, and time-series.
+- **Editorial web viewer** with four screens:
+  - **Frontier** — scatter plot with persona-weighted fit scoring and swappable X/Y axes (cost · p50 · p95 · reliability · quality · recovery · task completion). "Which model should I ship?"
+  - **Trace diff** — stacked candidate columns for a single row, tool calls inlined; agentic scopes add a workflow figure and a Stage 2 email / grounding / judge drilldown.
+  - **Behavior** — per-candidate turns, tokens, tool mix. Surfaces the same-model / different-orchestration gap (e.g. Sonnet 4.6 on Vercel AI SDK vs. Claude Agent SDK).
+  - **Leaderboard** — sortable table; on agentic scopes, columns swap to Fit · Task ✓ · Recovery · Fab. · Judge · p50 · $/task with a same-model-vs delta card.
 
 ## Quick start
 
@@ -33,10 +37,10 @@ $EDITOR .env
 bun bench:tools                      # Tool bench across 12 candidates (mocked tools, cheap)
 bun bench:reasoning                  # Reasoning bench across 4 flagships
 bun bench:yc-qualifier:mock          # Prospect qualifier with mocked tools
-bun bench:yc-qualifier               # Prospect qualifier with real APIs (~$5–80)
+bun bench:yc-qualifier               # Prospect qualifier with real APIs (~$30)
 
 # View results
-bun viewer-v2                        # Builds data + serves at http://localhost:4041
+bun viewer                           # Builds data + serves at http://localhost:4040
 ```
 
 ## The shipped scopes
@@ -54,34 +58,35 @@ Three primitives. Discoverable in the `/` menu.
 |---|---|
 | `/bench-run [scope]` | Runs a comparison on the named scope. |
 | `/bench-view` | Builds + serves the viewer. |
-| `/bench-setup` | Three-question intake to scaffold a new benchmark from your own task. |
+| `/bench-setup` | Interactive intake to scaffold a new benchmark from your own task. |
 
 The skill activates on intent — say "benchmark my prompt" or "compare these models" and it'll route you through the same flows.
 
 ## Build your own scope
 
-`/bench-setup` asks three questions:
+`/bench-setup` asks, via the arrow-nav / space-to-toggle picker (Q2 + Q4 are multi-select, Q3 is single-select):
 
-1. *What are you building?*
-2. *What do you care about?* (speed / cost / reliability / balanced)
-3. *What do you already have?* (a dataset / a prompt / nothing yet)
+1. *What are you building?* — free text, 1-3 sentences.
+2. *What do you care about?* — Speed · Cost · Reliability · Balanced (pick any combination).
+3. *What do you already have?* — A dataset · A system prompt · Nothing yet · Demo first.
+4. *Which providers do you want to compare?* — Anthropic · OpenAI · Google · xAI.
 
-Plus a provider picker (Anthropic / OpenAI / Google / xAI). If you don't have a dataset, the skill kicks off a brainstorming-style sub-flow — 3-5 follow-ups about your task — and generates a synthetic one tailored to your domain.
+If you pick **Nothing yet** or **A system prompt**, the skill kicks off a brainstorming sub-flow — 3-5 follow-ups tailored to your task — and generates a synthetic starter dataset. **Demo first** skips scaffolding and opens the viewer on the shipped scopes so you can see the kit working before committing your own task.
 
-The output is a directory at `examples/<your-scope>/` with everything wired and ready to run.
+The output is a directory at `examples/<your-scope>/` with dataset + candidate configs + system prompt wired and ready to run.
 
 ## Repo layout
 
 ```
 custom-model-bench/
   ├── .claude-plugin/         marketplace + plugin metadata
-  ├── commands/               slash command definitions
+  ├── commands/               slash command definitions (bench-run, bench-view, bench-setup)
   ├── skills/custom-model-bench/
   │     ├── SKILL.md          the skill that activates on benchmark intent
   │     ├── examples/<scope>/ each scope owns its dataset + configs + runs
   │     └── scripts/          run-comparison.ts, judge.ts, graders/, adapters/
-  ├── viewer-v2/              static HTML + JS viewer; reads data.js
-  ├── docs/specs/             design docs
+  ├── viewer/                 static HTML + JS viewer; reads data.js
+  ├── docs/specs/             design docs and handoff notes
   └── blog/                   release content
 ```
 

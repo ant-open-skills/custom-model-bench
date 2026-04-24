@@ -8,7 +8,7 @@
  *
  * Custom tools are wrapped as an in-process SDK MCP server; their call names
  * come back prefixed with `mcp__<server>__` — we strip that when recording
- * the trace so viewer-v2's trace visualizer renders both runtimes the same.
+ * the trace so the viewer's trace visualizer renders both runtimes the same.
  */
 
 import {

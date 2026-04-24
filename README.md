@@ -29,18 +29,22 @@ Then ask Claude to "benchmark my prompt" or invoke `/bench-setup` directly.
 # Install dependencies
 bun install
 
-# Copy and fill in API keys (only providers you benchmark need keys)
+# See what the platform looks like first — open the viewer on the shipped results
+bun viewer                           # Builds data + serves at http://localhost:4040
+
+# Ready to run your own? Copy .env.example and fill in API keys
+# (only providers you benchmark need keys)
 cp .env.example .env
 $EDITOR .env
 
-# Run an existing benchmark
+# Run an existing benchmark with your keys
 bun bench:tools                      # Tool bench across 12 candidates (mocked tools, cheap)
 bun bench:reasoning                  # Reasoning bench across 4 flagships
 bun bench:yc-qualifier:mock          # Prospect qualifier with mocked tools
 bun bench:yc-qualifier               # Prospect qualifier with real APIs (~$30)
 
-# View results
-bun viewer                           # Builds data + serves at http://localhost:4040
+# Re-run the viewer to see your new numbers alongside the shipped ones
+bun viewer
 ```
 
 ## The shipped scopes

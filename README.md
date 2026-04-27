@@ -7,7 +7,7 @@ claude plugin marketplace add ant-open-skills/custom-model-bench
 claude plugin install custom-model-bench@ant-open-skills
 ```
 
-Then ask Claude to "benchmark my prompt" or invoke `/bench-setup` directly.
+Then ask run to `/bench-view` to get started with an example or run `/bench-setup` to build your own. 
 
 ## What it does
 

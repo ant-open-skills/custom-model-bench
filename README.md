@@ -9,6 +9,8 @@ claude plugin install custom-model-bench@ant-open-skills
 
 Then ask run to `/bench-view` to get started with an example or run `/bench-setup` to build your own. 
 
+Want the full methodology behind the kit? [Read the blog post on krackedtools.dev →](https://www.krackedtools.dev)
+
 ## What it does
 
 - **Cross-provider candidate runtime.** Vercel AI SDK adapters for Anthropic, OpenAI, Google, xAI — same pipeline, swap a config field.

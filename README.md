@@ -9,7 +9,7 @@ claude plugin install custom-model-bench@ant-open-skills
 
 Then ask run to `/bench-view` to get started with an example or run `/bench-setup` to build your own. 
 
-Want the full methodology behind the kit? [Read the blog post on krackedtools.dev →](https://www.krackedtools.dev)
+To understnad the full methodology behind the kit -> [Read the blog post on krackedtools.dev](https://www.krackedtools.dev)
 
 ## What it does
 

@@ -395,6 +395,20 @@
 .v3-dot.dominated .halo { opacity: 0.05; }
 .v3-dot.dominated .v3-dot-label { opacity: 0.35; }
 .v3-dot:hover .halo { opacity: 0.28; }
+/* preview-top: hover-highlight on a persona chip lights up the dot
+   that would become #1 if you switched to that persona. */
+.v3-dot.preview-top .core {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  opacity: 1 !important;
+}
+.v3-dot.preview-top .halo {
+  opacity: 0.45 !important;
+}
+.v3-dot.preview-top .v3-dot-label {
+  opacity: 1 !important;
+  font-weight: 600;
+}
 .v3-dot-label {
   font-family: var(--mono); font-size: 10px;
   fill: var(--ink-2);
@@ -451,7 +465,23 @@
   font-size: 10.5px;
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--ink-3);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+}
+.v3-rec-persona {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.v3-rec-arrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-3);
+  margin-bottom: 2px;
 }
 .v3-rec-v {
   display: flex; align-items: center; gap: 7px; flex-wrap: wrap;

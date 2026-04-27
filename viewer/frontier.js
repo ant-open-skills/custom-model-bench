@@ -44,7 +44,7 @@
       label: "Premium agent",
       blurb: "High-stakes per task — drives revenue, contracts, compliance. Can't ship a cheap one that fabricates or bails when a tool fails.",
       weights: { lat50: 0.07, lat95: 0.03, cost: 0.10, success: 0.10, quality: 0.30, recovery: 0.25, task_completion: 0.15 },
-      axes: { x: "cost", y: "quality" },
+      axes: { x: "lat50", y: "recovery" },
       axesTagline: "",
     },
     {
@@ -93,8 +93,12 @@
     },
   ];
 
+  // Default landing scope: prefer yc-qualifier (the agentic flagship — most
+  // interesting first impression). Fall back to the first scope in the bundle
+  // if yc-qualifier isn't present.
+  const DEFAULT_SUITE = (B.scopes.find(s => s.id === "yc-qualifier") || B.scopes[0])?.id;
   const SEL = {
-    suite:   localStorage.getItem("cmbv3_suite")   || (B.scopes[0] && B.scopes[0].id),
+    suite:   localStorage.getItem("cmbv3_suite")   || DEFAULT_SUITE,
     persona: localStorage.getItem("cmbv3_persona") || "premium-agent",
     runtime: localStorage.getItem("cmbv3_runtime") || "all",
     // Axis overrides — null means "use the persona's default axes".
@@ -377,9 +381,22 @@
     const xTicks = xS.ticks;
     const yTicks = yS.ticks;
 
+    // For each persona, compute who would be #1 if you switched to it. We
+    // use this to: (a) preview the would-be winner on hover by highlighting
+    // its dot, and (b) embed the candidate idx in the chip's data-attr.
+    const personaPreview = {};
+    for (const p of PERSONAS) {
+      const previewRanked = shown
+        .map(c => ({ c, fit: fitWith(c, p.weights).fit }))
+        .sort((a, b) => b.fit - a.fit);
+      personaPreview[p.id] = previewRanked[0]?.c?.idx ?? -1;
+    }
+
     // Personas list
     const personaHtml = PERSONAS.map(p => `
-      <button class="v3-persona ${p.id === persona.id ? "active" : ""}" data-persona="${p.id}">
+      <button class="v3-persona ${p.id === persona.id ? "active" : ""}"
+              data-persona="${p.id}"
+              data-preview-idx="${personaPreview[p.id]}">
         <div class="pp-head">
           <span class="pp-dot"></span>
           <span class="pp-label">${UI.esc(p.label)}</span>
@@ -532,7 +549,9 @@
       const strong = diff > 8;
       recommendation = `
         <div class="v3-rec">
-          <div class="v3-rec-k">For ${UI.esc(persona.label.toLowerCase())}, ship</div>
+          <div class="v3-rec-k">If you're shipping a</div>
+          <div class="v3-rec-persona">${UI.esc(persona.label)}</div>
+          <div class="v3-rec-arrow">↓ ship</div>
           <div class="v3-rec-v">
             ${UI.providerDot(top.provider)}
             <span class="rec-name">${UI.esc(UI.modelDisplay(top.model))}</span>
@@ -664,6 +683,16 @@
         SEL.axisY = null;
         persist();
         window.__APP.render();
+      });
+      // Hover-to-preview: highlight which dot would become #1 if you
+      // switched to this persona. Cleared on mouseleave.
+      el.addEventListener("mouseenter", () => {
+        const idx = el.dataset.previewIdx;
+        if (idx == null || idx === "" || idx === "-1") return;
+        document.querySelectorAll(`.v3-dot[data-idx="${idx}"]`).forEach(d => d.classList.add("preview-top"));
+      });
+      el.addEventListener("mouseleave", () => {
+        document.querySelectorAll(".v3-dot.preview-top").forEach(d => d.classList.remove("preview-top"));
       });
     });
     // Axis pickers: swap x/y dims without changing persona/weights.

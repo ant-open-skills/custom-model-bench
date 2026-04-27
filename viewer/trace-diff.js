@@ -57,7 +57,11 @@
   }
 
   // Render a single trace as a vertical stack of events.
-  // Trace events shape (from data): { type: "tool_call" | "tool_result" | "assistant_text", name?, args?, result?, text?, step? }
+  // Trace event schema (per viewer/types.d.ts):
+  //   { type: "tool_call",     step, name, input,  id }
+  //   { type: "tool_result",   step, name, output, id }
+  //   { type: "assistant_text", step, text }
+  // Older synthetic data sometimes used `args` / `result` — we read both.
   function traceBlock(row, run) {
     if (!row) {
       return `<div class="v3-trace-empty">no data for this row</div>`;
@@ -78,7 +82,9 @@
       for (const ev of trace) {
         step = ev.step ?? step;
         if (ev.type === "tool_call") {
-          const argsStr = typeof ev.args === "string" ? ev.args : JSON.stringify(ev.args || {});
+          // Real schema: ev.input. Synthetic / older data: ev.args.
+          const argsRaw = ev.input ?? ev.args ?? {};
+          const argsStr = typeof argsRaw === "string" ? argsRaw : JSON.stringify(argsRaw);
           const argsShort = argsStr.length > 80 ? argsStr.slice(0, 79) + "…" : argsStr;
           lines.push(`
             <div class="tdl tdl-call">
@@ -93,7 +99,9 @@
             </div>
           `);
         } else if (ev.type === "tool_result") {
-          const resStr = typeof ev.result === "string" ? ev.result : JSON.stringify(ev.result || {});
+          // Real schema: ev.output. Synthetic / older data: ev.result.
+          const resRaw = ev.output ?? ev.result ?? {};
+          const resStr = typeof resRaw === "string" ? resRaw : JSON.stringify(resRaw);
           const resShort = resStr.length > 140 ? resStr.slice(0, 139) + "…" : resStr;
           lines.push(`
             <div class="tdl tdl-res">

@@ -805,6 +805,9 @@
   font-style: italic;
 }
 .tdl-final {
+  /* override the parent .tdl grid so the 'final answer' label can sit
+     above the body instead of being squeezed into the 16px rail column */
+  display: block;
   padding: 6px 8px;
   background: color-mix(in oklch, var(--good) 10%, var(--bg-elev));
   border-left: 2px solid var(--good);
@@ -812,10 +815,18 @@
   margin-top: 4px;
 }
 .tdl-final .tdl-k {
+  display: block;
   font-family: var(--mono); font-size: 9.5px;
   text-transform: uppercase; letter-spacing: 0.08em;
   color: var(--good);
   margin-bottom: 3px;
+}
+.tdl-final .tdl-body {
+  display: block;
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-2);
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 
 .td-foot {

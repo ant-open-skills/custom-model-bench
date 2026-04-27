@@ -93,6 +93,20 @@
     },
   ];
 
+  // localStorage schema version. Bump this whenever default scope / persona /
+  // axes change so that returning users with stale saved prefs get migrated
+  // to the new defaults instead of being pinned to the old state forever.
+  // History:
+  //   1 — initial cmbv3_* keys
+  //   2 — premium-agent default axes lat50 × recovery; default scope yc-qualifier
+  const CMBV3_SCHEMA = "2";
+  if (localStorage.getItem("cmbv3_schema") !== CMBV3_SCHEMA) {
+    for (const k of Object.keys(localStorage)) {
+      if (k.startsWith("cmbv3_")) localStorage.removeItem(k);
+    }
+    localStorage.setItem("cmbv3_schema", CMBV3_SCHEMA);
+  }
+
   // Default landing scope: prefer yc-qualifier (the agentic flagship — most
   // interesting first impression). Fall back to the first scope in the bundle
   // if yc-qualifier isn't present.

@@ -23,7 +23,28 @@ Then ask Claude to "benchmark my prompt" or invoke `/bench-setup` directly.
   - **Behavior** — per-candidate turns, tokens, tool mix. Surfaces the same-model / different-orchestration gap (e.g. Sonnet 4.6 on Vercel AI SDK vs. Claude Agent SDK).
   - **Leaderboard** — sortable table; on agentic scopes, columns swap to Fit · Task ✓ · Recovery · Fab. · Judge · p50 · $/task with a same-model-vs delta card.
 
-## Quick start
+## Quick start — inside Claude Code
+
+After the two-command install above, the kit is fully driven from inside Claude Code. Three slash commands cover the lifecycle:
+
+| Command | When to reach for it |
+|---|---|
+| `/bench-view` | **Start here.** Opens the viewer on the shipped results so you see what the platform looks like before running anything. |
+| `/bench-run [scope]` | Run a comparison on the named scope (or it'll ask which). Pick `yc-qualifier:mock` for a free deterministic preview, `yc-qualifier` for the real-APIs flagship (~$30). |
+| `/bench-setup` | Interactive intake to scaffold a new benchmark from your own task. |
+
+The skill also activates on intent — say "benchmark my prompt" or "compare these models" and you'll be routed through the same flows. Picking **Demo first** in `/bench-setup` skips scaffolding and opens the viewer directly.
+
+## The shipped scopes
+
+- **`speed-bench`** — single-turn prompts across 12 candidates. Latency vs cost vs accuracy on simple tasks.
+- **`reasoning-bench`** — hard science/math problems graded for exact-match correctness.
+- **`tool-bench`** — multi-tool-use tasks with mocked tool handlers (deterministic, reproducible).
+- **`yc-qualifier`** — the agentic flagship. Stage 1 prospect research → Stage 2 email drafter → grounding-faithfulness grader → 3-run Opus 4.7 rubric judge.
+
+## Standalone CLI (without Claude Code)
+
+If you'd rather drive the kit directly from a terminal — for CI runs, scripted comparisons, or hacking on the internals — clone the repo and use the bun scripts:
 
 ```bash
 # Install dependencies
@@ -47,24 +68,7 @@ bun bench:yc-qualifier               # Prospect qualifier with real APIs (~$30)
 bun viewer
 ```
 
-## The shipped scopes
-
-- **`speed-bench`** — single-turn prompts across 12 candidates. Latency vs cost vs accuracy on simple tasks.
-- **`reasoning-bench`** — hard science/math problems graded for exact-match correctness.
-- **`tool-bench`** — multi-tool-use tasks with mocked tool handlers (deterministic, reproducible).
-- **`yc-qualifier`** — the agentic flagship. Stage 1 prospect research → Stage 2 email drafter → grounding-faithfulness grader → 3-run Opus 4.7 rubric judge.
-
-## Slash commands
-
-Three primitives. Discoverable in the `/` menu.
-
-| Command | Effect |
-|---|---|
-| `/bench-run [scope]` | Runs a comparison on the named scope. |
-| `/bench-view` | Builds + serves the viewer. |
-| `/bench-setup` | Interactive intake to scaffold a new benchmark from your own task. |
-
-The skill activates on intent — say "benchmark my prompt" or "compare these models" and it'll route you through the same flows.
+Same datasets, same graders, same comparison JSONs as the slash-command path — just driven from the shell instead of the Claude Code chat.
 
 ## Build your own scope
 

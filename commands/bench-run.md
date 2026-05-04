@@ -29,3 +29,13 @@ Cost-control env flags (set before the command if the user hasn't asked for full
 If the scope has Stage 2 (`config-stage2*.ts` exists in the dir) and the user hasn't said "full pipeline", **ask before spending real Opus judge budget.**
 
 Stream the runner's output so the user sees the leaderboard as it lands. When the run completes, tell the user the path to the new comparison JSON and offer `/custom-model-bench:bench-view` to inspect.
+
+## Multi-harness scopes (scaffolded by `/bench-setup` from a GitHub repo)
+
+If the scope's directory contains one or more `bench-adapter.{py,ts}` files (Stage 3 scopes scaffolded from a multi-harness GitHub repo), the harness-invocation runner is **not yet wired up — that ships in v0.5.** For now:
+
+- Run the model-swap dimension as usual using the existing `config-stage1-*.ts` candidates.
+- Tell the user explicitly: *"I'm running the model-swap dimension only. Harness comparison (varying `agent_sdk/` vs `client_sdk/`) is staged in the adapter stubs but not yet executed — that ships next."*
+- Do not error out or skip the run. The model-swap results are still useful on their own.
+
+When the v0.5 runner lands, this section will get replaced with the actual harness-invocation flow.

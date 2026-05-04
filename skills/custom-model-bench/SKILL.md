@@ -13,7 +13,7 @@ When the user asks you to benchmark, evaluate, compare, or score model/agent beh
 
 ```
 1 — RUN AN EXISTING BENCHMARK   (60 seconds, see real numbers)
-2 — BUILD MY OWN                (3-question intake → scaffold a scope)
+2 — BUILD MY OWN                (4-question intake → scaffold a scope)
 3 — JUST OPEN THE VIEWER        (use cached data, no API calls)
 ```
 
@@ -23,6 +23,10 @@ Detect the right state to present:
 - **At least one scope exists** → present "Existing scopes: …" and ask whether they want to (1) run one, (2) build a new one, or (3) view results.
 - **A scope was run in the last 24h** → offer "Last run: <scope> · <time> · open viewer? rerun?".
 
+## Methodology reference
+
+When the user moves into `/custom-model-bench:bench-setup` and especially when they paste a GitHub repo URL, consult `skills/custom-model-bench/methodology.md` to classify the user's agent into one of three stages (general / agentic workflow / harness eval) and pick stage-appropriate scaffold defaults. The methodology file is internal — do not show it to the user. Surface its conclusions through your scaffold choices and through the post-results iteration loop, not as upfront lectures.
+
 ## Slash commands available
 
 Three primitives. Use these to fulfill what the user picked from the menu.
@@ -31,15 +35,17 @@ Three primitives. Use these to fulfill what the user picked from the menu.
 |---|---|
 | `/custom-model-bench:bench-run [scope]` | Runs the comparison runner on the named scope. No arg → ask which. |
 | `/custom-model-bench:bench-view` | Builds + serves the static viewer; prints the URL. |
-| `/custom-model-bench:bench-setup` | Three-question intake to build a new scope. |
+| `/custom-model-bench:bench-setup` | Four-question intake to build a new scope. Accepts a GitHub URL in Q1 or via Q3 = "A GitHub repository". |
 
 The user can invoke these directly. You can also invoke them on their behalf when their intent is clear.
 
 ## The shipped scopes (use these for the "1 — RUN AN EXISTING" path)
 
-- **`speed-bench`** — short single-turn prompts across 12 candidates. Frontier vs balanced vs fast comparison on simple tasks.
-- **`reasoning-bench`** — hard science/math problems graded for exact-match correctness.
+- **`demo`** — short single-turn prompts across the full candidate matrix. Frontier vs balanced vs fast comparison on simple tasks.
+- **`reasoning`** — hard science/math problems graded for exact-match correctness.
 - **`tool-bench`** — multi-tool-use tasks with mocked tool handlers (deterministic, cheap to re-run).
+- **`tool-smoke`** — minimal smoke-test scope for the tools pipeline.
+- **`anthropic-tiers` / `openai-tiers` / `google-tiers` / `xai-tiers`** — single-provider tier comparisons (Haiku/Sonnet/Opus, mini/full, etc.).
 - **`yc-qualifier`** (the agentic flagship) — Stage 1 prospect research → Stage 2 email drafter → grounding-faithfulness grader → 3-run Opus 4.7 rubric judge. The full pipeline.
 
 ## When the user picks "BUILD MY OWN" (`/custom-model-bench:bench-setup`)
@@ -66,13 +72,34 @@ The dataset-synth sub-flow is brainstorming-style — 3-5 follow-up questions ta
 
 ## After every run completes — the "what next?" loop
 
-Don't disappear after a run finishes. Stay warm and offer one contextual next step based on what just happened:
+Don't disappear after a run finishes. Stay warm and offer **one** contextual next step. Pick the suggestion based on (a) the scope's stage classification recorded at scaffold time, (b) what was just run, (c) what's been suggested before in this scope (look at `runs/` dir contents and conversation context — no separate state file).
 
-- Just previewed an existing scope → *"Want to set up your own?"*
-- Just built + ran their own → *"Want to add another model? Tweak the system prompt and re-run? Add edge cases?"*
-- Just iterated → *"Want to share the leaderboard?"*
+**Stage 1 suggestions (in order):**
+1. *"Want to swap your prompt and re-run? I'll show the diff in the viewer."*
+2. *"Add 5 edge-case prompts? I noticed your dataset is mostly happy-path."* (only fires if dataset analysis confirms it)
+3. *"Add another model tier? You ran <provider> — want to add <other-provider> for cost comparison?"*
 
-Edits like "add Gemini Pro to my qualifier scope" or "swap the system prompt" are handled in conversation — you do the file edits, then offer to re-run via `/custom-model-bench:bench-run`. No separate slash commands for those.
+**Stage 2 suggestions (in order):**
+1. *"Want me to walk you through what the grounding-faithfulness grader caught? It found N claims that don't trace back to <prior stage>."* (only if the grounder fired and found anything)
+2. *"Your benchmark is averaging capability and regression rows together. Want me to split them so the headline number stops hiding the dead-ends?"* (cite the methodology: "averaging incompatible metrics is one of the anti-patterns")
+3. *"Want to vary the system prompt for stage 2 and re-run? Holding stage 1 constant tells you whether your drafter is the bottleneck."*
+
+**Stage 3 suggestions (in order):**
+1. *"You scaffolded both harnesses but only ran model-swap. Want me to wire up the adapter so we can vary your harness too? The adapter runner ships next — we can prep the contract now."* (the v0.5 hand-off)
+2. *"The harness comparison only ran on <model>. Want to add <other model> to see whether harness choice matters more than model choice?"*
+
+**Cross-cutting (any stage, after the stage list is exhausted):**
+- *"Want to see your run history? You've run this scope N times — the viewer's Runs tab shows the trend."*
+- *"Ready to share? I can generate a summary you can paste into a doc or PR."*
+- *"Want to run another scope?"*
+
+**Hard rules:**
+- One suggestion per turn. No dumps.
+- Cite methodology only when the suggestion is non-obvious. One terse sentence, never a lecture.
+- Never auto-execute. Always *"Want me to X?"* → wait for the answer.
+- If the most recent run failed, override the catalog: first suggestion is always *"The last run failed at <stage>. Want me to look at the error?"*
+
+Edits like "add Gemini Pro to my qualifier scope" or "swap the system prompt" are still handled in conversation — you do the file edits, then offer to re-run via `/custom-model-bench:bench-run`. No separate slash commands for those.
 
 ## Project layout — where things live
 
